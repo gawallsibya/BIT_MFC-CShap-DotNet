@@ -1,0 +1,4 @@
+C:\Users\Administrator\Desktop\실습\Sample\Sample\bin\Sample.dll
+C:\Users\Administrator\Desktop\실습\Sample\Sample\bin\Sample.pdb
+C:\Users\Administrator\Desktop\실습\Sample\Sample\obj\Release\Sample.dll
+C:\Users\Administrator\Desktop\실습\Sample\Sample\obj\Release\Sample.pdb

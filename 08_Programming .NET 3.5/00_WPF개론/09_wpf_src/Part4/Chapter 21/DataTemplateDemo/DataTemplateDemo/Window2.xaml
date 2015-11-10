@@ -1,0 +1,73 @@
+﻿<Window x:Class="DataTemplateDemo.Window2"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    Title="Window2" Height="300" Width="300">
+    <Canvas xmlns:local="clr-namespace:DataTemplateDemo">
+        <Canvas.Resources>
+            <local:Person x:Key="person1">
+                <local:Person.Irum>호나우두</local:Person.Irum>
+                <local:Person.Juso>이탈리아 리그</local:Person.Juso>
+                <local:Person.Hobby>낚 시</local:Person.Hobby>
+            </local:Person>
+            
+            <local:Person x:Key="person2">
+                <local:Person.Irum>펠레</local:Person.Irum>
+                <local:Person.Juso>브라질 리그</local:Person.Juso>
+                <local:Person.Hobby>삼 바</local:Person.Hobby>
+            </local:Person>
+
+            <DataTemplate  x:Key="myPersonTemplate">
+                <Grid >
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto" />
+                        <ColumnDefinition Width="Auto" />
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                    </Grid.RowDefinitions>
+                    <Image Grid.RowSpan="3" Source="icon.tif" HorizontalAlignment="Left" VerticalAlignment="Top"></Image>
+                    <TextBlock Grid.Column="1" Grid.Row="0"  Text="{Binding Path=Irum}" Margin="10,0,0,0" />
+                    <TextBlock Grid.Column="1" Grid.Row="1"  Text="{Binding Path=Juso}" Margin="10,0,0,0" />
+                    <TextBlock Grid.Column="1" Grid.Row="2"  Text="{Binding Path=Hobby}" Margin="10,0,0,0" />
+
+                </Grid>
+            </DataTemplate>
+
+            <DataTemplate  x:Key="youPersonTemplate">
+                <Grid Background="Beige">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto" />
+                        <ColumnDefinition Width="Auto" />
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                    </Grid.RowDefinitions>
+                    <Image Grid.RowSpan="3" Source="icon.tif" HorizontalAlignment="Left" VerticalAlignment="Top"></Image>
+                    <TextBlock Grid.Column="1" Grid.Row="0"  Text="{Binding Path=Irum}" Margin="10,0,0,0" />
+                    <TextBlock Grid.Column="1" Grid.Row="1"  Text="{Binding Path=Juso}" Margin="10,0,0,0" />
+                    <TextBlock Grid.Column="1" Grid.Row="2"  Text="{Binding Path=Hobby}" Margin="10,0,0,0" />
+
+                </Grid>
+            </DataTemplate>
+
+            <local:MyDataTemplateSelector x:Key="myDataTemplateSelector"/>
+
+        </Canvas.Resources>
+        
+        <Label  ContentTemplateSelector="{StaticResource myDataTemplateSelector}" HorizontalContentAlignment="Stretch"   Canvas.Left="30" Canvas.Top="34" Width="175" Height="89">
+            <Label.Content>
+                <StaticResourceExtension ResourceKey="person1"/>
+            </Label.Content>
+        </Label>
+        
+        <Label  ContentTemplateSelector="{StaticResource myDataTemplateSelector}" HorizontalContentAlignment="Stretch"   Canvas.Left="30" Canvas.Top="141" Width="175" Height="89">
+            <Label.Content>
+                <StaticResourceExtension ResourceKey="person2"/>
+            </Label.Content>
+        </Label>
+    </Canvas>
+</Window>

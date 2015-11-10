@@ -1,0 +1,33 @@
+[ WSDL 생성 및 PROCY 생성]
+
+1. WCF에서 WSDL 생성
+    HelloWorldService.dll 
+
+   ==> 생성파일 : *.wsdl, *.xsd 
+
+2. WSDL을 통해서 proxy 코드 생성
+   svcutil.exe *.wsdl *.xsd /language:C# 
+   
+   ==> 생성파일 : proxy.cs 코드 , output.config 파일 
+       client 구현시 : proxy.cs 은 추가 사용
+                       output.config 파일은 해당 config 파일에 업데이트
+
+3. client 구현
+// config 파일 미사용시
+string url = "http://localhost/wcf/example/helloworldservice";
+BasicHttpBinding binding = new BasicHttpBinding();
+EndpointAddress address = new EndpointAddress(url);
+ 
+using (HelloWorldClient proxy = new HelloWorldClient(binding, address)) {
+    string result = proxy.SayHello();
+    Console.WriteLine(result);
+}
+
+// config 파일 사용시
+   using (HelloWorldClient proxy =
+                new HelloWorldClient("BasicHttpBinding_IHelloWorld")) 
+   {
+    string result = proxy.SayHello();
+    Console.WriteLine(result);
+   }
+

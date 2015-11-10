@@ -1,0 +1,22 @@
+<%@ Page Language="C#" Theme="Autumn" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" >
+<head runat="server">
+    <title>제목 없음</title>
+</head>
+<body>
+    <form id="form1" runat="server">
+    <div>
+        <h3>명명된 스킨 예제</h3>
+        
+        <asp:TextBox ID="TextBox1" runat="server" Text="TextBox 입니다."></asp:TextBox><br />
+        <asp:Button ID="Button1" runat="server" Text="Button"/><br />
+        <asp:Button ID="Button2" runat="server" Text="Button" SkinID="BrownButton"/><br />
+        <asp:Label ID="Label1" runat="server" Text="Autumn 테마에 정의된 Lable 컨트롤의 기본 스킨 적용"></asp:Label><br />  
+        <asp:Label ID="Label2" runat="server" Text="Autumn 테마에 정의된 Lable 컨트롤의 명명된 스킨(BrownLabel) 적용" SkinID="BrownLabel"></asp:Label>
+    </div>
+    </form>
+</body>
+</html>

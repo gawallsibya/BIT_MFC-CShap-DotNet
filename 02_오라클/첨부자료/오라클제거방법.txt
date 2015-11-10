@@ -1,0 +1,62 @@
+오라클 제거방법(윈도우의 경우)
+
+1. 실행중인 오라클 정지
+- 제어판 - 관리도구 - 서비스 에서 oracle로 시작되는 모든 서비스 중지
+
+2. Universal Installer를 사용하여 오라클 제거
+-- 이 과정에서 설치된 오라클 소프트웨어 대부분이 제거됩니다. 
+--여기서 재부팅 한 번 해줍니다.
+
+3. 나머지 오라클 관련 파일 제거 (아래의 항목들은 있는지 확인해서 있는것만 삭제하면 됩니다)
+(1) 레지스트리 제거
+- 실행 - regedit 로 들어가 다음 리스트를 모두 삭제합니다. 
+HKEY_CURRENT_USER\SOFTWARE\ORACLE
+HKEY_LOCAL_MACHINE\SOFTWARE\ORACLE
+HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\EventLog\Application\Oracle.oracle
+HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\OracleDBConsole
+HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\Oracle10g_home
+HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\OraclService
+
+(2) 환경변수 제거 
+내 컴퓨터 속성 - 고급 - 환경변수에서 oracle 과 관련된 환경변수 모두 제거
+(예, ORACLE_HOME, ORACLE_SID, TNS_NAME 등...)
+그리고 PATH나 CLASSPATH에 잡혀진 오라클 경로가 존재하면 모두 제거 
+
+(3) 파일 제거(확인해 보고 있으면 제거합니다)
+Universal Installer에 의해 제거되고 남은 오라클관련 파일 제거합니다.
+- Program files에 있는 oracle 디렉토리
+- 오라클 메인 디렉토리
+- C:\Documents and Settings\user_name\Local Settings\Temp에 있는 오라클 관련 디렉토리 및 파일 제거 
+나열된 값들 중에서 값을 검사한다.
+  WHERE deptno IN(10, 20)
+ANY : 서브쿼리의앞에 위치해서 
+        서브쿼리의 반환값 중 어느 하나만 비교 조건을 만족해도 됨
+
+ALL : 서브쿼리의 앞에 위치해서
+        서브쿼리의 반환값 중 모든 비교 조건을 만족해야 됨
+ex)
+SELECT salary
+FROM employee
+WHERE department_id = 30;
+=> 구매부서에 속한 사원들의 급여를 반환 
+--------------------------------------------------
+=> 구매부서에 속한 사원들의 월급보다 높은 
+     월급을 받는 사원명단을 추출 
+
+SELECT employee_id, salary
+FROM employee
+WHERE salary > ALL(SELECT salary        ==>MAX(salary)
+		   FROM employee
+	   	   WHERE department_id = 30);
+
+ex) 
+WHERE deptno IN(10, 20)
+
+WHERE sal > ANY( 500, 1500, 2500)
+
+WHERE sal > ALL( 500, 1500, 2500)
+
+
+
+
+

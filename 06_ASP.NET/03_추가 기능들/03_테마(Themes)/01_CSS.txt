@@ -1,0 +1,27 @@
+<%@ Page Language="C#" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" >
+<head runat="server">
+    <title>제목 없음</title>
+    <link href="StyleSheet.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+    <form id="form1" runat="server">
+    <div>
+        <h3>CSS 예제</h3>
+        
+        1. 어떤 스타일도 적용되지 않은 텍스트 입니다.
+        <p></p>
+        2. <a href="http://www.w3schools.com/css/">http://www.w3schools.com/css/</a>
+        <p></p>        
+        3. <input type="text" name="TextBox1" class="Style1" value="Style1이 적용된 TextBox 입니다." size="40" />
+        <p></p>
+        4. <asp:Label ID="Label1" runat="server" Text="Style2가 적용된 텍스트 입니다." CssClass="Style2"></asp:Label>
+        <p></p>
+        5. <asp:Label ID="Label2" runat="server" Text="Style3이 적용된 텍스트 입니다." CssClass="Style3"></asp:Label>  
+    </div>
+    </form>
+</body>
+</html>

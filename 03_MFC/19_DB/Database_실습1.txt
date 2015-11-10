@@ -1,0 +1,289 @@
+*) 실습 1)--------------------------------------------------------------------------------------
+
+[ODBC를 통한 데이터베이스 관리]
+
+주 제 : 비디오 고객 관리 
+DB    : MS-ACCESS
+
+
+1. DB 구축
+
+   3개의 테이블 구성
+
+   Tape_Table     : 테이프번호, 영화제목, 입수일자, 감독, 주인공, 금액
+   Relation_Table : 테이프번호, 고객번호, 빌린날짜, 회수날짜, 회수여부
+   Custom_Table   : 고객번호, 고객명, 고객전화번호, 고객주소
+
+
+   Tape)
+    TAPE_CD	: integer형
+    TITLE	: Char(50)
+    INDAY	: Date
+    DIRECTOR	: Char(30)
+    ACTOR	: Char(30)
+    MONEY	: Long
+    주키        : TAPE_CD
+
+   Custom_Tape
+    TAPE_CD	: integer형
+    CUSTOM_CD	: integer형
+    RENT_DAY	: Date형
+    REC_DAY	: Date형
+    ISREC	: Boolean형
+    주키        : TAPE_CD + CUSTOM_CD
+    (같은 곡개이 같은 비디오를 빌리지 못한다.)
+
+   Custom
+    CUSTOM_CD	: integer형
+    NAME	: Char(20)
+    TEL		: Char(20)
+    ADDRESS	: Char(60)
+    주키 	: CUSTOM_CD
+
+  
+     *) VIDEO 파일 확인 : Primary Key확인
+
+
+*) ODBC 설정
+
+   제어판 => ODBC 데이터 원본 관리자 ==> ODBC 드라이버탭
+  
+    - 시스템에 설치된 ODBC 드라이버 항목 보기 
+
+
+*) MFC가 제공하는 ODBC 관련 클래스
+
+   CRecordView ==> View 클래스 파생
+
+   CRecordSet  ==> 레코드셋 파생 클래스
+  
+
+   일반적으로 CRecordSet::Open()을 사용하여 CDatabase객체를 생성하고
+   오픈한다.
+
+   이 함수는 SQL SELECT 문장을 실행한 다음 첫 레코드로 이동한다.
+
+   그 다음, 
+   CRecordset의 맴버 함수를 사용하여 ODBC 커서의 위치를 정하고 데이터 베이스의
+   필드와 레코드셋 사이에 데이터를 교환한다.
+
+
+   CDatabase  <===>   CRecordSet  <===>  CRecordView
+
+           CFieldExchange        CDataExchange
+
+
+
+   CDatabase 클래스 
+   - 데이터 소스와의 연결을 처리하는 ODBC API를 캡슐화한 클래스로 데이터 소스에 
+     (SQL Server, Access등) 대한 연결을 담당
+
+     사용방법 : CDatabase객체를 생성 후 Open()을 사용하여 데이터 소스에 연결하고
+
+                사용이 끝난 후에는 Close()를 호출하여 연결을 해제한다.
+
+
+   CRecordSet 클래스 		
+   - 데이터베이스에서 가져온 실제 레코드의 집합으로 선택된 레코드의 필드 값을
+     나타내는 맴버 변수를 가지고 있다.
+     데이터 베이스에서 이것을 View로 표현한다.
+
+   CRecordView 클래스
+   - CFormView에서 파생된 클래스
+     각 컨트롤의 내용을 CRecordset의 필드에 대한 맴버변수와 교환할 수 있다.
+   
+
+
+
+2. ODBC 설정
+
+
+3. 프로젝트 생성
+
+   SDI ==> STEP2) Header files only ==> STEP6) View의 기초 클래스로 CListView를 설정
+
+   *) stdafx.h에 관련 h파일 생성
+
+
+   DB 관련 클래스 생성
+   CGetCustomer 라는 클래스 생성 : BASE클래스는 CRecordset
+    - ODBC에서 설정한 DB가져옴
+    - RecordsetType : Dynaset(기본 타입임)
+    - 테이블 선택   : Customer
+
+    ==> 클래스가 생성되고 각 컬럼(필드)에 해당하는 맴버변수가 생성된다.
+
+
+4. 소스 구현
+   
+   View::OnCreate에서 리스트뷰를 리포트 뷰로 변환
+   int CDBTESTView::OnCreate(LPCREATESTRUCT lpCreateStruct) 
+   {
+
+	//ReportView형태로 세팅
+	lpCreateStruct->style = LVS_REPORT|LVS_ALIGNLEFT|WS_CHILD;
+
+	if (CListView::OnCreate(lpCreateStruct) == -1)
+		return -1;
+	
+	// TODO: Add your specialized creation code here
+	//화면에 보기를 보여줌
+	GetListCtrl().ShowWindow(SW_SHOW);
+
+	//Report View의 컬럼명을 설정
+	GetListCtrl().InsertColumn(0, "코드", LVCFMT_CENTER, 50, -1);
+	GetListCtrl().InsertColumn(1, "고객성명", LVCFMT_LEFT, 80, -1);
+	GetListCtrl().InsertColumn(2, "전화번호", LVCFMT_LEFT, 100, -1);
+	GetListCtrl().InsertColumn(3, "주소", LVCFMT_LEFT, 180, -1);	
+	return 0;
+    }
+
+
+5. 데이터베이스 내의 데이터를 파일로 저장할 필요가 있기 때문에 보통 
+   Doc클래스에 레코드셋 객체를 선언한다.
+
+		        #include "GetCustomer.h"
+   - Doc클래스에 	CGetCustomer  m_precCus;
+
+   - View클래스에	CGetCustomer* m_recCus;
+
+
+6. 메뉴 추가 
+   - 보기 : ID_VIEW_CUSTOMER  : 고객정보보기 
+
+   - 핸들러 추가 
+
+   void CDBTESTView::OnViewCustomer() 
+   {
+	// TODO: Add your command handler code here
+	CString tmpstr;
+	LV_ITEM lvitem;
+	int actual;
+
+	//LV_ITEM 구조체를 채워준다.
+	lvitem.mask = LVIF_TEXT;
+	lvitem.state = lvitem.stateMask = 0;
+	
+	//소트를 하려면 여기에다 포인터값을 넣어주어야 한다.
+	lvitem.lParam = 0;
+
+	//View클래스의 레코드셋 포인터 값 할당
+	if(m_precCus == NULL)
+		m_precCus = &GetDocument()->m_recCus;
+
+	// 이미 오픈되었다면 닫는다.
+	if(m_precCus->IsOpen())
+		m_precCus->Close();
+	m_precCus->Open();
+
+	//레코드가 비어 있으면 실행 중지
+	if(m_precCus->IsBOF())
+	{
+		MessageBox("레코드가 비었습니다.");
+		m_precCus->Close();
+		return;
+	}
+	
+	// 기존데이터를 모두 지운다.
+	GetListCtrl().DeleteAllItems();
+
+	//제일 처음 레코드로 이동한다.
+	m_precCus->MoveFirst();
+	
+	//레코드 끝을 만나면 루프의 밖으로 빠져 나간다.
+	while(!(m_precCus->IsEOF()))
+	{
+		//View를 CUSTOM 테이블의 데이터로 채운다.
+		tmpstr.Format("%ld", m_precCus->m_CUSTOM_CD);
+		lvitem.iItem = GetListCtrl().GetItemCount() + 1;
+		lvitem.iSubItem = 0;
+		lvitem.pszText = tmpstr.GetBuffer(tmpstr.GetLength());
+		lvitem.cchTextMax = tmpstr.GetLength() + 1;
+		actual = GetListCtrl().InsertItem(&lvitem);
+
+		// 두번째 컬럼
+		tmpstr = m_precCus->m_NAME;
+		lvitem.iItem = actual;
+		lvitem.iSubItem = 1;
+		lvitem.pszText = tmpstr.GetBuffer(tmpstr.GetLength());
+		lvitem.cchTextMax = tmpstr.GetLength() + 1;
+		GetListCtrl().SetItem(&lvitem);
+
+		// 세번째 컬럼
+		tmpstr = m_precCus->m_TEL;
+		lvitem.iItem = actual;
+		lvitem.iSubItem = 2;
+		lvitem.pszText = tmpstr.GetBuffer(tmpstr.GetLength());
+		lvitem.cchTextMax = tmpstr.GetLength() + 1;
+		GetListCtrl().SetItem(&lvitem);
+		
+		// 네번째 컬럼
+		tmpstr = m_precCus->m_ADDRESS;
+		lvitem.iItem = actual;
+		lvitem.iSubItem = 3;
+		lvitem.pszText = tmpstr.GetBuffer(tmpstr.GetLength());
+		lvitem.cchTextMax = tmpstr.GetLength() + 1;
+		GetListCtrl().SetItem(&lvitem);
+		
+		//다음 레코드로 이동
+		m_precCus->MoveNext();
+	}
+	//레코드셋을 닫는다.
+	m_precCus->Close();	
+    }
+
+
+7. CGetCustomer 클래스가 DB에 어떻게 접근하는지 확인
+
+   생성자 : 컬럼과 연결된 맴버 변수 초기화
+	    필드 개수 저장
+	    레코드 타입 저장
+
+   CRecordSet::Open()
+    - CDatabase 객체를 생성하고 레코드셋 객체와 연결해 줌
+    - 세부적으로 Open()함수는
+      GetDefaultConnect()함수를 호출하여 지정된 데이터 소스와 연결하고
+      GetDefaultSql()을 호출하여 지정된 테이블의 사용에 관한 처리를 한다.
+
+    - DoFiedlExchange()
+      DB필드 값과 Application의 맴버 변수를 연결해 주는 역할
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   
+ 

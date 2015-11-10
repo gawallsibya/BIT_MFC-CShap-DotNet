@@ -1,0 +1,327 @@
+1. COM객체 생성(+ interface 1개 같이 생성)
+   - COM객체관련 h/cpp
+   - interface의 정의부( .idl)
+
+2. interfae의 순수가상함수 생성
+   1) interface의 정의부에 추가됨 (.idl)
+   2) COM객체의 선언부( .h)
+   3) COM객체의 구현부(.cpp)
+
+3. interface 자동 생성
+   1) .idl : 정의
+   2) .idl : coclass
+   3) .h   : 상속
+   4) .h   : 노출부
+--------------------------------------------------------------------
+[COM API를 이용한 COMPONENT 접근]
+
+1. stdafx.h 파일에 include
+   #include "..\XXXX\XXX_i.h"  // interface 정의부
+
+2. stdafx.cpp 파일에 include
+   #include "..\XXX\XXX_i.c" // IID, CLSID 정보
+
+3. 사용하고자 하는 interface 선언  및 NULL초기화
+   IXXX * m_pIXXX;
+
+4. 초기화 위치에서 접근(OnInitDialog)
+   CoInitialize(NULL)
+
+   HRESULT hr = CoCreateInstance(CLSID_XXX, NULL, 
+		CLSCTX_INPROC_SERVER, 
+		IID_IXXX, reinterpret_cast<void**>(&m_pIXXX));
+   if( FAILED(hr))
+   {
+	MessageBox("ERROR");
+	CoUninitialize();
+	return FALSE;
+   }
+
+   //다른 인터페이스를 획득하고자 한다면
+   hr = m_pIXXX->QueryInterface(IID_YYY, reinterpret_cast<void**>(&m_IYYY);
+     if( FAILED(hr))
+   {
+	MessageBox("ERROR");
+	CoUninitialize();
+	return FALSE;
+   }
+
+   //인터페이스를 이용한 접근 가능
+
+5. 해제
+   OnDestroy()
+   {
+	pIXXX->Release();
+	pIYYY->Release();
+	CoUninitialize();
+   }
+
+--------------------------------------------------------------------------
+
+[스마트포인터를 이용한 COMPONENT 접근]
+
+1. stdafx.h 파일에 include
+   #import "MyCal.tlb" no_namespace
+   *) 반드시 컴파일 ==> 생성되는 두개의 파일 체크(.tlh, .tli)
+
+2. 사용하고자 하는 interface 선언  및 0으로 초기화
+   IAddEndPtr  m_pIAddEnd;
+
+4. 초기화 위치에서 접근(OnInitDialog)
+   AfxOleInit();
+
+   // 스마트 포인터를 초기화 한다.
+   m_pIAddEnd = IAddEndPtr(__uuidof(AddBack));	// CoCreateInstance 호출코드
+   m_pIAdd = m_pIAddEnd;			// QueryInterface 호출
+
+   // 프로퍼티는 변수처럼 접근된다....
+   m_nAddEnd = m_pIAddEnd->AddEnd;	// get
+   m_pIAddEnd->AddEnd =    m_nAddEnd ;	// put
+   UpdateData(FALSE);
+
+
+   //인터페이스를 이용한 접근 가능
+
+5. 해제
+   OnDestroy()
+   {
+	pIXXX = 0;
+	pIYYY = 0;
+
+   }
+
+--------------------------------------------------------------------------
+
+*) ErroHandling
+
+[ COM COMPONENT ]
+1. 컴포넌트 생성시 ISupportErrorInfo 인터페이스 추가 
+
+   ATL Object Wizard 에서 [Support ISupportErrorInfo] 옵션 선택
+	ISupportErrorInfo 인터페이스 지원 
+======================================================================================
+수작업으로 추가시
+
+1) COM객체 에러 인터페이스 상속
+class ATL_NO_VTABLE CBBB :
+	public CComObjectRootEx<CComSingleThreadModel>,
+	public CComCoClass<CBBB, &CLSID_BBB>,
+	public ISupportErrorInfo,			//<===================
+
+2) COM객체에 인터페이스 노출
+BEGIN_COM_MAP(CBBB)
+	COM_INTERFACE_ENTRY(IBBB)
+	COM_INTERFACE_ENTRY(ISupportErrorInfo)		//<=====================
+
+
+3) COM객체에 맴버 함수 선언부 추가
+	// ISupportsErrorInfo
+	STDMETHOD(InterfaceSupportsErrorInfo)(REFIID riid);
+
+4) COM객체의 CPP파일에 추가
+STDMETHODIMP CBBB::InterfaceSupportsErrorInfo(REFIID riid)
+{
+	static const IID* const arr[] = 
+	{
+		&IID_IBBB
+	};
+
+	for (int i=0; i < sizeof(arr) / sizeof(arr[0]); i++)
+	{
+		if (InlineIsEqualGUID(*arr[i],riid))
+			return S_OK;
+	}
+	return S_FALSE;
+}
+=====================================================================================
+
+2. 에러 핸들링이 필요한 부분에서 에러 처리
+   STDMETHODIMP CAddBack::foo(short newVal)
+  {
+	// TODO: Add your implementation code here
+	if(newVal <1) {
+		HRESULT hr;
+		CComPtr<ICreateErrorInfo> pCreateErrInfo;
+		CComQIPtr<IErrorInfo, &IID_IErrorInfo> pErrInfo;
+
+		hr = ::CreateErrorInfo(&pCreateErrInfo);
+		if(SUCCEEDED(hr)) {
+			pCreateErrInfo->SetSource(OLESTR("AddBack.AddBack.1"));
+			pCreateErrInfo->SetDescription(OLESTR("자연수만 가능"));
+			pErrInfo = pCreateErrInfo;
+			::SetErrorInfo(0, pErrInfo);
+		}
+		return E_INVALIDARG;
+	}
+	m_AddEnd = newVal;
+	return S_OK;
+}
+
+
+[ CLIENT ]
+1. import 시 부가정보(GUID정보)를 가져옴
+    #import "AAA.tlb"  no_namespace named_guids
+
+2. 에러 핸들링 함수 구현
+void ShowMessage(_com_error & e)
+{
+	_bstr_t bstrSource(e.Source());
+	_bstr_t bstrDescription(e.Description());
+	CString szMsg = TEXT("에러가 발생했습니다. \n");
+	CString szTemp;
+
+	szTemp.Format(TEXT("에러코드:%081x\n"), e.Error());
+	szMsg += szTemp;
+	szTemp.Format(TEXT("에러 내용 : %s\n"), e.ErrorMessage());
+	szMsg += szTemp;
+	szTemp.Format(TEXT("에러 소스 : %s\n"), bstrSource.length() ? (LPCTSTR)bstrSource : _T("없음"));
+	szMsg += szTemp;
+	szTemp.Format(TEXT("에러 설명 : %s\n"), bstrDescription.length() ? (LPCTSTR)bstrDescription : _T("없음"));
+	szMsg += szTemp;
+	AfxMessageBox(szMsg);
+}
+
+3. 구조화된 예외처리 사용
+void CUseSampleDlg::OnClickedBtnAdd()
+{
+	try
+	{
+		p_mIbbb->foo(0);
+	}
+	catch(_com_error& e)
+	{
+		ShowMessage(e);
+	}
+
+}
+
+//========================================================
+[ EVENT ]
+COMPONENT 이벤트 추가 
+1. 컴포넌트 생성시 이벤트관련 표준 인터페이스를 추가 
+   idl 파일에 간접접근 이벤트 인터페이스 자동 생성 +@
+
+2. 직접 접근할 수 있는이벤트 인터페이스를 추가 
+   - 기존 생성되었던 일반 인터페이스를 복사하여 
+     추가하고, 이벤트 이름만 이벤트 인터페이스 이름과 
+     비슷하게 변경
+     [
+	object,
+	uuid(25F1C5C3-9E86-4C41-9582-652277F92E1D),
+	dual,
+	nonextensible,
+	pointer_default(unique)
+      ]
+       interface ICalcEvents : IDispatch{
+
+       };
+3. 추가한 인터페이스를 coclass 에 추가 
+    [source] interface ICalcEvents;
+4. 필요한 메서드를 등록
+    [id(1)] HRESULT GetResult(DOUBLE result);
+    [id(2)] HRESULT GetLog(INT val);
+5. 간접접근 이벤트 인터페이스에 생성된 메서드를 복사
+6. 이벤트 인터페이스에 대한 컴객체 생성
+   기존 컴객체에서 마우스 오른쪽 >> 추가 >> 연결지점 추가 
+
+7. 적절한 부분에서 fire-메서드 호출
+   CProxyICalcEvents<CCalc>::Fire_GetResult(m_Result);
+   CProxy_ICalcEvents<CCalc>::Fire_GetResult(m_Result);
+======================================================================================
+
+
+[CLIENT EVENT 수신처리 ]
+
+1. import 시 부가정보(GUID정보)를 가져옴
+    #import "AAA.tlb"  no_namespace named_guids
+
+2. stdafx.h에 추가
+#include <atlbase.h>
+extern CComModule _Module;
+#include <atlcom.h>
+
+3. stdafx.cpp에 추가
+#include <atlimpl.cpp>
+
+4. 전역 객체 생성
+CComModule _Module;
+
+5. 전역 객체 초기화(App::InitInstance)의 상단부
+  _Module.Init(NULL, NULL);
+
+6. 전역 객체 해제(App::InitInstance)의 하단부
+  _Module.Term();
+
+7. C++ 클래스 생성 : COM객체 (sink interface, raw_method)
+   *) tlh 파일을 참조해서 수정변경 
+
+    CEventHandler ==> .h/.cpp 생성
+
+   *) .h codecopy
+class ATL_NO_VTABLE CEventHandler : 
+	public CComObjectRoot,
+	public IDispatchImpl<IAddBackEvent, &IID_IAddBackEvent, &LIBID_ADDBACKLib>
+{
+public:
+	BEGIN_COM_MAP(CEventHandler)
+		COM_INTERFACE_ENTRY(IDispatch)
+		COM_INTERFACE_ENTRY(IAddBackEvent)
+	END_COM_MAP()
+
+	STDMETHOD(raw_ChangedAddEnd) (short newVal);
+	STDMETHOD(raw_ChangedSum) (short newVal);
+};
+
+   *) .cpp
+#include "stdafx.h"
+#include "resource.h"
+#include "EventHandler.h"
+
+STDMETHODIMP CEventHandler::raw_ChangedAddEnd (short newVal)
+{
+	CString szMsg("AddEnd 속성이 변경되었습니다.\n");
+	CString szTemp;
+	szTemp.Format("AddEnd 속성 값 : %d", newVal);
+	szMsg += szTemp;
+	AfxMessageBox(szMsg);
+	return S_OK;
+}
+
+
+* Connection과정 ========================
+1. 맴버 변수 추가 
+#include "EventHandler.h"
+
+// CUseSampleDlg 대화 상자
+class CUseSampleDlg : public CDialogEx
+{
+protected:
+	DWORD 		m_Cookie;		// 연결 정보 저장 
+   	ICTestPtr	m_pICal;		// COM객체의 interface
+
+
+2. 초기화 : Connection처리
+   AfxOleInit();
+
+   // 스마트 포인터를 초기화 한다.
+   m_pICal = ICTestPtr(__uuidof(CTest));	// CoCreateInstance 호출코드
+
+	//CONNECTION
+	HRESULT hr;
+	IUnknown* pUnk;
+	CComObject<CEventHandler>* pHandler;
+	CComObject<CEventHandler>::CreateInstance(&pHandler);
+	pUnk = m_pICal;
+	hr = AtlAdvise(pUnk,
+				   pHandler->GetUnknown(),
+				   IID_ICTestEvents,
+				   &m_Cookie);
+	if(FAILED(hr))
+		AfxMessageBox(TEXT("이벤트를 받을 수 없습니다."));
+
+
+
+
+
+
+

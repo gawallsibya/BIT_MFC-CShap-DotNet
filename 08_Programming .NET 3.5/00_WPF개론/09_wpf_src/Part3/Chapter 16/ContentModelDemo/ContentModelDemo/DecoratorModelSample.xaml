@@ -1,0 +1,33 @@
+﻿<Window x:Class="ContentModelDemo.DecoratorModelSample"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    Title="DecoratorModelSample" Height="345" Width="579">
+    <Grid Width="536">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="353" />
+            <ColumnDefinition Width="183*" />
+        </Grid.ColumnDefinitions>
+        <Border BorderThickness="2" BorderBrush="Black" Background="Aqua" Height="129" Margin="32.5,66.5,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Width="300" Grid.Column="0">
+            <Border.Child>
+            <Canvas >
+                <TextBlock Canvas.Top="39" Canvas.Left="50" Height="16" Width="28">
+                Hello
+                </TextBlock>
+                <Button Canvas.Top="79" Canvas.Left="220" Height="22" Width="53">
+                    Click Me
+                </Button>
+            </Canvas>
+           </Border.Child>
+        </Border>
+        <!--<BulletDecorator Grid.Column="1" VerticalAlignment="Top" Height="27">
+            <BulletDecorator.Bullet>
+                <Image Source="bullet.tif" Width="20"/>
+            </BulletDecorator.Bullet>
+            <TextBlock Width="152" TextWrapping="Wrap" HorizontalAlignment="Left"  Foreground ="Purple" Height="303">
+                A Simple BulletDecorator
+            </TextBlock>
+
+        </BulletDecorator>-->
+
+    </Grid>
+</Window>

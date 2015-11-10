@@ -1,0 +1,29 @@
+﻿<UserControl x:Class="DynamicControls.Page"
+    xmlns="http://schemas.microsoft.com/client/2007" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
+    Width="400" Height="300">
+    <Grid x:Name="LayoutRoot" Background="White">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="10" />
+            <RowDefinition Height="50" />
+            <RowDefinition Height="50" />
+            <RowDefinition Height="10" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="10" />
+            <ColumnDefinition Width="150" />
+            <ColumnDefinition Width="15" />
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="10" />
+        </Grid.ColumnDefinitions>
+        <Border BorderBrush="Black" BorderThickness="1" 
+            Grid.Column="1" Grid.Row="1" >
+            <StackPanel x:Name="Choice" Orientation="Horizontal"  >
+                <RadioButton x:Name="Web" Content="Web" 
+                    Width="60" Height="30" Margin="10,0,0,0" />
+                <RadioButton x:Name="Desk" Content="Desktop"
+                    Width="80" Height="30" />
+            </StackPanel>
+        </Border>
+    </Grid>
+</UserControl>

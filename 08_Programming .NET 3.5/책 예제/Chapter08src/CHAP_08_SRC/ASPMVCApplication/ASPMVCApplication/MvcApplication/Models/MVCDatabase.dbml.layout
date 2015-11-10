@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="MVCDatabase">
+  <DataContextMoniker Name="/MVCDatabaseDataContext" />
+  <nestedChildShapes>
+    <classShape Id="5b5657df-e0e6-4719-9300-32a394e1eab0" absoluteBounds="0.5, 0.5, 2, 1.3862939453125">
+      <DataClassMoniker Name="/MVCDatabaseDataContext/Person" />
+      <nestedChildShapes>
+        <elementListCompartment Id="5411a0ea-4999-463c-bc84-e3855bf8a507" absoluteBounds="0.515, 0.96, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="1dbf9550-a133-4856-8f8b-577599fc046f" absoluteBounds="1.25, 3, 2, 1.1939925130208333">
+      <DataClassMoniker Name="/MVCDatabaseDataContext/ShippingMethod" />
+      <nestedChildShapes>
+        <elementListCompartment Id="f6c0526a-5e69-4775-b8a1-851459a24e6d" absoluteBounds="1.2650000000000001, 3.46, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(1.875 : 3); (1.875 : 1.8862939453125)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/MVCDatabaseDataContext/ShippingMethod/ShippingMethod_Person" />
+      <nodes>
+        <classShapeMoniker Id="1dbf9550-a133-4856-8f8b-577599fc046f" />
+        <classShapeMoniker Id="5b5657df-e0e6-4719-9300-32a394e1eab0" />
+      </nodes>
+    </associationConnector>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>

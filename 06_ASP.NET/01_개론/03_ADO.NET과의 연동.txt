@@ -1,0 +1,37 @@
+<%@ Import Namespace="System.Data" %>
+<%@ Import Namespace="System.Data.OleDb" %>
+<script language="c#" runat="server">
+  void Page_Load(object sender, EventArgs e)
+  {
+      OleDbConnection objConnection; 
+    OleDbDataAdapter objCommand;
+    string strConnect;
+    string strCommand;
+    DataSet DataSet1 = new DataSet();
+    
+    strConnect =  @"Provider=Microsoft.Jet.OLEDB.4.0;";
+    strConnect += @"Data Source=C:\ado.mdb;";
+    strConnect += "Persist Security Info=False";
+    strCommand = "SELECT * FROM member";
+ objConnection = new OleDbConnection(strConnect);
+    objCommand = new OleDbDataAdapter(strCommand, objConnection);
+    objCommand.Fill(DataSet1, "products");
+    DataGrid1.DataSource=DataSet1.Tables["Products"].DefaultView;
+    DataGrid1.DataBind();
+  }
+</script>
+
+<html>
+<head>
+  <title>데이터 격자 컨트롤 예제</title>
+</head>
+<body>
+  <asp:DataGrid id="DataGrid1" runat="server"  />
+</body>
+</html>
+
+
+
+------------------------------------------------------------------
+
+

@@ -1,0 +1,23 @@
+1. 레지스트리에 특정정보를 저장하고 읽는 작업
+
+저장
+	CString section = TEXT("시작/종료 시간");
+	CString entry = TEXT("시작");
+	CTime time = CTime::GetCurrentTime();
+	CString str;
+	str.Format(TEXT("%d:%d:%d"), time.GetHour(), time.GetMinute(), time.GetSecond());
+	WriteProfileString(section,entry,str);
+
+            CString section = TEXT("시작/종료 시간");
+	CString entry = TEXT("종료");
+	CTime time = CTime::GetCurrentTime();
+	CString str;
+	str.Format(TEXT("%d:%d:%d"), time.GetHour(), time.GetMinute(), time.GetSecond());
+	WriteProfileString(section,entry,str);
+
+읽기
+CString section = "시작/종료 시간";
+CString entry = "시작";
+Cstring str;
+str = GetProfileString(section,entry);
+AfxMessageBox(str);

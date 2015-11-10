@@ -1,0 +1,48 @@
+<%@ Page Language="C#" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<script runat="server">
+    protected void Page_Load(object sender, EventArgs e)
+    {
+        if (!Page.IsPostBack)
+        {
+            ViewState["Counter"] = 0;
+            DisplayCounter();
+        }
+    }
+
+    void DisplayCounter()
+    {
+        Label1.Text = ViewState["Counter"].ToString();
+    }
+
+    protected void Button1_Click(object sender, EventArgs e)
+    {
+        ViewState["Counter"] = (int)ViewState["Counter"] + 1;
+        DisplayCounter();
+    }
+
+    protected void Button2_Click(object sender, EventArgs e)
+    {
+        ViewState["Counter"] = (int)ViewState["Counter"] - 1;
+        DisplayCounter();
+    }
+</script>
+
+<html xmlns="http://www.w3.org/1999/xhtml" >
+<head runat="server">
+    <title>제목 없음</title>
+</head>
+<body>
+    <form id="form1" runat="server">
+    <div>
+        <h3>뷰 상태를 이용한 카운터 예제</h3>
+        
+        <asp:Label ID="Label1" runat="server"></asp:Label>
+        <asp:Button ID="Button1" runat="server" Text="+" OnClick="Button1_Click" />
+        <asp:Button ID="Button2" runat="server" Text="-" OnClick="Button2_Click" />
+    </div>
+    </form>
+</body>
+</html>

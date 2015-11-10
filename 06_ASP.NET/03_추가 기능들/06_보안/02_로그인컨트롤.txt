@@ -1,0 +1,117 @@
+// default.aspx
+
+<%@ Page Language="C#" MasterPageFile="~/MasterPage.master" Title="제목 없음" %>
+
+<asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
+    메인 페이지 입니다.
+</asp:Content>
+
+
+// Login.aspx
+
+<%@ Page Language="C#" MasterPageFile="~/MasterPage.master" Title="제목 없음" %>
+
+<asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
+    <asp:Login ID="Login1" runat="server">
+    </asp:Login>
+</asp:Content>
+
+
+// Createuser.aspx
+
+<%@ Page Language="C#" MasterPageFile="~/MasterPage.master" Title="제목 없음" %>
+
+<asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
+    <asp:CreateUserWizard ID="CreateUserWizard1" runat="server" ContinueDestinationPageUrl="~/Default.aspx">
+        <WizardSteps>
+            <asp:CreateUserWizardStep ID="CreateUserWizardStep1" runat="server">
+            </asp:CreateUserWizardStep>
+            <asp:CompleteWizardStep ID="CompleteWizardStep1" runat="server">
+            </asp:CompleteWizardStep>
+        </WizardSteps>
+    </asp:CreateUserWizard>
+</asp:Content>
+
+
+// Master.master
+<%@ Master Language="C#" %>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head id="Head1" runat="server">
+    <title>제목 없음</title>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div>
+            <table cellspacing="0" cellpadding="5" border="1" width="500" style="height: 80%;">
+                <tr style="height: 20px;">
+                    <td style="width: 200px;"><h3>Web Site Logo</h3></td>
+                    <td style="width: 300px;">
+                        <table width="100%">
+                            <tr>
+                                <td><b>Top Menu</b></td>
+                                <td align="right"><asp:LoginStatus ID="loginstatus" runat="server" /></td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+                <tr>
+                    <td valign="top">
+                        <asp:LoginView ID="LoginView1" runat="server">
+                            <LoggedInTemplate>
+                                <asp:LoginName ID="LoginName1" runat="server" FormatString="{0} 님 반갑습니다.!!!" />
+                            </LoggedInTemplate>
+                            <AnonymousTemplate>
+                                <asp:Login ID="Login1" runat="server" CreateUserUrl="~/CreateUser.aspx" CreateUserText="회원가입" BackColor="#E3EAEB" BorderColor="#E6E2D8" BorderPadding="4" BorderStyle="Solid" BorderWidth="1px" Font-Names="Verdana" Font-Size="0.8em" ForeColor="#333333" TextLayout="TextOnTop">
+                                    <TitleTextStyle BackColor="#1C5E55" Font-Bold="True" Font-Size="0.9em" ForeColor="White" />
+                                    <InstructionTextStyle Font-Italic="True" ForeColor="Black" />
+                                    <TextBoxStyle Font-Size="0.8em" />
+                                    <LoginButtonStyle BackColor="White" BorderColor="#C5BBAF" BorderStyle="Solid" BorderWidth="1px" Font-Names="Verdana" Font-Size="0.8em" ForeColor="#1C5E55" />
+                                </asp:Login>
+                            </AnonymousTemplate>
+                        </asp:LoginView>
+                        <p></p>
+                        <b>Left Menu</b>
+                    </td>
+                    <td valign="top" style="height: 250px;">
+                        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                        </asp:ContentPlaceHolder>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2"><b>Bottom Menu</b></td>
+                </tr>
+            </table>
+        </div>
+    </form>
+</body>
+</html>
+
+
+// Web.config
+
+<?xml version="1.0"?>
+
+<configuration xmlns="http://schemas.microsoft.com/.NetConfiguration/v2.0">
+	<appSettings/>
+	<connectionStrings/>
+	<system.web>
+		<authentication mode="Forms">
+			<forms name=".ASPXAUTH" loginUrl="Ex01_Login.aspx" defaultUrl="Default.aspx"></forms>
+		</authentication>
+
+		<authorization>
+	      <allow users="*"/>
+		</authorization>
+
+
+    <membership defaultProvider="MyAspNetSqlMembershipProvider">
+      <providers>
+        <add name="MyAspNetSqlMembershipProvider" type="System.Web.Security.SqlMembershipProvider" connectionStringName="LocalSqlServer" enablePasswordRetrieval="false" enablePasswordReset="true" requiresQuestionAndAnswer="true" applicationName="/" requiresUniqueEmail="false" passwordFormat="Hashed" maxInvalidPasswordAttempts="5" minRequiredPasswordLength="4" minRequiredNonalphanumericCharacters="0" />
+      </providers>
+    </membership>
+
+	</system.web>
+
+</configuration>

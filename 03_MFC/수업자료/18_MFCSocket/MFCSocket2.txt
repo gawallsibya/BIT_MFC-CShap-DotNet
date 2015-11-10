@@ -1,0 +1,48 @@
+[ 기본 소켓 프로그램 ]
+
+[ 서버 구현 ]
+
+1. 위자드를 통한 프로젝트 생성시 WinSock사용버튼 체크
+
+   추가 사항 
+
+   1) stdafx.h에 h파일 추가
+      #include <afxsock.h>  // MFC소켓 확장
+
+   2) App::InitInstance()에 소켓 DLL초기화
+
+     if( !AfxSocketInit())  //윈속 DLL초기화
+    {
+	 AfxMessageBox(IDP_SOCKETS_INIT_FAILED);
+	 return FALSE;
+    }
+
+
+
+2. 서버 프로그램에서 사용할 두개의 소켓 클래스 생성
+
+
+   CListenSock	: public CAsyncSocket
+
+   - 메인 소켓
+
+   - 클라이언트의 연결요청 처리
+
+     OnAccept 처리 
+   
+
+   CChildSocket : public CAsyncSocket   
+   - 새로운 클라이언트와 연결할 자소켓
+
+     OnReceive 처리 
+
+     OnClose 처리 
+
+
+3. 기본 네트웤 코드는  App에서 관리 
+
+
+[ 클라이언트 구현 ]
+
+
+      

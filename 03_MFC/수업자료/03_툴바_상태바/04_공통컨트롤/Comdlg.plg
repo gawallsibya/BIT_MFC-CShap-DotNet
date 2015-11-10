@@ -1,0 +1,57 @@
+<html>
+<body>
+<pre>
+<h1>Build Log</h1>
+<h3>
+--------------------Configuration: ComDlg - Win32 Debug--------------------
+</h3>
+<h3>Command Lines</h3>
+Creating command line "rc.exe /l 0x412 /fo".\Debug/ComDlg.res" /d "_DEBUG" /d "_AFXDLL" "C:\Documents and Settings\최창민\바탕 화면\03_MFC\1_강의\7일차_Control_실습\1_Comdlg\ComDlg.rc"" 
+Creating temporary file "C:\DOCUME~1\최창민\LOCALS~1\Temp\RSP86.tmp" with contents
+[
+/nologo /MDd /W3 /Gm /GX /ZI /Od /D "WIN32" /D "_DEBUG" /D "_WINDOWS" /D "_AFXDLL" /D "_MBCS" /Fp".\Debug/Comdlg.pch" /Yu"stdafx.h" /Fo".\Debug/" /Fd".\Debug/" /FD /c 
+"C:\Documents and Settings\최창민\바탕 화면\03_MFC\1_강의\7일차_Control_실습\1_Comdlg\ComDlg.cpp"
+"C:\Documents and Settings\최창민\바탕 화면\03_MFC\1_강의\7일차_Control_실습\1_Comdlg\ComDoc.cpp"
+"C:\Documents and Settings\최창민\바탕 화면\03_MFC\1_강의\7일차_Control_실습\1_Comdlg\ComView.cpp"
+"C:\Documents and Settings\최창민\바탕 화면\03_MFC\1_강의\7일차_Control_실습\1_Comdlg\DelDlg.cpp"
+"C:\Documents and Settings\최창민\바탕 화면\03_MFC\1_강의\7일차_Control_실습\1_Comdlg\MainFrm.cpp"
+]
+Creating command line "cl.exe @"C:\DOCUME~1\최창민\LOCALS~1\Temp\RSP86.tmp"" 
+Creating temporary file "C:\DOCUME~1\최창민\LOCALS~1\Temp\RSP87.tmp" with contents
+[
+/nologo /MDd /W3 /Gm /GX /ZI /Od /D "WIN32" /D "_DEBUG" /D "_WINDOWS" /D "_AFXDLL" /D "_MBCS" /Fp".\Debug/Comdlg.pch" /Yc"stdafx.h" /Fo".\Debug/" /Fd".\Debug/" /FD /c 
+"C:\Documents and Settings\최창민\바탕 화면\03_MFC\1_강의\7일차_Control_실습\1_Comdlg\StdAfx.cpp"
+]
+Creating command line "cl.exe @"C:\DOCUME~1\최창민\LOCALS~1\Temp\RSP87.tmp"" 
+Creating temporary file "C:\DOCUME~1\최창민\LOCALS~1\Temp\RSP88.tmp" with contents
+[
+/nologo /subsystem:windows /incremental:yes /pdb:".\Debug/Comdlg.pdb" /debug /machine:I386 /out:".\Debug/Comdlg.exe" 
+".\Debug\ComDlg.obj"
+".\Debug\ComDoc.obj"
+".\Debug\ComView.obj"
+".\Debug\DelDlg.obj"
+".\Debug\MainFrm.obj"
+".\Debug\StdAfx.obj"
+".\Debug\ComDlg.res"
+]
+Creating command line "link.exe @"C:\DOCUME~1\최창민\LOCALS~1\Temp\RSP88.tmp""
+<h3>Output Window</h3>
+Compiling resources...
+Compiling...
+StdAfx.cpp
+Compiling...
+ComDlg.cpp
+ComDoc.cpp
+ComView.cpp
+DelDlg.cpp
+MainFrm.cpp
+Generating Code...
+Linking...
+
+
+
+<h3>Results</h3>
+Comdlg.exe - 0 error(s), 0 warning(s)
+</pre>
+</body>
+</html>

@@ -1,0 +1,20 @@
+﻿// Ex01.aspx
+
+<%@ Page Language="C#" MasterPageFile="~/MasterPage1.master" Title="제목 없음" %>
+
+<asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
+    <br />
+    <b>메인 페이지 입니다.</b>
+</asp:Content>
+
+
+// Ex01_1.aspx
+<%@ Page Language="C#" MasterPageFile="~/MasterPage1.master" Title="제목 없음" %>
+
+<asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
+    <br />
+    <b>사이트 소개 페이지 입니다.</b>
+    <br />
+    <br />
+    본 사이트는 Master Page 테스트를 위해 만들어진 사이트 입니다.
+</asp:Content>

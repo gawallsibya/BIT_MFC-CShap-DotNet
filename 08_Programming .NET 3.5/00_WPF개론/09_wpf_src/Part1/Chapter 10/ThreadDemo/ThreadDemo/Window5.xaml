@@ -1,0 +1,8 @@
+﻿<Window x:Class="ThreadDemo.Window5"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    Title="Window5" Height="77" Width="300">
+    <StackPanel>
+        <Button Name="callCompoButton" Click="callCompoButton_Click">Call Comsponent</Button>
+    </StackPanel>
+</Window>

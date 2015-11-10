@@ -1,0 +1,60 @@
+<html>
+<body>
+<pre>
+<h1>Build Log</h1>
+<h3>
+--------------------Configuration: VideoShop2 - Win32 Debug--------------------
+</h3>
+<h3>Command Lines</h3>
+Creating temporary file "C:\DOCUME~1\ÃÖÃ¢¹Î\LOCALS~1\Temp\RSPFD.tmp" with contents
+[
+/nologo /MDd /W3 /Gm /GX /ZI /Od /D "WIN32" /D "_DEBUG" /D "_WINDOWS" /D "_AFXDLL" /FR"Debug/" /Fp"Debug/VideoShop2.pch" /Yu"stdafx.h" /Fo"Debug/" /Fd"Debug/" /FD /c 
+"C:\Documents and Settings\ÃÖÃ¢¹Î\¹ÙÅÁ È­¸é\03_MFC\1_°­ÀÇ\14ÀÏ_DBTestSample\VIDEOSHOP3\TapeDlg.cpp"
+]
+Creating command line "cl.exe @"C:\DOCUME~1\ÃÖÃ¢¹Î\LOCALS~1\Temp\RSPFD.tmp"" 
+Creating temporary file "C:\DOCUME~1\ÃÖÃ¢¹Î\LOCALS~1\Temp\RSPFE.tmp" with contents
+[
+/nologo /subsystem:windows /incremental:yes /pdb:"Debug/VideoShop3.pdb" /debug /machine:I386 /out:"Debug/VideoShop3.exe" /pdbtype:sept 
+".\Debug\CusTapeDlg.obj"
+".\Debug\CusTapeSet.obj"
+".\Debug\InsTapeDlg.obj"
+".\Debug\MainFrm.obj"
+".\Debug\StdAfx.obj"
+".\Debug\TapeDlg.obj"
+".\Debug\TapeSet.obj"
+".\Debug\VideoShop2.obj"
+".\Debug\VideoShop2Doc.obj"
+".\Debug\VideoShop2Set.obj"
+".\Debug\VideoShop2View.obj"
+".\Debug\VideoShop2.res"
+]
+Creating command line "link.exe @"C:\DOCUME~1\ÃÖÃ¢¹Î\LOCALS~1\Temp\RSPFE.tmp""
+<h3>Output Window</h3>
+Compiling...
+TapeDlg.cpp
+Linking...
+Creating temporary file "C:\DOCUME~1\ÃÖÃ¢¹Î\LOCALS~1\Temp\RSPFF.tmp" with contents
+[
+/nologo /o"Debug/VideoShop2.bsc" 
+".\Debug\StdAfx.sbr"
+".\Debug\CusTapeDlg.sbr"
+".\Debug\CusTapeSet.sbr"
+".\Debug\InsTapeDlg.sbr"
+".\Debug\MainFrm.sbr"
+".\Debug\TapeDlg.sbr"
+".\Debug\TapeSet.sbr"
+".\Debug\VideoShop2.sbr"
+".\Debug\VideoShop2Doc.sbr"
+".\Debug\VideoShop2Set.sbr"
+".\Debug\VideoShop2View.sbr"]
+Creating command line "bscmake.exe @"C:\DOCUME~1\ÃÖÃ¢¹Î\LOCALS~1\Temp\RSPFF.tmp""
+Creating browse info file...
+<h3>Output Window</h3>
+
+
+
+<h3>Results</h3>
+VideoShop3.exe - 0 error(s), 0 warning(s)
+</pre>
+</body>
+</html>

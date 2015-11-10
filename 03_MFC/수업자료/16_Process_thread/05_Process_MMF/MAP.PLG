@@ -1,0 +1,44 @@
+<html>
+<body>
+<pre>
+<h1>Build Log</h1>
+<h3>
+--------------------Configuration: Map - Win32 Debug--------------------
+</h3>
+<h3>Command Lines</h3>
+Creating command line "rc.exe /l 0x412 /fo"Debug/Map.res" /d "_DEBUG" /d "_AFXDLL" "C:\Documents and Settings\Administrator\πŸ≈¡ »≠∏È\15_Process_thread\05_Process_MMF\Map.rc"" 
+Creating temporary file "C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\RSP15C.tmp" with contents
+[
+/nologo /MDd /W3 /Gm /GX /ZI /Od /D "WIN32" /D "_DEBUG" /D "_WINDOWS" /D "_AFXDLL" /D "_MBCS" /Fp"Debug/Map.pch" /Yu"stdafx.h" /Fo"Debug/" /Fd"Debug/" /FD /GZ /c 
+"C:\Documents and Settings\Administrator\πŸ≈¡ »≠∏È\15_Process_thread\05_Process_MMF\MainFrm.cpp"
+"C:\Documents and Settings\Administrator\πŸ≈¡ »≠∏È\15_Process_thread\05_Process_MMF\Map.cpp"
+"C:\Documents and Settings\Administrator\πŸ≈¡ »≠∏È\15_Process_thread\05_Process_MMF\MapDoc.cpp"
+"C:\Documents and Settings\Administrator\πŸ≈¡ »≠∏È\15_Process_thread\05_Process_MMF\MapView.cpp"
+]
+Creating command line "cl.exe @C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\RSP15C.tmp" 
+Creating temporary file "C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\RSP15D.tmp" with contents
+[
+/nologo /MDd /W3 /Gm /GX /ZI /Od /D "WIN32" /D "_DEBUG" /D "_WINDOWS" /D "_AFXDLL" /D "_MBCS" /Fp"Debug/Map.pch" /Yc"stdafx.h" /Fo"Debug/" /Fd"Debug/" /FD /GZ /c 
+"C:\Documents and Settings\Administrator\πŸ≈¡ »≠∏È\15_Process_thread\05_Process_MMF\StdAfx.cpp"
+]
+Creating command line "cl.exe @C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\RSP15D.tmp" 
+Creating command line "link.exe /nologo /subsystem:windows /incremental:yes /pdb:"Debug/Map.pdb" /debug /machine:I386 /out:"Debug/Map.exe" /pdbtype:sept  ".\Debug\MainFrm.obj" ".\Debug\Map.obj" ".\Debug\MapDoc.obj" ".\Debug\MapView.obj" ".\Debug\StdAfx.obj" ".\Debug\Map.res" "
+<h3>Output Window</h3>
+Compiling resources...
+Compiling...
+StdAfx.cpp
+Compiling...
+MainFrm.cpp
+Map.cpp
+MapDoc.cpp
+MapView.cpp
+Generating Code...
+Linking...
+
+
+
+<h3>Results</h3>
+Map.exe - 0 error(s), 0 warning(s)
+</pre>
+</body>
+</html>

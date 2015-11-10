@@ -1,0 +1,6 @@
+D:\STUDY\NET Framework 3\WCF\ABC_SAMPLE\Server_Console\bin\Debug\Server_Console.exe.config
+D:\STUDY\NET Framework 3\WCF\ABC_SAMPLE\Server_Console\bin\Debug\Server_Console.exe
+D:\STUDY\NET Framework 3\WCF\ABC_SAMPLE\Server_Console\bin\Debug\Server_Console.pdb
+D:\STUDY\NET Framework 3\WCF\ABC_SAMPLE\Server_Console\obj\Debug\ResolveAssemblyReference.cache
+D:\STUDY\NET Framework 3\WCF\ABC_SAMPLE\Server_Console\obj\Debug\Server_Console.exe
+D:\STUDY\NET Framework 3\WCF\ABC_SAMPLE\Server_Console\obj\Debug\Server_Console.pdb

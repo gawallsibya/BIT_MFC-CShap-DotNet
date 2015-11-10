@@ -1,0 +1,84 @@
+[ DLL ]
+
+1. MFC DLL 구현
+
+   일반 DLL 정적연결 
+
+    - C형식의 함수를 익스포트함
+    - MFC 프로그램을 비롯 C/C++, VB, Delphi등 프로그램에서 사용 가능
+    - MFC 관련 DLL이 자신의 DLL에 결합되기 때문에공유에 비해 크기가 
+      크지만 DLL배포시 자신의 DLL만 배포하면 됨
+    
+    - Preprocessor definition : _USRDLL
+
+   일반 공유 연결
+  
+    - C형식의 함수를 익스포트함
+    - MFC 프로그램을 비롯 C/C++, VB, Delphi등 프로그램에서 사용 가능
+    - MFC 관련 DLL을 공유하기 때문에 정적에 비해 DLL 크기가 작지만
+      DLL 배포시 자신의 DLL과 관련 MFC DLL도 함께 배포해야 함
+    
+    - Preprocessor definition : _USRDLL , _AFXDLL
+
+   확장 DLL 공유 연결
+  
+    - 함수 뿐 아니라 C++ 클래스 자체를 익스포트 함
+    - MFC 프로그램에서만 사용 가능
+    - AFX_EXT_CLASS 매크로를 이용하여 클래스를 익스포트 함
+    - 확장 DLL의 경우 MFC DLL의 정적 연결을 지원하지 않음
+    - Preprocessor definition : _AFXEXT, _AFXDLL
+
+
+
+
+
+ex1) MFC AppWizard(dll)을 통한 dll구현
+
+ - Project Name : Pass
+
+ - STEP1) 일반 DLL 정적 연결
+
+ - 프로젝트 생성후 리소스 가져오기
+
+ - 새로운 다이얼로그 클래스 생생
+   CSetupDlg
+
+   맴버 변수 추가 
+   IDC_ANIMATE	CAnimateCtrl		m_Avi
+   IDC_MAIL	CString		m_Mail
+   IDC_PATH	CString		m_Path
+
+ - 코드 추가 
+   BOOL CSetupDlg::OnInitDialog() 
+   {
+	CDialog::OnInitDialog();
+	
+	m_Avi.Open(IDR_AVI1);	
+	return TRUE;  
+    }
+
+ - 익스포트 함수 정의
+   CPassApp theApp 한단부에 정의 
+
+#ifdef __cplusplus
+	extern "C" {
+#endif 
+		
+	__declspec(dllexport) BOOL ShowSetupDialog(char* szMail, char* szPath)
+	{
+		CSetupDlg  dlg;
+		dlg.m_Path = szPath;
+		if(dlg.DoModal() == IDOK)
+		{
+			lstrcpy(szMail, dlg.m_Mail);
+			lstrcpy(szPath, dlg.m_Path);
+			return TRUE;
+		}
+		return FALSE;
+	}
+
+#ifdef __cplusplus
+	}
+#endif 
+
+

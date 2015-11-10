@@ -1,0 +1,54 @@
+<html>
+<body>
+<pre>
+<h1>Build Log</h1>
+<h3>
+--------------------Configuration: CList - Win32 Debug--------------------
+</h3>
+<h3>Command Lines</h3>
+Creating command line "rc.exe /l 0x412 /fo"Debug/CList.res" /d "_DEBUG" /d "_AFXDLL" "C:\Documents and Settings\최창민\바탕 화면\MFC신규수업진행\0001_강의자료\07_도큐먼트\CList\CList.rc"" 
+Creating temporary file "C:\DOCUME~1\최창민\LOCALS~1\Temp\RSP186.tmp" with contents
+[
+/nologo /MDd /W3 /Gm /GX /ZI /Od /D "WIN32" /D "_DEBUG" /D "_WINDOWS" /D "_AFXDLL" /D "_MBCS" /Fp"Debug/CList.pch" /Yu"stdafx.h" /Fo"Debug/" /Fd"Debug/" /FD /GZ /c 
+"C:\Documents and Settings\최창민\바탕 화면\MFC신규수업진행\0001_강의자료\07_도큐먼트\CList\CList.cpp"
+"C:\Documents and Settings\최창민\바탕 화면\MFC신규수업진행\0001_강의자료\07_도큐먼트\CList\CListDoc.cpp"
+"C:\Documents and Settings\최창민\바탕 화면\MFC신규수업진행\0001_강의자료\07_도큐먼트\CList\CListView.cpp"
+"C:\Documents and Settings\최창민\바탕 화면\MFC신규수업진행\0001_강의자료\07_도큐먼트\CList\MainFrm.cpp"
+]
+Creating command line "cl.exe @"C:\DOCUME~1\최창민\LOCALS~1\Temp\RSP186.tmp"" 
+Creating temporary file "C:\DOCUME~1\최창민\LOCALS~1\Temp\RSP187.tmp" with contents
+[
+/nologo /MDd /W3 /Gm /GX /ZI /Od /D "WIN32" /D "_DEBUG" /D "_WINDOWS" /D "_AFXDLL" /D "_MBCS" /Fp"Debug/CList.pch" /Yc"stdafx.h" /Fo"Debug/" /Fd"Debug/" /FD /GZ /c 
+"C:\Documents and Settings\최창민\바탕 화면\MFC신규수업진행\0001_강의자료\07_도큐먼트\CList\StdAfx.cpp"
+]
+Creating command line "cl.exe @"C:\DOCUME~1\최창민\LOCALS~1\Temp\RSP187.tmp"" 
+Creating temporary file "C:\DOCUME~1\최창민\LOCALS~1\Temp\RSP188.tmp" with contents
+[
+/nologo /subsystem:windows /incremental:yes /pdb:"Debug/CList.pdb" /debug /machine:I386 /out:"Debug/CList.exe" /pdbtype:sept 
+".\Debug\CList.obj"
+".\Debug\CListDoc.obj"
+".\Debug\CListView.obj"
+".\Debug\MainFrm.obj"
+".\Debug\StdAfx.obj"
+".\Debug\CList.res"
+]
+Creating command line "link.exe @"C:\DOCUME~1\최창민\LOCALS~1\Temp\RSP188.tmp""
+<h3>Output Window</h3>
+Compiling resources...
+Compiling...
+StdAfx.cpp
+Compiling...
+CList.cpp
+CListDoc.cpp
+CListView.cpp
+MainFrm.cpp
+Generating Code...
+Linking...
+
+
+
+<h3>Results</h3>
+CList.exe - 0 error(s), 0 warning(s)
+</pre>
+</body>
+</html>

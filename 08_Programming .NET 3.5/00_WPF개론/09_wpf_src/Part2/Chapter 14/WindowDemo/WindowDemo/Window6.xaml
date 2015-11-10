@@ -1,0 +1,14 @@
+﻿<Window x:Class="WindowDemo.Window6"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    Title="Window6" Height="222" Width="392">
+    <Grid>
+        <Button Height="23" Margin="190,149,0,0" Name="button1" VerticalAlignment="Top" HorizontalAlignment="Left" Width="74" Click="button1_Click">Button</Button>
+        <TextBox Height="24" Margin="117,22,0,0" Name="textOk" VerticalAlignment="Top" HorizontalAlignment="Left" Width="241" />
+        <TextBox Margin="117,63,0,0" Name="textName" Height="24" VerticalAlignment="Top" HorizontalAlignment="Left" Width="241" />
+        <TextBox Height="24" Margin="117,99,0,0" Name="textJuso" VerticalAlignment="Top" HorizontalAlignment="Left" Width="241" />
+        <Label Height="28" HorizontalAlignment="Left" Margin="6,18,0,0" Name="lblOk" VerticalAlignment="Top" Width="87">OK?Cancer</Label>
+        <Label Height="28" HorizontalAlignment="Left" Margin="6,61,0,0" Name="lblName" VerticalAlignment="Top" Width="87">Name</Label>
+        <Label Height="28" HorizontalAlignment="Left" Margin="6,95,0,0" Name="lubjuso" VerticalAlignment="Top" Width="87">Juso</Label>
+    </Grid>
+</Window>

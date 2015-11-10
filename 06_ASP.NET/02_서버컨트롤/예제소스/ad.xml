@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Advertisements>
+
+  <Ad>
+    <ImageUrl>~/Images/banner1.gif</ImageUrl>
+    <NavigateUrl>http://www.microsoft.com</NavigateUrl>
+    <AlternateText>배너1</AlternateText>
+    <Keyword>Microsoft</Keyword>
+    <Impressions>50</Impressions>
+  </Ad>
+
+  <Ad>
+    <ImageUrl>~/Images/banner2.gif</ImageUrl>
+    <NavigateUrl>http://www.microsoft.com</NavigateUrl>
+    <AlternateText>배너2</AlternateText>
+    <Keyword>Microsoft</Keyword>
+    <Impressions>30</Impressions>
+  </Ad>
+
+  <Ad>
+    <ImageUrl>~/Images/banner3.gif</ImageUrl>
+    <NavigateUrl>http://www.microsoft.com</NavigateUrl>
+    <AlternateText>배너3</AlternateText>
+    <Keyword>Microsoft</Keyword>
+    <Impressions>20</Impressions>
+  </Ad>
+
+</Advertisements>

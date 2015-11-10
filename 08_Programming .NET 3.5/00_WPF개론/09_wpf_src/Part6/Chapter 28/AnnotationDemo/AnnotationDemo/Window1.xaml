@@ -1,0 +1,33 @@
+﻿<Window x:Class="AnnotationDemo.Window1"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    Title="Window1" Height="300" Width="300">
+    <Grid xmlns:ann="clr-namespace:System.Windows.Annotations;assembly=PresentationFramework">
+        <DocumentViewer x:Name="dv">
+            <DocumentViewer.ContextMenu>
+                <ContextMenu>
+                    <MenuItem Command="ApplicationCommands.Copy" />
+                    <Separator />
+                    <MenuItem Command="ann:AnnotationService.CreateHighlightCommand"
+                        Header="Add Highlight" />
+                    <MenuItem Command=
+            "ann:AnnotationService.CreateTextStickyNoteCommand"
+                      Header="Add Text Note" />
+                    <MenuItem Command="ann:AnnotationService.CreateInkStickyNoteCommand"
+                      Header="Add Ink Note" />
+                    <Separator />
+                    <MenuItem Command="ann:AnnotationService.ClearHighlightsCommand"
+                      Header="Remove Highlights" />
+                    <MenuItem Command="ann:AnnotationService.DeleteStickyNotesCommand"
+                      Header="Remove Notes" />
+                    <MenuItem Command="ann:AnnotationService.DeleteAnnotationsCommand"
+                      Header="Remove Highlights &amp; Notes" />
+                </ContextMenu>
+            </DocumentViewer.ContextMenu>
+            <DocumentViewer.CommandBindings>
+                <CommandBinding Command="Print" Executed="CommandBinding_Executed"></CommandBinding>
+            </DocumentViewer.CommandBindings>
+        </DocumentViewer>
+
+    </Grid>
+</Window>

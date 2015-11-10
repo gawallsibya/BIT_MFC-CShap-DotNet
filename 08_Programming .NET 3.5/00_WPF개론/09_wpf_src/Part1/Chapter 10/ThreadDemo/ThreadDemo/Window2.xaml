@@ -1,0 +1,12 @@
+﻿<Window x:Class="ThreadDemo.Window2"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    Title="Window2" Height="159" Width="300">
+    <Canvas Height="99">
+        <Label Height="25.96" Canvas.Left="25" Canvas.Top="12" Width="39">Num:</Label>
+        <Label Content="0" Height="26" Canvas.Left="92" Canvas.Top="12" Width="150" Name="lblNum" ></Label>
+        <Button Canvas.Left="137" Canvas.Top="60" Height="27" Name="StartOrStop" Width="105"  Click="StartOrStop_Click">
+            Start
+        </Button>
+    </Canvas>
+</Window>

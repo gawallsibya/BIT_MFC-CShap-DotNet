@@ -1,0 +1,12 @@
+﻿<Window x:Class="WPFControls.CalendarSample"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    Title="CalendarSample" Height="300" Width="300">
+    <Grid xmlns:toolKit="clr-namespace:Microsoft.Windows.Controls;assembly=WPFToolkit"
+         VerticalAlignment="Center" HorizontalAlignment="Center" >
+        <toolKit:Calendar>
+            
+        </toolKit:Calendar>
+        
+    </Grid>
+</Window>

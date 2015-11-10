@@ -1,0 +1,19 @@
+﻿<Window x:Class="WPFControls.CheckBoxSample"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    Title="CheckBoxSample" Height="300" Width="300">
+    <Grid  HorizontalAlignment="Center" VerticalAlignment="Center" Width="187">
+        <StackPanel>
+            <CheckBox>사과를 좋아하세요?</CheckBox>
+            <Border BorderBrush="Black" BorderThickness="1">
+                <GroupBox>
+                    <GroupBox.Header> 선택해 주세요</GroupBox.Header>
+                    <StackPanel>
+                        <CheckBox > Apple</CheckBox>
+                        <CheckBox > Banna</CheckBox>
+                    </StackPanel>
+                </GroupBox>
+            </Border>
+        </StackPanel>
+    </Grid>
+</Window>

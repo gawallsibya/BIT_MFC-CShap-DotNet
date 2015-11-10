@@ -1,0 +1,14 @@
+[  로그인 페이지 구성]
+
+마스터페이지를 사용하는  Login.aspx 파일 생성
+
+1.  Content1영역에 Login 컨트롤 추가
+
+
+
+<%@ Page Language="C#" MasterPageFile="~/Ex02_MasterPage.master" Title="제목 없음" %>
+
+<asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
+    <asp:Login ID="Login1" runat="server">
+    </asp:Login>
+</asp:Content>

@@ -1,0 +1,58 @@
+﻿<%@ Page Language="C#" %>
+<%@ Import Namespace="System.Data.SqlClient" %>
+<%@ Import Namespace="System.Data" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<script runat="server">   
+    protected void Button1_Click(object sender, EventArgs e)
+    {
+        SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["TestConnectionString"].ConnectionString);
+        string strSelect = "SELECT * FROM Member";
+        string strInsert = "INSERT INTO Member(user_id, password, name, phone) VALUES(@user_id, @password, @name, @phone)";        
+        SqlCommand cmdSelect = new SqlCommand(strSelect, con);
+        SqlCommand cmdInsert = new SqlCommand(strInsert, con);
+        cmdInsert.Parameters.AddWithValue("@user_id", TextBox1.Text);
+        cmdInsert.Parameters.AddWithValue("@password", TextBox2.Text);
+        cmdInsert.Parameters.AddWithValue("@name", TextBox3.Text);
+        cmdInsert.Parameters.AddWithValue("@phone", TextBox4.Text);
+
+        SqlDataAdapter ad = new SqlDataAdapter();
+        ad.SelectCommand = cmdSelect;
+        ad.InsertCommand = cmdInsert;
+        DataSet ds = new DataSet();
+        ad.Fill(ds);
+
+        DataTable table = ds.Tables[0];
+        DataRow row = table.NewRow();
+        row["user_id"] = TextBox1.Text;
+        row["password"] = TextBox2.Text;
+        row["name"] = TextBox3.Text;
+        row["phone"] = TextBox4.Text;
+        table.Rows.Add(row);
+
+        ad.Update(ds);       
+        
+        Label1.Text = TextBox1.Text + "의 정보가 입력되었습니다.";
+    }
+</script>
+
+<html xmlns="http://www.w3.org/1999/xhtml" >
+<head runat="server">
+    <title>제목 없음</title>
+</head>
+<body>
+    <form id="form1" runat="server">
+    <div>
+        <h3>비연결기반 INSERT 예제</h3>
+        
+        아이디 : <asp:TextBox ID="TextBox1" runat="server"></asp:TextBox><br />
+        암호 : <asp:TextBox ID="TextBox2" runat="server"></asp:TextBox><br />
+        이름 : <asp:TextBox ID="TextBox3" runat="server"></asp:TextBox><br />
+        전화 : <asp:TextBox ID="TextBox4" runat="server"></asp:TextBox><br />
+        <asp:Button ID="Button1" runat="server" Text="저장" OnClick="Button1_Click" /><br />
+        <asp:Label ID="Label1" runat="server"></asp:Label>
+    </div>
+    </form>
+</body>
+</html>

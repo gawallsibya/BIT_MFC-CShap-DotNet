@@ -1,0 +1,70 @@
+﻿<%@ Page Language="C#" ValidateRequest="false" %>
+<%@ Import Namespace="System.Net.Mail" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<script runat="server">
+    protected void Button1_Click(object sender, EventArgs e)
+    {   
+	// 발송할 전자메일의 정보를 담는 역할
+        MailMessage mail = new MailMessage();
+
+        // 보낸이, 받는이 지정        
+        mail.From = new MailAddress("ccm@yoursite.com");
+        mail.To.Add(TextBox1.Text);
+        //mail.From = new MailAddress("you@yoursite.com", "xxx사이트 관리자", System.Text.Encoding.Default);
+        //mail.To.Add(new MailAddress(TextBox1.Text, "홍길동", System.Text.Encoding.Default));
+
+        //제목 및 내용 지정
+        mail.Subject = TextBox2.Text;
+        mail.Body = TextBox3.Text;
+        mail.SubjectEncoding = System.Text.Encoding.Default;
+        mail.BodyEncoding = System.Text.Encoding.Default;
+        //mail.Priority = MailPriority.High;
+        //mail.Attachments.Add(new Attachment("C:\\temp\\File1.txt"));
+        //mail.Attachments.Add(new Attachment("C:\\temp\\File2.txt")); 
+        
+        // Body 형식 지정
+        bool isBodyHtml = false;
+        if (RadioButton2.Checked)
+            isBodyHtml = true;
+        mail.IsBodyHtml = isBodyHtml;
+                
+        //전자 메일 발송
+        SmtpClient smtp = new SmtpClient("127.0.0.1");
+        try
+        {
+            smtp.Send(mail);
+            Label1.Text = "전자 메일이 정상적으로 발송되었습니다.";
+        }
+        catch
+        {
+            Label1.Text = "전자 메일 발송 도중 에러가 발생하였습니다.";
+        }
+    }
+</script>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title>제목 없음</title>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div>
+            <h3>전자 메일 발송 예제</h3>
+            
+            받는이 :
+            <asp:TextBox ID="TextBox1" runat="server" Width="200"></asp:TextBox><br />
+            제목 : 
+            <asp:TextBox ID="TextBox2" runat="server" Width="200"></asp:TextBox><br />
+            내용 :
+            <asp:TextBox ID="TextBox3" runat="server" TextMode="multiline" Rows="5" Width="200"></asp:TextBox><br />
+            <asp:Button ID="Button1" runat="server" Text="전자 메일 발송" OnClick="Button1_Click" /><br />
+            Body 형식 : 
+            <asp:RadioButton ID="RadioButton1" runat="server" Text="Text" Checked="true" GroupName="BodyType" /> 
+            <asp:RadioButton ID="RadioButton2" runat="server" Text="Html" GroupName="BodyType" /><br />
+            <asp:Label ID="Label1" runat="server" Text=""></asp:Label>
+        </div>
+    </form>
+</body>
+</html>

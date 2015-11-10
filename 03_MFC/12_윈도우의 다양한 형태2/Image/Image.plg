@@ -1,0 +1,57 @@
+<html>
+<body>
+<pre>
+<h1>Build Log</h1>
+<h3>
+--------------------Configuration: Image - Win32 Debug--------------------
+</h3>
+<h3>Command Lines</h3>
+Creating command line "rc.exe /l 0x412 /fo"Debug/Image.res" /d "_DEBUG" /d "_AFXDLL" "C:\Documents and Settings\Administrator\바탕 화면\새 폴더\14_윈도우의 다양한 형태2\Image\Image.rc"" 
+Creating temporary file "C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\RSP129.tmp" with contents
+[
+/nologo /MDd /W3 /Gm /GX /ZI /Od /D "WIN32" /D "_DEBUG" /D "_WINDOWS" /D "_AFXDLL" /D "_MBCS" /Fp"Debug/Image.pch" /Yu"stdafx.h" /Fo"Debug/" /Fd"Debug/" /FD /GZ /c 
+"C:\Documents and Settings\Administrator\바탕 화면\새 폴더\14_윈도우의 다양한 형태2\Image\Image.cpp"
+"C:\Documents and Settings\Administrator\바탕 화면\새 폴더\14_윈도우의 다양한 형태2\Image\ImageDoc.cpp"
+"C:\Documents and Settings\Administrator\바탕 화면\새 폴더\14_윈도우의 다양한 형태2\Image\ImageView.cpp"
+"C:\Documents and Settings\Administrator\바탕 화면\새 폴더\14_윈도우의 다양한 형태2\Image\LeftView.cpp"
+"C:\Documents and Settings\Administrator\바탕 화면\새 폴더\14_윈도우의 다양한 형태2\Image\MainFrm.cpp"
+]
+Creating command line "cl.exe @C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\RSP129.tmp" 
+Creating temporary file "C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\RSP12A.tmp" with contents
+[
+/nologo /MDd /W3 /Gm /GX /ZI /Od /D "WIN32" /D "_DEBUG" /D "_WINDOWS" /D "_AFXDLL" /D "_MBCS" /Fp"Debug/Image.pch" /Yc"stdafx.h" /Fo"Debug/" /Fd"Debug/" /FD /GZ /c 
+"C:\Documents and Settings\Administrator\바탕 화면\새 폴더\14_윈도우의 다양한 형태2\Image\StdAfx.cpp"
+]
+Creating command line "cl.exe @C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\RSP12A.tmp" 
+Creating temporary file "C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\RSP12B.tmp" with contents
+[
+/nologo /subsystem:windows /incremental:yes /pdb:"Debug/Image.pdb" /debug /machine:I386 /out:"Debug/Image.exe" /pdbtype:sept 
+".\Debug\Image.obj"
+".\Debug\ImageDoc.obj"
+".\Debug\ImageView.obj"
+".\Debug\LeftView.obj"
+".\Debug\MainFrm.obj"
+".\Debug\StdAfx.obj"
+".\Debug\Image.res"
+]
+Creating command line "link.exe @C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\RSP12B.tmp"
+<h3>Output Window</h3>
+Compiling resources...
+Compiling...
+StdAfx.cpp
+Compiling...
+Image.cpp
+ImageDoc.cpp
+ImageView.cpp
+LeftView.cpp
+MainFrm.cpp
+Generating Code...
+Linking...
+
+
+
+<h3>Results</h3>
+Image.exe - 0 error(s), 0 warning(s)
+</pre>
+</body>
+</html>

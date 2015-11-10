@@ -1,0 +1,23 @@
+[CreateUser.aspx 파일 ]
+
+마스터페이지를 사용하는 웹페이지 생성
+
+1. 디자인에서
+    CreateUserWizard 컨트롤 생성
+
+2. 속성창에서 
+    ContinueDestinationPageURL 설정 ; Default.aspx
+
+
+<%@ Page Language="C#" MasterPageFile="~/Ex02_MasterPage.master" Title="제목 없음" %>
+
+<asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
+    <asp:CreateUserWizard ID="CreateUserWizard1" runat="server" ContinueDestinationPageUrl="~/Ex02_Default.aspx">
+        <WizardSteps>
+            <asp:CreateUserWizardStep ID="CreateUserWizardStep1" runat="server">
+            </asp:CreateUserWizardStep>
+            <asp:CompleteWizardStep ID="CompleteWizardStep1" runat="server">
+            </asp:CompleteWizardStep>
+        </WizardSteps>
+    </asp:CreateUserWizard>
+</asp:Content>

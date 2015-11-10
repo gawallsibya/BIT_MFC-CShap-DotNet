@@ -1,0 +1,19 @@
+﻿<Page
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    x:Class="StructuredNavigationDemo.StartPage"
+    Title="StartPage" Width="422" xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" mc:Ignorable="d" VerticalAlignment="Top" HorizontalAlignment="Left">
+    <Grid  VerticalAlignment="Top" HorizontalAlignment="Stretch" Height="202" Width="419" OverridesDefaultStyle="True">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="122" />
+            <ColumnDefinition Width="297*" />
+        </Grid.ColumnDefinitions>
+        <Label Height="32" Margin="8,8,9,0" x:Name="label1" VerticalAlignment="Top"  Content="이  름" />
+        <Label Height="24" Margin="8,34,17,0" x:Name="label2" VerticalAlignment="Top" Content="주 소" />
+        <Label Height="29" Margin="8,61,17,0" x:Name="label3" VerticalAlignment="Top" Content="적격 여부" />
+        <TextBox Grid.Column="1" Height="23" Margin="29,9,0,0" Name="textName" VerticalAlignment="Top" HorizontalAlignment="Left" Width="121" />
+        <TextBox Height="23" Margin="29,38,0,0" Name="textAddress" VerticalAlignment="Top" Grid.Column="1" HorizontalAlignment="Left" Width="205" />
+        <TextBlock Grid.Column="1" Height="21" Margin="29,67,141,0" Name="textYesOrNo" VerticalAlignment="Top" />
+        <Button Grid.Column="1" Height="23" Margin="154,67,0,0" Name="btnConfirm" VerticalAlignment="Top" HorizontalAlignment="Left" Width="80" Click="btnConfirm_Click">적격여부확인</Button>
+    </Grid>
+</Page>

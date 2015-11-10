@@ -1,0 +1,6 @@
+1. 세션           <===민철
+2. Masterpage공유자원      <== 재영
+3. FindControl  <== 민호
+4. request        <== 재찬
+    PostUrl : 기존 폼의 데이터 및 컨트롤 정보를 사용가능
+    Redirect : 페이지 변경 , 기존 페이지 접근 불가

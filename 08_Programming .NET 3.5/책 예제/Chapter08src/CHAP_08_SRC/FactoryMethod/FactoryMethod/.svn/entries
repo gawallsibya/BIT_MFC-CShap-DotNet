@@ -1,0 +1,61 @@
+8
+
+dir
+1755
+svn://71.248.178.27/OReilly/Prog%20.NET%203.5/DotNet3/Chapter%20Design%20Patterns/SourceCode/FactoryMethod/FactoryMethod
+svn://71.248.178.27
+
+
+
+2007-08-23T15:44:40.656250Z
+1665
+jliberty
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+35da0109-7d8c-7944-ae35-a6cffb41e53a
+
+FactoryMethod.csproj
+file
+
+
+
+
+2008-01-11T15:38:14.533778Z
+cffb8aa8bfae4aab3758a4443014aeeb
+2007-08-18T21:25:46.210875Z
+1653
+alex
+
+bin
+dir
+
+obj
+dir
+
+Program.cs
+file
+
+
+
+
+2008-01-11T15:38:14.538778Z
+b292d3b5c3c04604b17f44fd5b59f939
+2007-08-23T15:44:40.656250Z
+1665
+jliberty
+
+Properties
+dir
+

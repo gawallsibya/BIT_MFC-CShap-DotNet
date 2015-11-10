@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 10.00
+# Visual Studio 2008
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PackUriDemo", "PackUriDemo\PackUriDemo.csproj", "{368203CB-C090-4951-9747-D1777F8AB4D8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DemoComponent", "DemoComponent\DemoComponent.csproj", "{DCB9C59F-83E6-48B7-A016-95ED3481C5A9}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{368203CB-C090-4951-9747-D1777F8AB4D8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{368203CB-C090-4951-9747-D1777F8AB4D8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{368203CB-C090-4951-9747-D1777F8AB4D8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{368203CB-C090-4951-9747-D1777F8AB4D8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DCB9C59F-83E6-48B7-A016-95ED3481C5A9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DCB9C59F-83E6-48B7-A016-95ED3481C5A9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DCB9C59F-83E6-48B7-A016-95ED3481C5A9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DCB9C59F-83E6-48B7-A016-95ED3481C5A9}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,154 @@
+Chapter 3 Single-row SQL Functions
+
+p3-12
+
+TO_CHAR(d,fmt) : date를 varchar2로 변환
+
+TO_CHAR(n,fmt) : number 값을 varchar2로 변환
+
+TO_DATE(s,fmt) : char나 VARCHAR2타입을 DATE타입으로 변환
+
+TO_NUMBER(s,f,mt) : NUMBER타입으로 변환
+
+*) 문자형 data
+
+     CHAR  : 고정길이 문자형 data , 기본크기는 1, 기본타입은 BYTE,  
+                                                                     CHAR로 변경가능하다.
+
+     VARCHAR2 : 가변길이 문자형 data
+
+     ex) CREATE TABLE chr_exam1 (
+              names1  CHAR(3 BYTE), 		
+              names2  VARCHAR2(3 BYTE) );	
+
+            INSERT INTO chr_exam1 VALUES('AA', 'AA');
+
+	// name1에 'AA'  를 저장해도 3byte크기
+	//name2에 'AA' 를 저장하면 2byte가 됨            
+
+            SELECT REPLACE(names1, ' ' , 'B') nm1,
+                        REPLACE(names2, ' ', 'B') nm2
+             FROM chr_exam1;
+
+
+----------------------------------------------------------
+p3-10
+
+현재 날짜 반환
+
+SELECT CURRENT_DATE, 
+            SYSDATE
+FROM   DUAL;
+
+
+ADD_MONTHS(d, n) : 임의의 날짜에 개월수를 더함
+
+LAST_DAY(d) : d 와 같은 달의 마지막 날짜를 반환
+
+MONTHS_BETWEEN(d1,d2) : 두 날짜 사이의 개월 수 구하기(리턴값은 숫자형)
+
+NEW_TIME(d, z1,z2) : d, z1을 z2기준으로 변경
+ 
+NEXT_DAY(d, day) : d이후의 날짜 중에서 주중에 day를 명시한 첫번째 일자를 반환
+
+ROUND(d,fmt) : d날짜를 포멧모델인 fmt에 의해 명시된 단위로 결과 반환
+
+TRUNC(d, fmt) : 잘라냄
+
+ SYSDATE  : 현재 날짜 반환
+-----------------------------------------------------------
+p3-9
+
+CHR(n) :  문자형태로 반환
+
+REPLACE(s, p,r) : s에 포함된 p 를 r로 교체
+
+SUBSTR(s, m, n) : s중에서 m에서 시작하고 n으로 끝나는 문자열을 반환
+                          이 때 ( m,n은 숫자) 
+                           음수일 경우 오른쪽에서 시작한다.
+
+TRANSLATE(s,f,rom,to) : Replace와 비슷
+                                   문자 단위로 변경
+
+ASCII(s) : 숫자형 반환
+
+INSTR(s1, s2, m, n) : s1문자열에서 m에서 n까지 s2가 처음 나타나는 위치 반환
+                               숫자형 테이터 반환
+
+LENGTH(s) : 길이 반환(갯수)
+                    LENGTHB( byte크기 반환)
+
+------------------------------------------------------------
+p3.7
+
+CONCAT(s1, s2) : 두 개의 문자를 붙이기
+
+INITCAP(s) : 첫 글자만 대문자로 변환
+
+LOWER(s) : 모두 소문자로 
+
+UPPER(s) : 모두 대문자로 
+
+LPAD(s1, n, s2) : s1을 n자리만큼 문자열 길이를 늘리고 s2로 채워준다(왼쪽으로).
+
+RPAD(s1, n, s2) : s1을 n자리만큼 문자열 길이를 늘리고 s2로 채워준다(오른쪽으로).
+
+LTRIM(s, c) : s문장에서 c문장을 제거한다.(왼쪽)
+
+RTRIM(s,c) : s문장에서 c문장을 제거한다.(오른쪽)                         
+-----------------------------------------------------------
+
+
+p3-6
+
+ABS(n)  : 절대값
+
+CEIL(n)  : n과 같거나 큰 수 중  가장 작은 정수 반환
+
+FLOOR(n) : n보다 작거나 같은 수 중 가장 큰 정수 반환 
+
+MOD(m,n) : m을 n으로 나눈 나머지값 , n이 0이면 m을 반환한다.
+
+POWER(m,n) : m의 n 제곱근 
+
+ROUND(m,n) : m을 소수점 이하 n+1 자리에서 반올림한 결과를 반환
+                     n을 생략시 0으로 인식 / 소수점 첫째자리에서 반올림한다.
+
+                     ROUND(5.2)
+                     ROUND(2.235, 2)
+
+TRUNC(m,n)  : m값을 n번째 자리에서 잘라낸다.
+                      생략시 0과 동일 
+
+SIGN(n)   :  부호 확인( 0보다 클 경우 1 작을 경우 -1을 반환
+                                0일 경우는 0을 반환)
+
+-------------------------------------------
+p3-5
+         ex) NUMBER(p, s)
+               number(4,2)  ==> -99.99 ~ 99.99
+               number(2)     ==> -99 ~ 99 
+
+-------------------------------------------------------
+p3.0
+
+오라클에서 제공되는 함수들 이해
+
+- 함수 : 반환값이 있다.
+            즉 연산을 하고 결과를 반환한다.
+- 저장프로시저 : 연산을 하지만 반환값은 없다.
+
+*) 함수의 장점은 연산 결과를 바로 확인할 수 있다. 따라서 성공 여부 판단이 가능
+
+
+함수들은 처리하고자 하는  data type 에 따라 분류가 되어 있다.
+ -  number / char / date / conversion / etc...
+
+SQL 문장에서 함수가 사용될 수 있는 곳
+ - SELECT 리스트  /   WHERE  절 / START WITH(계층형 쿼리)
+    HAVING절(그룹 쿼리) 
+    INSERT 문의 INTO 절 / UPDATE문의 SET절
+
+  *) 공통점 : 임의의 값들이 위치할 수 있는 곳임!
+
+--------------------------------------------------

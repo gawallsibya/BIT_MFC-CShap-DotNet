@@ -1,0 +1,48 @@
+// DefaultFocus : 페이지가 처음 로드될 때 포커스를 받을 컨트롤 지정
+
+// DefaultButton 속성 : 폼 내에서 Enter 키가 눌려졌을 때 실행될 버튼 지정
+
+// 한 페이지는 여러 영역으로 구분됨
+// - 각 영역을 Panel 컨트롤로 구분하고 Panel 컨트롤의 DefaultButton 속성 사용
+
+<%@ Page Language="C#" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<script runat="server">
+    protected void Button1_Click(object sender, EventArgs e)
+    {
+        Label1.Text = "TextBox1 : " + TextBox1.Text + "<br>TextBox2 : " + TextBox2.Text;
+        Page.SetFocus("TextBox1");
+    }
+
+    protected void Button2_Click(object sender, EventArgs e)
+    {
+        Label1.Text = "Hello, " + TextBox3.Text;
+        TextBox3.Focus();
+    }
+</script>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head id="Head1" runat="server">
+    <title>제목 없음</title>
+</head>
+<body>
+    <form id="form1" runat="server" defaultfocus="TextBox2" defaultbutton="Button1">
+        <div>
+            <h3>Focus API 예제</h3>
+            
+            TextBox1 : <asp:TextBox ID="TextBox1" runat="server"></asp:TextBox><br />
+            TextBox2 : <asp:TextBox ID="TextBox2" runat="server"></asp:TextBox> <-- 페이지 첫 로드 시 포커스 지점<br />
+            <asp:Button ID="Button1" runat="server" Text="Button1" OnClick="Button1_Click" />
+            <p></p>
+            <asp:Panel ID="Panel1" runat="server" DefaultButton="Button2">
+                이름을 입력하세요 : <asp:TextBox ID="TextBox3" runat="server"></asp:TextBox><br />
+                <asp:Button ID="Button2" runat="server" Text="Button2" OnClick="Button2_Click" /><br />
+            </asp:Panel><br />
+            결과 --><br />
+            <asp:Label ID="Label1" runat="server" Text=""></asp:Label>
+        </div>
+    </form>
+</body>
+</html>

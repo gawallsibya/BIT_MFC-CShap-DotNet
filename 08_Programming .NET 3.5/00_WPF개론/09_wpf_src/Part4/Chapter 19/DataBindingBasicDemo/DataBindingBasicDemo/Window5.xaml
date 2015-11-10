@@ -1,0 +1,23 @@
+﻿<Window x:Class="DataBindingBasicDemo.Window5"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    Title="Window5" Height="300" Width="505">
+    <Window.Resources>
+        <XmlDataProvider x:Key="BookList" Source="Books.xml"
+                       XPath="Books"/>
+        <DataTemplate x:Key="dataTemplate">
+            <TextBlock Text="{Binding XPath=@name}" />
+        </DataTemplate>
+    </Window.Resources>
+    <Canvas DataContext="{Binding Source={StaticResource BookList}}" Width="448">
+        
+        <ListBox Name="genreListBox"
+            ItemsSource="{Binding XPath=Genre}"
+            ItemTemplate="{StaticResource dataTemplate}"
+            IsSynchronizedWithCurrentItem="true" Height="98" Canvas.Left="25" Canvas.Top="30" Width="127" />
+        <ListBox DataContext="{Binding ElementName=genreListBox , Path=SelectedItem}"
+              ItemsSource="{Binding XPath=Book}"
+              ItemTemplate="{StaticResource dataTemplate}" Height="98" Canvas.Left="192" Canvas.Top="30" Width="197" />
+
+    </Canvas>
+</Window>

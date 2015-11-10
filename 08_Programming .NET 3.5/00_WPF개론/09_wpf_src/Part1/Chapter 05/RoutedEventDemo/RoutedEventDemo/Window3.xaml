@@ -1,0 +1,9 @@
+﻿<Window x:Class="RoutedEventDemo.Window3"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    Title="Window3" Height="300" Width="300">
+    <Canvas>
+        <Button Height="22" Canvas.Left="37" Canvas.Top="52" Width="68" Click="Button_Click">Raise Event</Button>
+        <Button Name="clickMeButton" Click="clickMeButton_Click" Height="22" Canvas.Left="37" Canvas.Top="102" Width="68">Clik Me</Button>
+    </Canvas>
+</Window>

@@ -1,0 +1,9 @@
+﻿<Window x:Class="WPFControls.ToolTipSample"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    Title="ToolTipSample" Height="300" Width="300">
+    <Grid HorizontalAlignment="Center" VerticalAlignment="Center">
+        <Button ToolTip="클릭하시면 최종 확인 입니다." 
+         >확 인</Button>
+    </Grid>
+</Window>

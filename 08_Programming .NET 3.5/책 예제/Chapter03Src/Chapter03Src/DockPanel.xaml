@@ -1,0 +1,15 @@
+<Window
+   xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+   Title="Programming .NET 3.5 | Layout: DockPanel">
+	
+	<DockPanel LastChildFill="True">
+	<TextBlock DockPanel.Dock="Top" Background="LightCoral" >I am the top...</TextBlock>
+	<TextBlock DockPanel.Dock="Bottom" Background="LightCoral" >I am the bottom...</TextBlock>
+	<TextBlock DockPanel.Dock="Left" VerticalAlignment="Center">I am the left...</TextBlock>
+	<TextBlock DockPanel.Dock="Right" VerticalAlignment="Center">I am the Right...</TextBlock>
+	<Button Height="40" Width="200">I am the Fill (or the center)</Button>
+	</DockPanel>
+      
+	
+</Window>

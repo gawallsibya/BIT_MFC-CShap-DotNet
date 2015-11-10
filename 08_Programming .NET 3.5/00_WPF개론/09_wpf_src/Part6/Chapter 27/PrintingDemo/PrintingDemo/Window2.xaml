@@ -1,0 +1,34 @@
+﻿<Window x:Class="PrintingDemo.Window2"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    Title="Window2" Height="318" Width="489">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <Button Name="btnPrint" Click="btnPrint_Click">Print</Button>
+        <FlowDocumentReader Grid.Row="1" Name="flowDocumentReader">
+            
+            <FlowDocument >
+                <Paragraph>
+                    By definition, technical people care most about technology. Many software professionals are far more interested in how an application works than in how it interacts with its users. Yet those users—who are, after all, the ones paying for all of this—care deeply about user interfaces. An application's interface is a major part of the complete user experience with that software, and to its users, the experience is the application. Providing a better user experience through a better interface can improve productivity, help create loyal customers, increase sales on a Web site, and more. 
+
+Once happy with purely character-based interfaces, users have now become accustomed to graphical interfaces. Yet the requirements for user interfaces continue to advance. Graphics and media have become more widely used, and the Web has conditioned a generation of people to expect easy interaction with software. The more time people spend interacting with applications, the more important the interfaces to those applications become. To keep up with increasing expectations, the technology used to create user interfaces must also advance.
+
+The goal of Windows Presentation Foundation (WPF) is to provide these advances for Windows. Included in version 3.0 of the Microsoft .NET Framework, WPF allows building interfaces that incorporate documents, media, two- and three-dimensional graphics, animations, Web-like characteristics, and much more. Like everything else in the .NET Framework 3.0, WPF will be available for Windows Vista, Windows XP, and Windows Server 2003, and it's scheduled to be released when Windows Vista ships. This paper introduces WPF, describing its various parts. The goal is to make clear the problems this technology addresses, then survey the solutions that WPF provides.
+
+                </Paragraph>
+
+                <Paragraph>
+                    By definition, technical people care most about technology. Many software professionals are far more interested in how an application works than in how it interacts with its users. Yet those users—who are, after all, the ones paying for all of this—care deeply about user interfaces. An application's interface is a major part of the complete user experience with that software, and to its users, the experience is the application. Providing a better user experience through a better interface can improve productivity, help create loyal customers, increase sales on a Web site, and more. 
+
+Once happy with purely character-based interfaces, users have now become accustomed to graphical interfaces. Yet the requirements for user interfaces continue to advance. Graphics and media have become more widely used, and the Web has conditioned a generation of people to expect easy interaction with software. The more time people spend interacting with applications, the more important the interfaces to those applications become. To keep up with increasing expectations, the technology used to create user interfaces must also advance.
+
+The goal of Windows Presentation Foundation (WPF) is to provide these advances for Windows. Included in version 3.0 of the Microsoft .NET Framework, WPF allows building interfaces that incorporate documents, media, two- and three-dimensional graphics, animations, Web-like characteristics, and much more. Like everything else in the .NET Framework 3.0, WPF will be available for Windows Vista, Windows XP, and Windows Server 2003, and it's scheduled to be released when Windows Vista ships. This paper introduces WPF, describing its various parts. The goal is to make clear the problems this technology addresses, then survey the solutions that WPF provides.
+
+                </Paragraph>
+            </FlowDocument>
+        </FlowDocumentReader>
+    </Grid>
+</Window>

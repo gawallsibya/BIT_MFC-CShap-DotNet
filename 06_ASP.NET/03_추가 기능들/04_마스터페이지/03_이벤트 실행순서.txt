@@ -1,0 +1,88 @@
+// MasterPage3.master
+
+<%@ Master Language="C#" %>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<script runat="server">
+    protected void Page_Init(object sender, EventArgs e)
+    {
+        Response.Write("마스터 페이지 : " + "Init" + "<br>");
+    }
+
+    protected void Page_Load(object sender, EventArgs e)
+    {
+        Response.Write("<b>마스터 페이지 : " + "Load" + "</b><br>");
+    }
+
+    protected void Page_PreRender(object sender, EventArgs e)
+    {
+        Response.Write("마스터 페이지 : " + "PreRender" + "<br>");
+    }
+
+    protected void Button1_Click(object sender, EventArgs e)
+    {
+        Response.Write("<b>마스터 페이지 : " + "Button1_Click" + "</b><br>");
+    }
+</script>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title>제목 없음</title>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div>
+            <asp:Button ID="Button1" runat="server" Text="마스터 페이지 버튼" OnClick="Button1_Click" />
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>
+    </form>
+</body>
+</html>
+
+
+
+
+// 03.aspx
+<%@ Page Language="C#" MasterPageFile="~/MasterPage3.master" Title="제목 없음" %>
+
+<script runat="server">
+    protected void Page_Init(object sender, EventArgs e)
+    {
+        Response.Write("콘텐츠 페이지 : " + "Init" + "<br>");
+    }
+
+    protected void Page_PreLoad(object sender, EventArgs e)
+    {
+        Response.Write("콘텐츠 페이지 : " + "PreLoad" + "<br>");
+    }
+    
+    protected void Page_Load(object sender, EventArgs e)
+    {
+        Response.Write("<b>콘텐츠 페이지 : " + "Load" + "</b><br>");
+    }
+
+    protected void Page_LoadComplete(object sender, EventArgs e)
+    {
+        Response.Write("콘텐츠 페이지 : " + "LoadComplete" + "<br>");
+    }
+
+    protected void Page_PreRender(object sender, EventArgs e)
+    {
+        Response.Write("콘텐츠 페이지 : " + "PreRender" + "<br>");
+    }
+
+    protected void Page_PreRenderComplete(object sender, EventArgs e)
+    {
+        Response.Write("콘텐츠 페이지 : " + "PreRenderComplete" + "<br>");
+    }
+
+    protected void Button1_Click(object sender, EventArgs e)
+    {
+        Response.Write("<b>콘텐츠 페이지 : " + "Button1_Click" + "</b><br>");
+    }
+</script>
+
+<asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
+    <asp:Button ID="Button1" runat="server" Text="콘텐츠 페이지 버튼" OnClick="Button1_Click" />
+</asp:Content> 

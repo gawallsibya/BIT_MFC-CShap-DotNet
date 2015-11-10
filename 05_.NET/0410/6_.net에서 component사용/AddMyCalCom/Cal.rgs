@@ -1,0 +1,26 @@
+HKCR
+{
+	AddMyCalCom.Cal.1 = s 'Cal Class'
+	{
+		CLSID = s '{63CAE2B0-B4AD-4972-B188-2A644353125C}'
+	}
+	AddMyCalCom.Cal = s 'Cal Class'
+	{
+		CLSID = s '{63CAE2B0-B4AD-4972-B188-2A644353125C}'
+		CurVer = s 'AddMyCalCom.Cal.1'
+	}
+	NoRemove CLSID
+	{
+		ForceRemove {63CAE2B0-B4AD-4972-B188-2A644353125C} = s 'Cal Class'
+		{
+			ProgID = s 'AddMyCalCom.Cal.1'
+			VersionIndependentProgID = s 'AddMyCalCom.Cal'
+			ForceRemove 'Programmable'
+			InprocServer32 = s '%MODULE%'
+			{
+				val ThreadingModel = s 'Apartment'
+			}
+			'TypeLib' = s '{2BE554A9-12E7-4580-A423-8893B30D1B0E}'
+		}
+	}
+}

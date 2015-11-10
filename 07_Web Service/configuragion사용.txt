@@ -1,0 +1,16 @@
+Webconfig 파일 사용 
+
+/*.config
+<connectionStrings>
+        <add name="TESTDB"
+            connectionString="Data Source=WOOSONG_BIT-PC\SQLEXPRESS;Initial Catalog=WoosongBit;User ID=ccm;Password=ccm"
+            providerName="System.Data.SqlClient" />
+    </connectionStrings>
+
+//사용
+참조추가 
+system.configuragion
+using System.Configuration;
+
+string sqlConnString = ConfigurationManager.ConnectionStrings["TESTDB"].ConnectionString;
+            MessageBox.Show(sqlConnString);

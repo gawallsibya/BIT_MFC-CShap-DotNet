@@ -1,0 +1,13 @@
+<Window
+   xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+   xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
+   Title="Programming .NET 3.5 | Resources">
+	<Window.Resources>
+	   <SolidColorBrush x:Key="GreenBrush" Color="Green" />
+	</Window.Resources>
+	<Viewbox>
+		<TextBlock Foreground="{StaticResource GreenBrush}"> 
+			Little Green Men 
+		</TextBlock> 
+	</Viewbox>
+</Window>

@@ -1,0 +1,23 @@
+﻿<Window x:Class="ContentModelDemo.ContentControlSample"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    Title="ContentControlSample" Height="300" Width="300">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="140*" />
+            <ColumnDefinition Width="138*" />
+        </Grid.ColumnDefinitions>
+        <ContentControl Grid.Column="0" Name="contentControl1"  VerticalAlignment="Top" >
+            <!--<Button>Hello</Button>-->
+            <ContentControl.Content>
+                <Button>Hello</Button>
+            </ContentControl.Content>
+            <!--<Button>WPF</Button>-->
+        </ContentControl>
+        <Button Grid.Column="1"  VerticalAlignment="Top">
+            <Button.Content>
+                WPF
+            </Button.Content>
+        </Button>
+    </Grid>
+</Window>

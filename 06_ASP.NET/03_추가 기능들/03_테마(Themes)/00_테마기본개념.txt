@@ -1,0 +1,214 @@
+//-----------------------------------------------------------
+// 03. 테마 기본 개념
+//------------------------------------------------------------
+
+
+[ 테마 ]
+
+- ASP.NET 2.0에서 새로 추가된 기능
+- 서버컨트롤, 웹 페이지, 웹 사이트, 웹 서버 단위의 스타일 및 레이아웃을
+  일관성 있게 관리해줌
+
+- 웹 사이트의 디자인을 변경해야 하는 경우 모든 웹 페이지를 일일이 찾아갈
+  필요 없이 해당 테마를 변경하는 것으로 전체 웹 사이트 스타일 변경 가능
+  
+- 즉 웹 사이트의 특정 스타일을 지정하는 데 사용하는 기능
+
+
+
+[ App_Themes 폴더 ]
+
+- 테마를 위해 만들어진 미리 예약된 폴더임
+
+- 한 사이트에는 여러 개의 테마 존재 가능
+
+- 실제 웹 사이트에 적용되는 스타일은 이 폴더 내부에 정의된 이미지, 
+  CSS파일 및 스킨 파일에 의해서 이루어짐
+
+  *)스킨 파일
+    - .skin 확장자명을 가지고 있슴
+    - 서버 컨트롤의 스타일 정의
+
+
+[ 테마 사용하기 ]
+
+
+
+1) CSS 사용하기 
+
+   과거 ASP.NET에서 사용했었던 개념임
+
+   - 01_CSS 파일 예제 확인
+     동일 디렉토리에 StyleSheet.css 파일 추가후 실행
+
+   - 장점 : CSS를 통해 손쉽고 일관성있게 웹 페이지 스타일 관리
+
+   - 단점 : HTML태그가 아닌 서버 컨트롤에 CSS를 적용해야 할 경우 모든
+            서버 컨트롤에 CssClass 속성을 지정해야 하는 불편함이 있다.
+
+
+2) 기본 스킨(Default Skeen)
+   - 테마가 적용된 영역에 포함되어 있는 모든 서버 컨트롤에 기본적으로 
+     적용되는 스킨을 말함
+
+
+   **) 테마 생성하기 
+	
+	1. 솔루션 탐색기에서 [프로젝트명을 마우스 오른쪽 클릭]
+	   -> [ASP.NET 폴더 추가]-> [Theme]메뉴 선택
+
+	2. [Theme]메뉴 선택하면 솔루션 탐색기에 App_Theme 폴더가 자동으로 
+           생성됨
+           그 하위에 기본적으로 Theme1이라는 폴더가 생성됨
+           Theme1의 폴더명을 Summer로 수정
+
+	3. 정의된 Summer테마에서 [마우스오른쪽클릭]->[새항목추가]
+
+	4. 새항목 추가에서 테마에 추가할 수 있는 파일 템플릿이 나타나는데
+	   이들중 '스킨 파일' 템플릿을 선택하고, 
+	   파일 명을 'Summer.skin"으로 입력한 후 추가 버튼을 클릭
+
+	5. Summer 테마에 Summer.skin 파일이 추가된것 확인
+
+	6. Summer.skin파일에 코드 구현
+
+
+<asp:TextBox runat="server" ForeColor="white" BackColor="blue"/>
+<asp:Button runat="server" ForeColor="white" BackColor="blue"/>
+<asp:Label runat="server" ForeColor="DarkSlateBlue" Font-Bold="true" Font-Size="Medium" Font-Italic="true"></asp:Label>
+
+
+	예제 소스 추가할것 )
+
+
+3) 명명된 스킨(Named Skin)
+
+- 위와 동일하게 Autumn테마를 정의하고 Autumn.skin 파일을 추가
+
+   
+<asp:TextBox runat="server" ForeColor="white" BackColor="brown"/>
+<asp:Button runat="server" ForeColor="white" BackColor="brown"/>
+<asp:Button runat="server" ForeColor="brown" BackColor="white" SkinID="BrownButton"/>
+<asp:Label runat="server" ForeColor="SaddleBrown" Font-Bold="true" Font-Size="Medium" Font-Italic="true"></asp:Label>
+<asp:Label runat="server" ForeColor="white" BackColor="SaddleBrown" Font-Bold="true" Font-Size="Medium" SkinID="BrownLabel"></asp:Label>
+
+
+
+	예제 소스 추가할 것)
+
+
+
+
+
+
+4) 프로그래밍 방식으로 테마적용하기
+
+   - 테마를 고정시키는 것이 아니라 상황에 따라 테마를 변경시킨다는 뜻임
+
+   - 골드 회원과 일반 회원이 있을 경우 
+     서로간의 테마를 다르게 사용하고 싶다....
+
+   - 더 낳아가서 회원이 테마 자체를 선택할 수 도 있게 한다
+
+   예제 확인)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,44 @@
+<html>
+<body>
+<pre>
+<h1>Build Log</h1>
+<h3>
+--------------------Configuration: Dir - Win32 Debug--------------------
+</h3>
+<h3>Command Lines</h3>
+Creating command line "rc.exe /l 0x412 /fo"Debug/Dir.res" /d "_DEBUG" /d "_AFXDLL" "C:\Documents and Settings\Administrator\바탕 화면\새 폴더\12_File열거\Dir\Dir.rc"" 
+Creating temporary file "C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\RSP11A.tmp" with contents
+[
+/nologo /MDd /W3 /Gm /GX /ZI /Od /D "WIN32" /D "_DEBUG" /D "_WINDOWS" /D "_AFXDLL" /D "_MBCS" /Fp"Debug/Dir.pch" /Yu"stdafx.h" /Fo"Debug/" /Fd"Debug/" /FD /GZ /c 
+"C:\Documents and Settings\Administrator\바탕 화면\새 폴더\12_File열거\Dir\Dir.cpp"
+"C:\Documents and Settings\Administrator\바탕 화면\새 폴더\12_File열거\Dir\DirDoc.cpp"
+"C:\Documents and Settings\Administrator\바탕 화면\새 폴더\12_File열거\Dir\DirView.cpp"
+"C:\Documents and Settings\Administrator\바탕 화면\새 폴더\12_File열거\Dir\MainFrm.cpp"
+]
+Creating command line "cl.exe @C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\RSP11A.tmp" 
+Creating temporary file "C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\RSP11B.tmp" with contents
+[
+/nologo /MDd /W3 /Gm /GX /ZI /Od /D "WIN32" /D "_DEBUG" /D "_WINDOWS" /D "_AFXDLL" /D "_MBCS" /Fp"Debug/Dir.pch" /Yc"stdafx.h" /Fo"Debug/" /Fd"Debug/" /FD /GZ /c 
+"C:\Documents and Settings\Administrator\바탕 화면\새 폴더\12_File열거\Dir\StdAfx.cpp"
+]
+Creating command line "cl.exe @C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\RSP11B.tmp" 
+Creating command line "link.exe /nologo /subsystem:windows /incremental:yes /pdb:"Debug/Dir.pdb" /debug /machine:I386 /out:"Debug/Dir.exe" /pdbtype:sept  ".\Debug\Dir.obj" ".\Debug\DirDoc.obj" ".\Debug\DirView.obj" ".\Debug\MainFrm.obj" ".\Debug\StdAfx.obj" ".\Debug\Dir.res" "
+<h3>Output Window</h3>
+Compiling resources...
+Compiling...
+StdAfx.cpp
+Compiling...
+Dir.cpp
+DirDoc.cpp
+DirView.cpp
+MainFrm.cpp
+Generating Code...
+Linking...
+
+
+
+<h3>Results</h3>
+Dir.exe - 0 error(s), 0 warning(s)
+</pre>
+</body>
+</html>

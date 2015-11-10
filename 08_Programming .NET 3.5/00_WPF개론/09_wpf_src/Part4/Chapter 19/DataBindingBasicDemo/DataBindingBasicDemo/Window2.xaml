@@ -1,0 +1,18 @@
+﻿<Window x:Class="DataBindingBasicDemo.Window2"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    Title="Window2" Height="300" Width="300">
+    <StackPanel Name="myStackPanel" xmlns:local="clr-namespace:DataBindingBasicDemo" HorizontalAlignment="Center" VerticalAlignment="Center" Width="155">
+        <StackPanel.Resources>
+            <local:Person x:Key="PersonLee" Name="LeeSunSin" Juso="Sea"/>
+        </StackPanel.Resources>
+        
+        <TextBox Text="{Binding Source={StaticResource PersonLee},Path=Name}"></TextBox>
+        <TextBox Text="{Binding Source={StaticResource PersonLee},Path=Name , UpdateSourceTrigger=LostFocus}"></TextBox>
+        <TextBox Text="{Binding Source={StaticResource PersonLee},Path=Name , UpdateSourceTrigger=PropertyChanged}"
+></TextBox>
+        <TextBox Name="txtExlpicit"  Text="{Binding Source={StaticResource PersonLee},Path=Name , UpdateSourceTrigger=Explicit
+}"></TextBox>
+        <Button Name="updateSource" Click="updateSource_Click">UpdateSource</Button>
+     </StackPanel>
+</Window>

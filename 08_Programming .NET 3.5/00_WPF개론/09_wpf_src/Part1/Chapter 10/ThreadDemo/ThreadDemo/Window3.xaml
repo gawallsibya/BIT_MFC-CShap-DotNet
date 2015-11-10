@@ -1,0 +1,26 @@
+﻿<Window x:Class="ThreadDemo.Window3"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    Title="Window3" Height="300" Width="300">
+    <Window.Resources>
+        <Storyboard x:Key="myAni" >
+            <DoubleAnimation 
+                Storyboard.TargetName="txState" 
+                Storyboard.TargetProperty="Opacity" 
+                From="1" To="0" Duration="0:0:1" RepeatBehavior="Forever"  
+                   AutoReverse="True"/>
+        </Storyboard>
+    </Window.Resources>
+
+    <Grid Height="45">
+        <TextBlock Name="txState" Margin="10,10,0,16.02" Width="120" 
+                                             HorizontalAlignment="Left">
+           Not connected...
+        </TextBlock>
+        <Button Margin="0,5.98,12,16.02" Name="StartOrStop" 
+                 Click="StartOrStop_Click" HorizontalAlignment="Right" 
+                             Width="122">
+            Start
+        </Button>
+    </Grid>
+</Window>

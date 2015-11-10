@@ -1,0 +1,22 @@
+﻿using System;
+class DataTypeInfo
+{
+    static void Main()
+    {
+        int data1 = 1;
+        float data2 = 10.5f;
+	// 두 값이 같은지 비교
+        Console.WriteLine("data1과 data2는 {0}", data1.Equals(data2));
+	// CTS 형식 변환
+        Console.WriteLine("data1 타입:{0}", data1.GetType());
+        Console.WriteLine("data2 타입:{0}", data2.GetType());
+	// 메서드로 숫자를 문자 형태로 출력
+        Console.WriteLine("data2의 문자열:{0}", data2.ToString());
+	// 시스템 내부에서 data2를 가리키는 고유 값
+        Console.WriteLine("data2의 해쉬코드:{0}", data2.GetHashCode());
+	// int형 변수의 기본형이 System.ValueType(값 형식)
+        Console.WriteLine("data1의 BaseType:{0}", data1.GetType().BaseType);
+	// 문자열은 기본형이 System.Object(참조 자료)
+        Console.WriteLine("문자열의 BaseType:{0}", "문자열".GetType().BaseType);
+    }
+}

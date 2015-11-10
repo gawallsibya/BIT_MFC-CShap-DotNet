@@ -1,0 +1,13 @@
+﻿<Window x:Class="WPFControls.ImageSample"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    Title="ImageSample" Height="300" Width="300">
+    <Grid>
+        <Grid.Resources>
+            <BitmapImage x:Key="myImage" UriSource="Sunset.JPG"></BitmapImage>
+            <CroppedBitmap x:Key="cropImage" Source="{StaticResource myImage}" SourceRect="800,400,200,200"></CroppedBitmap>
+        </Grid.Resources>
+        <Image Source="{StaticResource cropImage}"  Stretch="None" ></Image>
+        
+    </Grid>
+</Window>

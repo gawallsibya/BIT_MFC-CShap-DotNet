@@ -1,0 +1,48 @@
+<html>
+<body>
+<pre>
+<h1>Build Log</h1>
+<h3>
+--------------------Configuration: CriticalSectionDemo - Win32 Debug--------------------
+</h3>
+<h3>Command Lines</h3>
+Creating command line "rc.exe /l 0x412 /fo"Debug/CriticalSectionDemo.res" /d "_DEBUG" /d "_AFXDLL" "C:\Documents and Settings\Administrator\πŸ≈¡ »≠∏È\15_Process_thread\03_SN_CriticalSection\CriticalSectionDemo.rc"" 
+Creating temporary file "C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\RSP14B.tmp" with contents
+[
+/nologo /MDd /W3 /Gm /GX /ZI /Od /D "WIN32" /D "_DEBUG" /D "_WINDOWS" /D "_AFXDLL" /D "_MBCS" /Fp"Debug/CriticalSectionDemo.pch" /Yu"stdafx.h" /Fo"Debug/" /Fd"Debug/" /FD /GZ /c 
+"C:\Documents and Settings\Administrator\πŸ≈¡ »≠∏È\15_Process_thread\03_SN_CriticalSection\CriticalSectionDemo.cpp"
+"C:\Documents and Settings\Administrator\πŸ≈¡ »≠∏È\15_Process_thread\03_SN_CriticalSection\CriticalSectionDemoDlg.cpp"
+]
+Creating command line "cl.exe @C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\RSP14B.tmp" 
+Creating temporary file "C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\RSP14C.tmp" with contents
+[
+/nologo /MDd /W3 /Gm /GX /ZI /Od /D "WIN32" /D "_DEBUG" /D "_WINDOWS" /D "_AFXDLL" /D "_MBCS" /Fp"Debug/CriticalSectionDemo.pch" /Yc"stdafx.h" /Fo"Debug/" /Fd"Debug/" /FD /GZ /c 
+"C:\Documents and Settings\Administrator\πŸ≈¡ »≠∏È\15_Process_thread\03_SN_CriticalSection\StdAfx.cpp"
+]
+Creating command line "cl.exe @C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\RSP14C.tmp" 
+Creating temporary file "C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\RSP14D.tmp" with contents
+[
+/nologo /subsystem:windows /incremental:yes /pdb:"Debug/CriticalSectionDemo.pdb" /debug /machine:I386 /out:"Debug/CriticalSectionDemo.exe" /pdbtype:sept 
+".\Debug\CriticalSectionDemo.obj"
+".\Debug\CriticalSectionDemoDlg.obj"
+".\Debug\StdAfx.obj"
+".\Debug\CriticalSectionDemo.res"
+]
+Creating command line "link.exe @C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\RSP14D.tmp"
+<h3>Output Window</h3>
+Compiling resources...
+Compiling...
+StdAfx.cpp
+Compiling...
+CriticalSectionDemo.cpp
+CriticalSectionDemoDlg.cpp
+Generating Code...
+Linking...
+
+
+
+<h3>Results</h3>
+CriticalSectionDemo.exe - 0 error(s), 0 warning(s)
+</pre>
+</body>
+</html>

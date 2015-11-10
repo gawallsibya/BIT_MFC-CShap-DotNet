@@ -1,0 +1,32 @@
+﻿<Window x:Class="ResourceDemo.Window4"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    Title="Window4" Height="300" Width="300">
+    <Canvas>
+        <Canvas.Resources>
+            <XmlDataProvider x:Key="myBooks" XPath="MyBooks/Books" >
+                <x:XData>
+                    <MyBooks xmlns="">
+                        <Books>
+                            <Book>
+                                <Title>난중 일기</Title>
+                                <Author>이 순 신</Author>
+                            </Book>
+                            <Book>
+                                <Title>마산 기행</Title>
+                                <Author>이 상 은</Author>
+                            </Book>
+                            <Book>
+                                <Title>욱곡 바다</Title>
+                                <Author>이 성 훈</Author>
+                            </Book>
+                            
+                        </Books>
+                    </MyBooks>
+                </x:XData>
+                
+            </XmlDataProvider>
+        </Canvas.Resources>
+        <ListBox Canvas.Left="28" Canvas.Top="48" Height="165" Name="listBox1" Width="207" DataContext="{DynamicResource myBooks}" ItemsSource="{Binding Mode=Default, XPath=/MyBooks/Books/Book/Title}" />
+    </Canvas>
+</Window>

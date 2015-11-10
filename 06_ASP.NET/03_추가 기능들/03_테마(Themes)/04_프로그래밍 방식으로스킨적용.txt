@@ -1,0 +1,51 @@
+<%@ Page Language="C#" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<script runat="server">
+    protected void Page_PreInit(object sender, EventArgs e)
+    {
+        switch (Request.QueryString["Theme"])
+        {
+            case "Autumn":
+                Page.Theme = "Autumn";
+                break;
+            case "Summer" :
+                Page.Theme = "Summer";
+                break;
+            default :
+                Page.Theme = "Autumn";
+                break;
+        }
+    }
+
+    protected void Button1_Click(object sender, EventArgs e)
+    {
+        Response.Redirect("Ex04.aspx?Theme=Autumn");    
+    }
+
+    protected void Button2_Click(object sender, EventArgs e)
+    {
+        Response.Redirect("Ex04.aspx?Theme=Summer");
+    }
+</script>
+
+<html xmlns="http://www.w3.org/1999/xhtml" >
+<head runat="server">
+    <title>제목 없음</title>
+</head>
+<body>
+    <form id="form1" runat="server">
+    <div>
+        <h3>동적 테마 예제</h3>
+        
+        테마 선택 : 
+        <asp:Button ID="Button1" runat="server" Text="가을 테마" OnClick="Button1_Click" />&nbsp;
+        <asp:Button ID="Button2" runat="server" Text="여름 테마" OnClick="Button2_Click" />
+        <p></p>
+        <asp:TextBox ID="TextBox1" runat="server" Text="TextBox 입니다."></asp:TextBox><br />
+        <asp:Label ID="Label1" runat="server" Text="Label 입니다."></asp:Label>
+    </div>
+    </form>
+</body>
+</html>

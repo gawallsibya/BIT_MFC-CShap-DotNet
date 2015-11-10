@@ -1,0 +1,174 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="WPFControls.App" Collapsed="true">
+    <Position X="0.5" Y="1" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>App.xaml.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="WPFControls.Window1" Collapsed="true">
+    <Position X="5.75" Y="5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>BorderSample.xaml.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="WPFControls.BulletDecorator" Collapsed="true">
+    <Position X="2.25" Y="1" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>BulletDecorator.xaml.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="WPFControls.CanvasSample" Collapsed="true">
+    <Position X="4" Y="1" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>CanvasSample.xaml.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="WPFControls.CheckBoxSample" Collapsed="true">
+    <Position X="5.75" Y="1" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>CheckBoxSample.xaml.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="WPFControls.ComboboxSample" Collapsed="true">
+    <Position X="0.5" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ComboBoxSample.xaml.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="WPFControls.ContextMenu" Collapsed="true">
+    <Position X="2.25" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ContextMenuSample.xaml.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="WPFControls.DockPanelSample" Collapsed="true">
+    <Position X="4" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>DockPanelSample.xaml.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="WPFControls.DocumentViwerSample" Collapsed="true">
+    <Position X="5.75" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>DocumentViewerSample.xaml.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="WPFControls.ExpanderSample" Collapsed="true">
+    <Position X="7.5" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ExpanderSample.xaml.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="WPFControls.FlowDocumentPageViewer" Collapsed="true">
+    <Position X="0.5" Y="3" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>FlowDocumentPageViewerSample.xaml.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="WPFControls.FlowDocumentReader" Collapsed="true">
+    <Position X="2.25" Y="3" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>FlowDocumentReaderSample.xaml.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="WPFControls.FlowDocumentScrollViewerSample" Collapsed="true">
+    <Position X="4" Y="3" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>FlowDocumentScrollViewerSample.xaml.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="WPFControls.FrameSample" Collapsed="true">
+    <Position X="5.75" Y="3" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>FrameSample.xaml.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="WPFControls.GridSample" Collapsed="true">
+    <Position X="7.5" Y="3" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>GridSample.xaml.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="WPFControls.GridSplitterSample" Collapsed="true">
+    <Position X="0.5" Y="4" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>GridSplitterSample.xaml.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="WPFControls.GroupBox" Collapsed="true">
+    <Position X="2.25" Y="4" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>GroupBoxSample.xaml.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="WPFControls.ImageSample" Collapsed="true">
+    <Position X="4" Y="4" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ImageSample.xaml.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="WPFControls.LabelSample" Collapsed="true">
+    <Position X="5.75" Y="4" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>LabelSample.xaml.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="WPFControls.ListBoxSample" Collapsed="true">
+    <Position X="7.5" Y="4" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ListBoxSample.xaml.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="WPFControls.ListViewSample" Collapsed="true">
+    <Position X="0.5" Y="5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ListViewSample.xaml.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="WPFControls.Properties.Resources" Collapsed="true">
+    <Position X="2.25" Y="5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAABEAAAAQAAAAAAAAAAAAAAAIA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="WPFControls.Properties.Settings" Collapsed="true">
+    <Position X="4" Y="5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAIAAAAAABAAAAAAAAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="System.Windows.Controls.ListView">
+    <Position X="1.75" Y="7.5" Width="1.5" />
+    <TypeIdentifier />
+    <ShowAsAssociation>
+      <Property Name="View" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="System.Windows.Controls.ViewBase" Collapsed="true">
+    <Position X="4.5" Y="8" Width="1.5" />
+    <TypeIdentifier />
+  </Class>
+  <Font Name="맑은 고딕" Size="9" />
+</ClassDiagram>

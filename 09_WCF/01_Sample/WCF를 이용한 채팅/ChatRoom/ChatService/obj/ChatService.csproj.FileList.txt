@@ -1,0 +1,12 @@
+bin\Debug\ChatService.exe.config
+bin\Debug\ChatService.exe
+bin\Debug\ChatService.pdb
+obj\Debug\ResolveAssemblyReference.cache
+obj\Debug\ChatService.exe
+obj\Debug\ChatService.pdb
+bin\Release\ChatService.exe.config
+bin\Release\ChatService.exe
+bin\Release\ChatService.pdb
+obj\Release\ResolveAssemblyReference.cache
+obj\Release\ChatService.exe
+obj\Release\ChatService.pdb

@@ -1,0 +1,10 @@
+1. C#에서 component 사용방법
+    1) 해당 component를 참조 추가한다.
+        - 참조 추가명
+    2) 참조 추가된 컴포넌트를 using namespace 처리한다.
+        using 참조 추가명
+    3) 코드에서 해당 CoClass 개체를 생성한다.
+       참조추가명.클래스명 data = new 클래스명();
+        data.메서드 사용가능하다.
+
+2. dll은 import 해서 사용하면 된다.

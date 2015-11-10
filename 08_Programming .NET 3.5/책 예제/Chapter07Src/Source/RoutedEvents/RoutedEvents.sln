@@ -1,0 +1,20 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 10.00
+# Visual Studio 2008
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RoutedEvents", "RoutedEvents\RoutedEvents.csproj", "{0415E75F-C5A5-481D-A99A-0D1DBB82AE8F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{0415E75F-C5A5-481D-A99A-0D1DBB82AE8F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0415E75F-C5A5-481D-A99A-0D1DBB82AE8F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0415E75F-C5A5-481D-A99A-0D1DBB82AE8F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0415E75F-C5A5-481D-A99A-0D1DBB82AE8F}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

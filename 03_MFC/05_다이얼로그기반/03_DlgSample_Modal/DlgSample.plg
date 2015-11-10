@@ -1,0 +1,60 @@
+<html>
+<body>
+<pre>
+<h1>Build Log</h1>
+<h3>
+--------------------Configuration: DlgSample - Win32 Debug--------------------
+</h3>
+<h3>Command Lines</h3>
+Creating command line "rc.exe /l 0x412 /fo"Debug/DlgSample.res" /d "_DEBUG" /d "_AFXDLL" "C:\Documents and Settings\최창민\바탕 화면\MFC신규수업진행\05_다이얼로그기반\03_DlgSample_Modal\DlgSample.rc"" 
+Creating temporary file "C:\DOCUME~1\최창민\LOCALS~1\Temp\RSP32.tmp" with contents
+[
+/nologo /MDd /W3 /Gm /GX /ZI /Od /D "WIN32" /D "_DEBUG" /D "_WINDOWS" /D "_AFXDLL" /D "_MBCS" /Fp"Debug/DlgSample.pch" /Yu"stdafx.h" /Fo"Debug/" /Fd"Debug/" /FD /GZ /c 
+"C:\Documents and Settings\최창민\바탕 화면\MFC신규수업진행\05_다이얼로그기반\03_DlgSample_Modal\ChildView.cpp"
+"C:\Documents and Settings\최창민\바탕 화면\MFC신규수업진행\05_다이얼로그기반\03_DlgSample_Modal\DlgSample.cpp"
+"C:\Documents and Settings\최창민\바탕 화면\MFC신규수업진행\05_다이얼로그기반\03_DlgSample_Modal\MainFrm.cpp"
+"C:\Documents and Settings\최창민\바탕 화면\MFC신규수업진행\05_다이얼로그기반\03_DlgSample_Modal\MyDialog.cpp"
+"C:\Documents and Settings\최창민\바탕 화면\MFC신규수업진행\05_다이얼로그기반\03_DlgSample_Modal\NumEdit.cpp"
+"C:\Documents and Settings\최창민\바탕 화면\MFC신규수업진행\05_다이얼로그기반\03_DlgSample_Modal\XPButton.cpp"
+]
+Creating command line "cl.exe @"C:\DOCUME~1\최창민\LOCALS~1\Temp\RSP32.tmp"" 
+Creating temporary file "C:\DOCUME~1\최창민\LOCALS~1\Temp\RSP33.tmp" with contents
+[
+/nologo /MDd /W3 /Gm /GX /ZI /Od /D "WIN32" /D "_DEBUG" /D "_WINDOWS" /D "_AFXDLL" /D "_MBCS" /Fp"Debug/DlgSample.pch" /Yc"stdafx.h" /Fo"Debug/" /Fd"Debug/" /FD /GZ /c 
+"C:\Documents and Settings\최창민\바탕 화면\MFC신규수업진행\05_다이얼로그기반\03_DlgSample_Modal\StdAfx.cpp"
+]
+Creating command line "cl.exe @"C:\DOCUME~1\최창민\LOCALS~1\Temp\RSP33.tmp"" 
+Creating temporary file "C:\DOCUME~1\최창민\LOCALS~1\Temp\RSP34.tmp" with contents
+[
+/nologo /subsystem:windows /incremental:yes /pdb:"Debug/DlgSample.pdb" /debug /machine:I386 /out:"Debug/DlgSample.exe" /pdbtype:sept 
+".\Debug\ChildView.obj"
+".\Debug\DlgSample.obj"
+".\Debug\MainFrm.obj"
+".\Debug\MyDialog.obj"
+".\Debug\NumEdit.obj"
+".\Debug\StdAfx.obj"
+".\Debug\XPButton.obj"
+".\Debug\DlgSample.res"
+]
+Creating command line "link.exe @"C:\DOCUME~1\최창민\LOCALS~1\Temp\RSP34.tmp""
+<h3>Output Window</h3>
+Compiling resources...
+Compiling...
+StdAfx.cpp
+Compiling...
+ChildView.cpp
+DlgSample.cpp
+MainFrm.cpp
+MyDialog.cpp
+NumEdit.cpp
+XPButton.cpp
+Generating Code...
+Linking...
+
+
+
+<h3>Results</h3>
+DlgSample.exe - 0 error(s), 0 warning(s)
+</pre>
+</body>
+</html>

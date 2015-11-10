@@ -1,0 +1,108 @@
+
+
+--------------------------------------------------------------------------------------------
+데이터 캐싱
+
+사용자가 생성한 데이터 자체를 저장하는 캐싱 기법
+데이터 캐시에 저장된 데이터는 웹 사이트 전체에서 사용될 수 있다.
+
+사용예)
+
+Cache["myKey"] = myValue;		// 데이터 캐시에 데이터 저장
+myValue = Cache["myKey"];		// 데이터 캐시에서 데이터 참조 
+
+
+// pubs DB의 authors 테이블의 레코드 중 최상위 3개의 레코드를 DataSet 개체에 담고
+// 이 DataSet 개체를 데이터 캐시에 저장하여 GridView 컨트롤 바인딩 작업에 사용하는 예제
+
+// Web.Config
+<?xml version="1.0"?>
+<configuration>
+	<connectionStrings>
+		<add name="pubsConnectionString" connectionString="Data Source=.;Initial Catalog=pubs;User ID=sa;Password=sa" providerName="System.Data.SqlClient"/>
+	</connectionStrings>	
+</configuration>
+
+
+
+// Default.aspx
+-  DataSet myDataSet = (DataSet)Cache["MyDataSet"];
+   => MyDataSet이라는 이름의 데이터 케시에서 DataSet 개체를 뽑아냄
+      최초 페이지 로드시 데이터 캐시를 참조하면 데이터 캐시는 NULL을 반환함
+
+-  
+
+<%@ Page Language="C#" %>
+<%@ Import Namespace="System.Data" %>
+<%@ Import Namespace="System.Data.SqlClient" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<script runat="server">
+    protected void Page_Load(object sender, EventArgs e)
+    {
+        DataSet myDataSet = (DataSet)Cache["MyDataSet"];
+
+        if (myDataSet == null)
+        {
+            SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["pubsConnectionString"].ConnectionString);
+            SqlCommand cmd = new SqlCommand("select top 3 * from Authors", conn);
+            SqlDataAdapter ad = new SqlDataAdapter(cmd);
+            DataSet ds = new DataSet();
+            ad.Fill(ds);
+
+            Cache["MyDataSet"] = ds;
+            myDataSet = ds;            
+            
+            Label1.Text = "데이터 캐시 새로 생성";
+        }
+        else
+        {
+            Label1.Text = "데이터 캐시 사용";
+        }
+
+        GridView1.DataSource = myDataSet;
+        GridView1.DataBind();
+    }
+</script>
+
+<html xmlns="http://www.w3.org/1999/xhtml" >
+<head id="Head1" runat="server">
+    <title>제목 없음</title>
+</head>
+<body>
+    <form id="form1" runat="server">
+    <div>
+        <h3>데이터 캐싱 예제</h3>
+        
+        <asp:GridView ID="GridView1" runat="server">
+        </asp:GridView>        
+        <p></p>        
+        <asp:Label ID="Label1" runat="server"></asp:Label>         
+    </div>
+    </form>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

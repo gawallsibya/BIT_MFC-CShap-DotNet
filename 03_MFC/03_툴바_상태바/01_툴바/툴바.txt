@@ -1,0 +1,193 @@
+도구모음, 상태표시줄 리바
+
+- CToolBar
+  도구 모음을 만드는 클래스
+
+- CStatusBar
+  MFC의 상태 표시줄 클래스
+
+- CReBar
+  컨트롤을 포함하고 있는 클래스
+
+
+------------------------------------------------------------------
+
+[ 도구 모음 ]
+
+목적 : 한번의 클릭만으로 자주 사용하는 명령을 이용하기 위한 것
+
+구현 : 통상 메뉴와 동일한 명령 ID를 사용한다.
+
+       도구 모음 단추 클릭시 WM_COMMAND 메시지 발생(메뉴와 동일)
+
+
+
+[ 도구모음 생성 및 초기화 -------------------------------------------------------------------
+
+
+1) CToolBar::Create() 로 생성이 이루어진다.
+
+ - 응용 프로그램의 자식이므로 Frame창이 생성될 때 만들어지는것이
+   일반적임
+   즉, Frame::OnCreate에서 통상 구현한다.
+	
+    
+    CToolBar m_wndToolBar;
+
+    ex1)
+    m_wndToolBar.Create(this);	//m_wndToolBar.Create(this, WS_CHILD|WS_VISIBLE|CBRS_TOP);
+				//두번째 인자는 묵시적으로 지정된다.
+    ex2)
+    m_wndToolBar.Create(this, WS_CHILD|WS_VISIBLE|CBRS_BOTTOM);// 도구모음을 윈창 아래에 생성
+
+    ex3)
+    m_wndToolBar.Create(this);
+    m_wndToolBar.SetBarStyle( (m_wndToolBar.GetBarStyle() &
+	~CBRS_TOP) | CBRS_BOTTOM);
+
+
+  - 이번 과정은 도구 모음만 만들어지고 만들어진 도구모음에는 아무것도 
+    들어있지 않은 상태가 된다.
+
+
+2) 도구 모음에 단추를 추가 
+
+
+   ex1) 첫번째 방법
+
+   - CToolBar::LoadBitmap() 을 호출해 사용할 이미지가 들어있는 리소스를 부름
+   - CToolBar::SetButtons()를 호출하여 도구 모음에 단추의 수와 단추의 명령 ID를 지정
+
+   // RC 파일에서
+   IDR_TOOLBAR BITMAP ToolBar.bmp	// 단 bmp는 16*15픽셀
+
+   // cpp 파일에서
+   static UINT nButtonIDs[] = { 	// 단추의 크기는 24*25픽셀
+	ID_FILE_NEW,
+	ID_FILE_OPEN,
+	ID_FILE_SAVE};
+
+   m_wndToolBar.Create(this);
+   m_wndToolBar.LoadBitmap(IDR_TOOLBAR);	
+   m_wndToolBar.SetButtons(nButtonIDs, 3);
+
+
+  ex2) 두번째 방법 : AppWizard가 사용하는 방법
+
+   - RC 파일에 툴바의 ID를 기술
+
+   // RC 파일에서
+   IDR_TOOLBAR BITMAP ToolBar.bmp
+
+   IDR_TOOLBAR TOOLBAR 16,15
+   BEGIN
+	BUTTON ID_FILE_NEW
+	BUTTON ID_FILE_OPEN
+	BUTTON ID_FILE_SAVE
+   END
+
+   // CPP 파일에서
+   m_wndToolBar.Create(this);
+   m_wndToolBar.LoadToolBar(IDR_TOOLBAR);
+
+
+  **) 팁 : 만들어진 툴바에 텍스트 추가하기
+
+  m_wndToolBar.Create(this);
+  m_wndToolBar.LoadToolBar(IDR_TOOLBAR);
+  
+  m_wndToolBar.SetButtonText(0, _T("NEW"));
+  m_wndToolBar.SetButtonText(1, _T("OPEN"));
+  m_wndToolBar.SetButtonText(2, _T("SAVE"));
+
+  m_wndToolBar.SetSizes( CSIZE(48, 42), CSIZE(40, 19));
+
+
+  **) 디폴트 툴바는 표준 누름 단추임(클릭시 내려가고 놓으면 올라옴)
+
+      재 클릭할때까지 내려가있는 라디오 누름 단추 구현
+
+    m_wndToolBar.Create(this);
+    m_wndToolBar.LoadToolBar(IDR_TOOLBAR); 
+   
+    m_wndToolBar.SetButtonStyle(0, TBBS_CHECKBOX);	// 확인 누름단추
+    m_wndToolBar.SetButtonStyle(1, TBBS_CHECKGROUP);	// 라디오 누름 단추
+    m_wndToolBar.SetButtonStyle(2, TBBS_CHECKGROUP);	// 라디오 누름 단추
+
+
+    int nState = m_wndToolBar.GetToolBarCtrl().GetState(ID_FILE_OPEN);
+
+    m_wndToolBar.GetToolBarCtrl().SetState(ID_FILE_OPEN, nState|TBSTATE_CHECKED);
+
+
+
+3) 고정 및 자유 이동
+
+    CBRS_ALIGN_LEFT		프레임 창의 왼쪽에 고정되도록 한다.
+    CBRS_ALIGN_RIGHT		프레임 창의 오른쪽에 고정되도록 한다.
+    CBRS_ALIGN_TOP		프레임 창의 위쪽에 고정되도록 한다.
+    CBRS_ALIGN_BOTTOM		프레임 창의 아래쪽에 고정되도록 한다.
+    CBRS_ALIGN_ANY		프레임 창 어느쪽에도 고정되도록 한다.
+
+
+   // 어디나 고정되도록 설정
+   m_wndToolBar.EnableDocking(CBRS_ALIGN_ANY);
+   EnableDocking( CBRS_ALIGN_ANY);
+
+   // 위 아래만 고정되도록 설정 
+   m_wndToolBar.EnableDocking( CBRS_ALIGIN_TOP| CBRS_ALIGN_BOTTOM);
+   EnableDocking( CBRS_ALIGN_ANY);
+
+
+4) 도구모음 나타내기 숨기기
+
+   void CMainFrame::OnViewToolBar()
+   {
+	ShowControlBar(&m_wndToolBar, (m_wndToolBar.GetStyle() &
+	 WS_VISIBLE) == 0, FALSE);
+
+   }
+
+
+5) 도구모음 설명 및 상태 설명 텍스트
+   RC파일 확인
+
+
+6) 누름단추 이외의 컨트롤을 도구 모음에 추가하기
+   #define IDC_COMBOBOX 100
+   CComboBox m_wndComboBox;		// 선언
+	
+    m_wndToolBar.SetButtonInfo( 12, IDC_COMBOBOX, TBBS_SEPARATOR, 100);
+    CRect rect;
+    m_wndToolBar.GetItemRect(12, &rect);
+    rect.bottom = rect.top + 6;
+    m_wndComboBox.Create(WS_CHILD | WS_VISIBLE | WS_VSCROLL |
+	CBS_SORT | CBS_DROPDOWNLIST, rect, (CWnd*)&m_wndToolBar, IDC_COMBOBOX);
+
+   m_wndComboBox.AddString("빨간색");
+   m_wndComboBox.AddString("녹  색");
+   m_wndComboBox.AddString("파란색");
+
+
+
+
+7)  핸들러 구현 
+BOOL CMainFrame::OnCommand(WPARAM wParam, LPARAM lParam) 
+{
+	if( LOWORD(wParam)  == IDC_COMBOBOX ) // ID 조사.
+	{
+		if( HIWORD(wParam) == CBN_SELCHANGE)
+		{
+			char temp[20];
+			int n = m_wndComboBox.GetCurSel();
+			m_wndComboBox.GetLBText(n, temp);
+
+			AfxMessageBox(temp);
+		}
+	}
+
+	return CFrameWnd::OnCommand(wParam, lParam);
+}
+
+
+      

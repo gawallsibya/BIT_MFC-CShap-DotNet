@@ -1,0 +1,9 @@
+obj\Debug\ResolveAssemblyReference.cache
+obj\Debug\WCFClient_WinForm.Properties.Resources.resources
+obj\Debug\WCFClient_WinForm.csproj.GenerateResource.Cache
+bin\Debug\WCFClient_WinForm.exe.config
+bin\Debug\WCFClient_WinForm.exe
+bin\Debug\WCFClient_WinForm.pdb
+obj\Debug\WCFClient_WinForm.exe
+obj\Debug\WCFClient_WinForm.pdb
+obj\Debug\WCFClient_WinForm.Form1.resources

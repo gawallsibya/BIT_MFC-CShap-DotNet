@@ -1,0 +1,43 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Text;
+using System.Windows;
+using System.Windows.Controls;
+using System.Windows.Data;
+using System.Windows.Documents;
+using System.Windows.Input;
+using System.Windows.Media;
+using System.Windows.Media.Imaging;
+using System.Windows.Navigation;
+using System.Windows.Shapes;
+using System.Windows.Controls.Primitives;
+
+namespace LayoutDemo
+{
+    /// <summary>
+    /// Window1.xaml에 대한 상호 작용 논리
+    /// </summary>
+    public partial class Window1 : Window
+    {
+        public Window1()
+        {
+            InitializeComponent();
+        }
+
+        private void button2_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void Window_Loaded(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void button1_Click(object sender, RoutedEventArgs e)
+        {
+            Rect rect = LayoutInformation.GetLayoutSlot(sender as FrameworkElement);
+
+        }
+    }
+}

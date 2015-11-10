@@ -1,0 +1,36 @@
+﻿<Window x:Class="WPFControls.DataGridSample"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    Title="DataGridSample" Height="300" Width="510">
+    <Grid xmlns:toolKit="clr-namespace:Microsoft.Windows.Controls;assembly=WPFToolkit">
+        <Grid.Resources>
+            <XmlDataProvider x:Key="myData" XPath="Company/Employees/*">
+                <x:XData>
+                    <Company xmlns="">
+                        <Employees>
+                            <Employee>
+                                <FirstName>Lee</FirstName>
+                                <LastName>sungJeae</LastName>
+                                <EmployeeNumber>A12345</EmployeeNumber>
+                            </Employee>
+                            <Employee>
+                                <FirstName>Kim</FirstName>
+                                <LastName>Munsu</LastName>
+                                <EmployeeNumber>K2373</EmployeeNumber>
+                            </Employee>
+                        </Employees>
+                    </Company>
+                </x:XData>
+
+            </XmlDataProvider>
+        </Grid.Resources>
+        <toolKit:DataGrid ItemsSource="{Binding Source={StaticResource myData}}" AutoGenerateColumns="False">
+            <toolKit:DataGrid.Columns >
+                <toolKit:DataGridTextColumn Header="FirstName" Width="SizeToCells" Binding="{Binding XPath=FirstName}"/>
+                <toolKit:DataGridTextColumn Header="LastName" Width="SizeToCells" Binding="{Binding XPath=LastName}"/>
+                <toolKit:DataGridTextColumn Header="EmployeeNumber" Width="SizeToCells" Binding="{Binding XPath=EmployeeNumber}"/>
+            </toolKit:DataGrid.Columns>
+        </toolKit:DataGrid>
+        
+    </Grid>
+</Window>

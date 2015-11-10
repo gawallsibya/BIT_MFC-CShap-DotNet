@@ -1,0 +1,27 @@
+C:\Documents and Settings\Alex Horovitz\My Documents\Software\LibertyAssociatesRepository\DotNet3Src\PhotosByJane\PhotoCooperative\PhotoCooperative\obj\Debug\Checkout.g.cs
+C:\Documents and Settings\Alex Horovitz\My Documents\Software\LibertyAssociatesRepository\DotNet3Src\PhotosByJane\PhotoCooperative\PhotoCooperative\obj\Debug\Window1.g.cs
+C:\Documents and Settings\Alex Horovitz\My Documents\Software\LibertyAssociatesRepository\DotNet3Src\PhotosByJane\PhotoCooperative\PhotoCooperative\obj\Debug\App.g.cs
+C:\Documents and Settings\Alex Horovitz\My Documents\Software\LibertyAssociatesRepository\DotNet3Src\PhotosByJane\PhotoCooperative\PhotoCooperative\obj\Debug\GeneratedInternalTypeHelper.g.cs
+C:\Documents and Settings\Alex Horovitz\My Documents\Software\LibertyAssociatesRepository\DotNet3Src\PhotosByJane\PhotoCooperative\PhotoCooperative\obj\Debug\PhotoCooperative_MarkupCompile.cache
+C:\Documents and Settings\Alex Horovitz\My Documents\Software\LibertyAssociatesRepository\DotNet3Src\PhotosByJane\PhotoCooperative\PhotoCooperative\obj\Debug\PhotoCooperative_MarkupCompile.lref
+.\bin\Debug\PhotoCooperative.exe
+.\bin\Debug\PhotoCooperative.pdb
+.\bin\Debug\PresentationDesignDeveloper.dll
+.\bin\Debug\PresentationDesignFramework.dll
+.\bin\Debug\PresentationDesignCore.dll
+.\bin\Debug\Draft.PresentationDesignMarkup.dll
+obj\Debug\ResolveAssemblyReference.cache
+C:\Documents and Settings\Alex Horovitz\My Documents\Software\LibertyAssociatesRepository\DotNet3Src\PhotoCooperative\PhotoCooperative\obj\Debug\Checkout.g.cs
+C:\Documents and Settings\Alex Horovitz\My Documents\Software\LibertyAssociatesRepository\DotNet3Src\PhotoCooperative\PhotoCooperative\obj\Debug\Window1.g.cs
+C:\Documents and Settings\Alex Horovitz\My Documents\Software\LibertyAssociatesRepository\DotNet3Src\PhotoCooperative\PhotoCooperative\obj\Debug\App.g.cs
+C:\Documents and Settings\Alex Horovitz\My Documents\Software\LibertyAssociatesRepository\DotNet3Src\PhotoCooperative\PhotoCooperative\obj\Debug\GeneratedInternalTypeHelper.g.cs
+C:\Documents and Settings\Alex Horovitz\My Documents\Software\LibertyAssociatesRepository\DotNet3Src\PhotoCooperative\PhotoCooperative\obj\Debug\PhotoCooperative_MarkupCompile.cache
+C:\Documents and Settings\Alex Horovitz\My Documents\Software\LibertyAssociatesRepository\DotNet3Src\PhotoCooperative\PhotoCooperative\obj\Debug\PhotoCooperative_MarkupCompile.lref
+C:\Documents and Settings\Alex Horovitz\My Documents\Software\LibertyAssociatesRepository\DotNet3Src\PhotoCooperative\PhotoCooperative\obj\Debug\App.baml
+C:\Documents and Settings\Alex Horovitz\My Documents\Software\LibertyAssociatesRepository\DotNet3Src\PhotoCooperative\PhotoCooperative\obj\Debug\Checkout.baml
+C:\Documents and Settings\Alex Horovitz\My Documents\Software\LibertyAssociatesRepository\DotNet3Src\PhotoCooperative\PhotoCooperative\obj\Debug\Window1.baml
+obj\Debug\PhotoCooperative.g.resources
+obj\Debug\PhotoCooperative.Properties.Resources.resources
+obj\Debug\PhotoCooperative.csproj.GenerateResource.Cache
+obj\Debug\PhotoCooperative.exe
+obj\Debug\PhotoCooperative.pdb

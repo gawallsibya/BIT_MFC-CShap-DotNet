@@ -1,0 +1,42 @@
+<html>
+<body>
+<pre>
+<h1>Build Log</h1>
+<h3>
+--------------------Configuration: Count - Win32 Debug--------------------
+</h3>
+<h3>Command Lines</h3>
+Creating command line "rc.exe /l 0x412 /fo"Debug/Count.res" /d "_DEBUG" /d "_AFXDLL" "H:\03_고급반 수업자료\02_MFC\02_MFC\16_Process_thread\01_Thread\Count.rc"" 
+Creating temporary file "C:\DOCUME~1\최창민\LOCALS~1\Temp\RSP24.tmp" with contents
+[
+/nologo /MDd /W3 /Gm /GX /ZI /Od /D "WIN32" /D "_DEBUG" /D "_WINDOWS" /D "_AFXDLL" /D "_MBCS" /Fp"Debug/Count.pch" /Yu"stdafx.h" /Fo"Debug/" /Fd"Debug/" /FD /GZ /c 
+"H:\03_고급반 수업자료\02_MFC\02_MFC\16_Process_thread\01_Thread\Count.cpp"
+"H:\03_고급반 수업자료\02_MFC\02_MFC\16_Process_thread\01_Thread\CountDlg.cpp"
+"H:\03_고급반 수업자료\02_MFC\02_MFC\16_Process_thread\01_Thread\MyThread.cpp"
+]
+Creating command line "cl.exe @"C:\DOCUME~1\최창민\LOCALS~1\Temp\RSP24.tmp"" 
+Creating temporary file "C:\DOCUME~1\최창민\LOCALS~1\Temp\RSP25.tmp" with contents
+[
+/nologo /MDd /W3 /Gm /GX /ZI /Od /D "WIN32" /D "_DEBUG" /D "_WINDOWS" /D "_AFXDLL" /D "_MBCS" /Fp"Debug/Count.pch" /Yc"stdafx.h" /Fo"Debug/" /Fd"Debug/" /FD /GZ /c 
+"H:\03_고급반 수업자료\02_MFC\02_MFC\16_Process_thread\01_Thread\StdAfx.cpp"
+]
+Creating command line "cl.exe @"C:\DOCUME~1\최창민\LOCALS~1\Temp\RSP25.tmp"" 
+Creating command line "link.exe /nologo /subsystem:windows /incremental:yes /pdb:"Debug/Count.pdb" /debug /machine:I386 /out:"Debug/Count.exe" /pdbtype:sept  ".\Debug\Count.obj" ".\Debug\CountDlg.obj" ".\Debug\MyThread.obj" ".\Debug\StdAfx.obj" ".\Debug\Count.res" "
+<h3>Output Window</h3>
+Compiling resources...
+Compiling...
+StdAfx.cpp
+Compiling...
+Count.cpp
+CountDlg.cpp
+MyThread.cpp
+Generating Code...
+Linking...
+
+
+
+<h3>Results</h3>
+Count.exe - 0 error(s), 0 warning(s)
+</pre>
+</body>
+</html>

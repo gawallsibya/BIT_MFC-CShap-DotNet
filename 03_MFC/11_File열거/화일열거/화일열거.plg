@@ -1,0 +1,27 @@
+<html>
+<body>
+<pre>
+<h1>Build Log</h1>
+<h3>
+--------------------Configuration: 화일열거 - Win32 Debug--------------------
+</h3>
+<h3>Command Lines</h3>
+Creating temporary file "C:\DOCUME~1\choiccmm\LOCALS~1\Temp\RSP215.tmp" with contents
+[
+/nologo /MTd /W3 /Gm /GX /ZI /Od /D "WIN32" /D "_DEBUG" /D "_CONSOLE" /D "_MBCS" /Fp"Debug/화일열거.pch" /YX /Fo"Debug/" /Fd"Debug/" /FD /GZ /c 
+"D:\01_강의_자료\03_고급\03_MFC\1_강의\10일차_IO\화일열거\a.cpp"
+]
+Creating command line "cl.exe @C:\DOCUME~1\choiccmm\LOCALS~1\Temp\RSP215.tmp" 
+Creating command line "link.exe /nologo /subsystem:console /incremental:yes /pdb:"Debug/화일열거.pdb" /debug /machine:I386 /out:"Debug/화일열거.exe" /pdbtype:sept  ".\Debug\a.obj" "
+<h3>Output Window</h3>
+Compiling...
+a.cpp
+Linking...
+
+
+
+<h3>Results</h3>
+화일열거.exe - 0 error(s), 0 warning(s)
+</pre>
+</body>
+</html>

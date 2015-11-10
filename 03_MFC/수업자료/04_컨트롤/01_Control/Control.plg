@@ -1,0 +1,42 @@
+<html>
+<body>
+<pre>
+<h1>Build Log</h1>
+<h3>
+--------------------Configuration: Control - Win32 Debug--------------------
+</h3>
+<h3>Command Lines</h3>
+Creating command line "rc.exe /l 0x412 /fo"Debug/Control.res" /d "_DEBUG" /d "_AFXDLL" "C:\Documents and Settings\최창민\바탕 화면\03_MFC\1_강의\5일차_Mouse_KEYBOARD\Sample\Control\Control.rc"" 
+Creating temporary file "C:\DOCUME~1\최창민\LOCALS~1\Temp\RSP1D.tmp" with contents
+[
+/nologo /MDd /W3 /Gm /GX /ZI /Od /D "WIN32" /D "_DEBUG" /D "_WINDOWS" /D "_AFXDLL" /D "_MBCS" /Fp"Debug/Control.pch" /Yu"stdafx.h" /Fo"Debug/" /Fd"Debug/" /FD /GZ /c 
+"C:\Documents and Settings\최창민\바탕 화면\03_MFC\1_강의\5일차_Mouse_KEYBOARD\Sample\Control\ChildView.cpp"
+"C:\Documents and Settings\최창민\바탕 화면\03_MFC\1_강의\5일차_Mouse_KEYBOARD\Sample\Control\Control.cpp"
+"C:\Documents and Settings\최창민\바탕 화면\03_MFC\1_강의\5일차_Mouse_KEYBOARD\Sample\Control\MainFrm.cpp"
+]
+Creating command line "cl.exe @"C:\DOCUME~1\최창민\LOCALS~1\Temp\RSP1D.tmp"" 
+Creating temporary file "C:\DOCUME~1\최창민\LOCALS~1\Temp\RSP1E.tmp" with contents
+[
+/nologo /MDd /W3 /Gm /GX /ZI /Od /D "WIN32" /D "_DEBUG" /D "_WINDOWS" /D "_AFXDLL" /D "_MBCS" /Fp"Debug/Control.pch" /Yc"stdafx.h" /Fo"Debug/" /Fd"Debug/" /FD /GZ /c 
+"C:\Documents and Settings\최창민\바탕 화면\03_MFC\1_강의\5일차_Mouse_KEYBOARD\Sample\Control\StdAfx.cpp"
+]
+Creating command line "cl.exe @"C:\DOCUME~1\최창민\LOCALS~1\Temp\RSP1E.tmp"" 
+Creating command line "link.exe /nologo /subsystem:windows /incremental:yes /pdb:"Debug/Control.pdb" /debug /machine:I386 /out:"Debug/Control.exe" /pdbtype:sept  ".\Debug\ChildView.obj" ".\Debug\Control.obj" ".\Debug\MainFrm.obj" ".\Debug\StdAfx.obj" ".\Debug\Control.res" "
+<h3>Output Window</h3>
+Compiling resources...
+Compiling...
+StdAfx.cpp
+Compiling...
+ChildView.cpp
+Control.cpp
+MainFrm.cpp
+Generating Code...
+Linking...
+
+
+
+<h3>Results</h3>
+Control.exe - 0 error(s), 0 warning(s)
+</pre>
+</body>
+</html>

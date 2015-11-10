@@ -1,0 +1,542 @@
+//Microsoft Developer Studio generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// Korean resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_KOR)
+#ifdef _WIN32
+LANGUAGE LANG_KOREAN, SUBLANG_DEFAULT
+#pragma code_page(949)
+#endif //_WIN32
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#define _AFX_NO_SPLITTER_RESOURCES\r\n"
+    "#define _AFX_NO_OLE_RESOURCES\r\n"
+    "#define _AFX_NO_TRACKER_RESOURCES\r\n"
+    "#define _AFX_NO_PROPERTY_RESOURCES\r\n"
+    "\r\n"
+    "#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_KOR)\r\n"
+    "#ifdef _WIN32\r\n"
+    "LANGUAGE 18, 1\r\n"
+    "#pragma code_page(949)\r\n"
+    "#endif\r\n"
+    "#include ""res\\VideoShop2.rc2""  // non-Microsoft Visual C++ edited resources\r\n"
+    "#include ""l.kor\\afxres.rc""          // Standard components\r\n"
+    "#include ""l.kor\\afxprint.rc""        // printing/print preview resources\r\n"
+    "#include ""l.kor\\afxdb.rc""           // Database resources\r\n"
+    "#endif\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+IDR_MAINFRAME           ICON    DISCARDABLE     "res\\VideoShop2.ico"
+IDR_VIDEOSTYPE          ICON    DISCARDABLE     "res\\VideoShop2Doc.ico"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Bitmap
+//
+
+IDR_MAINFRAME           BITMAP  MOVEABLE PURE   "res\\Toolbar.bmp"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Toolbar
+//
+
+IDR_MAINFRAME TOOLBAR DISCARDABLE  16, 15
+BEGIN
+    BUTTON      ID_EDIT_CUT
+    BUTTON      ID_EDIT_COPY
+    BUTTON      ID_EDIT_PASTE
+    SEPARATOR
+    BUTTON      ID_FILE_PRINT
+    SEPARATOR
+    BUTTON      ID_RECORD_FIRST
+    BUTTON      ID_RECORD_PREV
+    BUTTON      ID_RECORD_NEXT
+    BUTTON      ID_RECORD_LAST
+    SEPARATOR
+    BUTTON      ID_APP_ABOUT
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Menu
+//
+
+IDR_MAINFRAME MENU PRELOAD DISCARDABLE 
+BEGIN
+    POPUP "파일(&F)"
+    BEGIN
+        MENUITEM "인쇄(&P)...\tCtrl+P",         ID_FILE_PRINT
+        MENUITEM "미리 보기(&V)",               ID_FILE_PRINT_PREVIEW
+        MENUITEM "인쇄 설정(&R)...",            ID_FILE_PRINT_SETUP
+        MENUITEM SEPARATOR
+        MENUITEM "종료(&X)",                    ID_APP_EXIT
+    END
+    POPUP "편집(&E)"
+    BEGIN
+        MENUITEM "실행 취소(&U)\tCtrl+Z",       ID_EDIT_UNDO
+        MENUITEM SEPARATOR
+        MENUITEM "잘라내기(&T)\tCtrl+X",        ID_EDIT_CUT
+        MENUITEM "복사(&C)\tCtrl+C",            ID_EDIT_COPY
+        MENUITEM "붙여넣기(&P)\tCtrl+V",        ID_EDIT_PASTE
+    END
+    POPUP "레코드(&R)"
+    BEGIN
+        MENUITEM "첫째 레코드(&F)",             ID_RECORD_FIRST
+        MENUITEM "이전 레코드(&P)",             ID_RECORD_PREV
+        MENUITEM "다음 레코드(&N)",             ID_RECORD_NEXT
+        MENUITEM "마지막 레코드(&L)",           ID_RECORD_LAST
+    END
+    POPUP "레코드편집"
+    BEGIN
+        MENUITEM "대여내역",                    ID_RECORD_CUSTOM
+        MENUITEM "테이프",                      ID_RECORD_TAPE
+        MENUITEM "고객추가",                    ID_CUSTAPE_ADD
+    END
+    POPUP "보기(&V)"
+    BEGIN
+        MENUITEM "도구모음줄(&T)",              ID_VIEW_TOOLBAR
+        MENUITEM "상태표시줄(&S)",              ID_VIEW_STATUS_BAR
+    END
+    POPUP "도움말(&H)"
+    BEGIN
+        MENUITEM "VideoShop2 정보(&A)...",      ID_APP_ABOUT
+    END
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Accelerator
+//
+
+IDR_MAINFRAME ACCELERATORS PRELOAD MOVEABLE PURE 
+BEGIN
+    "P",            ID_FILE_PRINT,          VIRTKEY, CONTROL
+    "Z",            ID_EDIT_UNDO,           VIRTKEY, CONTROL
+    "X",            ID_EDIT_CUT,            VIRTKEY, CONTROL
+    "C",            ID_EDIT_COPY,           VIRTKEY, CONTROL
+    "V",            ID_EDIT_PASTE,          VIRTKEY, CONTROL
+    VK_BACK,        ID_EDIT_UNDO,           VIRTKEY, ALT
+    VK_DELETE,      ID_EDIT_CUT,            VIRTKEY, SHIFT
+    VK_INSERT,      ID_EDIT_COPY,           VIRTKEY, CONTROL
+    VK_INSERT,      ID_EDIT_PASTE,          VIRTKEY, SHIFT
+    VK_F6,          ID_NEXT_PANE,           VIRTKEY 
+    VK_F6,          ID_PREV_PANE,           VIRTKEY, SHIFT
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_ABOUTBOX DIALOG DISCARDABLE  0, 0, 217, 55
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "VideoShop2 정보"
+FONT 9, "굴림"
+BEGIN
+    ICON            IDR_MAINFRAME,IDC_STATIC,11,17,20,20
+    LTEXT           "VideoShop2 버전 1.0",IDC_STATIC,40,10,119,8,SS_NOPREFIX
+    LTEXT           "Copyright (C) 1998",IDC_STATIC,40,25,119,8
+    DEFPUSHBUTTON   "확인",IDOK,178,7,32,14,WS_GROUP
+END
+
+IDD_VIDEOSHOP2_FORM DIALOG DISCARDABLE  0, 0, 376, 273
+STYLE WS_CHILD
+FONT 9, "굴림"
+BEGIN
+    CTEXT           "고객성명",IDC_STATIC,165,28,39,15,SS_CENTERIMAGE
+    CTEXT           "전화번호",IDC_STATIC,40,55,39,15,SS_CENTERIMAGE
+    CTEXT           "주    소",IDC_STATIC,40,83,39,15,SS_CENTERIMAGE
+    EDITTEXT        IDC_NAME_EDIT,215,29,82,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_TEL_EDIT,86,55,102,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_ADDRESS_EDIT,86,84,216,14,ES_AUTOHSCROLL
+    CONTROL         "List1",IDC_TAPE_LIST,"SysListView32",LVS_REPORT | 
+                    LVS_ALIGNLEFT | WS_BORDER | WS_TABSTOP,7,125,362,141
+    CTEXT           "대여정보",IDC_STATIC,13,108,39,15,SS_CENTERIMAGE
+    CTEXT           "고객번호",IDC_STATIC,40,28,39,15,SS_CENTERIMAGE
+    EDITTEXT        IDC_CODE_EDIT,86,29,55,14,ES_RIGHT | ES_AUTOHSCROLL
+    PUSHBUTTON      "추가완료",IDC_ADD_BTN,327,29,42,14
+    PUSHBUTTON      "추가취소",IDC_ADDCANCEL_BTN,327,50,42,14
+    PUSHBUTTON      "삭제",IDC_DELETE_BTN,327,73,42,13
+END
+
+IDD_CUSTAPE_DLG DIALOG DISCARDABLE  0, 0, 207, 237
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Dialog"
+FONT 10, "System"
+BEGIN
+    EDITTEXT        IDC_RENTDAY_EDIT,73,54,107,12,ES_AUTOHSCROLL
+    EDITTEXT        IDC_RECDAY_EDIT,73,74,107,12,ES_AUTOHSCROLL
+    EDITTEXT        IDC_TAPECODE_EDIT,18,107,55,12,ES_AUTOHSCROLL
+    EDITTEXT        IDC_TAPETTLE_EDIT,80,107,107,12,ES_AUTOHSCROLL
+    CONTROL         "List2",IDC_TITLE_LIST,"SysListView32",LVS_REPORT | 
+                    LVS_SINGLESEL | LVS_ALIGNLEFT | WS_BORDER | WS_TABSTOP,
+                    18,136,170,74
+    DEFPUSHBUTTON   "검색",IDOK,7,217,33,13
+    DEFPUSHBUTTON   "추가",ID_CUSTAPE_ADD,40,217,33,13
+    DEFPUSHBUTTON   "삭제",ID_CUSTAPE_DELETE,73,217,33,13
+    DEFPUSHBUTTON   "수정",ID_CUSTAPE_UPDATE,106,217,33,13
+    DEFPUSHBUTTON   "추가완료",ID_CUSTAPE_COMPLETE,139,217,32,13
+    PUSHBUTTON      "종료",IDCANCEL,172,217,28,13
+    EDITTEXT        IDC_CUSNAME_EDIT,73,16,107,12,ES_AUTOHSCROLL | 
+                    ES_READONLY | NOT WS_TABSTOP
+    EDITTEXT        IDC_CUSCODE_EDIT,73,35,107,12,ES_AUTOHSCROLL | 
+                    ES_READONLY | NOT WS_TABSTOP
+    CTEXT           "고객명",IDC_STATIC,18,18,37,9
+    CTEXT           "고객코드",IDC_STATIC,18,37,37,9
+    CTEXT           "테이프 선택",IDC_STATIC,18,124,48,9
+    CTEXT           "빌려간날짜",IDC_STATIC,18,57,43,9
+    CTEXT           "회수일자",IDC_STATIC,18,76,43,9
+    CTEXT           "빌린 테이프",IDC_STATIC,18,95,43,9
+END
+
+IDD_TAPE_DLG DIALOG DISCARDABLE  0, 0, 238, 159
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Dialog"
+FONT 10, "System"
+BEGIN
+    DEFPUSHBUTTON   "추가",IDOK,7,141,32,11
+    PUSHBUTTON      "종료",IDCANCEL,200,141,31,11
+    DEFPUSHBUTTON   "삭제",ID_TAPE_DELETE,111,141,32,11
+    CONTROL         "List1",IDC_TAPE_LIST,"SysListView32",LVS_REPORT | 
+                    LVS_ALIGNLEFT | WS_BORDER | WS_TABSTOP,7,7,224,128
+END
+
+IDD_INSTAPE_DLG DIALOG DISCARDABLE  0, 0, 187, 141
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Dialog"
+FONT 10, "System"
+BEGIN
+    DEFPUSHBUTTON   "확 인",IDOK,14,123,50,11
+    PUSHBUTTON      "취 소",IDCANCEL,120,123,50,11
+    CTEXT           "코드번호",IDC_STATIC,21,15,37,11,SS_CENTERIMAGE
+    EDITTEXT        IDC_CODE_EDIT,74,14,91,12,ES_AUTOHSCROLL
+    CTEXT           "영화제목",IDC_STATIC,21,32,37,11,SS_CENTERIMAGE
+    CTEXT           "입수일자",IDC_STATIC,21,50,37,11,SS_CENTERIMAGE
+    CTEXT           "감독",IDC_STATIC,21,68,37,11,SS_CENTERIMAGE
+    CTEXT           "주연",IDC_STATIC,21,86,37,11,SS_CENTERIMAGE
+    CTEXT           "금액",IDC_STATIC,21,103,37,11,SS_CENTERIMAGE
+    EDITTEXT        IDC_TITLE_EDIT,74,32,91,12,ES_AUTOHSCROLL
+    EDITTEXT        IDC_INDAY_EDIT,74,50,91,12,ES_AUTOHSCROLL
+    EDITTEXT        IDC_DIRECTOR_EDIT,74,67,91,12,ES_AUTOHSCROLL
+    EDITTEXT        IDC_ACTOR_EDIT,74,86,91,12,ES_AUTOHSCROLL
+    EDITTEXT        IDC_MONEY_EDIT,74,101,91,12,ES_AUTOHSCROLL
+END
+
+
+#ifndef _MAC
+/////////////////////////////////////////////////////////////////////////////
+//
+// Version
+//
+
+VS_VERSION_INFO VERSIONINFO
+ FILEVERSION 1,0,0,1
+ PRODUCTVERSION 1,0,0,1
+ FILEFLAGSMASK 0x3fL
+#ifdef _DEBUG
+ FILEFLAGS 0x1L
+#else
+ FILEFLAGS 0x0L
+#endif
+ FILEOS 0x4L
+ FILETYPE 0x1L
+ FILESUBTYPE 0x0L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "041204B0"
+        BEGIN
+            VALUE "CompanyName", "\0"
+            VALUE "FileDescription", "VideoShop2 MFC 응용 프로그램\0"
+            VALUE "FileVersion", "1, 0, 0, 1\0"
+            VALUE "InternalName", "VideoShop2\0"
+            VALUE "LegalCopyright", "Copyright (C) 1998\0"
+            VALUE "LegalTrademarks", "\0"
+            VALUE "OriginalFilename", "VideoShop2.EXE\0"
+            VALUE "ProductName", "VideoShop2 응용 프로그램\0"
+            VALUE "ProductVersion", "1, 0, 0, 1\0"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x412, 1200
+    END
+END
+
+#endif    // !_MAC
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO DISCARDABLE 
+BEGIN
+    IDD_ABOUTBOX, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 210
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 48
+    END
+
+    IDD_VIDEOSHOP2_FORM, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 369
+        VERTGUIDE, 13
+        VERTGUIDE, 40
+        VERTGUIDE, 86
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 266
+        HORZGUIDE, 43
+    END
+
+    IDD_CUSTAPE_DLG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 200
+        VERTGUIDE, 18
+        VERTGUIDE, 73
+        VERTGUIDE, 139
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 230
+        HORZGUIDE, 217
+    END
+
+    IDD_TAPE_DLG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 231
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 152
+    END
+
+    IDD_INSTAPE_DLG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 180
+        VERTGUIDE, 21
+        VERTGUIDE, 74
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 134
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDP_FAILED_OPEN_DATABASE "데이터베이스를 열 수 없음."
+END
+
+STRINGTABLE PRELOAD DISCARDABLE 
+BEGIN
+    IDR_MAINFRAME           "VideoShop2\n\nVideoS\n\n\nVideoShop2.Document\nVideoS Document"
+END
+
+STRINGTABLE PRELOAD DISCARDABLE 
+BEGIN
+    AFX_IDS_APP_TITLE       "VideoShop2"
+    AFX_IDS_IDLEMESSAGE     "준비"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_INDICATOR_EXT        "EXT"
+    ID_INDICATOR_CAPS       "CAP"
+    ID_INDICATOR_NUM        "NUM"
+    ID_INDICATOR_SCRL       "SCRL"
+    ID_INDICATOR_OVR        "OVR"
+    ID_INDICATOR_REC        "REC"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_FILE_PAGE_SETUP      "인쇄 옵션을 바꿉니다.\n쪽 설정"
+    ID_FILE_PRINT_SETUP     "프린터 및 인쇄 옵션을 바꿉니다.\n인쇄 설정"
+    ID_FILE_PRINT           "실행 중인 문서를 인쇄합니다.\n인쇄"
+    ID_FILE_PRINT_PREVIEW   "인쇄할 내용을 화면으로 미리 봅니다.\n미리 보기"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_APP_ABOUT            "프로그램 정보, 버전 번호 및 저작권을 나타냅니다.\n정보"
+    ID_APP_EXIT             "문서를 저장할지 물어보고 응용 프로그램을 종료합니다.\n종료"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_FILE_MRU_FILE1       "이 문서 열기"
+    ID_FILE_MRU_FILE2       "이 문서 열기"
+    ID_FILE_MRU_FILE3       "이 문서 열기"
+    ID_FILE_MRU_FILE4       "이 문서 열기"
+    ID_FILE_MRU_FILE5       "이 문서 열기"
+    ID_FILE_MRU_FILE6       "이 문서 열기"
+    ID_FILE_MRU_FILE7       "이 문서 열기"
+    ID_FILE_MRU_FILE8       "이 문서 열기"
+    ID_FILE_MRU_FILE9       "이 문서 열기"
+    ID_FILE_MRU_FILE10      "이 문서 열기"
+    ID_FILE_MRU_FILE11      "이 문서 열기"
+    ID_FILE_MRU_FILE12      "이 문서 열기"
+    ID_FILE_MRU_FILE13      "이 문서 열기"
+    ID_FILE_MRU_FILE14      "이 문서 열기"
+    ID_FILE_MRU_FILE15      "이 문서 열기"
+    ID_FILE_MRU_FILE16      "이 문서 열기"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_NEXT_PANE            "다음 창으로 전환합니다.\n다음 창"
+    ID_PREV_PANE            "이전 창으로 전환합니다.\n이전 창"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_WINDOW_SPLIT         "실행 중인 창을 여러 개로 나눕니다.\n나누기"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_EDIT_CLEAR           "선택된 내용을 지웁니다.\n지우기"
+    ID_EDIT_CLEAR_ALL       "모든 내용을 지웁니다.\n모두 지우기"
+    ID_EDIT_COPY            "선택된 내용을 복사하여 클립보드에 저장합니다.\n복사"
+    ID_EDIT_CUT             "선택된 내용을 잘라내어 클립보드에 저장합니다.\n잘라내기"
+    ID_EDIT_FIND            "지정된 텍스트를 찾습니다.\n찾기"
+    ID_EDIT_PASTE           "클립보드 내용을 삽입합니다.\n붙여넣기"
+    ID_EDIT_REPEAT          "마지막 동작을 반복합니다.\n반복"
+    ID_EDIT_REPLACE         "지정된 문자열을 다른 문자열로 바꿉니다.\n바꾸기"
+    ID_EDIT_SELECT_ALL      "문서 전체를 선택합니다.\n전체 선택"
+    ID_EDIT_UNDO            "마지막으로 실행한 것을 취소합니다.\n실행 취소"
+    ID_EDIT_REDO            "이전에 취소한 동작을 다시 실행합니다.\n다시 실행"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_VIEW_TOOLBAR         "도구모음줄을 보이거나 감춥니다.\n도구모음줄 전환"
+    ID_VIEW_STATUS_BAR      "상태표시줄을 보이거나 감춥니다.\n상태표시줄 전환"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_RECORD_FIRST         "첫째 레코드로 이동합니다.\n첫째 레코드"
+    ID_RECORD_LAST          "마지막 레코드로 이동합니다.\n마지막 레코드"
+    ID_RECORD_NEXT          "다음 레코드로 이동합니다.\n다음 레코드"
+    ID_RECORD_PREV          "이전 레코드로 이동합니다.\n이전 레코드"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    AFX_IDS_SCSIZE          "창 크기를 바꿉니다."
+    AFX_IDS_SCMOVE          "창 위치를 바꿉니다."
+    AFX_IDS_SCMINIMIZE      "창을 아이콘으로 축소합니다."
+    AFX_IDS_SCMAXIMIZE      "창을 전체 화면으로 확대합니다."
+    AFX_IDS_SCNEXTWINDOW    "다음 문서 창으로 전환합니다."
+    AFX_IDS_SCPREVWINDOW    "이전 문서 창으로 전환합니다."
+    AFX_IDS_SCCLOSE         "사용 중인 창을 닫고 문서를 저장할지 묻습니다."
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    AFX_IDS_SCRESTORE       "창을 보통 크기로 복구합니다."
+    AFX_IDS_SCTASKLIST      "작업 목록을 활성화합니다."
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    AFX_IDS_PREVIEW_CLOSE   "미리 보기 모드를 닫습니다.\n미리 보기 취소"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_RECORD_UPDATE        "자료를 Update합니다.\nUpdate"
+    ID_RECORD_ADDTAPE       "테이프를 추가합니다.\n테잎추가"
+    ID_RECORD_CUSTOM        "고객에 대한 자료를 편비합니다."
+    ID_RECORD_TAPE          "비디오 테이프의 내용을 편집합니다."
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_CUSTAPE_ADD          "현재 화면에 있는 고객을 추가 시킵니다.\n고객추가"
+END
+
+#endif    // Korean resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+#define _AFX_NO_SPLITTER_RESOURCES
+#define _AFX_NO_OLE_RESOURCES
+#define _AFX_NO_TRACKER_RESOURCES
+#define _AFX_NO_PROPERTY_RESOURCES
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_KOR)
+#ifdef _WIN32
+LANGUAGE 18, 1
+#pragma code_page(949)
+#endif
+#include "res\VideoShop2.rc2"  // non-Microsoft Visual C++ edited resources
+#include "l.kor\afxres.rc"          // Standard components
+#include "l.kor\afxprint.rc"        // printing/print preview resources
+#include "l.kor\afxdb.rc"           // Database resources
+#endif
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

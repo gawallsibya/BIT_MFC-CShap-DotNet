@@ -1,0 +1,6 @@
+obj\Debug\ResolveAssemblyReference.cache
+bin\Debug\Server_Console.exe.config
+bin\Debug\Server_Console.exe
+bin\Debug\Server_Console.pdb
+obj\Debug\Server_Console.exe
+obj\Debug\Server_Console.pdb

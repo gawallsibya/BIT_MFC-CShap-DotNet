@@ -1,0 +1,26 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Programming .NET 3.5 :: CardSpaces Demo</title>
+</head>
+<body>
+<form method="post" action="Results.aspx">
+    <div>
+        <object type="application/x-informationcard" name="identityToken">
+           <param name="tokenType" value="urn:oasis:names:tc:SAML:1.0:assertion"/>
+           <param name="issuer" value="http://schemas.xmlsoap.org/ws/2005/05/identity/issuer/self"/>
+             <param name="requiredClaims" value ="
+                http://schemas.xmlsoap.org/ws/2005/05/identity/claims/givenname 
+                http://schemas.xmlsoap.org/ws/2005/05/identity/claims/surname 
+                http://schemas.xmlsoap.org/ws/2005/05/identity/claims/locality 
+                http://schemas.xmlsoap.org/ws/2005/05/identity/claims/country 
+                http://schemas.xmlsoap.org/ws/2005/05/identity/claims/dateofbirth
+                http://schemas.xmlsoap.org/ws/2005/05/identity/claims/emailaddress
+                http://schemas.xmlsoap.org/ws/2005/05/identity/claims/privatepersonalidentifier"/>        
+            </object>
+
+        <input type="submit" name="SignInButton" value="Authenticate using CardSpace!" />
+</form>
+</body>
+</html>

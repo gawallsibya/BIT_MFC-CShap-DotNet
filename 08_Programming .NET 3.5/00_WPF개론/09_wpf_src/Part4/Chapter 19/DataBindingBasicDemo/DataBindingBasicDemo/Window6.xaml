@@ -1,0 +1,26 @@
+﻿<Window x:Class="DataBindingBasicDemo.Window6"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    Title="Window6" Height="300" Width="471">
+    <Window.Resources>
+        <XmlDataProvider x:Key="BookList" Source="Books.xml"
+                       XPath="Books"/>
+        <DataTemplate x:Key="dataTemplate">
+            <TextBlock Text="{Binding XPath=@name}" />
+        </DataTemplate>
+    </Window.Resources>
+    <Canvas DataContext="{Binding Source={StaticResource BookList}}" Width="448">
+
+        <ListBox Name="genreListBox"
+            ItemsSource="{Binding XPath=Genre}"
+            ItemTemplate="{StaticResource dataTemplate}"
+            IsSynchronizedWithCurrentItem="true" Height="98" Canvas.Left="25" Canvas.Top="30" Width="127" />
+        <ListBox DataContext="{Binding ElementName=genreListBox , Path=SelectedItem}"
+              ItemsSource="{Binding XPath=Book}"
+              ItemTemplate="{StaticResource dataTemplate}" Height="98" Canvas.Left="192" Canvas.Top="30" Width="197" />
+        <Button Canvas.Left="25" Canvas.Top="166" Height="23" Name="btnMovePrevious" Width="75" Click="btnMovePrevious_Click">&lt;&lt;</Button>
+        <Button Canvas.Left="114" Canvas.Top="166" Height="23" Name="btnMoveNext" Width="75" Click="btnMoveNext_Click">&gt;&gt;</Button>
+        <Button Canvas.Left="207" Canvas.Top="166" Height="23" Name="btnfilter" Width="75" Click="btnfilter_Click">Filter</Button>
+        <Button Canvas.Left="305" Canvas.Top="166" Height="23" Name="btnUnfilter" Width="75" Click="btnUnfilter_Click">UnFilter</Button>
+    </Canvas>
+</Window>

@@ -1,0 +1,15 @@
+﻿<Window x:Class="WPFControls.ToolBarSample"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    Title="ToolBarSample" Height="300" Width="300">
+    <Grid HorizontalAlignment="Left" VerticalAlignment="Top" Height="29" Width="215">
+        <ToolBarTray >
+            <ToolBar >
+                <Button>Hello</Button>
+                <Button>WPF</Button>
+                <Button>New</Button>
+                <Button>Presentation</Button>
+            </ToolBar>
+        </ToolBarTray>
+    </Grid>
+</Window>

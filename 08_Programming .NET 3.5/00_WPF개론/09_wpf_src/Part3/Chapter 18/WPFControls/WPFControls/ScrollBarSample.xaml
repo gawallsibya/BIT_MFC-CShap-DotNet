@@ -1,0 +1,9 @@
+﻿<Window x:Class="WPFControls.ScrollBarSample"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    Title="ScrollBarSample" Height="300" Width="300">
+    <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center"> 
+        <ScrollBar Name="sb" Orientation="Horizontal" Width="200" Height="20" Maximum="100" VerticalAlignment="Center" VerticalContentAlignment="Center" HorizontalAlignment="Center"></ScrollBar>
+        <TextBox Text="{Binding ElementName=sb ,Path=Value}"></TextBox>
+    </StackPanel>
+</Window>

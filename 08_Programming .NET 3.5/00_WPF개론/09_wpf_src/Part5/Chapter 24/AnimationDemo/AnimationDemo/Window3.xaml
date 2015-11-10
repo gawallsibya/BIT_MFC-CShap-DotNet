@@ -1,0 +1,35 @@
+﻿<Window x:Class="AnimationDemo.Window3"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    Title="Window3" Height="438" Width="529">
+    <Window.Resources>
+        <PathGeometry x:Key="pahGeometry">
+            <PathFigure IsClosed="True" StartPoint="352.5,113.5">
+                <BezierSegment Point1="352.5,175.90817673088" Point2="273.70211597022,226.5" Point3="176.5,226.5" IsSmoothJoin="True"/>
+                <BezierSegment Point1="79.2978840297803,226.5" Point2="0.5,175.90817673088" Point3="0.5,113.5" IsSmoothJoin="True"/>
+                <BezierSegment Point1="0.5,51.0918232691203" Point2="79.2978840297803,0.5" Point3="176.5,0.5" IsSmoothJoin="True"/>
+                <BezierSegment Point1="273.70211597022,0.5" Point2="352.5,51.0918232691203" Point3="352.5,113.5" IsSmoothJoin="True"/>
+            </PathFigure>
+        </PathGeometry>
+
+        <DoubleAnimationUsingPath x:Key="animationX"
+              
+                PathGeometry="{StaticResource pahGeometry}"
+                Source="X" 
+                Duration="0:0:5"  />
+        
+        <DoubleAnimationUsingPath x:Key="animationY"
+              
+                PathGeometry="{StaticResource pahGeometry}"
+                Source="Y" 
+                Duration="0:0:5"  />
+
+
+    </Window.Resources>
+
+        <Canvas Height="363" Width="435">
+        <Path Stroke="Black" StrokeThickness="1" Data="{StaticResource pahGeometry}" Height="227" Canvas.Left="28" Canvas.Top="29" Width="353"></Path>
+            <Ellipse Canvas.Left="361" Canvas.Top="140" Height="38" Name="ellipse1" Stroke="Black" Width="39" Fill="Beige" />
+        <Button Canvas.Left="28" Canvas.Top="322" Height="27" Name="btnStartAnimation" Width="99" Click="btnStartAnimation_Click">StartAnimation</Button>
+    </Canvas>
+</Window>

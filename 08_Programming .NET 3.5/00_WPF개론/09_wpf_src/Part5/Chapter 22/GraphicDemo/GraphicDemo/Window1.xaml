@@ -1,0 +1,13 @@
+﻿<Window x:Class="GraphicDemo.Window1"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    Title="Window1" Height="600" Width="600">
+    <Border BorderBrush="Black" BorderThickness="1" Margin="100">
+        <Canvas>
+            <Rectangle Width="100" Height="100"  Stroke="Black" Fill="Coral" MouseDown="Rectangle_MouseDown_1"></Rectangle>
+            <Rectangle Width="100" Height="100" Canvas.Left="100" Canvas.Top="100" Stroke="Black" MouseDown="Rectangle_MouseDown" Fill="Beige">
+                
+            </Rectangle>
+        </Canvas>
+    </Border>
+</Window>

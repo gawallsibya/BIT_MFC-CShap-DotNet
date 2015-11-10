@@ -1,0 +1,116 @@
+*) 실습 3)--------------------------------------------------------------------------------------
+
+[ODBC를 통한 데이터베이스 관리]
+
+ CRecordView를 사용하여
+
+ 데이터 수정, 삭제, 검색, 추가 기능 구현
+
+주 제 : 비디오 고객 관리 
+DB    : MS-ACCESS
+
+
+코드 분석----------------
+
+
+1. DB 테이블 3개와 연동할 각각의 RecordSet 클래스 구현
+
+   생성된 3개의 객체를 View에서 관리
+
+
+2. View와 연동된 폼뷰의 컨트롤 구성
+
+   - 직접 DB의 컬럼(필드)와 연결시키지 않음
+
+   - ResourceToDB()  &  DBToResource() : 사용자 정의 함수를 통해
+     간접으로 DB에 접근
+
+
+3. 각각의 Dlg 구현
+
+   - IDD_TAPE_DLG : 		테이프 목록 보여주기
+   - IDD_INSTAPE_DLG :		테이프 추가, 삭제 
+   - IDD_CUSTAPE_DLG : 		테이프 대여 관련 
+
+
+4. void CVideoShop2View::OnInitialUpdate()
+   
+   - 메인 화면 초기화   
+     DBToResource();
+	
+     UpdateList();	// 3개의 테이블을 조인하여 데이터 검색 방법
+
+5. BOOL CVideoShop2Doc::OnNewDocument()
+
+   - DB 연결 ( 주 레코드셋으로 연결 )
+   - Open 상태 유지 
+   
+
+6. BOOL CVideoShop2View::OnMove(UINT nIDMove) 
+
+   - 테이블의 레코드 이동 
+
+7. 레코드 이동과 관련된 핸들러 확인
+   View::OnRecordFirst()     View::OnUpdateRecordFirst()
+   View::OnRecordLast()	     View::OnUpdateRecordLast()
+   View::OnRecordNext()      View::OnUpdateRecordNext()
+   View::OnRecordPrev()      View::OnUpdateRecordPrev()
+
+
+
+---------------------------------------------------------------------------------
+[ 추가, 삭제 기능 확인 ]
+
+1. 추가 
+
+[레코드편집/고개추가]메뉴 클릭시
+
+// 추가 환경 설정
+void CVideoShop2View::OnCustapeAdd() 
+
+// DB에 추가 
+void CVideoShop2View::OnAddBtn() 
+
+// DB 저장 취소 
+// void CVideoShop2View::OnAddcancelBtn() 
+
+
+2. 삭제 
+
+[폼뷰의 삭제 ]
+void CVideoShop2View::OnDeleteBtn() 
+
+
+*) 프로그램 종료
+void CVideoShop2View::OnDestroy() 
+
+
+[ 메인 테이블만 지속적으로 열린 상태고 나머지 테이블은 필요시 열고 닫음 ]
+-------------------------------------------------------------------------------
+[ 삭제, 추가 기능 확인 ]
+
+Tape 테이블 관련 코드 확인(CTapeDlg)
+
+1. 초기화 
+BOOL CTapeDlg::OnInitDialog() 
+
+void CTapeDlg::ViewList()
+
+
+2. 삭제 
+
+// 사용자가 선택한 위치의 인덱스 저장 
+void CTapeDlg::OnItemchangedTapeList(NMHDR* pNMHDR, LRESULT* pResult) 
+
+// 삭제 핸들러
+void CTapeDlg::OnTapeDelete() 
+
+// 실제 DB정보 삭제 함수
+void CTapeDlg::RecordDelete(CString delstr)
+
+
+3. 추가 
+void CTapeDlg::OnOK() 
+
+   
+ 

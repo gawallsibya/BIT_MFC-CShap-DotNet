@@ -1,0 +1,113 @@
+*) 실습 2)--------------------------------------------------------------------------------------
+
+[ODBC를 통한 데이터베이스 관리]
+
+ CRecordView를 사용하여
+
+
+주 제 : 비디오 고객 관리 
+DB    : MS-ACCESS
+
+
+1. 프로젝트 생성
+   VideoShop2
+
+   SDI ==> STEP2) Database View Without File Support 
+   
+   [ Data Source.... ]
+
+    - ODBC에서 설정한 DB가져옴
+    - RecordsetType : Dynaset(기본 타입임)
+    - Customer 테이블 선택
+
+    ==> STEP6) 새로운 클래스가 하나 더 추가가 되어 있슴
+               View는 CRecordView로 상속처리됨
+
+
+ 
+2. 소스 추가 
+  void CVideoShop2View::OnInitialUpdate()
+  {
+	m_pSet = &GetDocument()->m_videoShop2Set;
+	if(m_pSet->IsOpen())
+		m_pSet->Close();
+
+	m_pSet->Open();
+	CRecordView::OnInitialUpdate();
+
+   }
+
+
+3. 맴버 함수 추가 
+
+// 툴바 버튼이나 메뉴를 이용하여 호출됨
+// 정해진 핸들러임
+BOOL CVideoShop2View::OnMove(UINT nIDMoveCommand)
+{
+	switch (nIDMoveCommand)
+	{
+	case ID_RECORD_PREV:
+		if(m_pSet->IsBOF())
+			break;
+		m_pSet->MovePrev();
+		break;
+	case ID_RECORD_FIRST:
+		m_pSet->MoveFirst();
+		break;
+	case ID_RECORD_NEXT:
+		if(m_pSet->IsEOF())
+			break;
+		m_pSet->MoveNext();
+		break;
+	case ID_RECORD_LAST:
+		m_pSet->MoveLast();
+		break;
+	default:
+		ASSERT(FALSE);
+		break;
+	}
+	UpdateData(FALSE);
+
+	return TRUE;
+}
+
+
+4. 종료 처리 
+void CVideoShop2View::OnDestroy() 
+{
+	CRecordView::OnDestroy();
+	
+	// TODO: Add your message handler code here
+		if(m_pSet->IsOpen())
+		m_pSet->Close();
+}
+
+
+
+5. 폼뷰 UI 구성
+
+   고객번호    Edit
+   전화번호    Edit
+   주    소    Edit
+
+   ==> [클래스 위저드] => Member Varible에서 레코드셋 변수를 지정
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   
+ 

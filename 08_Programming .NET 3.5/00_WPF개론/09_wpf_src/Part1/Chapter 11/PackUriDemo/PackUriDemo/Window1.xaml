@@ -1,0 +1,12 @@
+﻿<Window x:Class="PackUriDemo.Window1"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    Title="Window1" Height="306" Width="362">
+    <Canvas Height="232" Width="333">
+        <Image Source="img10.jpg" Height="89.333" Canvas.Left="12" Canvas.Top="12" Width="133.333"></Image>
+        <Image Source="pack://application:,,,/img10.jpg" Height="89" Canvas.Left="172" Canvas.Top="12.333" Width="133"></Image>
+        <Image Source="/DemoComponent;component/img4.jpg" Height="89" Canvas.Left="12.333" Canvas.Top="143" Width="133"></Image>
+        <Image Source="/DemoComponent;component/images/img5.jpg" Height="89" Canvas.Left="172" Canvas.Top="144" Width="133"></Image>
+
+    </Canvas>
+</Window>

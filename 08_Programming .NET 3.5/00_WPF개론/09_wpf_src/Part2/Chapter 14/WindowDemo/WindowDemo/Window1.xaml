@@ -1,0 +1,15 @@
+﻿<Window x:Class="WindowDemo.Window1"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    Title="WindowDemo" Height="342" Width="476"
+    BorderThickness="10" BorderBrush="Blue" >
+    <!-- 여기서부터 클라이언트 영역 -->
+    <Grid Height="326" Width="406">
+        <Rectangle Stroke="Black" Margin="166,154,72,55" Fill="Aqua"></Rectangle>
+        <Ellipse Stroke="Black" Width="150" Margin="41,36,0,90" 
+                                    HorizontalAlignment="Left"/>
+        <Rectangle Margin="149,12,109,141" Stroke="Black" />
+    </Grid>
+    
+    <!-- 여기까지 클라이언트 영역 -->
+</Window>

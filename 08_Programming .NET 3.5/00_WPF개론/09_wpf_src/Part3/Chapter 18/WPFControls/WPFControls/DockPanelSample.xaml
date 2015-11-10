@@ -1,0 +1,12 @@
+﻿<Window x:Class="WPFControls.DockPanelSample"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    Title="DockPanelSample" Height="300" Width="300">
+    <DockPanel LastChildFill="True" Focusable="True">
+        <Grid DockPanel.Dock="Top" Height="50" Background="Azure"></Grid>
+        <Grid Focusable="True" DockPanel.Dock="Left" Width="50" Background="Green" MouseLeftButtonDown="Grid_MouseLeftButtonDown" >
+            <Button VerticalAlignment="Bottom">Hello</Button>
+        </Grid>
+        <Grid Background="Ivory"></Grid>
+    </DockPanel>
+</Window>

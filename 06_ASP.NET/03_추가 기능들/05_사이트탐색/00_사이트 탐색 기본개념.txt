@@ -1,0 +1,417 @@
+//-----------------------------------------------------------
+// 05. 사이트 탐색 기본 개념
+//------------------------------------------------------------
+
+
+[ 사이트 탐색이란? ]
+
+: 사이트맵 , 사이트 경로 (Home >> 열린마당 >> 메인)
+
+- 사용자가 일관된 방식으로 사이트를 탐색할 수 있는 기능을 제공하는 클래스 집합
+
+- 이를 사용하면 모든 페이지의 탐색 링크 정보를 중앙의 한 위치에서 관리하기 때문에
+
+  탐색 링크의 어떠한 변화에도 기민하게 대응이 가능함
+
+- 이러한 관리 패턴은 사이트 전체의 레이아웃을 한 곳에서 관리했던 마스터 페이지의 
+  
+  모습과 비슷하다.
+
+
+
+[ 사이트 맵 만들기 ]
+
+1. 새 항목 추가 
+   템플릿 : "사이트 맵"
+   이  름 : "Web.sitemap"  ( XML형식)
+   <추가>버튼 클릭
+
+
+2. 생성된 사이트 맵 파일을 솔루션 탐색기에서 확인
+
+3. Web.sitemap 파일을 더블클릭
+   기본적으로 생성된 구문확인 가능
+
+4. 수정
+
+
+   <?xml version="1.0" encoding="utf-8" ?>
+<siteMap xmlns="http://schemas.microsoft.com/AspNet/SiteMap-File-1.0" >
+  <siteMapNode url="Default.aspx" title="Home" description="메인 페이지">
+    <siteMapNode url="Introduce.aspx" title="사이트 소개" description="사이트 소개"/>
+    <siteMapNode url="Qna.aspx" title="Q&amp;A"  description="답변 게시판">
+      <siteMapNode url="AspNetBoard.aspx" title="ASP.NET 2.0 " description="ASP.NET 2.0 답변 게시판"/>
+      <siteMapNode url="BooksBoard.aspx" title="Books " description="책 관련 답변 게시판"/>
+    </siteMapNode>
+    <siteMapNode url="Lecture.aspx" title="강의실" description="개발 관련 강의실">
+      <siteMapNode url="Basis.aspx" title="기초 강의실" description="ASP.NET 2.0 개발을 위한 기초강의">
+        <siteMapNode url="Html.aspx" title="HTML" description="HTML 강의" />
+      </siteMapNode>
+      <siteMapNode url="Primary.aspx" title="초급 강의실" description="ASP.NET 2.0 개발을 위한 초급강의">
+        <siteMapNode url="CSharp.aspx" title="C# 2.0" description="C# 2.0 강의" />
+      </siteMapNode>
+      <siteMapNode url="Intermediate.aspx" title="중급 강의실" description="ASP.NET 2.0 개발을 위한 중급강의">
+        <siteMapNode url="XmlWebService.aspx" title="XML 웹서비스" description="XML 웹서비스 강의"/>
+      </siteMapNode>
+    </siteMapNode>
+  </siteMapNode>
+</siteMap>     
+
+
+특성		설명
+-----------------------------------------------------------------------------------
+title		탐색 링크(노드)의 제목을 지정
+description	<siteMapNode>요소를 설명하는 문구를 지정
+		탐색 링크 위로 마우스 포인터를 올렸을 때 나타나는 툴팁 문구를 지정
+url		탐색 링크를 클릭했을 때 이동할 페이지의 url 지정
+		이 url 특성은 사이트 맵 파일 내에서 ID 역할을 하므로 같은 사이트 맵
+		파일 내에서 동일한 url 특성 값을 지정하면 오류를 발생하게 됨 
+
+*) 위의 sitemap에 설정된 맵 계층 구조
+
+    Home
+	사이트 소개
+       Q&A
+	ASP.NET 2.0
+	Books
+       강의실
+	기초 강의실
+		HTML
+	초급 강의실
+		C# 2.0
+	중급 강의실
+		XML 웹 서비스
+
+----------------------------------------------------------------------------------------
+
+*) Web.sitemap 컨트롤
+   - SiteMapPath, TreeView, Menu를 통해 웹 페이지에서 탐색 링크로 표시됨
+
+      상단 탐색 메뉴 : Menu 컨트롤
+      좌특 탐색 메뉴 : TeeView 컨트롤
+      탐색 경로        : SiteMapPath 컨트롤 
+
+----------------------------------------------------------------------------------------
+
+    
+
+[ 탐색 컨트롤 사용하기 ]
+
+SiteMapPath 컨트롤
+
+- 사이트 맵 파일과 바인딩하여 다음과 같은 탐색경로를 표현하는 데 사용되는 컨트롤
+
+  home > 강의실 > 기초 강의실 > HTML
+
+
+// html.aspx
+
+<%@ Page Language="C#" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title>제목 없음</title>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div>
+            <h3>SiteMapPath 예제</h3>
+            
+            <asp:SiteMapPath ID="SiteMapPath1" runat="server">
+            </asp:SiteMapPath>
+        </div>
+    </form>
+</body>
+</html>
+
+
+
+
+// html.aspx 코드 개선 1
+// PathSeparator 속성
+
+<%@ Page Language="C#" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title>제목 없음</title>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div>
+            <h3>SiteMapPath 예제</h3>
+            
+            <asp:SiteMapPath ID="SiteMapPath1" runat="server" PathSeparator=" | ">
+            </asp:SiteMapPath>
+        </div>
+    </form>
+</body>
+</html>
+
+
+
+
+
+// html.aspx 코드 개선 2
+// Image 추가
+
+Images 폴더를 만들고 Image 파일 추가 
+
+<%@ Page Language="C#" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title>제목 없음</title>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div>
+            <h3>SiteMapPath 예제</h3>
+            
+            <asp:SiteMapPath ID="SiteMapPath1" runat="server">
+		<PathSeparatorTemplate>
+		<asp:Image ID="Image1" Runat="server"
+		ImageUrl="~/Images/right_arrow.jpg"/>
+		</PathSeparatorTemplate>
+            </asp:SiteMapPath>
+        </div>
+    </form>
+</body>
+</html>
+
+
+
+*)  PathDirection 속성
+탐색 경로의 정렬 방향을 가져오거나 설정함
+
+-  RootToCurrent : 기본값, 최상위 부모 노드가 좌측에 위치 
+
+-  CurrentToRoot  : 최상위 부모 노드가 우측에 위치 
+
+<%@ Page Language="C#" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head id="Head1" runat="server">
+    <title>제목 없음</title>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div>
+            <h3>SiteMapPath 예제</h3>
+            
+            <asp:SiteMapPath ID="SiteMapPath1" runat="server"
+            PathDirection = "CurrentToRoot" >
+            </asp:SiteMapPath>
+        </div>
+    </form>
+</body>
+</html>
+
+
+*)  ParentLevelsDisplayed 속성
+
+탐색 경로의 현재 위치를 기준으로 표시할 부모 노드 수준(단계)의 수를 가져오거나 설정
+기본값은 -1
+
+<%@ Page Language="C#" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head id="Head1" runat="server">
+    <title>제목 없음</title>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div>
+            <h3>SiteMapPath 예제</h3>
+            
+            <asp:SiteMapPath ID="SiteMapPath1" runat="server"
+            ParentLevelsDisplayed = 2 >
+            </asp:SiteMapPath>
+        </div>
+    </form>
+</body>
+</html>
+
+
+*)  ShowToolTips 속성
+기본값은 true
+
+
+
+
+
+
+[TreeView 컨트롤 사용 ]
+
+
+// CShape.aspx
+
+ <%@ Page Language="C#" %>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" >
+<head runat="server">
+    <title>제목 없음</title>
+</head>
+<body>
+    <form id="form1" runat="server">
+    <div>
+        <h3>TreeView 예제</h3>
+        
+        <asp:TreeView ID="TreeView1" runat="server" DataSourceID="SiteMapDataSource1">
+        </asp:TreeView>
+        <asp:SiteMapDataSource ID="SiteMapDataSource1" runat="server" />        
+    </div>
+    </form>
+</body>
+</html>
+
+
+
+
+[ Menu 컨트롤 ]
+
+<%@ Page Language="C#" %>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" >
+<head runat="server">
+    <title>제목 없음</title>
+</head>
+<body>
+    <form id="form1" runat="server">
+    <div>
+        <h3>Menu 예제</h3>
+        
+        <asp:Menu ID="Menu1" runat="server" DataSourceID="SiteMapDataSource1">
+        </asp:Menu>
+        <asp:SiteMapDataSource ID="SiteMapDataSource1" runat="server" />
+    </div>
+    </form>
+</body>
+</html>
+
+
+[ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

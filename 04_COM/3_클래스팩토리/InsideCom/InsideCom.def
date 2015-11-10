@@ -1,0 +1,12 @@
+;
+;	Component module-definition file
+;
+
+LIBRARY		InsideCom.dll
+DESCRIPTION	'InsideCom Component by IClassFactory'
+
+EXPORTS
+			DllGetClassObject		@2 PRIVATE
+			DllRegisterServer		@3 PRIVATE
+			DllUnregisterServer 	@4 PRIVATE
+			DllCanUnloadNow			@5 PRIVATE

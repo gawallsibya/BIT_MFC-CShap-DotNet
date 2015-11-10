@@ -1,0 +1,47 @@
+
+CView::GetDocument()				View => Document
+
+CDocument::UpdateAllViews()			Document => View활성화
+
+CView::OnUpdate()					
+
+CDocument::GetNextView()			Document => View
+
+CMainFrame::GetActiveView()			Frame => View
+
+CMainFrame::GetActiveDocument()		Frame => Document
+
+
+CDC::GetSafeHdc()	HDC를 얻는다.
+
+CWnd::GetSafeHwnd()  HWND를 얻는다.
+
+::AfxGetInstanceHandle()    HINSTANCE를 얻는다.
+
+::AfxGetMainWnd()			MainFrame의 윈도우 객체 포인트를 얻는다.
+
+::AfxGetResourceHandle()	리소스 핸들(HINSTANCE)를 얻는다.
+
+::AfxMessageBox()			메시지 박스 실행 
+
+
+
+[ 메시지 맵 순서 ]
+
+윈도우 메시지 맵 : CView, CDocument, CMainFrame 모두 가능
+
+*) CDocument에 WM_LBUTTONDOWN 메시지 발생 안함
+   - 윈도우가 없기 때문 
+   - 유일한 메시지 : OnCommand
+
+*) 매핑 순서
+   CView => CDocument => CMainFrame => CWinApp 
+
+   - 먼저 매핑된 곳이 호출됨
+
+
+   View::LButtonDOwn
+   {
+		((CMainFrame*)AfxGetMainWnd())->OnLButtonDown(nFlags, point);
+   }
+

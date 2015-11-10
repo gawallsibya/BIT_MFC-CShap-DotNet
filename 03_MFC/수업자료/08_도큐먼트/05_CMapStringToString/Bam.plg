@@ -1,0 +1,60 @@
+<html>
+<body>
+<pre>
+<h1>Build Log</h1>
+<h3>
+--------------------Configuration: Bam - Win32 Debug--------------------
+</h3>
+<h3>Command Lines</h3>
+Creating command line "rc.exe /l 0x412 /fo"Debug/Bam.res" /d "_DEBUG" /d "_AFXDLL" "C:\Documents and Settings\최창민\바탕 화면\02_MFC\0001_강의자료\07_도큐먼트\05_CMapStringToString\Bam.rc"" 
+Creating temporary file "C:\DOCUME~1\최창민\LOCALS~1\Temp\RSP1A.tmp" with contents
+[
+/nologo /MDd /W3 /Gm /GX /ZI /Od /D "WIN32" /D "_DEBUG" /D "_WINDOWS" /D "_AFXDLL" /D "_MBCS" /Fp"Debug/Bam.pch" /Yu"stdafx.h" /Fo"Debug/" /Fd"Debug/" /FD /GZ /c 
+"C:\Documents and Settings\최창민\바탕 화면\02_MFC\0001_강의자료\07_도큐먼트\05_CMapStringToString\Bam.cpp"
+"C:\Documents and Settings\최창민\바탕 화면\02_MFC\0001_강의자료\07_도큐먼트\05_CMapStringToString\BamDoc.cpp"
+"C:\Documents and Settings\최창민\바탕 화면\02_MFC\0001_강의자료\07_도큐먼트\05_CMapStringToString\BamView.cpp"
+"C:\Documents and Settings\최창민\바탕 화면\02_MFC\0001_강의자료\07_도큐먼트\05_CMapStringToString\DlgAdd.cpp"
+"C:\Documents and Settings\최창민\바탕 화면\02_MFC\0001_강의자료\07_도큐먼트\05_CMapStringToString\DlgFind.cpp"
+"C:\Documents and Settings\최창민\바탕 화면\02_MFC\0001_강의자료\07_도큐먼트\05_CMapStringToString\MainFrm.cpp"
+]
+Creating command line "cl.exe @"C:\DOCUME~1\최창민\LOCALS~1\Temp\RSP1A.tmp"" 
+Creating temporary file "C:\DOCUME~1\최창민\LOCALS~1\Temp\RSP1B.tmp" with contents
+[
+/nologo /MDd /W3 /Gm /GX /ZI /Od /D "WIN32" /D "_DEBUG" /D "_WINDOWS" /D "_AFXDLL" /D "_MBCS" /Fp"Debug/Bam.pch" /Yc"stdafx.h" /Fo"Debug/" /Fd"Debug/" /FD /GZ /c 
+"C:\Documents and Settings\최창민\바탕 화면\02_MFC\0001_강의자료\07_도큐먼트\05_CMapStringToString\StdAfx.cpp"
+]
+Creating command line "cl.exe @"C:\DOCUME~1\최창민\LOCALS~1\Temp\RSP1B.tmp"" 
+Creating temporary file "C:\DOCUME~1\최창민\LOCALS~1\Temp\RSP1C.tmp" with contents
+[
+/nologo /subsystem:windows /incremental:yes /pdb:"Debug/Bam.pdb" /debug /machine:I386 /out:"Debug/Bam.exe" /pdbtype:sept 
+".\Debug\Bam.obj"
+".\Debug\BamDoc.obj"
+".\Debug\BamView.obj"
+".\Debug\DlgAdd.obj"
+".\Debug\DlgFind.obj"
+".\Debug\MainFrm.obj"
+".\Debug\StdAfx.obj"
+".\Debug\Bam.res"
+]
+Creating command line "link.exe @"C:\DOCUME~1\최창민\LOCALS~1\Temp\RSP1C.tmp""
+<h3>Output Window</h3>
+Compiling resources...
+Compiling...
+StdAfx.cpp
+Compiling...
+Bam.cpp
+BamDoc.cpp
+BamView.cpp
+DlgAdd.cpp
+DlgFind.cpp
+MainFrm.cpp
+Generating Code...
+Linking...
+
+
+
+<h3>Results</h3>
+Bam.exe - 0 error(s), 0 warning(s)
+</pre>
+</body>
+</html>

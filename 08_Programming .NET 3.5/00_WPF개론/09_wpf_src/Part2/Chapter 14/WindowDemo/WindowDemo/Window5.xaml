@@ -1,0 +1,16 @@
+﻿<Window x:Class="WindowDemo.Window5"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    Title="Window5" Height="313" Width="509">
+    <Grid Width="450">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="119*" />
+            <ColumnDefinition Width="246*" />
+        </Grid.ColumnDefinitions>
+        <Label Height="28" Margin="0,28,0,0" Name="label1" VerticalAlignment="Top" HorizontalAlignment="Right" Width="81">FileName</Label>
+        <Label Margin="0,110,0,0" Name="label3" HorizontalAlignment="Right" Width="81.326" Height="28" VerticalAlignment="Top">DefaultExt.</Label>
+        <TextBox Grid.Column="1" Height="23" Margin="6,26,12,0" Name="textFileName" VerticalAlignment="Top" />
+        <TextBox Grid.Column="1" Margin="6,114,0,0" Name="textExt" Height="24" VerticalAlignment="Top" HorizontalAlignment="Left" Width="156.674" />
+        <Button Grid.Column="1" Height="23" Margin="6,189,0,0" Name="button1" VerticalAlignment="Top" Click="button1_Click" HorizontalAlignment="Left" Width="156.674">Open DialogBox</Button>
+    </Grid>
+    </Window>

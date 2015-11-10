@@ -1,0 +1,28 @@
+C:\Users\Administrator\Downloads\633040453539460000\FormChatClient\bin\Release\ChatClient.exe.config
+C:\Users\Administrator\Downloads\633040453539460000\FormChatClient\obj\Release\ChatClient.exe
+C:\Users\Administrator\Downloads\633040453539460000\FormChatClient\obj\Release\ChatClient.pdb
+C:\Users\Administrator\Downloads\633040453539460000\FormChatClient\obj\Release\FormChatClient.csprojResolveAssemblyReference.cache
+C:\Users\Administrator\Downloads\633040453539460000\FormChatClient\obj\Release\NikeSoftChat.ChatForm.resources
+C:\Users\Administrator\Downloads\633040453539460000\FormChatClient\obj\Release\NikeSoftChat.NickDialog.resources
+C:\Users\Administrator\Downloads\633040453539460000\FormChatClient\obj\Release\NikeSoftChat.PleaseWaitDialog.resources
+C:\Users\Administrator\Downloads\633040453539460000\FormChatClient\obj\Release\NikeSoftChat.Properties.Resources.resources
+C:\Users\Administrator\Downloads\633040453539460000\FormChatClient\obj\Release\FormChatClient.csproj.GenerateResource.Cache
+C:\Users\Administrator\Downloads\633040453539460000\FormChatClient\bin\Release\ChatClient.exe
+C:\Users\Administrator\Downloads\633040453539460000\FormChatClient\bin\Release\ChatClient.pdb
+\\61.81.99.99\Users\공유폴더\11_WCF\WCF를 이용한 채팅\FormChatClient\bin\Release\ChatClient.exe.config
+\\61.81.99.99\Users\공유폴더\11_WCF\WCF를 이용한 채팅\FormChatClient\obj\Release\ChatClient.exe
+\\61.81.99.99\Users\공유폴더\11_WCF\WCF를 이용한 채팅\FormChatClient\obj\Release\ChatClient.pdb
+\\61.81.99.99\Users\공유폴더\11_WCF\WCF를 이용한 채팅\FormChatClient\bin\Release\ChatClient.exe
+\\61.81.99.99\Users\공유폴더\11_WCF\WCF를 이용한 채팅\FormChatClient\bin\Release\ChatClient.pdb
+\\61.81.99.99\Users\공유폴더\11_WCF\WCF를 이용한 채팅\FormChatClient\obj\Release\FormChatClient.csprojResolveAssemblyReference.cache
+\\61.81.99.99\Users\공유폴더\11_WCF\WCF를 이용한 채팅\FormChatClient\obj\Release\NikeSoftChat.ChatForm.resources
+\\61.81.99.99\Users\공유폴더\11_WCF\WCF를 이용한 채팅\FormChatClient\obj\Release\NikeSoftChat.NickDialog.resources
+\\61.81.99.99\Users\공유폴더\11_WCF\WCF를 이용한 채팅\FormChatClient\obj\Release\NikeSoftChat.PleaseWaitDialog.resources
+\\61.81.99.99\Users\공유폴더\11_WCF\WCF를 이용한 채팅\FormChatClient\obj\Release\NikeSoftChat.Properties.Resources.resources
+\\61.81.99.99\Users\공유폴더\11_WCF\WCF를 이용한 채팅\FormChatClient\obj\Release\FormChatClient.csproj.GenerateResource.Cache
+\\61.81.99.99\Users\공유폴더\고급17기\09_WCF\02_Sample\WCF를 이용한 채팅\FormChatClient\bin\Release\ChatClient.exe.config
+\\61.81.99.99\Users\공유폴더\고급17기\09_WCF\02_Sample\WCF를 이용한 채팅\FormChatClient\obj\Release\ChatClient.exe
+\\61.81.99.99\Users\공유폴더\고급17기\09_WCF\02_Sample\WCF를 이용한 채팅\FormChatClient\obj\Release\ChatClient.pdb
+C:\Users\공유폴더\고급17기\09_WCF\02_Sample\WCF를 이용한 채팅\FormChatClient\bin\Release\ChatClient.exe.config
+C:\Users\공유폴더\고급17기\09_WCF\02_Sample\WCF를 이용한 채팅\FormChatClient\obj\Release\ChatClient.exe
+C:\Users\공유폴더\고급17기\09_WCF\02_Sample\WCF를 이용한 채팅\FormChatClient\obj\Release\ChatClient.pdb

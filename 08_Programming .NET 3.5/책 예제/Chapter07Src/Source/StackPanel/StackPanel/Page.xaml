@@ -1,0 +1,27 @@
+﻿<UserControl x:Class="StackPanel.Page"
+    xmlns="http://schemas.microsoft.com/client/2007" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
+    Width="600" Height="300">
+    <!--
+        <StackPanel Background="Bisque" Orientation="Vertical" >
+            <TextBlock Text="First Name?" HorizontalAlignment="Left"
+                Margin="10,2,0,1" />
+           <TextBox Width="150" Height="30" HorizontalAlignment="Left" 
+                Margin="10,2,0,1" />
+           <Button Content="Submit!" HorizontalAlignment="Left" 
+                Margin="50,20" Height="30" Width="150" />
+           <CheckBox Content="With Zng!" HorizontalAlignment="Left"
+                Margin="10,2,0,1" />
+        </StackPanel> -->
+    <StackPanel Background="Bisque" Orientation="Horizontal" >
+        <TextBlock Text="First Name?" VerticalAlignment="Center"
+                Margin="10,2,0,1" />
+           <TextBox Width="150" Height="30" VerticalAlignment="Center"
+                Margin="5,2,0,1" />
+           <Button Content="Submit!" VerticalAlignment="Center" 
+                Margin="10,2,0,1" Height="30" Width="150" />
+           <CheckBox Content="With Zng!" VerticalAlignment="Center"
+                Margin="10,2,0,1" />
+        </StackPanel>
+
+</UserControl>

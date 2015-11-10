@@ -1,0 +1,41 @@
+// AddMyCalCom.idl : IDL source for AddMyCalCom.dll
+//
+
+// This file will be processed by the MIDL tool to
+// produce the type library (AddMyCalCom.tlb) and marshalling code.
+
+import "oaidl.idl";
+import "ocidl.idl";
+	[
+		object,
+		uuid(5BBBB248-1758-4D73-9233-DEA81E132491),
+		dual,
+		helpstring("ICal Interface"),
+		pointer_default(unique)
+	]
+	interface ICal : IDispatch
+	{
+		[id(1), helpstring("method Add")] HRESULT Add([in] int first, [in] int second);
+		[propget, id(2), helpstring("property Result")] HRESULT Result([out, retval] int *pVal);
+		[propput, id(2), helpstring("property Result")] HRESULT Result([in] int newVal);
+	};
+
+[
+	uuid(2BE554A9-12E7-4580-A423-8893B30D1B0E),
+	version(1.0),
+	helpstring("AddMyCalCom 1.0 Type Library")
+]
+library ADDMYCALCOMLib
+{
+	importlib("stdole32.tlb");
+	importlib("stdole2.tlb");
+
+	[
+		uuid(63CAE2B0-B4AD-4972-B188-2A644353125C),
+		helpstring("Cal Class")
+	]
+	coclass Cal
+	{
+		[default] interface ICal;
+	};
+};

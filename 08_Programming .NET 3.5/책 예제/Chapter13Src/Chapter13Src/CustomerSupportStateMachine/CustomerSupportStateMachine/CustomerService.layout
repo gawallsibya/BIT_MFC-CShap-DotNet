@@ -1,0 +1,223 @@
+﻿<StateMachineWorkflowDesigner xmlns:ns0="clr-namespace:System.Drawing;Assembly=System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" Name="CustomerService" Location="30, 30" Size="859, 780" AutoSize="False" AutoSizeMargin="16, 24" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/workflow">
+	<StateMachineWorkflowDesigner.DesignerConnectors>
+		<StateDesignerConnector TargetConnectionIndex="0" TargetStateName="CallReceivedState" SourceConnectionIndex="0" TargetConnectionEdge="Top" SetStateName="setCallRecievedState" SourceStateName="CustomerServiceInitialState" SourceConnectionEdge="Right" TargetActivity="CallReceivedState" SourceActivity="CustomerServiceInitialState" EventHandlerName="OnCallReceived">
+			<StateDesignerConnector.Segments>
+				<ns0:Point X="185" Y="115" />
+				<ns0:Point X="735" Y="115" />
+				<ns0:Point X="735" Y="180" />
+			</StateDesignerConnector.Segments>
+		</StateDesignerConnector>
+		<StateDesignerConnector TargetConnectionIndex="0" TargetStateName="CallAssignedToSupportPerson" SourceConnectionIndex="0" TargetConnectionEdge="Top" SetStateName="setCallAssignedToSupportPersonState" SourceStateName="CallReceivedState" SourceConnectionEdge="Right" TargetActivity="CallAssignedToSupportPerson" SourceActivity="CallReceivedState" EventHandlerName="OnAssignToSupportPerson">
+			<StateDesignerConnector.Segments>
+				<ns0:Point X="803" Y="224" />
+				<ns0:Point X="869" Y="224" />
+				<ns0:Point X="869" Y="495" />
+				<ns0:Point X="53" Y="495" />
+				<ns0:Point X="53" Y="215" />
+				<ns0:Point X="181" Y="215" />
+				<ns0:Point X="181" Y="223" />
+			</StateDesignerConnector.Segments>
+		</StateDesignerConnector>
+		<StateDesignerConnector TargetConnectionIndex="0" TargetStateName="CallSentToPhoneResolutionState" SourceConnectionIndex="1" TargetConnectionEdge="Top" SetStateName="setCallSentToPhoneResolutionState" SourceStateName="CallReceivedState" SourceConnectionEdge="Right" TargetActivity="CallSentToPhoneResolutionState" SourceActivity="CallReceivedState" EventHandlerName="OnAssignToPhoneResolution">
+			<StateDesignerConnector.Segments>
+				<ns0:Point X="815" Y="250" />
+				<ns0:Point X="868" Y="250" />
+				<ns0:Point X="868" Y="502" />
+				<ns0:Point X="196" Y="502" />
+				<ns0:Point X="196" Y="514" />
+			</StateDesignerConnector.Segments>
+		</StateDesignerConnector>
+		<StateDesignerConnector TargetConnectionIndex="0" TargetStateName="CallEndedMoreInformationRequired" SourceConnectionIndex="2" TargetConnectionEdge="Top" SetStateName="setCallEndedNeedMoreInformationState" SourceStateName="CallReceivedState" SourceConnectionEdge="Right" TargetActivity="CallEndedMoreInformationRequired" SourceActivity="CallReceivedState" EventHandlerName="OnEndCallNeedMoreInformation">
+			<StateDesignerConnector.Segments>
+				<ns0:Point X="836" Y="276" />
+				<ns0:Point X="866" Y="276" />
+				<ns0:Point X="866" Y="347" />
+				<ns0:Point X="498" Y="347" />
+				<ns0:Point X="498" Y="359" />
+			</StateDesignerConnector.Segments>
+		</StateDesignerConnector>
+		<StateDesignerConnector TargetConnectionIndex="0" TargetStateName="CallResolvedState" SourceConnectionIndex="3" TargetConnectionEdge="Top" SetStateName="setCallResolvedState" SourceStateName="CallReceivedState" SourceConnectionEdge="Right" TargetActivity="CallResolvedState" SourceActivity="CallReceivedState" EventHandlerName="OnCallResolved">
+			<StateDesignerConnector.Segments>
+				<ns0:Point X="742" Y="302" />
+				<ns0:Point X="866" Y="302" />
+				<ns0:Point X="866" Y="522" />
+				<ns0:Point X="626" Y="522" />
+				<ns0:Point X="626" Y="534" />
+			</StateDesignerConnector.Segments>
+		</StateDesignerConnector>
+		<StateDesignerConnector TargetConnectionIndex="0" TargetStateName="CallSentToPhoneResolutionState" SourceConnectionIndex="0" TargetConnectionEdge="Top" SetStateName="setToPhoneResolutionState" SourceStateName="CallAssignedToSupportPerson" SourceConnectionEdge="Right" TargetActivity="CallSentToPhoneResolutionState" SourceActivity="CallAssignedToSupportPerson" EventHandlerName="OnReassignCallToPhoneResolution">
+			<StateDesignerConnector.Segments>
+				<ns0:Point X="295" Y="267" />
+				<ns0:Point X="308" Y="267" />
+				<ns0:Point X="308" Y="502" />
+				<ns0:Point X="196" Y="502" />
+				<ns0:Point X="196" Y="514" />
+			</StateDesignerConnector.Segments>
+		</StateDesignerConnector>
+		<StateDesignerConnector TargetConnectionIndex="0" TargetStateName="CallAssignedToSupportPerson" SourceConnectionIndex="1" TargetConnectionEdge="Top" SetStateName="setAssignedToDifferentPersonState" SourceStateName="CallAssignedToSupportPerson" SourceConnectionEdge="Right" TargetActivity="CallAssignedToSupportPerson" SourceActivity="CallAssignedToSupportPerson" EventHandlerName="OnAssignToDifferentSupportPerson">
+			<StateDesignerConnector.Segments>
+				<ns0:Point X="299" Y="293" />
+				<ns0:Point X="309" Y="293" />
+				<ns0:Point X="309" Y="215" />
+				<ns0:Point X="181" Y="215" />
+				<ns0:Point X="181" Y="223" />
+			</StateDesignerConnector.Segments>
+		</StateDesignerConnector>
+		<StateDesignerConnector TargetConnectionIndex="0" TargetStateName="CallEndedMoreInformationRequired" SourceConnectionIndex="2" TargetConnectionEdge="Top" SetStateName="setCallEndsMoreInformationNeeeded" SourceStateName="CallAssignedToSupportPerson" SourceConnectionEdge="Right" TargetActivity="CallEndedMoreInformationRequired" SourceActivity="CallAssignedToSupportPerson" EventHandlerName="OnMoreInformationNeeded">
+			<StateDesignerConnector.Segments>
+				<ns0:Point X="257" Y="319" />
+				<ns0:Point X="498" Y="319" />
+				<ns0:Point X="498" Y="359" />
+			</StateDesignerConnector.Segments>
+		</StateDesignerConnector>
+		<StateDesignerConnector TargetConnectionIndex="0" TargetStateName="CallResolvedState" SourceConnectionIndex="3" TargetConnectionEdge="Top" SetStateName="setIssueResolvedState" SourceStateName="CallAssignedToSupportPerson" SourceConnectionEdge="Right" TargetActivity="CallResolvedState" SourceActivity="CallAssignedToSupportPerson" EventHandlerName="OnResolveCall">
+			<StateDesignerConnector.Segments>
+				<ns0:Point X="182" Y="345" />
+				<ns0:Point X="626" Y="345" />
+				<ns0:Point X="626" Y="534" />
+			</StateDesignerConnector.Segments>
+		</StateDesignerConnector>
+		<StateDesignerConnector TargetConnectionIndex="0" TargetStateName="CustomerSatisfiedState" SourceConnectionIndex="0" TargetConnectionEdge="Top" SetStateName="setCallEndsUnresolved" SourceStateName="CallEndedMoreInformationRequired" SourceConnectionEdge="Right" TargetActivity="CustomerSatisfiedState" SourceActivity="CallEndedMoreInformationRequired" EventHandlerName="OnEndCallWithoutResolution">
+			<StateDesignerConnector.Segments>
+				<ns0:Point X="587" Y="403" />
+				<ns0:Point X="619" Y="403" />
+				<ns0:Point X="619" Y="347" />
+				<ns0:Point X="379" Y="347" />
+				<ns0:Point X="379" Y="688" />
+				<ns0:Point X="422" Y="688" />
+				<ns0:Point X="422" Y="700" />
+			</StateDesignerConnector.Segments>
+		</StateDesignerConnector>
+		<StateDesignerConnector TargetConnectionIndex="0" TargetStateName="CustomerSatisfiedState" SourceConnectionIndex="0" TargetConnectionEdge="Top" SetStateName="setCallEndsWithSuccess" SourceStateName="CallResolvedState" SourceConnectionEdge="Right" TargetActivity="CustomerSatisfiedState" SourceActivity="CallResolvedState" EventHandlerName="OnCallResolvedSuccessfully">
+			<StateDesignerConnector.Segments>
+				<ns0:Point X="715" Y="578" />
+				<ns0:Point X="742" Y="578" />
+				<ns0:Point X="742" Y="688" />
+				<ns0:Point X="422" Y="688" />
+				<ns0:Point X="422" Y="700" />
+			</StateDesignerConnector.Segments>
+		</StateDesignerConnector>
+		<StateDesignerConnector TargetConnectionIndex="0" TargetStateName="CustomerSatisfiedState" SourceConnectionIndex="1" TargetConnectionEdge="Top" SetStateName="setAllDoneState" SourceStateName="CallSentToPhoneResolutionState" SourceConnectionEdge="Right" TargetActivity="CustomerSatisfiedState" SourceActivity="CallSentToPhoneResolutionState" EventHandlerName="OnPhoneResolutionSuccess">
+			<StateDesignerConnector.Segments>
+				<ns0:Point X="275" Y="584" />
+				<ns0:Point X="422" Y="584" />
+				<ns0:Point X="422" Y="700" />
+			</StateDesignerConnector.Segments>
+		</StateDesignerConnector>
+		<StateDesignerConnector TargetConnectionIndex="0" TargetStateName="CallAssignedToSupportPerson" SourceConnectionIndex="0" TargetConnectionEdge="Top" SetStateName="setCallAssignedToHuman" SourceStateName="CallSentToPhoneResolutionState" SourceConnectionEdge="Right" TargetActivity="CallAssignedToSupportPerson" SourceActivity="CallSentToPhoneResolutionState" EventHandlerName="OnNeedsHumanAssistance">
+			<StateDesignerConnector.Segments>
+				<ns0:Point X="272" Y="558" />
+				<ns0:Point X="317" Y="558" />
+				<ns0:Point X="317" Y="215" />
+				<ns0:Point X="181" Y="215" />
+				<ns0:Point X="181" Y="223" />
+			</StateDesignerConnector.Segments>
+		</StateDesignerConnector>
+	</StateMachineWorkflowDesigner.DesignerConnectors>
+	<StateMachineWorkflowDesigner.Designers>
+		<StateDesigner Name="CustomerServiceInitialState" Location="56, 71" Size="501, 93" AutoSizeMargin="16, 24">
+			<StateDesigner.Designers>
+				<EventDrivenDesigner Size="150, 209" Name="OnCallReceived" Location="64, 104">
+					<EventDrivenDesigner.Designers>
+						<HandleExternalEventActivityDesigner Size="130, 44" Name="handleCallReceivedEvent" Location="74, 169" />
+						<SetStateDesigner Size="130, 62" Name="setCallRecievedState" Location="74, 232" />
+						<FaultHandlersActivityDesigner Size="220, 168" Name="faultHandlersActivity1" ShowPreview="False" Location="138, 204" />
+					</EventDrivenDesigner.Designers>
+				</EventDrivenDesigner>
+			</StateDesigner.Designers>
+		</StateDesigner>
+		<StateDesigner Name="CallAssignedToSupportPerson" Location="60, 223" Size="243, 136" AutoSizeMargin="16, 24">
+			<StateDesigner.Designers>
+				<EventDrivenDesigner Size="150, 209" Name="OnReassignCallToPhoneResolution" Location="68, 256">
+					<EventDrivenDesigner.Designers>
+						<HandleExternalEventActivityDesigner Size="130, 44" Name="handleReassignCallToPhoneResolution" Location="78, 321" />
+						<SetStateDesigner Size="130, 62" Name="setToPhoneResolutionState" Location="78, 384" />
+					</EventDrivenDesigner.Designers>
+				</EventDrivenDesigner>
+				<EventDrivenDesigner Size="150, 209" Name="OnAssignToDifferentSupportPerson" Location="68, 282">
+					<EventDrivenDesigner.Designers>
+						<HandleExternalEventActivityDesigner Size="130, 44" Name="handleAssignToDifferentSupportPerson" Location="78, 347" />
+						<SetStateDesigner Size="130, 62" Name="setAssignedToDifferentPersonState" Location="78, 410" />
+					</EventDrivenDesigner.Designers>
+				</EventDrivenDesigner>
+				<EventDrivenDesigner Size="150, 209" Name="OnMoreInformationNeeded" Location="68, 308">
+					<EventDrivenDesigner.Designers>
+						<HandleExternalEventActivityDesigner Size="130, 44" Name="handleMoreInformationNeeded" Location="78, 373" />
+						<SetStateDesigner Size="130, 62" Name="setCallEndsMoreInformationNeeeded" Location="78, 436" />
+					</EventDrivenDesigner.Designers>
+				</EventDrivenDesigner>
+				<EventDrivenDesigner Size="150, 209" Name="OnResolveCall" Location="68, 334">
+					<EventDrivenDesigner.Designers>
+						<HandleExternalEventActivityDesigner Size="130, 44" Name="handleIssueResolved" Location="78, 399" />
+						<SetStateDesigner Size="130, 62" Name="setIssueResolvedState" Location="78, 462" />
+					</EventDrivenDesigner.Designers>
+				</EventDrivenDesigner>
+			</StateDesigner.Designers>
+		</StateDesigner>
+		<StateDesigner Name="CallSentToPhoneResolutionState" Location="80, 514" Size="232, 133" AutoSizeMargin="16, 24">
+			<StateDesigner.Designers>
+				<EventDrivenDesigner Size="150, 209" Name="OnNeedsHumanAssistance" Location="88, 547">
+					<EventDrivenDesigner.Designers>
+						<HandleExternalEventActivityDesigner Size="130, 44" Name="handleAssignToHumanOperator" Location="98, 612" />
+						<SetStateDesigner Size="130, 62" Name="setCallAssignedToHuman" Location="98, 675" />
+					</EventDrivenDesigner.Designers>
+				</EventDrivenDesigner>
+				<EventDrivenDesigner Size="150, 188" Name="OnPhoneResolutionSuccess" Location="88, 573">
+					<EventDrivenDesigner.Designers>
+						<DelayDesigner Size="130, 41" Name="delayActivity1" Location="98, 638" />
+						<SetStateDesigner Size="130, 44" Name="setAllDoneState" Location="98, 698" />
+					</EventDrivenDesigner.Designers>
+				</EventDrivenDesigner>
+			</StateDesigner.Designers>
+		</StateDesigner>
+		<StateDesigner Name="CallEndedMoreInformationRequired" Location="384, 359" Size="229, 130" AutoSizeMargin="16, 24">
+			<StateDesigner.Designers>
+				<EventDrivenDesigner Size="150, 206" Name="OnEndCallWithoutResolution" Location="392, 392">
+					<EventDrivenDesigner.Designers>
+						<DelayDesigner Size="130, 41" Name="delayActivity2" Location="402, 457" />
+						<SetStateDesigner Size="130, 62" Name="setCallEndsUnresolved" Location="402, 517" />
+					</EventDrivenDesigner.Designers>
+				</EventDrivenDesigner>
+			</StateDesigner.Designers>
+		</StateDesigner>
+		<StateDesigner Name="CallResolvedState" Location="521, 534" Size="210, 123" AutoSize="False" AutoSizeMargin="16, 24">
+			<StateDesigner.Designers>
+				<EventDrivenDesigner Size="150, 206" Name="OnCallResolvedSuccessfully" Location="366, 154">
+					<EventDrivenDesigner.Designers>
+						<DelayDesigner Size="130, 41" Name="delayActivity3" Location="376, 219" />
+						<SetStateDesigner Size="130, 62" Name="setCallEndsWithSuccess" Location="376, 279" />
+					</EventDrivenDesigner.Designers>
+				</EventDrivenDesigner>
+			</StateDesigner.Designers>
+		</StateDesigner>
+		<StateDesigner Name="CustomerSatisfiedState" Location="167, 700" Size="511, 80" AutoSizeMargin="16, 24" />
+		<StateDesigner Name="CallReceivedState" Location="612, 180" Size="247, 150" AutoSize="False" AutoSizeMargin="16, 24">
+			<StateDesigner.Designers>
+				<EventDrivenDesigner Size="150, 209" Name="OnAssignToSupportPerson" Location="620, 213">
+					<EventDrivenDesigner.Designers>
+						<HandleExternalEventActivityDesigner Size="130, 44" Name="handleAssignToSupportPerson" Location="630, 278" />
+						<SetStateDesigner Size="130, 62" Name="setCallAssignedToSupportPersonState" Location="630, 341" />
+					</EventDrivenDesigner.Designers>
+				</EventDrivenDesigner>
+				<EventDrivenDesigner Size="150, 209" Name="OnAssignToPhoneResolution" Location="620, 239">
+					<EventDrivenDesigner.Designers>
+						<HandleExternalEventActivityDesigner Size="130, 44" Name="handleSendCallToPhoneResolution" Location="630, 304" />
+						<SetStateDesigner Size="130, 62" Name="setCallSentToPhoneResolutionState" Location="630, 367" />
+					</EventDrivenDesigner.Designers>
+				</EventDrivenDesigner>
+				<EventDrivenDesigner Size="150, 209" Name="OnEndCallNeedMoreInformation" Location="620, 265">
+					<EventDrivenDesigner.Designers>
+						<HandleExternalEventActivityDesigner Size="130, 44" Name="handleEndCallNeedMoreInformation" Location="630, 330" />
+						<SetStateDesigner Size="130, 62" Name="setCallEndedNeedMoreInformationState" Location="630, 393" />
+					</EventDrivenDesigner.Designers>
+				</EventDrivenDesigner>
+				<EventDrivenDesigner Size="150, 209" Name="OnCallResolved" Location="620, 291">
+					<EventDrivenDesigner.Designers>
+						<HandleExternalEventActivityDesigner Size="130, 44" Name="handleCallResolved" Location="630, 356" />
+						<SetStateDesigner Size="130, 62" Name="setCallResolvedState" Location="630, 419" />
+					</EventDrivenDesigner.Designers>
+				</EventDrivenDesigner>
+			</StateDesigner.Designers>
+		</StateDesigner>
+	</StateMachineWorkflowDesigner.Designers>
+</StateMachineWorkflowDesigner>

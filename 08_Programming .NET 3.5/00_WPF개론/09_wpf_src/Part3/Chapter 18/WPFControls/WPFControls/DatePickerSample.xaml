@@ -1,0 +1,11 @@
+﻿<Window x:Class="WPFControls.DatePickerSample"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    Title="DatePickerSample" Height="300" Width="300">
+    <Canvas xmlns:toolKit="clr-namespace:Microsoft.Windows.Controls;assembly=WPFToolkit" >
+        <toolKit:DatePicker Height="24" Canvas.Left="50" Canvas.Top="50" Width="116">
+            
+        </toolKit:DatePicker>
+        
+    </Canvas>
+</Window>

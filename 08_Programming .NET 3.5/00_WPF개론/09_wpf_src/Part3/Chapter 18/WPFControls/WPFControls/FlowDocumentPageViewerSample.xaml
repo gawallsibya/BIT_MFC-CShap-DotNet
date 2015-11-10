@@ -1,0 +1,31 @@
+﻿<Window x:Class="WPFControls.FlowDocumentPageViewer"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    Title="FlowDocumentPageViewer" Height="300" Width="300">
+    <Grid>
+        <FlowDocumentPageViewer>
+            <FlowDocument>
+
+                <Paragraph>
+                    The Windows Presentation Foundation (or WPF), formerly code-named Avalon, is a graphical subsystem in .NET Framework 3.0 (formerly called WinFX)[1], which uses a markup language, known as XAML for rich user interface development. [2] WPF is included with Windows Vista and Windows Server 2008, and is also available for Windows XP Service Pack 2 or later, and Windows Server 2003. It provides a consistent programming model for building applications and provides a clear separation between the user interface and the business logic. A WPF application can be deployed on the desktop or hosted in a web browser. It also enables rich control, design, and development of the visual aspects of Windows programs. It aims to unify a number of application services: user interface, 2D and 3D drawing, fixed and adaptive documents, advanced typography, vector graphics, raster graphics, animation, data binding, audio and video. Although WinForms will continue to be widely used, and Microsoft has created only a few WPF applications, the company promotes WPF for line-of-business applications.[3]
+
+Microsoft Silverlight is a web-based subset of WPF that enables Flash-like web and mobile applications with the same programming model as .NET applications. 3D features are not supported, but XPS and vector-based drawing are included.
+
+
+                </Paragraph>
+
+                <Paragraph>
+
+                    The Windows Presentation Foundation (or WPF), formerly code-named Avalon, is a graphical subsystem in .NET Framework 3.0 (formerly called WinFX)[1], which uses a markup language, known as XAML for rich user interface development. [2] WPF is included with Windows Vista and Windows Server 2008, and is also available for Windows XP Service Pack 2 or later, and Windows Server 2003. It provides a consistent programming model for building applications and provides a clear separation between the user interface and the business logic. A WPF application can be deployed on the desktop or hosted in a web browser. It also enables rich control, design, and development of the visual aspects of Windows programs. It aims to unify a number of application services: user interface, 2D and 3D drawing, fixed and adaptive documents, advanced typography, vector graphics, raster graphics, animation, data binding, audio and video. Although WinForms will continue to be widely used, and Microsoft has created only a few WPF applications, the company promotes WPF for line-of-business applications.[3]
+
+Microsoft Silverlight is a web-based subset of WPF that enables Flash-like web and mobile applications with the same programming model as .NET applications. 3D features are not supported, but XPS and vector-based drawing are included.
+
+
+                </Paragraph>
+
+            </FlowDocument>
+
+        </FlowDocumentPageViewer>
+        
+    </Grid>
+</Window>

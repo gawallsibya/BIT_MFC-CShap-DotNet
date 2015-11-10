@@ -1,0 +1,114 @@
+
+void CCircleCtrl::OnDraw(
+						 CDC* pdc, const CRect& rcBounds, const CRect& rcInvalid)
+{
+	CRect rect, Rect = rcBounds;
+	CRgn rgn;
+	rect = Rect;
+	
+	CBrush hbr(TranslateColor(GetBackColor()));
+	
+	pdc->FillRect( &Rect, &hbr);
+	
+	if (m_State == SP_PUSHDOWN)
+	{
+		CPen pen( PS_SOLID, 2, 
+			GetSysColor( COLOR_3DHILIGHT ) );
+		CPen *pPen;
+		CPoint start, end;
+		start.x = rect.left;
+		start.y = rect.bottom;		
+		end.x = rect.right;
+		end.y = rect.top;
+		
+		rect.left += 2;
+		rect.top += 2;
+		rect.right -= 2;
+		rect.bottom -= 2;
+		
+		pPen = pdc->SelectObject( &pen );
+		pdc->Arc( &rect, start, end );
+		pdc->SelectObject( pPen );
+	}
+	rgn.CreateEllipticRgn( rect.left, rect.top,	
+		rect.right, rect.bottom );
+	pdc->SelectClipRgn( &rgn );
+	// 내부 버튼을 칠해주는 함수 
+	FillControl( pdc, &Rect, GetForeColor() );
+	
+	CString title = m_textLabel;
+	if( title.GetLength() != 0 )
+	{
+		// 버튼 위에 글자를 출력하는 함수 
+		DrawWhiteText( pdc, &Rect, 
+			Rect.Height() - rect.Height(), title );
+		title.ReleaseBuffer();
+	}
+}
+
+void CCircleCtrl::FillControl(CDC *pDC, CRect *pRect, COLORREF rgb)
+{
+	CBrush* pBrush;
+
+	pBrush = new CBrush(rgb);
+
+	int nWidth = pRect->Width();
+	int nHeight = pRect->Height();
+	CRect rect;
+
+	rect.SetRect(0, 0, nWidth, nHeight);
+	pDC->FillRect(&rect, pBrush);
+
+	delete pBrush;
+
+}
+void CCircleCtrl::DrawWhiteText(CDC *pDC, CRect *pRect, int nFontHeight, CString &text)
+{
+	CFont font;
+	int nHeight = -16 + nFontHeight;
+
+	font.CreateFont(nHeight, 0, 0, 0, FW_BOLD, TRUE, 0, 0, 
+		DEFAULT_CHARSET, OUT_CHARACTER_PRECIS, 
+		CLIP_CHARACTER_PRECIS, DEFAULT_QUALITY, 
+		DEFAULT_PITCH | FF_DONTCARE, "Times New Roman");
+	pDC->SetBkMode(TRANSPARENT);
+	pDC->SetTextColor(m_FontColor);
+
+	CFont* pOldFont = pDC->SelectObject(&font);
+	pDC->DrawText(text, -1, pRect, DT_SINGLELINE | DT_CENTER|
+		DT_VCENTER);
+
+	pDC->SelectObject(pOldFont);
+
+}
+
+void CCircleCtrl::OnLButtonDown(UINT nFlags, CPoint point) 
+{
+	CRect rect;
+	CRgn rgn;
+
+	GetClientRect(&rect);
+
+	rgn.CreateEllipticRgn(rect.left, rect.top, 
+		rect.right, rect.bottom);
+
+	if(rgn.PtInRegion(point))
+	{
+		m_State = SP_PUSHDOWN;
+		InvalidateControl();
+	
+	}
+	
+	COleControl::OnLButtonDown(nFlags, point);
+}
+
+void CCircleCtrl::OnLButtonUp(UINT nFlags, CPoint point) 
+{
+	if(m_State == SP_PUSHDOWN)
+	{
+		m_State = SP_PUSHUP;
+		InvalidateControl();
+	}
+	
+	COleControl::OnLButtonUp(nFlags, point);
+}

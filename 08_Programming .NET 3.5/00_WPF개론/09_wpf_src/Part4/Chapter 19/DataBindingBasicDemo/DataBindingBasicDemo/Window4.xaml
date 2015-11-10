@@ -1,0 +1,28 @@
+﻿<Window x:Class="DataBindingBasicDemo.Window4"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    Title="Window4" Height="300" Width="487">
+    <Canvas Name="myCanvas">
+        <TextBox Name="txtIrum" Text="{Binding Path=empNo}" Canvas.Left="111" Canvas.Top="36" Height="24"  Width="147" />
+        <TextBox Name="txtJuso" Text="{Binding Path=empName}" Canvas.Left="111" Canvas.Top="66" Height="24"  Width="147" />
+        <TextBox Name="txtHobby" Text="{Binding Path=empJuso}" Canvas.Left="111" Canvas.Top="96" Height="24"  Width="147" />
+        <Button Name="btnPrevious" Canvas.Left="113" Canvas.Top="191" Height="23"  Width="51" Click="btnPrevious_Click">&lt;&lt;</Button>
+        <Button Canvas.Left="212" Canvas.Top="191" Height="23" Name="btnNext" Width="48" Click="btnNext_Click">&gt;&gt;</Button>
+        <TextBox Canvas.Left="111" Canvas.Top="161" Height="24" Name="txtBirthDate" Text="{Binding Path=empBirthDate}" Width="147" />
+        <CheckBox Canvas.Left="124" Canvas.Top="133" Height="16" Name="checkMarried" IsChecked="{Binding Path=empMarried}" Width="120">empMarried</CheckBox>
+        <Label Canvas.Left="12" Canvas.Top="36" Height="28" Name="label1" Width="79">empNo</Label>
+        <Label Canvas.Left="12" Canvas.Top="67" Height="28" Name="label2" Width="79">empName</Label>
+        <Label Canvas.Left="12" Canvas.Top="96" Height="28" Name="label3" Width="79">empJuso</Label>
+        <Label Canvas.Left="12" Canvas.Top="161" Height="28" Name="label4" Width="93">empBirthDate</Label>
+        <ListBox Canvas.Left="279" Canvas.Top="36" Height="72" Name="listempNo" Width="139" ItemsSource="{Binding}" IsSynchronizedWithCurrentItem="True">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Text="{Binding Path=empNo}"></TextBlock>
+                        <TextBlock Text="{Binding Path=empName}"></TextBlock>
+                    </StackPanel>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+    </Canvas>
+</Window>

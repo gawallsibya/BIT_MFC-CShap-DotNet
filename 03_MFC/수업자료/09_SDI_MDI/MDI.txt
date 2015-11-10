@@ -1,0 +1,78 @@
+[ MDI 프로그램 ]
+
+여러 개의 Document를 사용
+
+
+SDI : CFrameWnd에서 파생된 하나의 프레임 윈도우 클래스(CMainFrame)와
+      하나의 프레임 윈도우 객체를 가짐
+MDI : 두개의 프레임 윈도우 클래스(CMainFrame, CChildFrame)와 
+       여러개의 프레임 윈도우 객체를 가짐
+
+
+구분               기초 클래스   생성된 클래스  객체수                View포함여부
+------------------------------------------------------------------------------------
+MDI프레임 윈도우   CMDIFrameWnd  CMainFrame     1개                   X
+MDI차일드 윈도우   CMDIChildWnd  CChildFrame    차일드 윈도우당 1개   O
+
+
+
+SDI와 MDI의 차이
+
+1) App::InitInstance()
+
+	// 1 CMultiDocTemplate 클래스를 이용하여 등록함
+	CMultiDocTemplate* pDocTemplate;
+	pDocTemplate = new CMultiDocTemplate(
+		IDR_MDITYPE,
+		RUNTIME_CLASS(CMDIDoc),
+		RUNTIME_CLASS(CChildFrame), // custom MDI child frame
+		RUNTIME_CLASS(CMDIView));
+	AddDocTemplate(pDocTemplate);
+
+	// 2 MDI FrameWindow생성
+	CMainFrame* pMainFrame = new CMainFrame;
+	if (!pMainFrame->LoadFrame(IDR_MAINFRAME))
+		return FALSE;
+	m_pMainWnd = pMainFrame;
+
+	// 3 드레그엔 드롭기능
+	m_pMainWnd->DragAcceptFiles();
+
+2) 리소스 차이 
+   두개의 프레임 윈도우 클래스에 따라  
+   아이콘, 메뉴, 문자열 테이블이 별도로 존재함
+
+
+3) 메뉴 => 창 => 새 창(다음창)
+   
+   ==> 동일한 Doc를 공유함 
+
+   CMDIFrameWnd::OnWindowNew() 호출..
+
+   - 차일드 프레임(CChildFrame)객체와 차일드 윈도우를 생성
+   - 뷰 객체와 뷰 윈도우를 생성
+   - 기존의 도큐먼트 객체와 새로운 차일드 프레임 객체, 뷰 객체 사이의 
+     관계를 설정
+   - 뷰 객체의 가상함수 OnInitialUpdate()를 호출
+   - 차일드 프레임 객체의 가상함수 ActiveFrame()을 호출함
+
+4) 메뉴 => 파일 => 새파일
+
+   ==> 새로운 Doc객체를 생성함
+
+*) MDI1 소스 참조
+
+   - 새로운 파일 생성시마다 상위클래스의 지원을 받아 새로운 프레임, 뷰, 도큐먼트 생성
+
+   - LButtonDown 클릭시 마다 좌표 저장
+
+   - 파일 저장 기능 구현
+
+
+*) MDI2 소스 참조(다중 View)
+
+   - 서로 다른 View를 생성
+
+*) MDI3 소스 참조
+
+   - 서로 다른 DOC 2개 생성

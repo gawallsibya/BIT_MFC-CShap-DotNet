@@ -1,0 +1,44 @@
+<html>
+<body>
+<pre>
+<h1>Build Log</h1>
+<h3>
+--------------------Configuration: IPC - Win32 Debug--------------------
+</h3>
+<h3>Command Lines</h3>
+Creating command line "rc.exe /l 0x412 /fo"Debug/IPC.res" /d "_DEBUG" /d "_AFXDLL" "D:\VC60\IPC\IPC.rc"" 
+Creating temporary file "C:\WINDOWS\TEMP\RSP3301.TMP" with contents
+[
+/nologo /MDd /W3 /Gm /GX /ZI /Od /D "WIN32" /D "_DEBUG" /D "_WINDOWS" /D "_AFXDLL" /D "_MBCS" /Fp"Debug/IPC.pch" /Yu"stdafx.h" /Fo"Debug/" /Fd"Debug/" /FD /GZ /c 
+"D:\VC60\IPC\IPC.cpp"
+"D:\VC60\IPC\IPCDoc.cpp"
+"D:\VC60\IPC\IPCView.cpp"
+"D:\VC60\IPC\MainFrm.cpp"
+]
+Creating command line "cl.exe @C:\WINDOWS\TEMP\RSP3301.TMP" 
+Creating temporary file "C:\WINDOWS\TEMP\RSP3302.TMP" with contents
+[
+/nologo /MDd /W3 /Gm /GX /ZI /Od /D "WIN32" /D "_DEBUG" /D "_WINDOWS" /D "_AFXDLL" /D "_MBCS" /Fp"Debug/IPC.pch" /Yc"stdafx.h" /Fo"Debug/" /Fd"Debug/" /FD /GZ /c 
+"D:\VC60\IPC\StdAfx.cpp"
+]
+Creating command line "cl.exe @C:\WINDOWS\TEMP\RSP3302.TMP" 
+Creating command line "link.exe /nologo /subsystem:windows /incremental:yes /pdb:"Debug/IPC.pdb" /debug /machine:I386 /out:"Debug/IPC.exe" /pdbtype:sept  .\Debug\IPC.obj .\Debug\IPCDoc.obj .\Debug\IPCView.obj .\Debug\MainFrm.obj .\Debug\StdAfx.obj .\Debug\IPC.res "
+<h3>Output Window</h3>
+Compiling resources...
+Compiling...
+StdAfx.cpp
+Compiling...
+IPC.cpp
+IPCDoc.cpp
+IPCView.cpp
+MainFrm.cpp
+Generating Code...
+Linking...
+
+
+
+<h3>Results</h3>
+IPC.exe - 0 error(s), 0 warning(s)
+</pre>
+</body>
+</html>

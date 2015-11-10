@@ -1,0 +1,104 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="DataBindingBasicDemo.App" Collapsed="true">
+    <Position X="0.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>App.xaml.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DataBindingBasicDemo.MyDataSet">
+    <Position X="1" Y="3.75" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+      <Compartment Name="Methods" Collapsed="true" />
+    </Compartments>
+    <NestedTypes>
+      <Class Name="DataBindingBasicDemo.MyDataSet.EmployeeDataTable" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>MyDataSet.cs</NewMemberFileName>
+        </TypeIdentifier>
+        <Lollipop Position="0.2" />
+      </Class>
+      <Delegate Name="DataBindingBasicDemo.MyDataSet.EmployeeRowChangeEventHandler" Collapsed="true">
+        <TypeIdentifier />
+      </Delegate>
+      <Class Name="DataBindingBasicDemo.MyDataSet.EmployeeRow" Collapsed="true">
+        <TypeIdentifier />
+      </Class>
+      <Class Name="DataBindingBasicDemo.MyDataSet.EmployeeRowChangeEvent" Collapsed="true">
+        <TypeIdentifier />
+      </Class>
+    </NestedTypes>
+    <TypeIdentifier>
+      <HashCode>AAAQAAAAAwAEAAJABAAAQAAACAgCQBgAAAAAAAEABBA=</HashCode>
+      <FileName>MyDataSet.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DataBindingBasicDemo.Person" BaseTypeListCollapsed="true">
+    <Position X="3" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAQAAAIEAAAAAAAQAgAAEAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Person.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="DataBindingBasicDemo.Window1" Collapsed="true">
+    <Position X="2.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAA=</HashCode>
+      <FileName>Window1.xaml.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DataBindingBasicDemo.Window2" Collapsed="true">
+    <Position X="4" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAACAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Window2.xaml.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DataBindingBasicDemo.Window3" Collapsed="true">
+    <Position X="5.75" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Window3.xaml.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DataBindingBasicDemo.Window4" Collapsed="true">
+    <Position X="0.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAQAAAAAEAAAAAAABAAQAAAAAAAAAAAAAAAAAQ=</HashCode>
+      <FileName>Window4.xaml.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DataBindingBasicDemo.Properties.Resources" Collapsed="true">
+    <Position X="5.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAABEAAAAQAAAAAAAAAAAAAAAIA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DataBindingBasicDemo.Properties.Settings" Collapsed="true">
+    <Position X="0.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAIAAAAAABAAAAAAAAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DataBindingBasicDemo.Window5" Collapsed="true">
+    <Position X="2.25" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Window5.xaml.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="System.Windows.Controls.ItemCollection" Collapsed="true">
+    <Position X="5.25" Y="4.75" Width="1.5" />
+    <TypeIdentifier />
+    <Lollipop Position="0.1" Collapsed="true" />
+  </Class>
+  <Class Name="System.Windows.Data.CollectionView" Collapsed="true">
+    <Position X="5.25" Y="3.5" Width="1.5" />
+    <TypeIdentifier />
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Font Name="맑은 고딕" Size="9" />
+</ClassDiagram>

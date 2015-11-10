@@ -1,0 +1,34 @@
+﻿<Window x:Class="WPFControls.TabControlSample"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    Title="TabControlSample" Height="300" Width="300">
+    <Grid HorizontalAlignment="Center" VerticalAlignment="Center" Height="200" Width="200">
+        <TabControl>
+            <TabItem>
+                <TabItem.Header>
+                    <StackPanel Orientation="Horizontal">
+                        <Ellipse Width="10" Height="10" Fill="Beige"/>
+                        <TextBlock>부서 정보</TextBlock>
+                    </StackPanel>
+                </TabItem.Header>
+                <StackPanel>
+                    <TextBlock>부서 코드</TextBlock>
+                    <TextBox Name="textBox1" Width="140" HorizontalAlignment="Left"/>
+                </StackPanel>
+            </TabItem>
+            <TabItem>
+                <TabItem.Header>
+                <StackPanel Orientation="Horizontal">
+                    <Ellipse Width="10" Height="10" Fill="Beige"/>
+                    <TextBlock>개인정보</TextBlock>
+                </StackPanel>
+               </TabItem.Header>
+                <StackPanel Orientation="Vertical">                    
+                    <TextBlock>개인코드</TextBlock>
+                    <TextBox HorizontalAlignment="Left" Width="145"></TextBox>
+                </StackPanel>
+
+            </TabItem>
+        </TabControl>
+    </Grid>
+</Window>

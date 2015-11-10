@@ -1,0 +1,73 @@
+// MasterPage.master
+
+<%@ Master Language="C#" %>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<script runat="server">
+    protected void Page_Load(object sender, EventArgs e)
+    {
+        Label1.Text = "이것은 마스터 페이지의 Label에 초기화된 문자열입니다.";
+    }
+</script>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title>제목 없음</title>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div>
+            <h3>콘텐츠 페이지에서 마스터 페이지로의 접근 예제</h3>
+            
+            <table border="1">
+                <tr>
+                    <td>
+                        마스터 페이지
+                    </td>
+                    <td>
+                        <asp:Label ID="Label1" runat="server" Text="Label"></asp:Label><br />          
+                        <asp:TextBox ID="TextBox1" runat="server"></asp:TextBox>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        콘텐츠 페이지
+                    </td>
+                    <td>
+                        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                        </asp:ContentPlaceHolder>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </form>
+</body>
+</html>
+
+
+
+
+// Exam04.aspx
+<%@ Page Language="C#" MasterPageFile="~/MasterPage4.master" Title="제목 없음" %>
+
+<script runat="server">
+    protected void Page_LoadComplete(object sender, EventArgs e)
+    {
+        if (!Page.IsPostBack)
+        {
+            Label tLabel = (Label)Master.FindControl("Label1");
+            Label1.Text = tLabel.Text;
+        }
+    }
+
+    protected void Button1_Click(object sender, EventArgs e)
+    {
+        TextBox tTextBox = (TextBox)Master.FindControl("TextBox1");
+        Label1.Text = tTextBox.Text;
+    }
+</script>
+
+<asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
+    <asp:Label ID="Label1" runat="server"></asp:Label><br />
+    <asp:Button ID="Button1" runat="server" Text="출력" OnClick="Button1_Click" />
+</asp:Content>

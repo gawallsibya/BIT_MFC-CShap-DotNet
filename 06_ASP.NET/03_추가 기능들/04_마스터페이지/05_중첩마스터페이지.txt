@@ -1,0 +1,63 @@
+// MasterKorea.master
+
+<%@ Master Language="C#" MasterPageFile="~/MasterMain.master" %>
+
+<asp:Content id="Content1" runat="server" ContentPlaceHolderID="ContentPlaceHolder1">
+    <table width="100%" border="1">
+            <tr>
+                <td colspan="2">
+                    홈 | 회사소개 | 제품정보 | 고객센터    
+                </td>                        
+            </tr>
+            <tr>
+                <td style="width: 100px;" valign="top">
+                    홈<br />회사소개<br />제품정보<br />고객센터<br />
+                </td>
+                <td style="height: 150px;">
+                    <asp:ContentPlaceHolder id="ContentPlaceHolder1" runat="server">                
+                    </asp:ContentPlaceHolder>    
+                </td>
+            </tr>
+        </table>
+</asp:Content>
+
+
+// MasterAmerica.master
+<%@ Master Language="C#" MasterPageFile="~/MasterMain.master" %>
+
+<asp:Content id="Content1" runat="server" ContentPlaceHolderID="ContentPlaceHolder1">
+    <table width="100%" border="1">
+            <tr>
+                <td colspan="2">
+                    HOME | ABOUT MADE | PRODUCTS | SUPPORT    
+                </td>                        
+            </tr>
+            <tr>
+                <td style="width: 100px;" valign="top">
+                    HOME<br />ABOUT MADE<br />PRODUCTS<br />SUPPORT<br />
+                </td>
+                <td style="height: 150px;">
+                    <asp:ContentPlaceHolder id="ContentPlaceHolder1" runat="server">                
+                    </asp:ContentPlaceHolder>
+                </td>
+            </tr>
+        </table>
+</asp:Content>
+
+
+
+
+
+//05.aspx
+<%@ Page Language="C#" MasterPageFile="~/MasterKorea.master" Title="제목 없음" %>
+
+<asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
+    여기는 (주)마데전자 한국 지사 입니다.
+</asp:Content>
+
+// 05_1.aspx
+<%@ Page Language="C#" MasterPageFile="~/MasterAmerica.master" Title="제목 없음" %>
+
+<asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
+    Here is MADE electronic American branch office.
+</asp:Content>

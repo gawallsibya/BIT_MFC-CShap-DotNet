@@ -1,0 +1,91 @@
+MFC DLL 만들기 
+
+1. MFCDLL 프로젝트 생성(정적 or 동적)
+
+2. XXX.h파일 추가 :  DLL 내부가 아닌 클라이언트 사용목적
+
+   extern "C" __declspec(dllimport) BOOL GetInfoDlg(TCHAR* str, int* num);
+
+3. XXX.cpp 파일추가 : 실제 노출될 함수 추가 
+필요한 h파일 include
+
+extern "C" __declspec(dllexport) BOOL GetInfoDlg(TCHAR* str, int* num)
+{
+	CMyDll  dlg;
+	if(dlg.DoModal() == IDOK)
+	{	
+		lstrcpy(str, dlg.m_str);
+		*num  = dlg.m_num;
+		return TRUE;
+	}
+	return FALSE;
+}
+
+4. 필요한 리소스 다이얼로그 추가 
+
+==========================================
+클라이언트 (DLL 사용)
+
+[암시적 사용]
+1. 전처리 과정 
+   #include "test.h"     				// DLL에서 만든 h파일
+   #pragma comment (lib, "MFCLibrary2.lib")		// DLL lib 파일
+
+2. DLL 암시적 연결 호출
+void CUseDllDlg::OnBnClickedButton1()
+{
+	// TODO: 여기에 컨트롤 알림 처리기 코드를 추가합니다.	
+	TCHAR str[20];
+	int num;
+	if(GetInfoDlg(str, &num))
+	{
+		m_str = str;
+		m_num = num;
+		UpdateData(FALSE);
+	}
+}
+
+[명시적 사용]
+HMODULE hModule;		// 맴버 변수에 추가 
+
+//DLL 명시적 연결
+void CUseDllDlg::OnBnClickedButton2()
+{
+	// TODO: 여기에 컨트롤 알림 처리기 코드를 추가합니다.
+	hModule = LoadLibrary(TEXT("MFCLibrary2.dll"));
+	if(hModule == NULL)
+		AfxMessageBox(TEXT("ERROR"));
+
+}
+
+//DLL 명시적 연결 해제
+void CUseDllDlg::OnBnClickedButton3()
+{
+	// TODO: 여기에 컨트롤 알림 처리기 코드를 추가합니다.
+	FreeLibrary(hModule);
+
+}
+
+typedef BOOL (*FUNC)(TCHAR*, int*);
+//DLL 함수 호출
+void CUseDllDlg::OnBnClickedButton4()
+{
+	// TODO: 여기에 컨트롤 알림 처리기 코드를 추가합니다.
+	FUNC foo;
+	foo = (FUNC)GetProcAddress(hModule, "GetInfoDlg");
+
+	TCHAR str[20];
+	int num;
+	if(foo(str, &num))
+	{
+		m_str = str;
+		m_num = num;
+		UpdateData(FALSE);
+	}
+}
+
+======================================================================
+
+확장 DLL : 클래스 자체를 노출
+class AFX_EXT_CLASS  XXXX
+

@@ -1,0 +1,88 @@
+
+
+--------------------------------------------------------------------------------------------
+
+부분 페이지 캐싱 ) : 컨트롤 캐싱
+
+- 페이지의 일부분을 캐싱하는 기법
+- 사용자 정의 컨트롤을 사용하여 페이지 일부분을 캐싱
+- 동적인 웹 페이지에서 특정 부분만 정적일 때 유용하게 사용
+  ex) 어제의 시청률과 같이 하루 동안은 절대 변경되지 않는 정보가 있을때
+      이 부분을 컨트롤 캐싱하면 사용자가 페이지를 요청할 때 마다 변하지도 
+      않는 어제의 시청률 정보를 처리하는 불필요한 과정을 없앨 수 있다.
+
+
+
+
+부분 페이지 캐싱 ) : 캐시 후 대체(Post-Cache Substitution)
+
+- 컨트롤 캐싱과 반대
+- 정적인 웹페이지에서 특정 부분만 동적일 경우에 유용하게 사용
+- ex) 사용자 이름 또는 배너 광고와 같이 캐싱되지 말아야 할 정보들이 정적인
+      영역에 포함되어 있을 때, 전체 페이지를 캐싱하고 사용자 이름 또는
+      베너 광고와 같이 동적인 부분만 캐싱되지 않도록 하면 해당 웹 페이지의
+      성능을 향상 시킬 수 있다.
+
+
+
+
+
+- 예제 ) 컨트롤 캐싱---------------------------------------------------------------
+
+
+
+// WebUserControl.ascx
+- 사용자 정의 컨트롤에  OutputCache 지시문 추가 후 관련 특성 지정
+- 페이지가 캐싱된 시각을 출력
+
+<%@ Control Language="C#" ClassName="WebUserControl" %>
+<%@ OutputCache Duration="10" VaryByParam="none" %>
+
+<script runat="server">
+    protected void Page_Load(object sender, EventArgs e)
+    {
+        Label1.Text = DateTime.Now.ToString();
+    }
+</script>
+
+<asp:Label ID="Label1" runat="server"></asp:Label>
+
+
+
+// Default.aspx
+- 컨트롤 캐싱에 사용할 사용자 정의 컨트롤 추가 
+<uc1:WebUserControl ID="WebUserControl1" runat="server" />
+
+- .aspx 페이지가 요청된 시각을 출력
+
+
+<%@ Page Language="C#" %>
+<%@ Register Src="WebUserControl.ascx" TagName="WebUserControl" TagPrefix="uc1" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<script runat="server">
+    protected void Page_Load(object sender, EventArgs e)
+    {
+        Label1.Text = DateTime.Now.ToString();
+    }
+</script>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head id="Head1" runat="server">
+    <title>제목 없음</title>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div>
+            <h3>컨트롤 캐싱 예제</h3>
+            
+            페이지가 캐싱된 시각(사용자 정의 컨트롤) :
+            <uc1:WebUserControl ID="WebUserControl1" runat="server" />
+            <p></p>
+            페이지가 요청된 시각 :
+            <asp:Label ID="Label1" runat="server"></asp:Label>
+        </div>
+    </form>
+</body>
+</html>

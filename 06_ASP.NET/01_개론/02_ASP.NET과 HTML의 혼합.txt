@@ -1,0 +1,33 @@
+<%@ Page Language="C#" %>
+<html>
+  <body>
+    Line1: 첫번째 HTML 라인<br />
+    <% Response.Write ("첫번째 ASP.NET 라인<br />"); %>
+    Line2: 두번째 HTML 라인<br />
+    <% Response.Write ("두번째 ASP.NET 라인<br />"); %>
+    Line3: 세번째 HTML 라인<br />
+    <% Response.Write ("세번째 ASP.NET 라인<br />"); %>
+  </body>
+</html>
+
+
+------------------------------------------------------------------
+<script language="c#" runat="server">
+  void Page_Load()
+  {
+    Message.Text="ASP.NET 라인";
+  }
+</script>
+
+<html>
+<head>
+<title>ASP.NET 코드 넣기 예제</TITLE>
+</head>
+<body>
+  첫번째 HTML 라인<br/>
+  <asp:label id=Message runat="server"/> <br />
+  두번째 HTML 라인<br/>
+</body>
+</html>
+
+

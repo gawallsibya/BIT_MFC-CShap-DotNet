@@ -1,0 +1,20 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Movie", "Movie.vcxproj", "{CD2F0804-1F48-4B09-80D3-76A6D0EA1F58}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Win32 = Debug|Win32
+		Release|Win32 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{CD2F0804-1F48-4B09-80D3-76A6D0EA1F58}.Debug|Win32.ActiveCfg = Debug|Win32
+		{CD2F0804-1F48-4B09-80D3-76A6D0EA1F58}.Debug|Win32.Build.0 = Debug|Win32
+		{CD2F0804-1F48-4B09-80D3-76A6D0EA1F58}.Release|Win32.ActiveCfg = Release|Win32
+		{CD2F0804-1F48-4B09-80D3-76A6D0EA1F58}.Release|Win32.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

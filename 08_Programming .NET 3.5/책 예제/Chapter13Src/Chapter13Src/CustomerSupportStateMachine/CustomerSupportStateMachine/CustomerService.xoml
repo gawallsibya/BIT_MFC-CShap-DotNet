@@ -1,0 +1,68 @@
+﻿<StateMachineWorkflowActivity x:Class="CustomerSupportStateMachine.CustomerService" InitialStateName="CustomerServiceInitialState" x:Name="CustomerService" DynamicUpdateCondition="{x:Null}" CompletedStateName="CustomerSatisfiedState" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/workflow">
+	<StateActivity x:Name="CustomerServiceInitialState">
+		<EventDrivenActivity x:Name="OnCallReceived">
+			<HandleExternalEventActivity x:Name="handleCallReceivedEvent" EventName="CallRecieved" InterfaceType="{x:Type CustomerSupportStateMachine.ICustomerCallService}" />
+			<SetStateActivity x:Name="setCallRecievedState" TargetStateName="CallReceivedState" />
+			<FaultHandlersActivity x:Name="faultHandlersActivity1" />
+		</EventDrivenActivity>
+	</StateActivity>
+	<StateActivity x:Name="CallAssignedToSupportPerson">
+		<EventDrivenActivity x:Name="OnReassignCallToPhoneResolution">
+			<HandleExternalEventActivity x:Name="handleReassignCallToPhoneResolution" EventName="CallSentToPhoneResolution" InterfaceType="{x:Type CustomerSupportStateMachine.ICustomerCallService}" />
+			<SetStateActivity x:Name="setToPhoneResolutionState" TargetStateName="CallSentToPhoneResolutionState" />
+		</EventDrivenActivity>
+		<EventDrivenActivity x:Name="OnAssignToDifferentSupportPerson">
+			<HandleExternalEventActivity x:Name="handleAssignToDifferentSupportPerson" EventName="CallAssignedToSupportPerson" InterfaceType="{x:Type CustomerSupportStateMachine.ICustomerCallService}" />
+			<SetStateActivity x:Name="setAssignedToDifferentPersonState" TargetStateName="CallAssignedToSupportPerson" />
+		</EventDrivenActivity>
+		<EventDrivenActivity x:Name="OnMoreInformationNeeded">
+			<HandleExternalEventActivity x:Name="handleMoreInformationNeeded" EventName="CallEndedMoreInformationRequired" InterfaceType="{x:Type CustomerSupportStateMachine.ICustomerCallService}" />
+			<SetStateActivity x:Name="setCallEndsMoreInformationNeeeded" TargetStateName="CallEndedMoreInformationRequired" />
+		</EventDrivenActivity>
+		<EventDrivenActivity x:Name="OnResolveCall">
+			<HandleExternalEventActivity x:Name="handleIssueResolved" EventName="CallResolved" InterfaceType="{x:Type CustomerSupportStateMachine.ICustomerCallService}" />
+			<SetStateActivity x:Name="setIssueResolvedState" TargetStateName="CallResolvedState" />
+		</EventDrivenActivity>
+	</StateActivity>
+	<StateActivity x:Name="CallSentToPhoneResolutionState">
+		<EventDrivenActivity x:Name="OnNeedsHumanAssistance">
+			<HandleExternalEventActivity x:Name="handleAssignToHumanOperator" EventName="CallAssignedToSupportPerson" InterfaceType="{x:Type CustomerSupportStateMachine.ICustomerCallService}" />
+			<SetStateActivity x:Name="setCallAssignedToHuman" TargetStateName="CallAssignedToSupportPerson" />
+		</EventDrivenActivity>
+		<EventDrivenActivity x:Name="OnPhoneResolutionSuccess">
+			<DelayActivity TimeoutDuration="00:00:00" x:Name="delayActivity1" />
+			<SetStateActivity x:Name="setAllDoneState" TargetStateName="CustomerSatisfiedState" />
+		</EventDrivenActivity>
+	</StateActivity>
+	<StateActivity x:Name="CallEndedMoreInformationRequired">
+		<EventDrivenActivity x:Name="OnEndCallWithoutResolution">
+			<DelayActivity TimeoutDuration="00:00:00" x:Name="delayActivity2" />
+			<SetStateActivity x:Name="setCallEndsUnresolved" TargetStateName="CustomerSatisfiedState" />
+		</EventDrivenActivity>
+	</StateActivity>
+	<StateActivity x:Name="CallResolvedState">
+		<EventDrivenActivity x:Name="OnCallResolvedSuccessfully">
+			<DelayActivity TimeoutDuration="00:00:00" x:Name="delayActivity3" />
+			<SetStateActivity x:Name="setCallEndsWithSuccess" TargetStateName="CustomerSatisfiedState" />
+		</EventDrivenActivity>
+	</StateActivity>
+	<StateActivity x:Name="CustomerSatisfiedState" />
+	<StateActivity x:Name="CallReceivedState">
+		<EventDrivenActivity x:Name="OnAssignToSupportPerson">
+			<HandleExternalEventActivity x:Name="handleAssignToSupportPerson" EventName="CallEndedMoreInformationRequired" InterfaceType="{x:Type CustomerSupportStateMachine.ICustomerCallService}" />
+			<SetStateActivity x:Name="setCallAssignedToSupportPersonState" TargetStateName="CallAssignedToSupportPerson" />
+		</EventDrivenActivity>
+		<EventDrivenActivity x:Name="OnAssignToPhoneResolution">
+			<HandleExternalEventActivity x:Name="handleSendCallToPhoneResolution" EventName="CallSentToPhoneResolution" InterfaceType="{x:Type CustomerSupportStateMachine.ICustomerCallService}" />
+			<SetStateActivity x:Name="setCallSentToPhoneResolutionState" TargetStateName="CallSentToPhoneResolutionState" />
+		</EventDrivenActivity>
+		<EventDrivenActivity x:Name="OnEndCallNeedMoreInformation">
+			<HandleExternalEventActivity x:Name="handleEndCallNeedMoreInformation" EventName="CallEndedMoreInformationRequired" InterfaceType="{x:Type CustomerSupportStateMachine.ICustomerCallService}" />
+			<SetStateActivity x:Name="setCallEndedNeedMoreInformationState" TargetStateName="CallEndedMoreInformationRequired" />
+		</EventDrivenActivity>
+		<EventDrivenActivity x:Name="OnCallResolved">
+			<HandleExternalEventActivity x:Name="handleCallResolved" EventName="CallResolved" InterfaceType="{x:Type CustomerSupportStateMachine.ICustomerCallService}" />
+			<SetStateActivity x:Name="setCallResolvedState" TargetStateName="CallResolvedState" />
+		</EventDrivenActivity>
+	</StateActivity>
+</StateMachineWorkflowActivity>

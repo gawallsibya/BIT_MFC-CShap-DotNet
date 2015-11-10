@@ -1,0 +1,31 @@
+﻿<Window x:Class="WPFControls.TreeViewSample"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    Title="TreeViewSample" Height="300" Width="300">
+    <Grid HorizontalAlignment="Center" VerticalAlignment="Center" Height="149" Width="165">
+        <TreeView Name="myTreeView" >
+            <TreeViewItem Header="총무부" IsSelected="True">
+                <TreeViewItem Header="이순신"/>
+                <TreeViewItem Header="사원 번호">
+                    <TreeViewItem Header="12345"/>
+                </TreeViewItem>
+                <TreeViewItem Header="출근일">
+                    <TreeViewItem Header="월요일"/>
+                    <TreeViewItem Header="화요일"/>
+                    <TreeViewItem Header="목요일"/>
+                </TreeViewItem>
+            </TreeViewItem>
+            <TreeViewItem Header="영업부">
+                <TreeViewItem Header="김철수"/>
+                <TreeViewItem Header="사원번호">
+                    <TreeViewItem Header="32567"/>
+                </TreeViewItem>
+                <TreeViewItem Header="출근일">
+                    <TreeViewItem Header="수요일"/>
+                    <TreeViewItem Header="금요일"/>
+                    <TreeViewItem Header="일요일"/>
+                </TreeViewItem>
+            </TreeViewItem>
+        </TreeView>
+    </Grid>
+</Window>

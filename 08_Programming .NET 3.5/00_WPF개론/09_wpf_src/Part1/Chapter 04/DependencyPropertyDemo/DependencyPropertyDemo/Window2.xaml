@@ -1,0 +1,14 @@
+﻿<Window x:Class="DependencyPropertyDemo.Window2"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    Title="Window2" Height="300" Width="300">
+    <StackPanel Name="myPanel" xmlns:local="clr-namespace:DependencyPropertyDemo">
+        <StackPanel.Resources>
+            <local:AnotherAnimal x:Key="myAni"></local:AnotherAnimal>
+        </StackPanel.Resources>
+        <TextBox Text="{Binding Source={StaticResource myAni}
+                                                      , Path=AniName}" />
+        <TextBox Text="{Binding Source={StaticResource myAni}
+                                                      , Path=AniName}" />
+    </StackPanel>
+</Window>

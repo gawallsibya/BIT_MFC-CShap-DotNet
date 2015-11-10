@@ -1,0 +1,94 @@
+// Default.aspx
+
+
+<%@ Page Language="C#" %>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<script runat="server">
+    protected void Page_Load(object sender, EventArgs e)
+    {
+        Label1.Text = User.Identity.Name + " 님 환영합니다.!!!";
+    }
+
+    protected void Button1_Click(object sender, EventArgs e)
+    {
+        FormsAuthentication.SignOut();
+        Response.Redirect("Ex01_Login.aspx");
+    }
+</script>
+
+<html xmlns="http://www.w3.org/1999/xhtml" >
+<head id="Head1" runat="server">
+    <title>제목 없음</title>
+</head>
+<body>
+    <form id="form1" runat="server">
+    <div>
+        <asp:Label ID="Label1" runat="server" Text="Label"></asp:Label><br />
+        <asp:Button ID="Button1" runat="server" Text="로그아웃" OnClick="Button1_Click" />
+    </div>
+    </form>
+</body>
+</html>
+
+
+//Login.aspx
+
+<%@ Page Language="C#" %>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<script runat="server">
+    protected void Button1_Click(object sender, EventArgs e)
+    {
+        if ((TextBox1.Text == "aaaa") && (TextBox2.Text == "aaaa"))
+            FormsAuthentication.RedirectFromLoginPage(TextBox1.Text, CheckBox1.Checked);
+        else
+            Label1.Text = "아이디와 비밀번호가 일치하지 않습니다.";
+    }
+</script>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head id="Head1" runat="server">
+    <title>제목 없음</title>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div>
+            <table>
+                <tr>
+                    <td>아이디 :</td>
+                    <td><asp:TextBox ID="TextBox1" runat="server"></asp:TextBox></td>
+                </tr>
+                <tr>
+                    <td>비밀번호 :</td>
+                    <td><asp:TextBox ID="TextBox2" runat="server" TextMode="Password"></asp:TextBox></td>
+                </tr>
+                <tr>
+                    <td>쿠키 유지 여부 :</td>
+                    <td><asp:CheckBox ID="CheckBox1" runat="server" /></td>
+                </tr>
+            </table>
+            <asp:Button ID="Button1" runat="server" Text="로그인" OnClick="Button1_Click" /><br />
+            <asp:Label ID="Label1" runat="server" ForeColor="red"></asp:Label>
+        </div>
+    </form>
+</body>
+</html>
+
+
+// Web.config
+
+<?xml version="1.0"?>
+
+<configuration xmlns="http://schemas.microsoft.com/.NetConfiguration/v2.0">
+  <appSettings/>
+  <connectionStrings/>
+  <system.web>
+    <authentication mode="Forms">            
+      <forms name=".ASPXAUTH" loginUrl="Ex01_Login.aspx" defaultUrl="Ex01_Default.aspx"></forms>
+    </authentication>
+    <authorization>      
+      <deny users="?"/>
+      </authorization>
+  </system.web>
+ </configuration>

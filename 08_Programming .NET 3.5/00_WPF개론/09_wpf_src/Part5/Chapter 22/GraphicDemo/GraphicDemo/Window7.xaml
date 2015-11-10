@@ -1,0 +1,38 @@
+﻿<Window x:Class="GraphicDemo.Window7"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    Title="Window7" Height="458" Width="642">
+    <Canvas Height="359" Width="527">
+        <Button Margin="50" Width="200" Height="50" Canvas.Left="-25" Canvas.Top="-16">DropShadow와Blur효과
+            <Button.BitmapEffect>
+                <BitmapEffectGroup>
+                    <DropShadowBitmapEffect Color="Black" Direction="320" 
+                 ShadowDepth="25" Softness="1" Opacity="0.5"/>
+                    <BlurBitmapEffect Radius="1" KernelType="Box" />
+                </BitmapEffectGroup>
+            </Button.BitmapEffect>
+        </Button>
+        <Rectangle Canvas.Left="33" Canvas.Top="107" Width="200" Height="200">
+            <Rectangle.Fill>
+                <ImageBrush ImageSource="Jin.jpg" />
+            </Rectangle.Fill>
+            <Rectangle.BitmapEffect>
+                <!--<BevelBitmapEffect BevelWidth="10"></BevelBitmapEffect>-->
+                <!--<BlurBitmapEffect Radius="2" KernelType="Box" />-->
+                <!--<DropShadowBitmapEffect Color="Black" Direction="320" 
+                  ShadowDepth="25" Softness="1"  Opacity="0.7"/>-->
+                <!--<EmbossBitmapEffect Relief=".96" LightAngle="202" />-->
+                <OuterGlowBitmapEffect GlowColor="Blue" GlowSize="30" Noise="1"
+                     Opacity="0.4" />
+            </Rectangle.BitmapEffect>
+        </Rectangle>
+
+        <Image Source="jin.jpg" Width="200" Height="200" Canvas.Left="278" Canvas.Top="107">
+            <Image.OpacityMask>
+                <ImageBrush ImageSource="opacitybrush.png"/>
+            </Image.OpacityMask>
+        </Image>
+
+
+    </Canvas>
+</Window>

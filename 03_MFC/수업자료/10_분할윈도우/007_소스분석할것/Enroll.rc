@@ -1,0 +1,527 @@
+//Microsoft Developer Studio generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// Korean resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_KOR)
+#ifdef _WIN32
+LANGUAGE LANG_KOREAN, SUBLANG_DEFAULT
+#pragma code_page(949)
+#endif //_WIN32
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#define _AFX_NO_SPLITTER_RESOURCES\r\n"
+    "#define _AFX_NO_OLE_RESOURCES\r\n"
+    "#define _AFX_NO_TRACKER_RESOURCES\r\n"
+    "#define _AFX_NO_PROPERTY_RESOURCES\r\n"
+    "\r\n"
+    "#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_KOR)\r\n"
+    "#ifdef _WIN32\r\n"
+    "LANGUAGE 18, 1\r\n"
+    "#pragma code_page(949)\r\n"
+    "#endif\r\n"
+    "#include ""res\\Enroll.rc2""  // non-Microsoft Visual C++ edited resources\r\n"
+    "#include ""l.kor\\afxres.rc""          // Standard components\r\n"
+    "#endif\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+IDR_MAINFRAME           ICON    DISCARDABLE     "res\\Enroll.ico"
+IDR_ENROLLTYPE          ICON    DISCARDABLE     "res\\EnrlDoc.ico"
+IDI_ICONTREE1           ICON    DISCARDABLE     "res\\Note07.ico"
+IDI_ICONTREE2           ICON    DISCARDABLE     "res\\Note08.ico"
+IDI_ICONTREE3           ICON    DISCARDABLE     "res\\Note04.ico"
+IDI_ICONLIST1           ICON    DISCARDABLE     "res\\Misc27.ico"
+IDI_ICONLIST2           ICON    DISCARDABLE     "res\\Misc26.ico"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Bitmap
+//
+
+IDR_MAINFRAME           BITMAP  MOVEABLE PURE   "res\\Toolbar.bmp"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Toolbar
+//
+
+IDR_MAINFRAME TOOLBAR DISCARDABLE  16, 15
+BEGIN
+    BUTTON      ID_FILE_NEW
+    BUTTON      ID_FILE_OPEN
+    BUTTON      ID_FILE_SAVE
+    SEPARATOR
+    BUTTON      ID_EDIT_CUT
+    BUTTON      ID_EDIT_COPY
+    BUTTON      ID_EDIT_PASTE
+    SEPARATOR
+    BUTTON      ID_COURSE_INSERT
+    BUTTON      ID_STUDENT_INSERT
+    SEPARATOR
+    BUTTON      ID_FILE_PRINT
+    BUTTON      ID_APP_ABOUT
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Menu
+//
+
+IDR_MAINFRAME MENU PRELOAD DISCARDABLE 
+BEGIN
+    POPUP "파일(&F)"
+    BEGIN
+        MENUITEM "새 파일(&N)\tCtrl+N",         ID_FILE_NEW
+        MENUITEM "열기(&O)...\tCtrl+O",         ID_FILE_OPEN
+        MENUITEM "저장(&S)\tCtrl+S",            ID_FILE_SAVE
+        MENUITEM "다른 이름으로 저장(&A)...",   ID_FILE_SAVE_AS
+        MENUITEM SEPARATOR
+        MENUITEM "최근 파일",                   ID_FILE_MRU_FILE1, GRAYED
+        MENUITEM SEPARATOR
+        MENUITEM "종료(&X)",                    ID_APP_EXIT
+    END
+    POPUP "편집(&E)"
+    BEGIN
+        MENUITEM "실행취소(&U)\tCtrl+Z",        ID_EDIT_UNDO
+        MENUITEM SEPARATOR
+        MENUITEM "잘라내기(&T)\tCtrl+X",        ID_EDIT_CUT
+        MENUITEM "복사(&C)\tCtrl+C",            ID_EDIT_COPY
+        MENUITEM "붙여넣기(&P)\tCtrl+V",        ID_EDIT_PASTE
+    END
+    POPUP "자료 등록(&I)"
+    BEGIN
+        MENUITEM "코스 등록(&C)",               ID_COURSE_INSERT
+        MENUITEM "수강생 등록(&S)",             ID_STUDENT_INSERT
+    END
+    POPUP "보기(&V)"
+    BEGIN
+        MENUITEM "도구모음줄(&T)",              ID_VIEW_TOOLBAR
+        MENUITEM "상태표시줄(&S)",              ID_VIEW_STATUS_BAR
+        MENUITEM SEPARATOR
+        MENUITEM "리스트뷰 콘트롤 속성",        ID_LIST_PROPERTY
+        MENUITEM "트리뷰 콘트롤 속성",          ID_TREE_PROPERTY
+    END
+    POPUP "도움말(&H)"
+    BEGIN
+        MENUITEM "Enroll 정보(&A)...",          ID_APP_ABOUT
+    END
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Accelerator
+//
+
+IDR_MAINFRAME ACCELERATORS PRELOAD MOVEABLE PURE 
+BEGIN
+    "N",            ID_FILE_NEW,            VIRTKEY, CONTROL
+    "O",            ID_FILE_OPEN,           VIRTKEY, CONTROL
+    "S",            ID_FILE_SAVE,           VIRTKEY, CONTROL
+    "Z",            ID_EDIT_UNDO,           VIRTKEY, CONTROL
+    "X",            ID_EDIT_CUT,            VIRTKEY, CONTROL
+    "C",            ID_EDIT_COPY,           VIRTKEY, CONTROL
+    "V",            ID_EDIT_PASTE,          VIRTKEY, CONTROL
+    VK_BACK,        ID_EDIT_UNDO,           VIRTKEY, ALT
+    VK_DELETE,      ID_EDIT_CUT,            VIRTKEY, SHIFT
+    VK_INSERT,      ID_EDIT_COPY,           VIRTKEY, CONTROL
+    VK_INSERT,      ID_EDIT_PASTE,          VIRTKEY, SHIFT
+    VK_F6,          ID_NEXT_PANE,           VIRTKEY 
+    VK_F6,          ID_PREV_PANE,           VIRTKEY, SHIFT
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_ABOUTBOX DIALOG DISCARDABLE  0, 0, 217, 55
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Enroll 정보"
+FONT 8, "MS Sans Serif"
+BEGIN
+    ICON            IDR_MAINFRAME,IDC_STATIC,11,17,20,20
+    LTEXT           "Enroll 버전 1.0",IDC_STATIC,40,10,119,8
+    LTEXT           "저작권 ",IDC_STATIC,40,25,119,8
+    DEFPUSHBUTTON   "확인",IDOK,178,7,32,14,WS_GROUP
+END
+
+IDD_COURSE DIALOG DISCARDABLE  0, 0, 187, 66
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "코스 등록"
+FONT 10, "굴림체"
+BEGIN
+    LTEXT           "코스명 :",IDC_STATIC,7,7,33,8
+    EDITTEXT        IDC_NAME,46,7,134,14,ES_AUTOHSCROLL
+    DEFPUSHBUTTON   "확인",IDOK,23,34,50,14
+    PUSHBUTTON      "취소",IDCANCEL,102,34,50,14
+END
+
+IDD_STUDENT DIALOG DISCARDABLE  0, 0, 154, 126
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "수강생 등록"
+FONT 10, "굴림체"
+BEGIN
+    LTEXT           "수강생명 :",IDC_STATIC,7,7,41,8
+    EDITTEXT        IDC_NAME,54,7,84,14,ES_AUTOHSCROLL
+    LTEXT           "전화번호 :",IDC_STATIC,7,28,41,8
+    EDITTEXT        IDC_TELNO,55,26,84,14,ES_AUTOHSCROLL
+    LTEXT           "생년월일 :",IDC_STATIC,7,49,41,8
+    EDITTEXT        IDC_BIRTH,55,46,84,14,ES_AUTOHSCROLL
+    GROUPBOX        "성별",IDC_STATIC,7,66,50,44
+    CONTROL         "남자",IDC_SEX,"Button",BS_AUTORADIOBUTTON | WS_GROUP,17,
+                    79,32,10
+    CONTROL         "여자",IDC_RADIO2,"Button",BS_AUTORADIOBUTTON,17,92,32,
+                    10
+    DEFPUSHBUTTON   "확인",IDOK,87,68,50,14,WS_GROUP
+    PUSHBUTTON      "취소",IDCANCEL,86,88,50,14
+END
+
+IDD_TREE_PROPERTY DIALOG DISCARDABLE  0, 0, 189, 156
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "트리뷰 콘트롤 속성"
+FONT 10, "굴림"
+BEGIN
+    DEFPUSHBUTTON   "확인",IDOK,136,5,50,14
+    PUSHBUTTON      "취소",IDCANCEL,136,25,50,14
+    CONTROL         "Tree1",IDC_TREE1,"SysTreeView32",WS_BORDER | WS_TABSTOP,
+                    5,5,85,145
+    GROUPBOX        "속성",IDC_STATIC,96,45,90,105
+    CONTROL         "EDITLABELS",IDC_EDITLABELS,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,101,58,54,10
+    CONTROL         "HASBUTTONS",IDC_HASBUTTONS,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,101,73,60,10
+    CONTROL         "HASLINES",IDC_HASLINES,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,101,88,47,10
+    CONTROL         "LINESATROOT",IDC_LINESATROOT,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,101,103,61,10
+    CONTROL         "DISABLEDRAGDROP",IDC_DISABLEDRAGDROP,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,101,118,79,10
+    CONTROL         "SHOWSELALWAYS",IDC_SHOWSELALWAYS,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,101,133,74,10
+END
+
+IDD_LIST_PROPERTY DIALOG DISCARDABLE  0, 0, 254, 111
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "리스트뷰 콘트롤 속성"
+FONT 10, "굴림"
+BEGIN
+    DEFPUSHBUTTON   "확인",IDOK,194,5,50,14
+    PUSHBUTTON      "취소",IDCANCEL,194,25,50,14
+    CONTROL         "List1",IDC_LIST1,"SysListView32",LVS_REPORT | WS_BORDER | 
+                    WS_TABSTOP,5,5,80,100
+    COMBOBOX        IDC_VIEWMODE,115,5,59,65,CBS_DROPDOWNLIST | WS_VSCROLL | 
+                    WS_TABSTOP
+    LTEXT           "형태 :",IDC_STATIC,91,9,18,8
+    LTEXT           "정렬 :",IDC_STATIC,91,28,18,8
+    COMBOBOX        IDC_SORTMODE,115,25,59,60,CBS_DROPDOWNLIST | WS_VSCROLL | 
+                    WS_TABSTOP
+    GROUPBOX        "속성",IDC_STATIC,90,45,155,60
+    CONTROL         "AUTOARRANGE",IDC_AUTOARRANGE,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,95,59,62,10
+    CONTROL         "SINGLESEL",IDC_SINGLESEL,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,95,72,51,10
+    CONTROL         "EDITLABEL",IDC_EDITLABEL,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,95,87,50,10
+    CONTROL         "NOLABELWRAP",IDC_NOLABLEWRAP,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,169,58,64,10
+    CONTROL         "NOCOLUMNHEADER",IDC_NOCOLUMNHEADER,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,169,72,71,10
+    CONTROL         "NOSORTHEADER",IDC_NOSORTHEADER,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,169,87,69,10
+END
+
+
+#ifndef _MAC
+/////////////////////////////////////////////////////////////////////////////
+//
+// Version
+//
+
+VS_VERSION_INFO VERSIONINFO
+ FILEVERSION 1,0,0,1
+ PRODUCTVERSION 1,0,0,1
+ FILEFLAGSMASK 0x3fL
+#ifdef _DEBUG
+ FILEFLAGS 0x1L
+#else
+ FILEFLAGS 0x0L
+#endif
+ FILEOS 0x4L
+ FILETYPE 0x1L
+ FILESUBTYPE 0x0L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "040904B0"
+        BEGIN
+            VALUE "CompanyName", "\0"
+            VALUE "FileDescription", "ENROLL MFC 응용프로그램\0"
+            VALUE "FileVersion", "1, 0, 0, 1\0"
+            VALUE "InternalName", "ENROLL\0"
+            VALUE "LegalCopyright", "저작권 \0"
+            VALUE "LegalTrademarks", "\0"
+            VALUE "OriginalFilename", "ENROLL.EXE\0"
+            VALUE "ProductName", "ENROLL 응용프로그램\0"
+            VALUE "ProductVersion", "1, 0, 0, 1\0"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x409, 1200
+    END
+END
+
+#endif    // !_MAC
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO DISCARDABLE 
+BEGIN
+    IDD_ABOUTBOX, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 210
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 48
+    END
+
+    IDD_COURSE, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 180
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 59
+    END
+
+    IDD_STUDENT, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 147
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 119
+    END
+
+    IDD_TREE_PROPERTY, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 182
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 149
+    END
+
+    IDD_LIST_PROPERTY, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 247
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 104
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog Info
+//
+
+IDD_LIST_PROPERTY DLGINIT
+BEGIN
+    IDC_VIEWMODE, 0x403, 12, 0
+0xdbc0, 0xbac0, 0xbe20, 0xc0c6, 0xc4cc, 0x00dc, 
+    IDC_VIEWMODE, 0x403, 10, 0
+0xabc5, 0xbe20, 0xc0c6, 0xc4cc, 0x00dc, 
+    IDC_VIEWMODE, 0x403, 7, 0
+0xaeb8, 0xbabd, 0xaec6, "\000" 
+    IDC_VIEWMODE, 0x403, 7, 0
+0xb8ba, 0xedb0, 0xadbc, "\000" 
+    IDC_SORTMODE, 0x403, 10, 0
+0xa4c1, 0xc4b7, 0xbe20, 0xc7c8, 0x00d4, 
+    IDC_SORTMODE, 0x403, 9, 0
+0xc0bf, 0xa7b8, 0xf7c2, 0xf8bc, "\000" 
+    IDC_SORTMODE, 0x403, 9, 0
+0xbbb3, 0xb2b8, 0xf7c2, 0xf8bc, "\000" 
+    0
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE PRELOAD DISCARDABLE 
+BEGIN
+    IDR_MAINFRAME           "수강 등록 현황\n\nEnroll\nEnroll Files (*.enr)\n.ENR\nEnroll.Document\nEnroll Document"
+END
+
+STRINGTABLE PRELOAD DISCARDABLE 
+BEGIN
+    AFX_IDS_APP_TITLE       "Enroll"
+    AFX_IDS_IDLEMESSAGE     "준비완료"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_INDICATOR_EXT        "EXT"
+    ID_INDICATOR_CAPS       "CAP"
+    ID_INDICATOR_NUM        "NUM"
+    ID_INDICATOR_SCRL       "SCRL"
+    ID_INDICATOR_OVR        "겹침"
+    ID_INDICATOR_REC        "기록"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_FILE_NEW             "새 문서 작성\n새 문서"
+    ID_FILE_OPEN            "기존 문서 열기\n열기"
+    ID_FILE_CLOSE           "실행중인 문서 닫기\n닫기"
+    ID_FILE_SAVE            "실행중인 문서 저장\n저장"
+    ID_FILE_SAVE_AS         "실행중인 문서를 다른 이름으로 저장\n다른 이름으로 저장"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_APP_ABOUT            "프로그램 정보, 버전 번호 및 저작권 나타내기\n정보"
+    ID_APP_EXIT             "응용프로그램 종료; 문서 저장을 요구하는 프롬프트\n종료"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_FILE_MRU_FILE1       "이 문서 열기"
+    ID_FILE_MRU_FILE2       "이 문서 열기"
+    ID_FILE_MRU_FILE3       "이 문서 열기"
+    ID_FILE_MRU_FILE4       "이 문서 열기"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_NEXT_PANE            "다음 창 유리로 전환\n다음 창 유리"
+    ID_PREV_PANE            "이전 창 유리로 전환\n이전 창 유리"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_WINDOW_SPLIT         "실행중인 창을 유리 창으로 분할\n분할"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_EDIT_CLEAR           "선택 지우기\n지우기"
+    ID_EDIT_CLEAR_ALL       "모두 지우기\n모두 지우기"
+    ID_EDIT_COPY            "선택 사항을 복사하여 클립보드에 저장하기\n복사"
+    ID_EDIT_CUT             "선택 사항을 잘라 내어 클립보드에 저장하기\n잘라 내기"
+    ID_EDIT_FIND            "지정 텍스트 찾기\n찾기"
+    ID_EDIT_PASTE           "클립보드 내용 삽입\n붙여넣기"
+    ID_EDIT_REPEAT          "마지막 조작 반복\n반복"
+    ID_EDIT_REPLACE         "지정 텍스트를 다른 텍스트로 바꾸기\n바꾸기"
+    ID_EDIT_SELECT_ALL      "문서 전체 선택\n전체 선택"
+    ID_EDIT_UNDO            "마지막 조작 실행취소\n실행취소"
+    ID_EDIT_REDO            "앞에서 실행취소한 조작 재실행\n재실행"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_VIEW_TOOLBAR         "도구모음줄 보이기 또는 감추기\n도구모음줄 전환"
+    ID_VIEW_STATUS_BAR      "상태 표시줄 보이기 또는 감추기\n상태표시줄 전환"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    AFX_IDS_SCSIZE          "창 크기 변경"
+    AFX_IDS_SCMOVE          "창 위치 변경"
+    AFX_IDS_SCMINIMIZE      "창을 아이콘으로 축소"
+    AFX_IDS_SCMAXIMIZE      "창을 전체 화면으로 확대"
+    AFX_IDS_SCNEXTWINDOW    "다음 문서 창으로 전환"
+    AFX_IDS_SCPREVWINDOW    "이전 문서 창으로 전환"
+    AFX_IDS_SCCLOSE         "활성창을 닫고 문서를 저장하도록 프롬프트에 의해 요구"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    AFX_IDS_SCRESTORE       "창을 보통 크기로 복귀"
+    AFX_IDS_SCTASKLIST      "작업 목록 활성화"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_COURSE_INSERT        "새로운 코스를 등록합니다.\n코스 등록"
+    ID_STUDENT_INSERT       "새로운 수강생을 등록합니다.\n수강생 등록"
+    ID_TREE_PROPERTY        "트리뷰 콘트롤의 속성을 테스트합니다."
+    ID_LIST_PROPERTY        "리스트뷰 콘트롤의 속성을 테스트합니다."
+END
+
+#endif    // Korean resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+#define _AFX_NO_SPLITTER_RESOURCES
+#define _AFX_NO_OLE_RESOURCES
+#define _AFX_NO_TRACKER_RESOURCES
+#define _AFX_NO_PROPERTY_RESOURCES
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_KOR)
+#ifdef _WIN32
+LANGUAGE 18, 1
+#pragma code_page(949)
+#endif
+#include "res\Enroll.rc2"  // non-Microsoft Visual C++ edited resources
+#include "l.kor\afxres.rc"          // Standard components
+#endif
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

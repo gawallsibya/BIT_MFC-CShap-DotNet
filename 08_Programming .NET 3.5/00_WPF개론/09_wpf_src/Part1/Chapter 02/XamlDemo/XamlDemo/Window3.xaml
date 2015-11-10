@@ -1,0 +1,13 @@
+﻿<Window x:Class="XamlDemo.Window3"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    Title="Window3" Height="300" Width="300">
+    <Grid xmlns:local="clr-namespace:XamlSample" >
+        <Grid.Resources>
+            <local:Animal x:Key="aniKey">
+                <local:Animal.Irum>Tiger</local:Animal.Irum>
+                <local:Animal.Juso>Sabana</local:Animal.Juso>
+            </local:Animal>
+        </Grid.Resources>
+    </Grid>
+</Window>

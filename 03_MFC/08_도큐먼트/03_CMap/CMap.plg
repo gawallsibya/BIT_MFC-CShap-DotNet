@@ -1,0 +1,57 @@
+<html>
+<body>
+<pre>
+<h1>Build Log</h1>
+<h3>
+--------------------Configuration: CMap - Win32 Debug--------------------
+</h3>
+<h3>Command Lines</h3>
+Creating command line "rc.exe /l 0x412 /fo"Debug/CMap.res" /d "_DEBUG" /d "_AFXDLL" "C:\Documents and Settings\최창민\바탕 화면\02_MFC\0001_강의자료\07_도큐먼트\03_CMap\CMap.rc"" 
+Creating temporary file "C:\DOCUME~1\최창민\LOCALS~1\Temp\RSP11.tmp" with contents
+[
+/nologo /MDd /W3 /Gm /GX /ZI /Od /D "WIN32" /D "_DEBUG" /D "_WINDOWS" /D "_AFXDLL" /D "_MBCS" /FR"Debug/" /Fp"Debug/CMap.pch" /Yu"stdafx.h" /Fo"Debug/" /Fd"Debug/" /FD /GZ /c 
+"C:\Documents and Settings\최창민\바탕 화면\02_MFC\0001_강의자료\07_도큐먼트\03_CMap\CMap.cpp"
+"C:\Documents and Settings\최창민\바탕 화면\02_MFC\0001_강의자료\07_도큐먼트\03_CMap\CMapDoc.cpp"
+"C:\Documents and Settings\최창민\바탕 화면\02_MFC\0001_강의자료\07_도큐먼트\03_CMap\CMapView.cpp"
+"C:\Documents and Settings\최창민\바탕 화면\02_MFC\0001_강의자료\07_도큐먼트\03_CMap\MainFrm.cpp"
+"C:\Documents and Settings\최창민\바탕 화면\02_MFC\0001_강의자료\07_도큐먼트\03_CMap\MapDialog.cpp"
+]
+Creating command line "cl.exe @"C:\DOCUME~1\최창민\LOCALS~1\Temp\RSP11.tmp"" 
+Creating temporary file "C:\DOCUME~1\최창민\LOCALS~1\Temp\RSP12.tmp" with contents
+[
+/nologo /MDd /W3 /Gm /GX /ZI /Od /D "WIN32" /D "_DEBUG" /D "_WINDOWS" /D "_AFXDLL" /D "_MBCS" /FR"Debug/" /Fp"Debug/CMap.pch" /Yc"stdafx.h" /Fo"Debug/" /Fd"Debug/" /FD /GZ /c 
+"C:\Documents and Settings\최창민\바탕 화면\02_MFC\0001_강의자료\07_도큐먼트\03_CMap\StdAfx.cpp"
+]
+Creating command line "cl.exe @"C:\DOCUME~1\최창민\LOCALS~1\Temp\RSP12.tmp"" 
+Creating temporary file "C:\DOCUME~1\최창민\LOCALS~1\Temp\RSP13.tmp" with contents
+[
+/nologo /subsystem:windows /incremental:yes /pdb:"Debug/CMap.pdb" /debug /machine:I386 /out:"Debug/CMap.exe" /pdbtype:sept 
+".\Debug\CMap.obj"
+".\Debug\CMapDoc.obj"
+".\Debug\CMapView.obj"
+".\Debug\MainFrm.obj"
+".\Debug\MapDialog.obj"
+".\Debug\StdAfx.obj"
+".\Debug\CMap.res"
+]
+Creating command line "link.exe @"C:\DOCUME~1\최창민\LOCALS~1\Temp\RSP13.tmp""
+<h3>Output Window</h3>
+Compiling resources...
+Compiling...
+StdAfx.cpp
+Compiling...
+CMap.cpp
+CMapDoc.cpp
+CMapView.cpp
+MainFrm.cpp
+MapDialog.cpp
+Generating Code...
+Linking...
+
+
+
+<h3>Results</h3>
+CMap.exe - 0 error(s), 0 warning(s)
+</pre>
+</body>
+</html>

@@ -1,0 +1,61 @@
+8
+
+dir
+1755
+svn://71.248.178.27/OReilly/Prog%20.NET%203.5/DotNet3/Chapter%20Design%20Patterns/SourceCode/Observer/Observer
+svn://71.248.178.27
+
+
+
+2007-08-23T15:44:40.656250Z
+1665
+jliberty
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+35da0109-7d8c-7944-ae35-a6cffb41e53a
+
+Observer.csproj
+file
+
+
+
+
+2008-01-11T15:38:13.351778Z
+f67162074f5fa5a269cc782e5c446064
+2007-08-18T19:49:21.695250Z
+1651
+alex
+
+bin
+dir
+
+obj
+dir
+
+Program.cs
+file
+
+
+
+
+2008-01-11T15:38:13.357778Z
+3978da2cce6172eefc33c2949a13db5d
+2007-08-23T15:44:40.656250Z
+1665
+jliberty
+
+Properties
+dir
+

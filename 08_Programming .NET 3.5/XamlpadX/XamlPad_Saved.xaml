@@ -1,0 +1,139 @@
+<Window
+   xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+   xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+   Title="Programming .NET 3.5 | US Presidents"
+   Background="White"
+   Margin="50">
+   <Window.Resources>
+
+      <LinearGradientBrush x:Key="ListBoxGradient"
+                           StartPoint="0,0"
+                           EndPoint="0,1">
+
+         <GradientStop Color="#9000FFFF"
+                       Offset="0" />
+         <GradientStop Color="#40000000"
+                       Offset="0.005" />
+         <GradientStop Color="#10000000"
+                       Offset="0.04" />
+         <GradientStop Color="#200000AA"
+                       Offset="0.945" />
+         <GradientStop Color="#60FFFFFF"
+                       Offset="1" />
+
+      </LinearGradientBrush>
+
+
+      <Style x:Key="SpecialListStyle"
+             TargetType="{x:Type ListBox}">
+         <Setter Property="Template">
+            <Setter.Value>
+               <ControlTemplate TargetType="{x:Type ListBox}" >
+                  <Border	BorderBrush="Gray" 
+                     BorderThickness="1" 
+                     CornerRadius="6" 
+                     Background="{DynamicResource ListBoxGradient}" >
+                     <ScrollViewer VerticalScrollBarVisibility="Disabled" 
+                        HorizontalScrollBarVisibility="Auto">
+                        <StackPanel	IsItemsHost="True" 
+                           Orientation="Horizontal" 
+                           HorizontalAlignment="Left" />
+                     </ScrollViewer>
+                  </Border>
+               </ControlTemplate>
+            </Setter.Value>
+         </Setter>
+      </Style>
+
+      <Style x:Key="SpecialListItem"
+             TargetType="{x:Type ListBoxItem}">
+         <Setter Property="MaxHeight"
+                 Value="185" />
+         <Setter Property="MinHeight"
+                 Value="165" />
+         <Setter Property="Opacity"
+                 Value=".75" />
+         <Style.Triggers>
+            <EventTrigger RoutedEvent="Mouse.MouseEnter">
+               <EventTrigger.Actions>
+                  <BeginStoryboard>
+                     <Storyboard>
+                        <DoubleAnimation Duration="0:0:0.2" 
+                           Storyboard.TargetProperty="MaxHeight" 
+                           To="195" />
+                        <DoubleAnimation Duration="0:0:0.2" 
+                           Storyboard.TargetProperty="Opacity"
+                           To="1.0" />
+                     </Storyboard>
+                  </BeginStoryboard>
+               </EventTrigger.Actions>
+            </EventTrigger>
+
+            <EventTrigger RoutedEvent="Mouse.MouseLeave">
+               <EventTrigger.Actions>
+                  <BeginStoryboard>
+                     <Storyboard>
+                        <DoubleAnimation Duration="0:0:1" 
+                           Storyboard.TargetProperty="MaxHeight" />
+                        <DoubleAnimation Duration="0:0:0.2" 
+                           Storyboard.TargetProperty="Opacity" />
+                     </Storyboard>
+                  </BeginStoryboard>
+               </EventTrigger.Actions>
+            </EventTrigger>
+         </Style.Triggers>
+      </Style>
+
+
+   </Window.Resources>
+   <Grid Width="600"
+         Height="280">
+      <StackPanel>
+         <TextBlock FontSize="14">United States Presidents</TextBlock>
+         <ListBox Style="{StaticResource SpecialListStyle}" 
+                  Grid.Row="1" 
+                  Grid.ColumnSpan="3" 
+                  Name ="PhotoListBox" 
+                  Margin="0,0,0,20" 
+		     
+                  ItemsSource="{Binding }" 
+                  ItemContainerStyle="{StaticResource SpecialListItem}" 
+                  SelectedIndex="0">
+ <ListBoxItem>
+               <Image Source= 
+            "http://upload.wikimedia.org/wikipedia/commons/b/b6/Gilbert_Stuart_Williamstown_Portrait_of_George_Washington.jpg" />
+            </ListBoxItem>
+            <ListBoxItem>
+               <Image Source= 
+            "http://upload.wikimedia.org/wikipedia/commons/9/9e/Johnadamsvp.flipped.jpg" />
+            </ListBoxItem>
+            <ListBoxItem>
+               <Image Source= 
+            "http://upload.wikimedia.org/wikipedia/commons/4/46/T_Jefferson_by_Charles_Willson_Peale_1791_2.jpg" />
+            </ListBoxItem>
+            <ListBoxItem>
+               <Image Source= 
+            "http://upload.wikimedia.org/wikipedia/commons/a/a7/Jm4.gif" />
+            </ListBoxItem>
+            <ListBoxItem>
+               <Image Source= 
+            "http://upload.wikimedia.org/wikipedia/commons/thumb/9/95/James_Monroe_White_House_portrait_1819.gif/498px-James_Monroe_White_House_portrait_1819.gif" />
+            </ListBoxItem>
+            <ListBoxItem>
+               <Image Source= 
+            "http://upload.wikimedia.org/wikipedia/commons/6/64/John_Quincy_Adams.jpg" />
+            </ListBoxItem>
+            <ListBoxItem>
+               <Image Source= 
+            "http://upload.wikimedia.org/wikipedia/commons/thumb/4/43/Andrew_jackson_head.jpg/494px-Andrew_jackson_head.jpg" />
+            </ListBoxItem>
+            <ListBoxItem>
+               <Image Source= 
+            "http://upload.wikimedia.org/wikipedia/commons/3/3f/Martin_Van_Buren_by_George_PA_Healy%2C_1858.gif" />
+            </ListBoxItem>
+
+
+         </ListBox>
+      </StackPanel>
+   </Grid>
+</Window>

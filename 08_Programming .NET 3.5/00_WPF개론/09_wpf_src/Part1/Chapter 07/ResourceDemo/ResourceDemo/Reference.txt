@@ -1,0 +1,2 @@
+﻿
+<SolidColorBrush x:Key="BrushAqua" Color="Aqua"/>

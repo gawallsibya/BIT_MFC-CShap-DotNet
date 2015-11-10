@@ -1,0 +1,229 @@
+[호스트 객체 구성 ]
+
+1. 단일 endpoint 구성
+// cs
+ static void Main(string[] args)
+        {
+            ServiceHost host = new ServiceHost(typeof(HelloWorldWCFService));
+	   //========================================================
+	    // 메타데이터 추가부분....
+            ServiceMetadataBehavior behavior =
+            host.Description.Behaviors.Find<ServiceMetadataBehavior>();
+            if (behavior == null)
+            {
+                behavior = new ServiceMetadataBehavior();
+                host.Description.Behaviors.Add(behavior);
+            }
+            behavior.HttpGetEnabled = true;
+            //===========================================
+            host.Open();
+            Console.WriteLine("Press Any key to stop the service");
+            Console.ReadLine();
+            host.Close();
+        }
+
+
+//config
+<configuration>
+  <system.serviceModel>
+    <services>
+      <service name="HelloWorldService.HelloWorldWCFService">
+        <host>
+          <baseAddresses>
+            <add baseAddress="http://61.81.99.99/wcf/example/helloworldservice"/>
+          </baseAddresses>
+        </host>
+          <endpoint contract="HelloWorldService.IHelloWorld"
+            address="http://61.81.99.99/wcf/example/helloworldservice"
+            binding="basicHttpBinding"
+         />
+       
+      </service>
+    </services>
+  </system.serviceModel>
+</configuration>
+
+
+//2. 2개 이상의 endpoint 구성
+//cs 수정 필요 없다...
+
+//config
+<configuration>
+  <system.serviceModel>
+    <services>
+      <service name="HelloWorldService.HelloWorldWCFService">
+        <host>
+          <baseAddresses>
+            <add baseAddress="http://localhost/wcf/example/helloworldservice"/>
+            <add baseAddress="net.tcp://localhost/wcf/example/helloworldservice"/>
+          </baseAddresses>
+        </host>
+        <endpoint contract="HelloWorldService.IHelloWorld"
+            address=""
+            binding="basicHttpBinding"
+                />
+        <endpoint contract="HelloWorldService.IHelloWorld"
+            address=""
+            binding="netTcpBinding"
+                />
+      </service>
+    </services>
+  </system.serviceModel>
+</configuration>
+
+//3.추가 기능 -------------------------------------------------------
+// bindings ==> 사용될 탬플릿을 나열한다.
+<configuration>
+    <system.serviceModel>
+        <bindings>
+            <basicHttpBinding>
+                <binding name="MtomSetting" messageEncoding="Mtom" />
+            </basicHttpBinding>
+        </bindings>
+        <services>
+            <service name="HelloWorldService.HelloWorldWCFService">
+                <host>
+                    <baseAddresses>
+                        <add baseAddress="http://localhost/wcf/example/helloworldservice"/>
+                        <add baseAddress="net.tcp://localhost/wcf/example/helloworldservice"/>
+                    </baseAddresses>
+                </host>
+                <endpoint contract="HelloWorldService.IHelloWorld"
+                    address=""
+                    binding="basicHttpBinding"
+                    bindingConfiguration="MtomSetting"
+                />
+                <endpoint contract="HelloWorldService.IHelloWorld"
+                    address=""
+                    binding="netTcpBinding"
+                />
+            </service>
+        </services>
+    </system.serviceModel>
+</configuration> 
+
+
+
+[ 클라이언트 구성 ]
+
+//1. cs 파일만을 이용한 구성 ==> XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+
+using System.ServiceModel.Description;	// System.ServiceModel 어셈블리추가
+using HelloWorldService;
+
+  static void Main(string[] args)
+        {
+	   //1. ServiceEndPoint 구성
+            Uri uri = new Uri("http://localhost/wcf/example/helloworldservice");
+            ServiceEndpoint ep = new ServiceEndpoint(
+                ContractDescription.GetContract(typeof(IHelloWorld)),
+                new BasicHttpBinding(),
+                new EndpointAddress(uri));
+
+	    //2. Proxy 객체를 생성할 수 있는 Factory 생성
+            ChannelFactory<IHelloWorld> factory = new ChannelFactory<IHelloWorld>(ep);
+
+	    // 3. Factory객체로 부터  Proxy객체를 생성
+            //    주의점은 반드시 EndPoint 구성이 일치해야 한다.
+            IHelloWorld proxy = factory.CreateChannel();
+
+            string result = proxy.SayHello();
+            Console.WriteLine(result);
+            (proxy as IDisposable).Dispose();
+        }
+
+===============================================================
+//2. cs, config 파일을 이용한 구성
+
+//1) cs 파일
+     static void Main(string[] args)
+      {
+            ChannelFactory<IHelloWorld> factory =
+                            new ChannelFactory<IHelloWorld>("HttpHelloWorld");
+            IHelloWorld proxy = factory.CreateChannel();
+            string result = proxy.SayHello();
+            (proxy as IDisposable).Dispose();
+            Console.WriteLine(result);
+       }
+
+//2) config
+<configuration>
+<system.serviceModel>
+  <client>
+    <endpoint name="HttpHelloWorld"
+        contract="HelloWorldService.IHelloWorld"
+        binding="basicHttpBinding"
+        address="http://localhost/wcf/example/helloworldservice"
+        />
+  </client>
+</system.serviceModel>
+</configuration>
+
+  
+//3. 추가적인 binding 속성을 사용하고,
+     2개 이상의 endpoint 연결이 가능한 코드 
+
+//cs.
+    static void Main(string[] args)
+    {
+        InvokeUsingHTTPWithConfig();
+        InvokeUsingTCPWithConfig();
+    }
+    static void InvokeUsingHTTPWithConfig()
+    {
+        ChannelFactory<IHelloWorld> factory =  new ChannelFactory<IHelloWorld>("HttpHelloWorld");
+        IHelloWorld proxy = factory.CreateChannel();
+        string result = proxy.SayHello();
+        (proxy as IDisposable).Dispose();
+        Console.WriteLine(result);
+    }
+    static void InvokeUsingTCPWithConfig()
+    {
+        ChannelFactory<IHelloWorld> factory = new ChannelFactory<IHelloWorld>("TcpHelloWorld");
+        IHelloWorld proxy = factory.CreateChannel();
+        string result = proxy.SayHello();
+        (proxy as IDisposable).Dispose();
+        Console.WriteLine(result);
+    }
+
+
+// config 파일 구성
+<configuration>
+  <system.serviceModel>
+    <bindings>
+      <basicHttpBinding>
+        <binding name="MtomSetting" messageEncoding="Mtom" />
+      </basicHttpBinding>
+    </bindings>
+    <client>
+      <endpoint name="HttpHelloWorld"
+          contract="HelloWorldService.IHelloWorld"
+          binding="basicHttpBinding"
+          bindingConfiguration="MtomSetting"
+          address="http://localhost/wcf/example/helloworldservice"
+            />
+      <endpoint name="TcpHelloWorld"
+          contract="HelloWorldService.IHelloWorld"
+          binding="netTcpBinding"
+          address="net.tcp://localhost/wcf/example/helloworldservice"
+            />
+    </client>
+  </system.serviceModel>
+</configuration>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

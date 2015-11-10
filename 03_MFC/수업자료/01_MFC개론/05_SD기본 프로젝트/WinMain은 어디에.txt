@@ -1,0 +1,92 @@
+(1) WinMain 찾기
+
+- CsingleApp의 InitInstance()에 브레이크 포인트를 걸고 프로그램 실행 
+
+- 디버깅 모드에서 call stack 윈도우에서 WinMain을 선택 
+
+- AppModule.cpp의 
+
+  24번째 항에 1) WinMain() 선언(_tWinMain은 WinMain으로 define되어 있슴)
+
+  이 함수는 다시 2) AfxWinMain()을 호출한다.
+
+  ==> WinMain.cpp의 21번째 행에서 전체 소스 확인 가능 
+
+
+
+//-----------------------  winmain.cpp ------------------------------------------
+int AFXAPI AfxWinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance,
+	LPTSTR lpCmdLine, int nCmdShow)
+{
+	CWinThread* pThread = AfxGetThread();		// 메인 스레드 객체의 시작 주소
+	CWinApp* pApp = AfxGetApp();			// 클래스 객체의 시작 주소 
+
+	// Perform specific initializations
+	if (!pThread->InitInstance())			// CWinApp의 InitInstance 호출됨.
+	{
+		if (pThread->m_pMainWnd != NULL)
+		{
+			TRACE0("Warning: Destroying non-NULL m_pMainWnd\n");
+			pThread->m_pMainWnd->DestroyWindow();
+		}
+		nReturnCode = pThread->ExitInstance();
+		goto InitFailure;
+	}
+	nReturnCode = pThread->Run();		// 3) CwinApp의 가상함수 Run을 호출한다.
+
+//-------------------------------- WinMain.cpp ---------------------------------
+
+
+
+//-------------------------------- Appcore.cpp ---------------------------------
+// 391번째 행 
+int CWinApp::Run()
+{
+	return CWinThread::Run();	// CWinThread::Run을 호출한다.
+}
+//-------------------------------- Appcore.cpp ---------------------------------
+
+
+int CwinThread::Run()
+{
+	while( bIdel && !::PeekMessge(&m_msgCur, NULL,NULL, NULL, PM_NOREMOVE))
+	{
+		if( !OnIdel() )
+		{
+		}
+		do
+		{
+			if( !PumpMessage())
+				return ExitInstance();
+		}
+		while(::!PeekMessage(…., PM_NOREMOVE));
+	}
+}
+
+// PumpMesage에서 GetMessage(), TranslateMessage(), DispatchMessage() 역할을 담당
+// PeekMessage의 마지막 파라미터 : 메시지를 제거하지 않는다.
+BOOL CwinThread::PumpMessage()
+{
+if( !::GetMessage(&m_msgCur, NULL,NULL,NULL)
+{
+	if(m_msgCur.message != WM_KICKIDLE && !PreTranslateMessage(&m_msgCcur))
+	{
+		::TranslateMessage(&m_msgCur);
+		::DispatchMessage(&m_msgCur);
+	}
+}
+
+   pump 메시지 소스에서 TranslateMessage 호출 직전에 PreTranslate 
+   메시지라는 가상 함수를 호출
+   ==> 이 함수가 TRUE를 호출하면 메시지 디스패칭을 skip하는 것 확인 할 수 있다.
+
+
+   즉, 특별하게 제거하고 싶은 메시지는 PreTranslate를 오버라이드 하여 사용한다.
+   PeekMessage가 WM_QUIT를 꺼내오면, PumpMessage는 0을 리턴한다.
+   이것은 ExitInstance를 호출한다.
+
+   프로그램을 종료시켜 호출 되는 부분을 확인
+
+
+
+

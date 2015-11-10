@@ -1,0 +1,83 @@
+
+// 전체 페이지 캐싱 예제) 확인----------------------------------------------------------------
+
+ // 반드시 Duration과 VaryByParam 특성이 지정되어야 함
+   - Duration : 캐시가 유지되는 시간(초)
+   - VaryByParam : Post 또는 Get 방식으로 넘어오는 변수별로 전체 페이지 
+                   캐싱할 때 사용하는 변수명을 설정
+   => .aspx페이지를 10초간 출력 캐시에 저장하며, 매개변수를 통한 출력 캐시는
+      사용하지 않겠다는 의미 
+ <%@ OutputCache Duration="10" VaryByParam="none" %>
+
+
+  // 예제 실행 후 F5 단축기를 눌러 새로고침을 하면??
+  페이지가 캐싱된 시간이 10초 동안 변하지 않는다.
+------------------------------------------------------------------------------
+
+<%@ Page Language="C#" %>
+<%@ OutputCache Duration="10" VaryByParam="none" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<script runat="server">
+    protected void Page_Load(object sender, EventArgs e)
+    {
+        Label1.Text = DateTime.Now.ToString();        
+    }
+</script>
+
+<html xmlns="http://www.w3.org/1999/xhtml" >
+<head id="Head1" runat="server">
+    <title>제목 없음</title>
+</head>
+<body>
+    <form id="form1" runat="server">
+    <div>
+        <h3>전체 페이지 캐싱 예제</h3>
+        
+        페이지가 캐싱된 시각 : <asp:Label ID="Label1" runat="server"></asp:Label>
+    </div>
+    </form>
+</body>
+</html>
+
+
+------------------------------------------------------------------------------------
+
+
+
+
+- 매개 변수를 사용한 전체 페이지 캐싱 예제)
+
+// http://localhost/Default.aspx?TestParameter=a
+   로 페이지를 요청하면 요청에 대해 각각 전체 페이지 
+   캐싱이 적용된다.
+
+<%@ Page Language="C#" %>
+<%@ OutputCache Duration="10" VaryByParam="TestParameter" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<script runat="server">
+    protected void Page_Load(object sender, EventArgs e)
+    {
+        Label1.Text = System.DateTime.Now.ToString();
+    }
+</script>
+
+<html xmlns="http://www.w3.org/1999/xhtml" >
+<head id="Head1" runat="server">
+    <title>제목 없음</title>
+</head>
+<body>
+    <form id="form1" runat="server">
+    <div>
+        <a href="Default.aspx?TestParameter=a">TestParameter a</a><br />
+        <a href="Default.aspx?TestParameter=b">TestParameter b</a><br />
+        
+        페이지가 캐싱된 시각 : 
+        <asp:Label ID="Label1" runat="server"></asp:Label>
+    </div>
+    </form>
+</body>
+</html>

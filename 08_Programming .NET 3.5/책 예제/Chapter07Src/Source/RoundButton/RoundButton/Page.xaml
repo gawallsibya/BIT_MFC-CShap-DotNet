@@ -1,0 +1,46 @@
+﻿<UserControl x:Class="RoundButton.Page"
+    xmlns="http://schemas.microsoft.com/client/2007" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
+    Width="800" Height="800">
+    <Grid x:Name="LayoutRoot" Background="White" ShowGridLines="False" >
+        <Grid.RowDefinitions>
+            <RowDefinition Height="200" />
+            <RowDefinition Height="250"/>
+            <RowDefinition />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition />
+            <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+        
+        
+        <Button x:Name="Title" Width="150" Height="150" 
+           Grid.Column="0" Grid.Row="0"
+           Content="{Binding Title}" 
+           Style="{StaticResource RoundButton}" />
+       <TextBlock x:Name="TitleOutput" Text="" Grid.Column="1" Grid.Row="0" VerticalAlignment="Center" />
+       
+        <Button x:Name="Author" Width="250" Height="200" 
+            FontSize="16" FontWeight="Bold"
+           Grid.Column="0" Grid.Row="1"
+           Content="{Binding Author}" 
+           Style="{StaticResource RoundButton}" />
+       <TextBlock x:Name="AuthorOutput" Text="" Grid.Column="1" Grid.Row="1" VerticalAlignment="Center" />
+       
+        <Button x:Name="Chapters" Width="300" Height="300" 
+           Grid.Column="0" Grid.Row="2"
+           Style="{StaticResource RoundButton}" >
+            <Button.Content>
+            
+                 <ListBox x:Name="ChapterLB" 
+                ItemsSource="{Binding  Chapters, Mode=OneWay}"
+                Height="100" Width="200" />
+            
+            </Button.Content>
+       </Button>
+       <TextBlock x:Name="ChapterOutput" Text="" Grid.Column="1" Grid.Row="2" VerticalAlignment="Center" />
+       
+    </Grid>
+    
+    
+</UserControl>

@@ -1,0 +1,16 @@
+﻿<Window x:Class="WPFControls.RadioButtonSample"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    Title="RadioButtonSample" Height="300" Width="300">
+    <Grid HorizontalAlignment="Center" VerticalAlignment="Center">
+        <GroupBox>
+            <GroupBox.Header>다음 중 축구 선수는?</GroupBox.Header>
+            <StackPanel>
+                <RadioButton Name="Lee" GroupName="football" Checked="Sel_Checked">이승엽</RadioButton>
+                <RadioButton Name="Kim" GroupName="football" Checked="Sel_Checked">김연아</RadioButton>
+                <RadioButton Name="Kang" GroupName="football" Checked="Sel_Checked">강호동</RadioButton>
+                <RadioButton Name="Cha" GroupName="football" Checked="Sel_Checked">차범근</RadioButton>
+            </StackPanel>
+        </GroupBox>
+    </Grid>
+</Window>

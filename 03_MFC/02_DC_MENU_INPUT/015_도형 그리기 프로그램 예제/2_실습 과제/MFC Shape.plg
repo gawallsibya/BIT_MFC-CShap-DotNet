@@ -1,0 +1,57 @@
+<html>
+<body>
+<pre>
+<h1>Build Log</h1>
+<h3>
+--------------------Configuration: MFC Shape - Win32 Debug--------------------
+</h3>
+<h3>Command Lines</h3>
+Creating command line "rc.exe /l 0x412 /fo"Debug/MFC Shape.res" /d "_DEBUG" /d "_AFXDLL" "C:\Documents and Settings\최창민\바탕 화면\00_신규MFC\00_MFC들어가기\03_MFC소스코드 분석\2.3_Sample\6_도형 그리기 프로그램 예제\MFC Shape.rc"" 
+Creating temporary file "C:\DOCUME~1\최창민\LOCALS~1\Temp\RSP159.tmp" with contents
+[
+/nologo /MDd /W3 /Gm /GX /ZI /Od /D "WIN32" /D "_DEBUG" /D "_WINDOWS" /D "_AFXDLL" /D "_MBCS" /Fp"Debug/MFC Shape.pch" /Yu"stdafx.h" /Fo"Debug/" /Fd"Debug/" /FD /GZ /c 
+"C:\Documents and Settings\최창민\바탕 화면\00_신규MFC\00_MFC들어가기\03_MFC소스코드 분석\2.3_Sample\6_도형 그리기 프로그램 예제\ChildView.cpp"
+"C:\Documents and Settings\최창민\바탕 화면\00_신규MFC\00_MFC들어가기\03_MFC소스코드 분석\2.3_Sample\6_도형 그리기 프로그램 예제\MainFrm.cpp"
+"C:\Documents and Settings\최창민\바탕 화면\00_신규MFC\00_MFC들어가기\03_MFC소스코드 분석\2.3_Sample\6_도형 그리기 프로그램 예제\MFC Shape.cpp"
+"C:\Documents and Settings\최창민\바탕 화면\00_신규MFC\00_MFC들어가기\03_MFC소스코드 분석\2.3_Sample\6_도형 그리기 프로그램 예제\Rectangle.cpp"
+"C:\Documents and Settings\최창민\바탕 화면\00_신규MFC\00_MFC들어가기\03_MFC소스코드 분석\2.3_Sample\6_도형 그리기 프로그램 예제\Widget.cpp"
+]
+Creating command line "cl.exe @"C:\DOCUME~1\최창민\LOCALS~1\Temp\RSP159.tmp"" 
+Creating temporary file "C:\DOCUME~1\최창민\LOCALS~1\Temp\RSP15A.tmp" with contents
+[
+/nologo /MDd /W3 /Gm /GX /ZI /Od /D "WIN32" /D "_DEBUG" /D "_WINDOWS" /D "_AFXDLL" /D "_MBCS" /Fp"Debug/MFC Shape.pch" /Yc"stdafx.h" /Fo"Debug/" /Fd"Debug/" /FD /GZ /c 
+"C:\Documents and Settings\최창민\바탕 화면\00_신규MFC\00_MFC들어가기\03_MFC소스코드 분석\2.3_Sample\6_도형 그리기 프로그램 예제\StdAfx.cpp"
+]
+Creating command line "cl.exe @"C:\DOCUME~1\최창민\LOCALS~1\Temp\RSP15A.tmp"" 
+Creating temporary file "C:\DOCUME~1\최창민\LOCALS~1\Temp\RSP15B.tmp" with contents
+[
+/nologo /subsystem:windows /incremental:yes /pdb:"Debug/MFC Shape.pdb" /debug /machine:I386 /out:"Debug/MFC Shape.exe" /pdbtype:sept 
+".\Debug\ChildView.obj"
+".\Debug\MainFrm.obj"
+".\Debug\MFC Shape.obj"
+".\Debug\Rectangle.obj"
+".\Debug\StdAfx.obj"
+".\Debug\Widget.obj"
+".\Debug\MFC Shape.res"
+]
+Creating command line "link.exe @"C:\DOCUME~1\최창민\LOCALS~1\Temp\RSP15B.tmp""
+<h3>Output Window</h3>
+Compiling resources...
+Compiling...
+StdAfx.cpp
+Compiling...
+ChildView.cpp
+MainFrm.cpp
+MFC Shape.cpp
+Rectangle.cpp
+Widget.cpp
+Generating Code...
+Linking...
+
+
+
+<h3>Results</h3>
+MFC Shape.exe - 0 error(s), 0 warning(s)
+</pre>
+</body>
+</html>

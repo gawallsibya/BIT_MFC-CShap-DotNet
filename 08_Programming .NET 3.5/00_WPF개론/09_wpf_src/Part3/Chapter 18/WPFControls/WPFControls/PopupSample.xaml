@@ -1,0 +1,13 @@
+﻿<Window x:Class="WPFControls.PopupSample"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    Title="PopupSample" Height="300" Width="300">
+    <Canvas>
+        <Button Name="btn" Height="22" Canvas.Left="89" Canvas.Top="87" Width="34"> Hello</Button>
+        <Popup IsOpen="True" PlacementTarget="{Binding ElementName=btn}" Placement="Bottom">
+            <TextBlock Background="Beige">
+            this is for Hello button
+            </TextBlock>
+        </Popup>
+    </Canvas>
+</Window>

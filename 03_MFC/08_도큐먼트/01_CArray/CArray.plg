@@ -1,0 +1,54 @@
+<html>
+<body>
+<pre>
+<h1>Build Log</h1>
+<h3>
+--------------------Configuration: CArray - Win32 Debug--------------------
+</h3>
+<h3>Command Lines</h3>
+Creating command line "rc.exe /l 0x412 /fo"Debug/CArray.res" /d "_DEBUG" /d "_AFXDLL" "C:\Documents and Settings\최창민\바탕 화면\03_MFC\1_강의\8일차_도큐먼트\CArray\CArray.rc"" 
+Creating temporary file "C:\DOCUME~1\최창민\LOCALS~1\Temp\RSP8F.tmp" with contents
+[
+/nologo /MDd /W3 /Gm /GX /ZI /Od /D "WIN32" /D "_DEBUG" /D "_WINDOWS" /D "_AFXDLL" /D "_MBCS" /Fp"Debug/CArray.pch" /Yu"stdafx.h" /Fo"Debug/" /Fd"Debug/" /FD /GZ /c 
+"C:\Documents and Settings\최창민\바탕 화면\03_MFC\1_강의\8일차_도큐먼트\CArray\CArray.cpp"
+"C:\Documents and Settings\최창민\바탕 화면\03_MFC\1_강의\8일차_도큐먼트\CArray\CArrayDoc.cpp"
+"C:\Documents and Settings\최창민\바탕 화면\03_MFC\1_강의\8일차_도큐먼트\CArray\CArrayView.cpp"
+"C:\Documents and Settings\최창민\바탕 화면\03_MFC\1_강의\8일차_도큐먼트\CArray\MainFrm.cpp"
+]
+Creating command line "cl.exe @"C:\DOCUME~1\최창민\LOCALS~1\Temp\RSP8F.tmp"" 
+Creating temporary file "C:\DOCUME~1\최창민\LOCALS~1\Temp\RSP90.tmp" with contents
+[
+/nologo /MDd /W3 /Gm /GX /ZI /Od /D "WIN32" /D "_DEBUG" /D "_WINDOWS" /D "_AFXDLL" /D "_MBCS" /Fp"Debug/CArray.pch" /Yc"stdafx.h" /Fo"Debug/" /Fd"Debug/" /FD /GZ /c 
+"C:\Documents and Settings\최창민\바탕 화면\03_MFC\1_강의\8일차_도큐먼트\CArray\StdAfx.cpp"
+]
+Creating command line "cl.exe @"C:\DOCUME~1\최창민\LOCALS~1\Temp\RSP90.tmp"" 
+Creating temporary file "C:\DOCUME~1\최창민\LOCALS~1\Temp\RSP91.tmp" with contents
+[
+/nologo /subsystem:windows /incremental:yes /pdb:"Debug/CArray.pdb" /debug /machine:I386 /out:"Debug/CArray.exe" /pdbtype:sept 
+".\Debug\CArray.obj"
+".\Debug\CArrayDoc.obj"
+".\Debug\CArrayView.obj"
+".\Debug\MainFrm.obj"
+".\Debug\StdAfx.obj"
+".\Debug\CArray.res"
+]
+Creating command line "link.exe @"C:\DOCUME~1\최창민\LOCALS~1\Temp\RSP91.tmp""
+<h3>Output Window</h3>
+Compiling resources...
+Compiling...
+StdAfx.cpp
+Compiling...
+CArray.cpp
+CArrayDoc.cpp
+CArrayView.cpp
+MainFrm.cpp
+Generating Code...
+Linking...
+
+
+
+<h3>Results</h3>
+CArray.exe - 0 error(s), 0 warning(s)
+</pre>
+</body>
+</html>

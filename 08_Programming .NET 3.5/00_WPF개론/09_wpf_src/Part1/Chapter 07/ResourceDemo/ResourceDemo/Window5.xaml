@@ -1,0 +1,16 @@
+﻿<Window x:Class="ResourceDemo.Window5"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    Title="Window5" Height="300" Width="300">
+    <Grid>
+        <Grid.Resources>
+            <ResourceDictionary>
+                <ResourceDictionary.MergedDictionaries>
+                    <ResourceDictionary Source="Dictionary1.xaml"></ResourceDictionary>
+                    <ResourceDictionary Source="Dictionary2.xaml"></ResourceDictionary>
+                </ResourceDictionary.MergedDictionaries>                
+            </ResourceDictionary>            
+        </Grid.Resources>
+        <Rectangle Margin="38,36,24,46" Name="rectangle1" Stroke="Black" Fill="{StaticResource GreenBrush}" />
+    </Grid>
+</Window>

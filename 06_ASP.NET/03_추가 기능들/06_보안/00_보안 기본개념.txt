@@ -1,0 +1,310 @@
+//-----------------------------------------------------------
+// 05. 보안 기본 개념
+//------------------------------------------------------------
+
+
+ASP.NET : 회원 가입, 로그인, 로그아웃등의 기능을 직접 구현
+
+ASP.NET 2.0버전 : 보안 프로세스들이 모두 모듈화 되어 있다.
+
+- 회원가입, 로그인, 로그아웃, 암호찾기와 같은 기능까지 로그인
+  컨트롤에서 지원된다.
+
+
+[ 인증과 권한 부여 ]
+
+- 인증 : ID, password를 통해 접근하는 로그인 과정
+
+   윈도우즈 기반 인증 : Windows 의 권한 제어 방식을 웹 사이트에 그대로 적용
+        불특정 다수가 접속하는 인터넷 환경에서 모든 계정을 windows가 관리할 수 는 없슴
+        보통 윈도우즈 기반 인증은 주로 인트라넷 환경에서 사용됨
+
+
+- 권한 부여 : 인증을 받은 사용자에 따라 특정 콘텐츠에 접근할 수 있는
+              유무를 줄 수 있다.
+
+
+1) 폼기반 인증
+   쿠키와 ASP.NET에서 제공하는 인증 관련 API를 사용해서 인증 처리를 하는 것을 말함
+
+   ASP.NET에서 제공하는 인증 관련 API를 사용할 수 있기 때문에 인증 처리를 쉽게 할 수 있는 장점이 있슴
+   
+
+
+   사용자 요청 --> IIS 
+
+		  --> 쿠키존재하는가? --> 로그인 페이지 --> 인증 되었는가? --> 쿠키 생성 --> 권한이 부여되었는가 --> 요청 페이지 접근 허가
+
+
+					--> 접근 거부 
+
+ 01 예제 확인 ) aaaa / aaaa 
+
+
+  // Web.config
+    <authentication mode="Forms">    : 폼 인증을 사용하기 위해 수정필요
+				     : 기본모드는 Windows 모드임
+
+
+    <forms name=".ASPXAUTH" loginUrl="Ex01_Login.aspx" defaultUrl="Ex01_Default.aspx"></forms>
+	  : 인증 권한을 가지고 있지 않은 사람일 경우 인증을 필요로 하는 페이지를 요청할 때
+            리디렉션할 페이지 URL을 지정함
+            default : 로그인 후 이동할 페이지 URL을 지정
+
+     <deny users="?"/>
+	  : 접근 권한에 대한 부분
+            users 특성에서 ?로 표현 : 익명 사용자를 의미하는 문자임
+
+  // Default.aspx
+
+    // 폼 기반 인증에서 인증된 사용자의 아이디는 Page.User.Identity.Name을 통해 가져올 수 있다.
+    protected void Page_Load(object sender, EventArgs e)
+    {
+        Label1.Text = User.Identity.Name + " 님 환영합니다.!!!";
+    }
+
+   // 로그 아웃 버튼 클릭시 : 인증 쿠키 삭제 하고 로그아웃 처리 메서드 호출 
+    protected void Button1_Click(object sender, EventArgs e)
+    {
+        FormsAuthentication.SignOut();
+        Response.Redirect("Ex01_Login.aspx");
+    }
+
+   // Login.aspx
+
+   // 인증 허용 
+
+	// 사용자 이름, 쿠키 유지 여부를 나타내는 bool형식의 변수임 
+        // 쿠키 유지 false이면 현 페이지에서만 인증이 허용
+        //  - 현 브라우저를 닫으면 인증 쿠키가 사라지고 로그아웃됨
+   FormsAuthentication.RedirectFromLoginPage(TextBox1.Text, CheckBox1.Checked);
+
+
+
+
+2) 권한 부여
+
+     <deny users="*"/>
+	  : 접근 권한에 대한 부분
+            모든 사용자를 의미함(익명 사용자 포함)
+
+
+     <allow users="aaa,bbb"/>
+     <deny users="*"/>
+	  : 아이디가 aaa,bbb인 사용자만 접근 허용(allow)
+	    나머지 모든 사용자는 접근 거부(deny)
+
+
+     <allow roles="Admins"/>
+     <deny users="*"/>
+	  : Admins라는 역할을 가진 사용자만 접근을 허용, 나머지 모든 사용자 접근 거부
+
+
+
+   ---------------------------------------------------------------
+<configuration>
+  <system.web>
+    <authentication mode="Forms">            
+	<deny users="?">
+    </authentication>
+  </system.web>
+
+  <location path="SuperAdminPage.asp"> 
+    <system.web>
+      <authorization>    
+         <allow roles="SuperAdmins"/>  
+         <deny users="*"/>
+         </authorization>
+     </system.web>
+   </location>
+ </configuration>
+
+/==> 특정 페이지에만 권한 부여가 적용되도록 하기 위한 처리 
+
+
+
+
+[ 로그인 컨트롤 사용하기 ]
+
+
+
+1) 맴버 자격(Membership) 2.0 추가 컨트롤
+
+   - 맴버 자격은 로그인 컨트롤, 맴버 자격 API, 맴버 자격 공급자가 서로 유기적으로 동작하도록
+     보안 프로세스(사용자 생성, 로그인, 로그아웃 등등)와 관련된 작업을 자동으로 처리해 주는 기능임
+
+
+          로그인 컨트롤
+
+          맴버 자격 API
+
+          맴버 자격 공급자
+          (SqlMembership Provider)     Access Membership Provider    사용자지정 맴버 자격 공급자
+
+	  데이터 소스
+	  SQL Server			JET(Access)			사용자 지정 데이터 소스
+
+        -----------------------------------------------------------------------------------------------
+
+
+
+2) 로그인 컨트롤
+
+
+ -CreateUserWizard(2.0)	사용자 정보를 입력받아 새로운 사용자를 만들어준다.
+
+  Login(2.0)		로그인 기능을 제공
+
+  LoginView(2.0)	인증된 사용자와 익명 사용자에게 보여줄 화면을 구분하여 나타냄
+
+  LoginName(2.0)	인증된 사용자의 이름 표시
+
+  LoginStatus(2.0)	인증된 사용자에게는 로그아웃 링크를 표시하고 익명 사용자에게는 로그인
+			링크를 표시
+
+  ChangePassword(2.0)	암호 수정 기능 제공
+  
+  PasswordRecovery(2.0)  암호 찾기 기능 제공
+
+
+	예제 확인) 로그인 컨트롤
+
+
+
+
+[ 맴버 자격 API와 역할 관리자 ]
+
+로그인 컨트롤은 내부적으로 맴버 자격 API를 사용하여 관련 프로세스를 처리함
+
+개발자는 맴버 자격 API를 소스코드에 직접 사용하여 맴버 자격을 프로그래밍 방식으로
+
+제어할 수 있다.
+
+두 개의 핵심 클래스 
+
+  - Membership 클래스 
+
+  - MembershipUser 클래스
+
+이 두 클래스를 사용하면 맴버 자격에서 제공하는 사용자 생성, 사용자 정보 참조,
+
+사용자 정부 수정, 사용자 유효성 검사, 사용자 삭제등등의 프로세스를 손쉽게 구현할 수 있다.
+
+  예제 확인 : API를 이용한 사용자 생성
+
+              API를 이용한 사용자 삭제
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

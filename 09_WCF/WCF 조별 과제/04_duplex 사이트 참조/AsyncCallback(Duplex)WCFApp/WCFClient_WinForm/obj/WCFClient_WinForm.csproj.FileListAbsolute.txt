@@ -1,0 +1,9 @@
+D:\STUDY\NET Framework 3\WCF\ABC_SAMPLE\WCFClient_WinForm\obj\Debug\ResolveAssemblyReference.cache
+D:\STUDY\NET Framework 3\WCF\ABC_SAMPLE\WCFClient_WinForm\obj\Debug\WCFClient_WinForm.Form1.resources
+D:\STUDY\NET Framework 3\WCF\ABC_SAMPLE\WCFClient_WinForm\obj\Debug\WCFClient_WinForm.Properties.Resources.resources
+D:\STUDY\NET Framework 3\WCF\ABC_SAMPLE\WCFClient_WinForm\obj\Debug\WCFClient_WinForm.csproj.GenerateResource.Cache
+D:\STUDY\NET Framework 3\WCF\ABC_SAMPLE\WCFClient_WinForm\obj\Debug\WCFClient_WinForm.exe
+D:\STUDY\NET Framework 3\WCF\ABC_SAMPLE\WCFClient_WinForm\bin\Debug\WCFClient_WinForm.exe.config
+D:\STUDY\NET Framework 3\WCF\ABC_SAMPLE\WCFClient_WinForm\bin\Debug\WCFClient_WinForm.exe
+D:\STUDY\NET Framework 3\WCF\ABC_SAMPLE\WCFClient_WinForm\bin\Debug\WCFClient_WinForm.pdb
+D:\STUDY\NET Framework 3\WCF\ABC_SAMPLE\WCFClient_WinForm\obj\Debug\WCFClient_WinForm.pdb

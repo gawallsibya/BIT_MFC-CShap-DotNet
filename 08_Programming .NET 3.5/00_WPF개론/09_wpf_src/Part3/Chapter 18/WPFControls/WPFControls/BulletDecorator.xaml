@@ -1,0 +1,23 @@
+﻿<Window x:Class="WPFControls.BulletDecorator"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    Title="BulletDecorator" Height="300" Width="300">
+    <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" Width="115">
+        <BulletDecorator>
+            <BulletDecorator.Bullet>
+                <CheckBox></CheckBox>
+            </BulletDecorator.Bullet>
+            <BulletDecorator.Child>
+                <TextBlock> 안녕 하세요</TextBlock>
+            </BulletDecorator.Child>
+        </BulletDecorator>
+        <BulletDecorator>
+            <BulletDecorator.Bullet>
+                <RadioButton></RadioButton>
+            </BulletDecorator.Bullet>
+            <BulletDecorator.Child>
+                <TextBlock> WPF 입니다.</TextBlock>
+            </BulletDecorator.Child>
+        </BulletDecorator>
+    </StackPanel>
+</Window>

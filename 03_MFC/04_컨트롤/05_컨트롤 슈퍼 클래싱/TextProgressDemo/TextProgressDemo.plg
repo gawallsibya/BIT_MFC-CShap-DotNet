@@ -1,0 +1,51 @@
+<html>
+<body>
+<pre>
+<h1>Build Log</h1>
+<h3>
+--------------------Configuration: TextProgressDemo - Win32 Debug--------------------
+</h3>
+<h3>Command Lines</h3>
+Creating command line "rc.exe /l 0x412 /fo"Debug/TextProgressDemo.res" /d "_DEBUG" /d "_AFXDLL" "C:\Documents and Settings\choiccmm\바탕 화면\예제\TextProgressDemo\TextProgressDemo.rc"" 
+Creating temporary file "C:\DOCUME~1\choiccmm\LOCALS~1\Temp\RSP1F6.tmp" with contents
+[
+/nologo /MDd /W3 /Gm /GX /ZI /Od /D "WIN32" /D "_DEBUG" /D "_WINDOWS" /D "_AFXDLL" /D "_MBCS" /Fp"Debug/TextProgressDemo.pch" /Yu"stdafx.h" /Fo"Debug/" /Fd"Debug/" /FD /GZ /c 
+"C:\Documents and Settings\choiccmm\바탕 화면\예제\TextProgressDemo\TextProgress.cpp"
+"C:\Documents and Settings\choiccmm\바탕 화면\예제\TextProgressDemo\TextProgressDemo.cpp"
+"C:\Documents and Settings\choiccmm\바탕 화면\예제\TextProgressDemo\TextProgressDemoDlg.cpp"
+]
+Creating command line "cl.exe @C:\DOCUME~1\choiccmm\LOCALS~1\Temp\RSP1F6.tmp" 
+Creating temporary file "C:\DOCUME~1\choiccmm\LOCALS~1\Temp\RSP1F7.tmp" with contents
+[
+/nologo /MDd /W3 /Gm /GX /ZI /Od /D "WIN32" /D "_DEBUG" /D "_WINDOWS" /D "_AFXDLL" /D "_MBCS" /Fp"Debug/TextProgressDemo.pch" /Yc"stdafx.h" /Fo"Debug/" /Fd"Debug/" /FD /GZ /c 
+"C:\Documents and Settings\choiccmm\바탕 화면\예제\TextProgressDemo\StdAfx.cpp"
+]
+Creating command line "cl.exe @C:\DOCUME~1\choiccmm\LOCALS~1\Temp\RSP1F7.tmp" 
+Creating temporary file "C:\DOCUME~1\choiccmm\LOCALS~1\Temp\RSP1F8.tmp" with contents
+[
+/nologo /subsystem:windows /incremental:yes /pdb:"Debug/TextProgressDemo.pdb" /debug /machine:I386 /out:"Debug/TextProgressDemo.exe" /pdbtype:sept 
+".\Debug\StdAfx.obj"
+".\Debug\TextProgress.obj"
+".\Debug\TextProgressDemo.obj"
+".\Debug\TextProgressDemoDlg.obj"
+".\Debug\TextProgressDemo.res"
+]
+Creating command line "link.exe @C:\DOCUME~1\choiccmm\LOCALS~1\Temp\RSP1F8.tmp"
+<h3>Output Window</h3>
+Compiling resources...
+Compiling...
+StdAfx.cpp
+Compiling...
+TextProgress.cpp
+TextProgressDemo.cpp
+TextProgressDemoDlg.cpp
+Generating Code...
+Linking...
+
+
+
+<h3>Results</h3>
+TextProgressDemo.exe - 0 error(s), 0 warning(s)
+</pre>
+</body>
+</html>

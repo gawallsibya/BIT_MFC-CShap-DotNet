@@ -1,0 +1,59 @@
+[ TIC TAC 게임 ]
+
+0. 클래스화 
+
+void CTicTacView::OnDraw(CDC* pDC)
+{
+m_pTic->DrawBoard(pDC);
+
+void CTicTacView::OnLButtonDown(UINT nFlags, CPoint point) 
+{
+	m_pTic->ClickXGamer(this, point);
+
+void CTicTacView::OnRButtonDown(UINT nFlags, CPoint point) 
+{
+	m_pTic->ClickOGamer(this, point);
+
+void CTicTacView::OnLButtonDblClk(UINT nFlags, CPoint point) 
+{
+	m_pTic->ResetGame(this, point);
+
+--------------------------------------------------
+1. 클라이언트 크기를 게임 화면의  크기로 변경
+
+2. 메뉴 추가
+    2.1 GameStart 
+          - 게임 화면 출력
+          - 이 후 게임이 진행됨
+          *) 게임 시작 전에 마우스 이벤트 작동 금지
+    2.2 GameEnd
+          - 게임 강제 종료
+          - 사용자에게 종료 여부 확인
+          - 재 확인 이후 게임을 종료 
+             게임 화면을 지움(프로그램은 계속 유지)
+
+    2.3 GameOption
+          - 단판  / 3판2승 / 5판 3승
+             기본 옵션은 단판
+          - 사용자에 의해서 옵션 변경 가능
+
+3. 게임 화면 변경
+    3.1 게임 진행 시간 출력(게임 시작부터 초단위로 시간 출력)
+    3.2 화면 UI에 실시간으로 승패 출력
+  
+          
+         
+
+
+
+
+
+
+
+
+
+
+
+
+
+

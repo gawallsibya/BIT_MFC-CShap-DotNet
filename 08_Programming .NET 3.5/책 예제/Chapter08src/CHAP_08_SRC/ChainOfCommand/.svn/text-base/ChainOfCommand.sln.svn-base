@@ -1,0 +1,20 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 10.00
+# Visual Studio Codename Orcas
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ChainOfCommand", "ChainOfCommand\ChainOfCommand.csproj", "{51731238-413E-4CBE-990B-95389D6F665A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{51731238-413E-4CBE-990B-95389D6F665A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{51731238-413E-4CBE-990B-95389D6F665A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{51731238-413E-4CBE-990B-95389D6F665A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{51731238-413E-4CBE-990B-95389D6F665A}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

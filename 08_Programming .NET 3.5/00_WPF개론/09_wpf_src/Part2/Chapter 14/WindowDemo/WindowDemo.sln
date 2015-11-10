@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 10.00
+# Visual Studio 2008
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WindowDemo", "WindowDemo\WindowDemo.csproj", "{5FCA0AE2-C658-4F1C-9F82-450330473EDE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyWindow", "MyWindow\MyWindow.csproj", "{53C9554D-50AB-4BC9-B784-D2E739003490}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{5FCA0AE2-C658-4F1C-9F82-450330473EDE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5FCA0AE2-C658-4F1C-9F82-450330473EDE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5FCA0AE2-C658-4F1C-9F82-450330473EDE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5FCA0AE2-C658-4F1C-9F82-450330473EDE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{53C9554D-50AB-4BC9-B784-D2E739003490}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{53C9554D-50AB-4BC9-B784-D2E739003490}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{53C9554D-50AB-4BC9-B784-D2E739003490}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{53C9554D-50AB-4BC9-B784-D2E739003490}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

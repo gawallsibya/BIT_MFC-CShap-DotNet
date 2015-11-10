@@ -1,0 +1,30 @@
+<html>
+<body>
+<pre>
+<h1>Build Log</h1>
+<h3>
+--------------------Configuration: Use - Win32 Debug--------------------
+</h3>
+<h3>Command Lines</h3>
+Creating temporary file "C:\DOCUME~1\√÷√¢πŒ\LOCALS~1\Temp\RSPDA.tmp" with contents
+[
+/nologo /MDd /W3 /Gm /GX /ZI /Od /D "WIN32" /D "_DEBUG" /D "_WINDOWS" /D "_AFXDLL" /D "_MBCS" /Fp"Debug/Use.pch" /Yu"stdafx.h" /Fo"Debug/" /Fd"Debug/" /FD /GZ /c 
+"C:\Documents and Settings\√÷√¢πŒ\πŸ≈¡ »≠∏È\12¿œ¬˜_DLL\Use\Use.cpp"
+"C:\Documents and Settings\√÷√¢πŒ\πŸ≈¡ »≠∏È\12¿œ¬˜_DLL\Use\UseView.cpp"
+]
+Creating command line "cl.exe @"C:\DOCUME~1\√÷√¢πŒ\LOCALS~1\Temp\RSPDA.tmp"" 
+Creating command line "link.exe /nologo /subsystem:windows /incremental:yes /pdb:"Debug/Use.pdb" /debug /machine:I386 /out:"Debug/Use.exe" /pdbtype:sept  ".\Debug\MainFrm.obj" ".\Debug\StdAfx.obj" ".\Debug\Use.obj" ".\Debug\UseDoc.obj" ".\Debug\UseView.obj" ".\Debug\Use.res" "
+<h3>Output Window</h3>
+Compiling...
+Use.cpp
+UseView.cpp
+Generating Code...
+Linking...
+
+
+
+<h3>Results</h3>
+Use.exe - 0 error(s), 0 warning(s)
+</pre>
+</body>
+</html>

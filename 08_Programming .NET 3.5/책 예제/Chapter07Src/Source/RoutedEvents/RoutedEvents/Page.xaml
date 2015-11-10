@@ -1,0 +1,82 @@
+﻿<UserControl x:Class="RoutedEvents.Page"
+    xmlns="http://schemas.microsoft.com/client/2007" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
+    Width="450" Height="300">
+    <Grid x:Name="LayoutRoot" Background="Bisque"  ShowGridLines="False">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="10" />
+            <RowDefinition Height="50" />
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="50" />
+            <RowDefinition Height="50" />
+            <RowDefinition Height="10" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="10" />     <!--0 margin-->
+            <ColumnDefinition Width="250" />    <!--1 left column-->
+            <ColumnDefinition Width="15" />     <!--2 padding-->
+            <ColumnDefinition Width="*"/>       <!--3 right column-->
+            <ColumnDefinition Width="10" />     <!--4 margin-->
+        </Grid.ColumnDefinitions>
+
+        <StackPanel Orientation="Horizontal" Grid.Row="1" Grid.Column="1" 
+        HorizontalAlignment="Right" VerticalAlignment="Bottom">
+ 
+            <Button x:Name="ButtonOne" Height="30" Width="75" 
+             Background="Beige"
+             Content="Push Me!" HorizontalAlignment="Right"
+             VerticalAlignment="Bottom" />
+
+            <Button x:Name="ButtonTwo" Height="30" Width="75" 
+              Background="Blue" Margin="10,0,0,0"
+             Content="No, Push Me!" HorizontalAlignment="Right"
+             VerticalAlignment="Bottom"  />
+
+        </StackPanel>
+        <TextBlock x:Name="ButtonOneResponse" Text="Waiting..."
+        Grid.Row="1" Grid.Column="3" VerticalAlignment="Bottom" 
+        HorizontalAlignment="Left" />
+        
+       <Border BorderBrush="Black" BorderThickness="1" 
+        Grid.Row="2" Grid.Column="1"  VerticalAlignment="Bottom" Height="30" />        
+        <StackPanel x:Name="Mood" Orientation="Horizontal" 
+            Grid.Row="2" Grid.Column="1" VerticalAlignment="Bottom" >
+            <RadioButton x:Name="Quiet" Content="Quiet" IsChecked="true" 
+                Width="58" Height="30" GroupName="Mood" Margin="5,0,0,0"  />
+            <RadioButton x:Name="Active" Content="Active"  
+                Width="58" Height="30" GroupName="Mood" />
+            <RadioButton x:Name="Noisy" Content="Noisy"  
+                Width="58" Height="30" GroupName="Mood" />
+            <RadioButton x:Name="Frenetic" Content="Frenetic"  
+                Width="70" Height="30" GroupName="Mood" />
+        </StackPanel>
+       <TextBlock x:Name="MoodEffect" Grid.Row="2" Grid.Column="3" Text="Waiting...." 
+            VerticalAlignment="Bottom"  HorizontalAlignment="Left"/>
+            
+       <Button x:Name="SetFeatures" Height="40" Width="250" Background="Blue"
+        Grid.Row="3" Grid.Column="1">
+            <Button.Content>
+                <StackPanel x:Name="Features" Orientation="Horizontal" 
+                    Grid.Row="3" Grid.Column="1" VerticalAlignment="Bottom" >
+                    <CheckBox x:Name="Soft" Content="Soft" Width="50" Height="40"
+                        Margin="5,0,0,0" />
+                    <CheckBox x:Name="Cozy" Content="Cozy" Width="50" Height="40" />                   
+                    <CheckBox x:Name="Warm" Content="Warm" Width="60" Height="40" />                   
+                    <CheckBox x:Name="Happy" Content="Happy" Width="60" Height="40" />                   
+                </StackPanel>
+            </Button.Content>
+        </Button>
+        <TextBlock x:Name="FeaturesEffects" Grid.Row="3" Grid.Column="3" 
+        Text="Waiting...." 
+        VerticalAlignment="Bottom"  HorizontalAlignment="Left"/>
+    
+     <Slider x:Name="theSlider" Height="20" Width="250" 
+            Minimum="0" Maximum="100" SmallChange="5" Value="10" 
+            Grid.Row="4" Grid.Column="1" HorizontalAlignment="Right"     />
+       <TextBlock x:Name="SliderEffect" Grid.Row="4" Grid.Column="3" Text="Waiting...." 
+            VerticalAlignment="Bottom"  HorizontalAlignment="Left"/>
+
+    
+        
+    </Grid>
+</UserControl>

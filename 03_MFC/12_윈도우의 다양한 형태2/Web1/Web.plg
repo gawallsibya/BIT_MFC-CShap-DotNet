@@ -1,0 +1,32 @@
+<html>
+<body>
+<pre>
+<h1>Build Log</h1>
+<h3>
+--------------------Configuration: Web - Win32 Debug--------------------
+</h3>
+<h3>Command Lines</h3>
+Creating command line "rc.exe /l 0x412 /fo"Debug/Web.res" /d "_DEBUG" /d "_AFXDLL" "D:\01_강의_자료\03_고급\03_MFC\1_강의\11일차_IMAGE_WEB\Web1\Web.rc"" 
+Creating temporary file "C:\DOCUME~1\choiccmm\LOCALS~1\Temp\RSP30C.tmp" with contents
+[
+/nologo /subsystem:windows /incremental:yes /pdb:"Debug/Web.pdb" /debug /machine:I386 /out:"Debug/Web.exe" /pdbtype:sept 
+".\Debug\MainFrm.obj"
+".\Debug\ProgressStatusBar.obj"
+".\Debug\StdAfx.obj"
+".\Debug\Web.obj"
+".\Debug\WebDoc.obj"
+".\Debug\WebView.obj"
+".\Debug\Web.res"
+]
+Creating command line "link.exe @C:\DOCUME~1\choiccmm\LOCALS~1\Temp\RSP30C.tmp"
+<h3>Output Window</h3>
+Compiling resources...
+Linking...
+
+
+
+<h3>Results</h3>
+Web.exe - 0 error(s), 0 warning(s)
+</pre>
+</body>
+</html>

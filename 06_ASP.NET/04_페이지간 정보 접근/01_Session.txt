@@ -1,0 +1,37 @@
+protected void Page_Load(object sender, EventArgs e)
+    {
+        if (!IsPostBack)
+        {
+            Session["conn"] = new SqlConnection();
+            ((SqlConnection)Session["conn"]).ConnectionString = @"Server=WOOSONG-1A633D2;database=Member;uid=NySHell;pwd=4514;";
+        }
+    }
+
+    // ===========================================================================================
+
+    protected void btn_Login_Click(object sender, EventArgs e)
+    {
+        string sql = "SELECT Name, ID, Character FROM Member WHERE ID = '" + textID.Text + "'AND PW = '" + textPW.Text + "';"; 
+
+        SqlCommand cmd = new SqlCommand(sql, (SqlConnection)Session["conn"]);
+
+        try
+        {
+            ((SqlConnection)Session["conn"]).Open();
+            SqlDataReader myDataReader;
+            myDataReader = cmd.ExecuteReader();
+            if (myDataReader.Read())
+            {
+                MyInfo(myDataReader["Name"].ToString(), myDataReader["ID"].ToString(),
+                    int.Parse(myDataReader["Character"].ToString()));
+            }
+            else
+                labelInfo.Text = "로그인 실패";
+        }
+        catch (Exception ex)    {   labelInfo.Text = ex.Message;    }
+    }
+
+    protected void MyInfo(string name, string id, int charNum)
+    {
+        
+    }

@@ -1,0 +1,31 @@
+<html>
+<body>
+<pre>
+<h1>Build Log</h1>
+<h3>
+--------------------Configuration: HTStaticDemo - Win32 Debug--------------------
+</h3>
+<h3>Command Lines</h3>
+Creating command line "rc.exe /l 0x412 /fo"Debug/HTStaticDemo.res" /d "_DEBUG" /d "_AFXDLL" "D:\01_강의_자료\03_고급\03_MFC\1_강의\12일차_기타\제공자료\3_확장컨트롤\HTStaticDemo\HTStaticDemo.rc"" 
+Creating temporary file "C:\DOCUME~1\choiccmm\LOCALS~1\Temp\RSP1AB.tmp" with contents
+[
+/nologo /subsystem:windows /incremental:yes /pdb:"Debug/HTStaticDemo.pdb" /debug /machine:I386 /out:"Debug/HTStaticDemo.exe" /pdbtype:sept 
+".\Debug\GraphStatic.obj"
+".\Debug\HTStatic.obj"
+".\Debug\HTStaticDemo.obj"
+".\Debug\HTStaticDemoDlg.obj"
+".\Debug\StdAfx.obj"
+".\Debug\HTStaticDemo.res"
+]
+Creating command line "link.exe @C:\DOCUME~1\choiccmm\LOCALS~1\Temp\RSP1AB.tmp"
+<h3>Output Window</h3>
+Compiling resources...
+Linking...
+
+
+
+<h3>Results</h3>
+HTStaticDemo.exe - 0 error(s), 0 warning(s)
+</pre>
+</body>
+</html>

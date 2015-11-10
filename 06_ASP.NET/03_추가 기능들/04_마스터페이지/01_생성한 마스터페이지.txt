@@ -1,0 +1,43 @@
+<%@ Master Language="C#" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" >
+<head runat="server">
+    <title>제목 없음</title>
+</head>
+<body>
+    <form id="form1" runat="server">
+    <div>
+        <h3>마스터 페이지 예제</h3>
+        
+        <table width="550" border="1">
+            <tr>
+                <td style="width: 100px;">
+                    <img src="Images/www_asp_net_logo.gif" alt="로고" />
+                </td>
+                <td valign="bottom">
+                    <a href="Ex01.aspx">Home</a> | <a href="Ex01_1.aspx">사이트 소개</a> | 공지사항 | QnA 게시판 | 자료실
+                </td>
+            </tr>
+            <tr>
+                <td valign="top">
+                    <a href="Ex01.aspx">Home</a><br />
+                    <a href="Ex01_1.aspx">사이트 소개</a><br />
+                    공지사항<br />
+                    QnA 게시판<br />
+                    자료실<br />
+                </td>
+                <td style="height: 150px;" valign="top">                    
+                    <asp:ContentPlaceHolder id="ContentPlaceHolder1" runat="server">
+                    </asp:ContentPlaceHolder>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">Copyright &copy; 2006 닷넷프로. All rights reserved.</td>
+            </tr>
+        </table>
+    </div>
+    </form>
+</body>
+</html>

@@ -1,0 +1,75 @@
+<%@ Page Language="C#" %>
+<%@ Import Namespace="System.Data.SqlClient" %>
+<%@ Import Namespace="System.Data" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<script runat="server">
+    protected void Page_Load(object sender, EventArgs e)
+    {
+        if (!Page.IsPostBack)
+        {
+            BindDropDownList();         
+        }        
+    }
+
+    void BindDropDownList()
+    {
+        string str = "Data Source=BIT5\\SQLEXPRESS;Initial Catalog=CCMTABLE;User ID=ccm;Password=ccccmm";
+        SqlConnection con = new SqlConnection(str);
+        SqlCommand cmd = new SqlCommand("SELECT CarID FROM Inventory", con);
+        SqlDataAdapter ad = new SqlDataAdapter();
+        ad.SelectCommand = cmd;
+        DataSet ds = new DataSet();
+        ad.Fill(ds);
+
+        DropDownList1.DataSource = ds;
+        DropDownList1.DataValueField = "CarID";
+        DropDownList1.DataTextField = "CarID";
+        DropDownList1.DataBind();
+    }
+
+    protected void Button1_Click(object sender, EventArgs e)
+    {
+        string str = "Data Source=BIT5\\SQLEXPRESS;Initial Catalog=CCMTABLE;User ID=ccm;Password=ccccmm";
+        SqlConnection con = new SqlConnection(str);
+        string strSelect = "SELECT * FROM Inventory WHERE CarID = @CarID";
+        string strDelete = "DELETE FROM Inventory WHERE CarID = @CarID";        
+        SqlCommand cmdSelect = new SqlCommand(strSelect, con);
+        cmdSelect.Parameters.AddWithValue("@CarID", DropDownList1.SelectedItem.Value);
+        SqlCommand cmdDelete = new SqlCommand(strDelete, con);        
+        cmdDelete.Parameters.AddWithValue("@CarID", DropDownList1.SelectedItem.Value);
+
+        SqlDataAdapter ad = new SqlDataAdapter();
+        ad.SelectCommand = cmdSelect;
+        ad.DeleteCommand = cmdDelete;
+        DataSet ds = new DataSet();
+        ad.Fill(ds);
+
+        DataTable table = ds.Tables[0];
+        DataRow row = table.Rows[0];
+        row.Delete();
+        ad.Update(ds);
+
+        BindDropDownList();
+    }
+</script>
+
+<html xmlns="http://www.w3.org/1999/xhtml" >
+<head id="Head1" runat="server">
+    <title>제목 없음</title>
+</head>
+<body>
+    <form id="form1" runat="server">
+    <div>
+        <h3>비연결기반 DELETE 예제</h3>
+        
+        아이디 선택 : 
+        <asp:DropDownList ID="DropDownList1" runat="server">
+        </asp:DropDownList><p></p>        
+        <asp:Button ID="Button1" runat="server" Text="삭제" OnClick="Button1_Click" />        
+    </div>
+    </form>
+</body>
+</html>
+

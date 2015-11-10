@@ -1,0 +1,21 @@
+﻿<Window x:Class="StyleDemo.Window4"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    Title="Window4" Height="300" Width="300">
+    <Grid>
+        <Grid.Resources>
+            <ResourceDictionary>
+                <ResourceDictionary.MergedDictionaries>
+                    <!--<ResourceDictionary Source="/PresentationFramework.Luna;component/themes/luna.normalcolor.xaml" />-->
+                    <ResourceDictionary Source="/PresentationFramework.Aero;component/themes/Aero.NormalColor.xaml" />
+                </ResourceDictionary.MergedDictionaries>
+            </ResourceDictionary>
+        </Grid.Resources>
+        <Button Margin="44,115,80,118" Name="button1">Button</Button>
+        <ComboBox Margin="44,57,80,0" Name="comboBox1" Height="22" VerticalAlignment="Top">
+            <ComboBoxItem>Apple</ComboBoxItem>
+            <ComboBoxItem>Banna</ComboBoxItem>
+            <ComboBoxItem>PineApple</ComboBoxItem>
+        </ComboBox>
+    </Grid>
+</Window>

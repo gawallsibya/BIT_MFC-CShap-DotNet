@@ -1,0 +1,41 @@
+﻿<%@ Page Language="C#" %>
+<%@ Import Namespace="System.Data.SqlClient" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<script runat="server">
+    protected void Button1_Click(object sender, EventArgs e)
+    {
+        SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["TestConnectionString"].ConnectionString);
+
+        string strSql = "INSERT INTO Member(user_id, password, name, phone) VALUES('" + TextBox1.Text + "', '" + TextBox2.Text + "', '" + TextBox3.Text + "', '" + TextBox4.Text + "')";
+        SqlCommand cmd = new SqlCommand(strSql, con);
+
+        // SqlConnection 개체를 열고 SqlCommand 개체를 통해 INSERT 문을 실행한 후 SqlConnection 개체 닫음.
+        con.Open();
+        cmd.ExecuteNonQuery();
+        con.Close();
+
+        Label1.Text = TextBox1.Text + "의 정보가 입력되었습니다.";
+    }
+</script>
+
+<html xmlns="http://www.w3.org/1999/xhtml" >
+<head runat="server">
+    <title>제목 없음</title>
+</head>
+<body>
+    <form id="form1" runat="server">
+    <div>
+        <h3>연결기반 INSERT 예제</h3>
+        
+        아이디 : <asp:TextBox ID="TextBox1" runat="server"></asp:TextBox><br />
+        암호 : <asp:TextBox ID="TextBox2" runat="server"></asp:TextBox><br />
+        이름 : <asp:TextBox ID="TextBox3" runat="server"></asp:TextBox><br />
+        전화 : <asp:TextBox ID="TextBox4" runat="server"></asp:TextBox><br />
+        <asp:Button ID="Button1" runat="server" Text="저장" OnClick="Button1_Click" /><br />
+        <asp:Label ID="Label1" runat="server"></asp:Label>
+    </div>
+    </form>
+</body>
+</html>

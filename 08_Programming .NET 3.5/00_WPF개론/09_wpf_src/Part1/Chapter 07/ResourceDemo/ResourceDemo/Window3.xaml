@@ -1,0 +1,25 @@
+﻿<Window x:Class="ResourceDemo.Window3"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    Title="Window3" Height="300" Width="300">
+    <Canvas xmlns:local="clr-namespace:ResourceDemo" xmlns:system="clr-namespace:System;assembly=mscorlib">
+        <Canvas.Resources>
+            <ObjectDataProvider x:Key="animal" ObjectType="{x:Type local:Animal}">
+                <ObjectDataProvider.ConstructorParameters>
+                    <system:String>Tiger</system:String>
+                    <system:String>Sabana</system:String>
+                </ObjectDataProvider.ConstructorParameters>
+            </ObjectDataProvider>
+            
+            <ObjectDataProvider x:Key="sayHello" ObjectType="{x:Type local:Greeting}" MethodName="SayHello">
+                <ObjectDataProvider.MethodParameters>
+                    <system:String>Mr. Kim </system:String>
+                </ObjectDataProvider.MethodParameters>
+            </ObjectDataProvider>
+        </Canvas.Resources>
+        <TextBox Canvas.Left="40" Canvas.Top="52" Height="21" x:Name="textBox1" Width="120" DataContext="{DynamicResource animal}" Text="{Binding Path=Irum, Mode=Default}" />
+        <TextBox Canvas.Left="40" Canvas.Top="88" Height="26" Name="textBox2" Width="155" Text="{Binding Source={StaticResource sayHello} ,Path=MethodParameters[0], BindsDirectlyToSource=true,UpdateSourceTrigger=PropertyChanged
+}"/>
+        <TextBox Canvas.Left="40" Canvas.Top="130" Height="25" Name="textBox3" Width="181"  Text="{Binding Source={StaticResource sayHello} ,Mode=OneWay}" />
+    </Canvas>
+</Window>

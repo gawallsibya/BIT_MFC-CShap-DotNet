@@ -1,0 +1,9 @@
+﻿<to:CustomWindow x:Class="WindowDemo.Window4"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    Title="Window4"   ResizeMode="CanResizeWithGrip" 
+        xmlns:to="clr-namespace:MyWindow;assembly=MyWindow" Height="341" Width="433">
+    <Grid >
+        <Button  Name="button1">Button</Button>
+    </Grid>
+</to:CustomWindow>

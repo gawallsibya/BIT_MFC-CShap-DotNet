@@ -1,0 +1,13 @@
+﻿<Window x:Class="AttachedPropertyDemo.Window2"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    Title="Window2" Height="300" Width="300">
+    <StackPanel xmlns:local="clr-namespace:AttachedPropertyDemo" Name="stackPanel">
+        <StackPanel.Resources>
+            <!--<local:NameFactory x:Key="nameFactory"></local:NameFactory>-->
+        </StackPanel.Resources>
+        <TextBox Name="txt"></TextBox>
+        <Button Click="Button_Click">Click Me</Button>
+        
+    </StackPanel>
+</Window>

@@ -1,0 +1,14 @@
+	//1. CString ==> TCHAR*
+	CString str = TEXT("AAAA");
+	TCHAR   tstr[20];
+//	lstrcpy(tstr, str.GetBuffer());
+//	lstrcpy(tstr, str);
+	lstrcpy(tstr, (LPTSTR)(LPCTSTR)str);
+	AfxMessageBox(tstr);
+
+	//2. TCHAR*  ==> CString
+	TCHAR  aaa[20];
+	lstrcpy(aaa,TEXT("ȫ�浿"));
+	CString temp;
+	temp.Format(TEXT("%s:%d"), aaa, 10);	
+	AfxMessageBox(temp);

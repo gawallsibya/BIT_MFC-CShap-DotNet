@@ -1,0 +1,10 @@
+﻿<Window x:Class="WPFControls.RepeatButtonSample"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    Title="RepeatButtonSample" Height="300" Width="300">
+    <Grid HorizontalAlignment="Center" VerticalAlignment="Center">
+        <RepeatButton Name="repeatButton" Interval="500" Delay="300" Click="repeatButton_Click" >
+            This is RepeatButton
+        </RepeatButton>
+    </Grid>
+</Window>

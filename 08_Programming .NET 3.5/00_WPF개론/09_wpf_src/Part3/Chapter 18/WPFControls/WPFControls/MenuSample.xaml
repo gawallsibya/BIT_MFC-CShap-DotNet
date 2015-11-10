@@ -1,0 +1,29 @@
+﻿<Window x:Class="WPFControls.MesnuSample"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    Title="MesnuSample" Height="300" Width="300">
+    <Grid VerticalAlignment="Top">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <Menu Grid.Row="0">
+            <MenuItem Header="_Edit">
+                <MenuItem Command="ApplicationCommands.Copy"/>
+                <MenuItem Command="ApplicationCommands.Cut"/>
+                <MenuItem Command="ApplicationCommands.Paste"/>
+            </MenuItem>
+            <MenuItem Header="Help">
+                <MenuItem Header="about"></MenuItem>
+                <MenuItem Header="What is Menu" Click="MenuItem_Click"></MenuItem>
+            </MenuItem>
+            
+        </Menu>
+        <TextBox Name="textBox1" Grid.Row="1" TextWrapping="Wrap"
+         Margin="2">
+            복덕 방에는 개가 한마리 졸고 있습니다. 달보고도 짖고 손님보고도 짖습니다. 아주 고약한 놈이지요. 때로는 졸다 놀라 제 꼬리 보고도 짖는 답니다.
+        </TextBox>
+
+    </Grid>
+
+</Window>

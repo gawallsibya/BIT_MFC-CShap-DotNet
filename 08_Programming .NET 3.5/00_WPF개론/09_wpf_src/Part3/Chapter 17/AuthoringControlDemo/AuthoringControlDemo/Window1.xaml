@@ -1,0 +1,9 @@
+﻿<Window x:Class="AuthoringControlDemo.Window1"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    Title="Window1" Height="300" Width="300" 
+     xmlns:UserControlDemo="clr-namespace:UserControlDemo;assembly=UserControlDemo" >
+    <Grid>
+        <UserControlDemo:MyControl Height="50" Margin="0,28,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Width="122" ValueChanged="MyControl_ValueChanged" Value="23"></UserControlDemo:MyControl>
+    </Grid>
+</Window>

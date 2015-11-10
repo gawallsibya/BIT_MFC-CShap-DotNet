@@ -1,0 +1,44 @@
+// MasterPage2.master
+
+<%@ Master Language="C#" %>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head id="Head1" runat="server">
+    <title>제목 없음</title>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div>
+            <h3>기본 콘텐츠 정의 예제</h3>
+            
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+            </asp:ContentPlaceHolder>
+            <br />
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder2" runat="server">
+                이것은 마스터 페이지의 ContentPlaceHolder2에 정의한 기본 콘텐츠입니다.
+            </asp:ContentPlaceHolder>
+        </div>
+    </form>
+</body>
+</html>
+
+
+
+// 02.aspx
+<%@ Page Language="C#" MasterPageFile="~/MasterPage2.master" Title="제목 없음" %>
+
+<asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
+    콘텐츠 페이지 : Content1 입니다.
+</asp:Content>
+
+
+// 02_1.aspx
+<%@ Page Language="C#" MasterPageFile="~/MasterPage2.master" Title="제목 없음" %>
+
+<asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
+    콘텐츠 페이지 : Content1 입니다.
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder2" runat="Server">
+    콘텐츠 페이지 : Content2 입니다.
+</asp:Content>
+

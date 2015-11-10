@@ -1,0 +1,48 @@
+﻿<%@ Page Language="C#" %>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<script runat="server">
+    protected void Page_Load(object sender, EventArgs e)
+    {
+        if (!Page.IsPostBack)
+        {
+            BindDropDownList();
+        }
+    }
+
+    void BindDropDownList()
+    {
+        DropDownList1.DataSource = Membership.GetAllUsers();
+        DropDownList1.DataBind();
+    }
+
+    protected void Button1_Click(object sender, EventArgs e)
+    {
+        string user = DropDownList1.SelectedItem.Text;
+        if (Membership.DeleteUser(user))
+        {
+            Label1.Text = user + " 계정이 정상적으로 삭제 되었습니다.";
+            BindDropDownList();
+        }
+        else
+        {
+            Label1.Text = user + " 계정 삭제 도중 오류가 발생했습니다.";
+        }
+    }
+</script>
+
+<html xmlns="http://www.w3.org/1999/xhtml" >
+<head runat="server">
+    <title>제목 없음</title>
+</head>
+<body>
+    <form id="form1" runat="server">
+    <div>
+        <asp:DropDownList ID="DropDownList1" runat="server">
+        </asp:DropDownList>
+        <asp:Button ID="Button1" runat="server" Text="선택 회원 삭제" OnClick="Button1_Click" /><br />
+        <asp:Label ID="Label1" runat="server"></asp:Label>
+    </div>
+    </form>
+</body>
+</html>

@@ -1,0 +1,50 @@
+﻿<Window x:Class="BindingSourceDemo.Window3"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    Title="Window3" Height="300" Width="300">
+    <Window.Resources>
+        <XmlDataProvider x:Key="myBooks" XPath="MyBooks/Books">
+            <x:XData>
+                <MyBooks xmlns="" >
+                    <Books>
+                        <Book ISBN="0-1234-4321-9" Stock="No"  Number="9">
+                            <Title>WPF Bible</Title>
+                            <Summary>WPF Tutorial</Summary>
+                        </Book>
+                        <Book ISBN="0-7567-0890-2" Stock="No" Number="8">
+                            <Title>East Sea Beach</Title>
+                            <Summary>Photo Journal</Summary>
+                        </Book>
+                        <Book ISBN="0-5698-1232-9" Stock="Yes"  Number="7">
+                            <Title>Hook ton</Title>
+                            <Summary>News</Summary>
+                        </Book>
+                    </Books>
+                </MyBooks>
+            </x:XData>
+        </XmlDataProvider>
+    </Window.Resources>
+
+    
+    <Canvas>
+       <ListBox ItemsSource="{Binding Source={StaticResource myBooks}, XPath=*}" Height="52" Canvas.Left="20.683" Canvas.Top="44" Width="88">
+        <ListBox.ItemTemplate>
+            <DataTemplate>
+                <TextBlock Text="{Binding XPath=Title}"/>
+            </DataTemplate>
+        </ListBox.ItemTemplate>
+        </ListBox>
+
+        <ListBox ItemsSource="{Binding Source={StaticResource myBooks}, 
+                                       XPath=*[@Stock\=\'No\']}"   Canvas.Left="143" Canvas.Top="44" Height="52" Width="88">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <TextBlock Text="{Binding XPath=Title}"></TextBlock>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+        
+        
+        
+    </Canvas>    
+</Window>

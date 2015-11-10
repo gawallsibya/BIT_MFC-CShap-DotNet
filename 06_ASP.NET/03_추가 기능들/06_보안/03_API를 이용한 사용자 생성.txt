@@ -1,0 +1,39 @@
+﻿<%@ Page Language="C#" %>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<script runat="server">
+    protected void Button1_Click(object sender, EventArgs e)
+    {
+        MembershipCreateStatus status;
+        Membership.CreateUser(TextBox1.Text, TextBox2.Text, TextBox3.Text, TextBox4.Text, TextBox5.Text, true, out status);
+
+        switch (status)
+        {
+            case MembershipCreateStatus.Success :
+                Label1.Text = "회원 가입이 성공적으로 이루어졌습니다.!!!";
+                break;
+            default :
+                Label1.Text = "회원 가입 도중 오류가 발생했습니다.";
+                break;                
+        }
+    }
+</script>
+
+<html xmlns="http://www.w3.org/1999/xhtml" >
+<head runat="server">
+    <title>제목 없음</title>
+</head>
+<body>
+    <form id="form1" runat="server">
+    <div>
+        사용자 이름 : <asp:TextBox ID="TextBox1" runat="server"></asp:TextBox><br />
+        암호 : <asp:TextBox ID="TextBox2" runat="server" TextMode="Password"></asp:TextBox><br />
+        전자메일 : <asp:TextBox ID="TextBox3" runat="server"></asp:TextBox><br />
+        보안 질문 : <asp:TextBox ID="TextBox4" runat="server"></asp:TextBox><br />
+        보안 대답 : <asp:TextBox ID="TextBox5" runat="server"></asp:TextBox><br />
+        <asp:Label ID="Label1" runat="server"></asp:Label>
+        <asp:Button ID="Button1" runat="server" Text="사용자 만들기" OnClick="Button1_Click" />
+    </div>
+    </form>
+</body>
+</html>

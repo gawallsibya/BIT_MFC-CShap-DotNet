@@ -1,0 +1,14 @@
+C:\Users\lee\Desktop\BookPub\Part2\App\Labs\BuildDemo\BuildDemo\bin\Release\BuildDemo.exe
+C:\Users\lee\Desktop\BookPub\Part2\App\Labs\BuildDemo\BuildDemo\bin\Release\BuildDemo.pdb
+C:\Users\lee\Desktop\BookPub\Part2\App\Labs\BuildDemo\BuildDemo\obj\Release\ResolveAssemblyReference.cache
+C:\Users\lee\Desktop\BookPub\Part2\App\Labs\BuildDemo\BuildDemo\obj\Release\Window1.baml
+C:\Users\lee\Desktop\BookPub\Part2\App\Labs\BuildDemo\BuildDemo\obj\Release\Window1.g.cs
+C:\Users\lee\Desktop\BookPub\Part2\App\Labs\BuildDemo\BuildDemo\obj\Release\App.g.cs
+C:\Users\lee\Desktop\BookPub\Part2\App\Labs\BuildDemo\BuildDemo\obj\Release\BuildDemo_MarkupCompile.cache
+C:\Users\lee\Desktop\BookPub\Part2\App\Labs\BuildDemo\BuildDemo\obj\Release\BuildDemo.g.resources
+C:\Users\lee\Desktop\BookPub\Part2\App\Labs\BuildDemo\BuildDemo\obj\Release\BuildDemo.Properties.Resources.resources
+C:\Users\lee\Desktop\BookPub\Part2\App\Labs\BuildDemo\BuildDemo\obj\Release\BuildDemo.csproj.GenerateResource.Cache
+C:\Users\lee\Desktop\BookPub\Part2\App\Labs\BuildDemo\BuildDemo\obj\Release\BuildDemo.exe
+C:\Users\lee\Desktop\BookPub\Part2\App\Labs\BuildDemo\BuildDemo\obj\Release\BuildDemo.pdb
+C:\Users\lee\Desktop\BookPub\Part2\Chapter2\Labs\BuildDemo\BuildDemo\obj\Release\BuildDemo.exe
+C:\Users\lee\Desktop\BookPub\Part2\Chapter2\Labs\BuildDemo\BuildDemo\obj\Release\BuildDemo.pdb

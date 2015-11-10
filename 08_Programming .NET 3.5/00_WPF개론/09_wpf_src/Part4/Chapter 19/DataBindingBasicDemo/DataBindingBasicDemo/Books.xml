@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Books xmlns="">
+  <Genre name="Poem">
+    <Book name="Soul"/>
+    <Book name="Deep Sea"/>
+    <Book name="Winter is Love"/>
+    <Book name="Time is new Life"/>
+  </Genre>
+  <Genre name="Manual">
+    <Book name="Fantastic fishing"/>
+    <Book name="How to WPF"/>
+    <Book name="Good Cook Good Life"/>
+    
+  </Genre>
+
+  <Genre name="Magagine">
+    <Book name="Baseball Classic"/>
+    <Book name="XSport II"/>
+    <Book name="New Generation Fashion"/>
+    <Book name="Health And Drug"/>
+  </Genre>
+</Books>

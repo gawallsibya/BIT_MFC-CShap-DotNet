@@ -1,0 +1,16 @@
+﻿<Page x:Class="NavigationDemo.FramePage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    Title="FramePage" ShowsNavigationUI="True">
+    <Grid ShowGridLines="True">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+        <Frame Grid.Column="0" Source="http://www.microsoft.com" ScrollViewer.CanContentScroll="True" NavigationUIVisibility="Visible"></Frame>
+        <Frame Grid.Column="1" Source="http://www.naver.com" ScrollViewer.CanContentScroll="True" NavigationUIVisibility="Visible" />
+            
+       
+       
+    </Grid>
+</Page>

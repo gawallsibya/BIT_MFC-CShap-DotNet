@@ -1,0 +1,90 @@
+[ MFC 윈속(Winsock) 관련 클래스 ]
+
+
+CAsynSocket
+CSocket
+CSocketFile
+
+
+CObject => CAsyncSocket => CSocket
+
+CObject => CFile => CSocketFile
+
+
+1) CAsyncSocket 클래스 --------------------------------------------------------------------
+
+   Winsock API를 캡슐화한 클래스
+
+   맴버 함수		기능
+   ------------------------------------------------
+   Create		소켓 생성
+   Bind			소켓에 로컬 주소와 포트 결합
+   Listen		클라이언트의 연결 요청 대기
+   Accept		클라이언트의 연결 허용
+   Connect		상대방 소켓에 연결 시도
+   Send/SendTo		데이터 전송
+   Receive/ReceiveFrom	데이터 수신
+   GetSockName		소켓에 대한 주소 리턴
+   GetPeerName		소켓에 연결된 상대방의 주소
+   Close		소켓 닫는다.(소멸자에서 호출됨)
+   ------------------------------------------------------
+
+
+   클래서 사용 과정
+
+   Server				Client
+   -------------------------------------------------------
+   Create : 소켓 생성			Create : 소켓 생성
+   Listen : 클라이언트의 요청 대기	Accept : 연결 허용
+   데이터 송수신			데이터 송수신
+   ---------------------------------------------------------
+
+   *) 상대방이 접속 시도 or 데이터 전달을 어떻게 감지??
+
+   가상함수로 되어 있어 재정의해서 사용함
+
+   통보 함수	기능
+   ---------------------------------------------------------------------
+   OnAccept	클라이언트로부터 연결 요청이 있으면 호출되는 가상함수
+   OnConnect	연결이 완료되면 호출되는 가상함수
+   OnSend	데이터 전송이 가능하면 호출되는 가상함수
+   OnReceive    데이터를 수신하면 호출되는 가상함수
+   OnClose	연결된 소켓이 닫히면 호출되는 가상 함수
+   ----------------------------------------------------------------------
+
+
+
+
+
+2) CSocket클래스 --------------------------------------------------------------
+
+   CAsyncSocket에서 파생됨
+   CSocketFile과 CArchive클래스를 이용하여 데이터 전송 및 수신 작업을
+   보다 간결하게 해줌
+
+   동기적으로 동작함 : 에이터를 송수신하는 표준 스트림 작업을 구현할 수 있슴
+
+
+   A컴퓨터 : CArchive <==> CSocketFile <==> CSocket
+
+              [ 네트워크 ]
+
+   	     CSocket <==> CSocketFile <==> CArchive  : B컴퓨터
+
+
+   ex) 
+   CMySocket *m_pSocket;
+
+   ...........
+
+   m_pFile 	= new CSocketFile(m_pSocket);	// 소켓을 통해 데이터 전송
+   m_pArcIn	= new CArchive(m_pFile, CArchive::load);  // 수신용
+   m_pArcOut	= new CArchive(m_pFile, CArchive::store); // 송신용
+
+
+   맴버 함수		기능
+   -------------------------------------------------------------------------
+   Creat		소켓 생성
+   IsBlocking		블록킹 여부를 판단
+   CancelBlockingCall 	현재 블록킹 호출을 취소
+   OnMessagePending	블록킹으로 인해 처리되지 않은 메시지 처리 요청

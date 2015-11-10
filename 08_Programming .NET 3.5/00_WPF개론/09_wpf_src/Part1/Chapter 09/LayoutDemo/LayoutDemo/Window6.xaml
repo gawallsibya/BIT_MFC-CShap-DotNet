@@ -1,0 +1,113 @@
+﻿<Window x:Class="LayoutDemo.Window6"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    Title="Window6" Height="273" Width="600" HorizontalAlignment="Center">
+    <Window.Resources>
+       
+        <Style TargetType="ListBox">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="ListBox">
+                        <Border CornerRadius="5" Background="{TemplateBinding ListBox.Background}">
+                            <ScrollViewer HorizontalScrollBarVisibility="Auto">
+                                <StackPanel Orientation="Horizontal"
+                           VerticalAlignment="Center"
+                           HorizontalAlignment="Center"
+                           IsItemsHost="True"/>
+                           </ScrollViewer>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+     
+        <Style TargetType="ListBoxItem">
+            <Setter Property="Opacity" Value="0.5" />
+            <Setter Property="MaxHeight" Value="75" />
+            <Style.Triggers>
+                <Trigger Property="IsSelected" Value="True">
+                    <Trigger.Setters>
+                        <Setter Property="Opacity" Value="1.0" />
+                    </Trigger.Setters>
+                </Trigger>
+                <EventTrigger RoutedEvent="Mouse.MouseEnter">
+                    <EventTrigger.Actions>
+                        <BeginStoryboard>
+                            <Storyboard>
+                                <DoubleAnimation
+                  Duration="0:0:0.2"
+                  Storyboard.TargetProperty="MaxHeight"
+                  To="90"  />
+                            </Storyboard>
+                        </BeginStoryboard>
+                    </EventTrigger.Actions>
+                </EventTrigger>
+                <EventTrigger RoutedEvent="Mouse.MouseLeave">
+                    <EventTrigger.Actions>
+                        <BeginStoryboard>
+                            <Storyboard>
+                                <DoubleAnimation
+                  Duration="0:0:1"
+                  Storyboard.TargetProperty="MaxHeight"  />
+                            </Storyboard>
+                        </BeginStoryboard>
+                    </EventTrigger.Actions>
+                </EventTrigger>
+            </Style.Triggers>
+        </Style>
+
+    </Window.Resources>
+    <StackPanel HorizontalAlignment="Center">
+    <ListBox Width="500" Margin="10" SelectedIndex="0" Height="113" HorizontalAlignment="Left" VerticalContentAlignment="Top">
+        <ListBoxItem>
+            <Image Source="images/img1.jpg"/>
+        </ListBoxItem>
+        <ListBoxItem>
+            <Image Source="images/img2.jpg"/>
+        </ListBoxItem>
+        <ListBoxItem>
+            <Image Source="images/img3.jpg"/>
+        </ListBoxItem>
+        <ListBoxItem>
+            <Image Source="images/img4.jpg"/>
+        </ListBoxItem>
+        <ListBoxItem>
+            <Image Source="images/img5.jpg"/>
+        </ListBoxItem>
+
+        <ListBoxItem>
+            <Image Source="images/img6.jpg"/>
+        </ListBoxItem>
+        <ListBoxItem>
+            <Image Source="images/img7.jpg"/>
+        </ListBoxItem>
+        <ListBoxItem>
+            <Image Source="images/img8.jpg"/>
+        </ListBoxItem>
+        <ListBoxItem>
+            <Image Source="images/img9.jpg"/>
+        </ListBoxItem>
+    </ListBox>
+        
+    <StackPanel VerticalAlignment="Top" HorizontalAlignment="Left"  Orientation="Horizontal">
+            <StackPanel.Resources>
+                <Style  TargetType="Image">
+                    <Style.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="Opacity" Value="0.5"></Setter>
+                        </Trigger>
+                    </Style.Triggers>
+                </Style>
+            </StackPanel.Resources>
+        
+            <Image Source="images/img1.jpg"/>
+            <Image Source="images/img2.jpg"/>
+            <Image Source="images/img3.jpg"/>
+            <Image Source="images/img4.jpg"/>
+            <Image Source="images/img5.jpg"/>
+           
+            
+    </StackPanel>
+    </StackPanel>
+   
+</Window>

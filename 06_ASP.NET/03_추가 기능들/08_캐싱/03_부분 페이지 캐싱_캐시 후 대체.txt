@@ -1,0 +1,150 @@
+
+
+--------------------------------------------------------------------------------------------
+
+부분 페이지 캐싱 ) : 컨트롤 캐싱
+
+- 페이지의 일부분을 캐싱하는 기법
+- 사용자 정의 컨트롤을 사용하여 페이지 일부분을 캐싱
+- 동적인 웹 페이지에서 특정 부분만 정적일 때 유용하게 사용
+  ex) 어제의 시청률과 같이 하루 동안은 절대 변경되지 않는 정보가 있을때
+      이 부분을 컨트롤 캐싱하면 사용자가 페이지를 요청할 때 마다 변하지도 
+      않는 어제의 시청률 정보를 처리하는 불필요한 과정을 없앨 수 있다.
+
+
+
+
+부분 페이지 캐싱 ) : 캐시 후 대체(Post-Cache Substitution)
+
+- 컨트롤 캐싱과 반대
+- 정적인 웹페이지에서 특정 부분만 동적일 경우에 유용하게 사용
+- ex) 사용자 이름 또는 배너 광고와 같이 캐싱되지 말아야 할 정보들이 정적인
+      영역에 포함되어 있을 때, 전체 페이지를 캐싱하고 사용자 이름 또는
+      베너 광고와 같이 동적인 부분만 캐싱되지 않도록 하면 해당 웹 페이지의
+      성능을 향상 시킬 수 있다.
+
+
+- 세 가지 방법으로 구현함 
+
+  1) Substitution 컨트롤을 사용하여 선언적으로 구현
+
+  2) Substitution API를 사용하여 프로그래밍 방식으로 구현
+
+  3) AdRotator 컨트롤을 사용하여 암시적으로 구현
+
+
+- 예제 ) Substitution 컨트롤을 사용하여 선언적으로 구현------------------------------------------------
+
+
+<%@ Page Language="C#" %>
+<%@ OutputCache Duration="10" VaryByParam="none" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<script runat="server">
+    protected void Page_Load(object sender, EventArgs e)
+    {
+        Label1.Text = DateTime.Now.ToString();
+    }
+
+    static string GetCurrentDate(HttpContext context)
+    {
+        return DateTime.Now.ToString();        
+    }
+</script>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head id="Head1" runat="server">
+    <title>제목 없음</title>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div>
+            <h3>Substitution 컨트롤 예제</h3>
+            
+            페이지가 캐싱된 시각 :
+            <asp:Label ID="Label1" runat="server"></asp:Label>
+            <p></p>
+            페이지가 요청된 시각(Substitution 컨트롤 사용) :
+            <asp:Substitution ID="Substitution1" runat="server" MethodName="GetCurrentDate" />
+        </div>
+    </form>
+</body>
+</html>
+
+
+
+
+
+- 예제 ) Substitution API를 사용하여 프로그래밍 방식으로 구현------------------------------------------------
+
+// 수정코드 
+<% Response.WriteSubstitution (new HttpResponseSubstitutionCallback(GetCurrentDate)); %>
+- 웹 폼 또는 사용자 정의 컨트롤에 정의된 정적 메서드를 호출하지 않고
+
+  임의의 개체에 정의된 정적 메서드를 호출할 수 있다는 장점을 가지고 있다.
+
+
+<%@ Page Language="C#" %>
+<%@ OutputCache Duration="10" VaryByParam="none" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<script runat="server">
+    protected void Page_Load(object sender, EventArgs e)
+    {
+        Label1.Text = DateTime.Now.ToString();
+    }
+
+    static string GetCurrentDate(HttpContext context)
+    {
+        return DateTime.Now.ToString();        
+    }
+</script>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head id="Head1" runat="server">
+    <title>제목 없음</title>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div>
+            <h3>Substitution 컨트롤 예제</h3>
+            
+            페이지가 캐싱된 시각 :
+            <asp:Label ID="Label1" runat="server"></asp:Label>
+            <p></p>
+            페이지가 요청된 시각(Substitution 컨트롤 사용) :
+            <% Response.WriteSubstitution (new HttpResponseSubstitutionCallback(GetCurrentDate)); %>
+        </div>
+    </form>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

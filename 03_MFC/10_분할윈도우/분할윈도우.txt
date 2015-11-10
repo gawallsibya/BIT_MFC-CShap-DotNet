@@ -1,0 +1,166 @@
+[ 분할 윈도우 - Splitter Window ]
+
+여러 개의 Pane으로 구성된 윈도우로 동일한 데이터를 
+다른 방식으로 출력하거나 독립적이지만 서로 연관된 정보를
+한눈에 볼 수 있게 한다.
+
+각 Pane에는 다양한 형태의 뷰가 놓이게 되며, 분할바(Split Bar)를 이용하여
+크기 조절이 가능하다.
+
+
+1. 종  류 
+
+ - 동적 분할 윈도우
+ - 정적 분할 윈도우
+
+
+
+ 1) 동적 분할 윈도우(Dynamic Splitter Window)
+
+    사용자가 필요할 때 각 페인으로 나눌 수 있는 분할 윈도우
+
+    VC++ 소스 코드 창이 여기에 해당
+     - 마우스 이용,  Window->Split메뉴 선택
+
+    생성 : CSplitterWnd::Create()
+
+
+  2) 정적 분할 윈도우(Static Splitter Window)
+
+     메인 윈도우가 생성될 때 페인의 수가 결정되어 변경할 수 없는
+     분할 윈도우
+
+     분할 박스를 이용하여 페인의 크기를 조절한다.
+
+     윈도우 탐색기가 대표적인 예
+
+     생성 : CSplitterWnd::CreateStatic()
+
+
+
+2. 구현
+
+   1) 동적 분할 윈도우
+      - 프로젝트 생성 4번째 스텝의 Advanced... 버튼 클릭
+        Use split Window체크
+
+
+       생성코드 1) class CMainFrame
+
+	protected:
+		CSplitterWnd m_wndSplitter;
+
+       생성코드 2) CMainFrame::OnCreateClient
+
+	{	
+	return m_wndSplitter.Create(this,
+		2, 2,               // 2행 2열
+		CSize(10, 10),      // 페인의 최소 크기
+		pContext);
+	}
+
+ 
+       ex) void CTESTView::OnDraw(CDC* pDC)
+	{
+	pDC->TextOut(10,10, "동적 분할 윈도우 테스트");
+	}
+
+
+   2) 정적 분할 윈도우
+	BOOL CMainFrame::OnCreateClient(LPCREATESTRUCT /*lpcs*/,
+	CCreateContext* pContext)
+	{
+	CRect rect;
+	GetClientRect(&rect);
+
+	m_wndSplitter.CreateStatic(this, 1, 2);// 수직 분할 윈도우
+
+	// 왼쪽 페인에서 사용할 뷰를 생성
+	m_wndSplitter.CreateView(0, 0, RUNTIME_CLASS(CLeftPane),
+			CSize(rect.Width()/2, 0), pContext);
+
+	// 오른쪽 페인에서 사용할 뷰를 생성
+	m_wndSplitter.CreateView(0, 1, RUNTIME_CLASS(CRightPane),
+			CSize(0, 0), pContext);
+
+	return TRUE;
+	}
+
+
+//----------------------------------------------------------
+[ NOTE ]
+
+CView::GetDocument()
+  - 뷰객체는 자신과 연결된 도큐먼트 객체를 하나 갖는다.
+     현재 뷰 객체와 연결된 도큐먼트 객체의 포인터를 리턴한다.
+     
+CDoucment::UpdateAllView(()
+  - 도큐먼트 내용이 변경될 때 마다 자신과 연관된 뷰에 갱신된 데이터를 반영하기 
+     위해 호출하는 함수
+ 
+  - 이 함수가 호출되면 어플리케이션 프레임워크는 뷰 클래스의 가상함수인 
+     OnUpdate() 를 호출하게 된다.
+
+CView::OnUpdate()
+  -  일반적으로 도큐먼트 객체에 접근하여 데이터를 얻은 다음 변경된 내용을
+      뷰에 반영한다.
+
+  - 이 함수의 인자들은  UpdateAllViews() 함수에서 전달된다.
+     인자를 통해 필요한 부분만 갱신도 가능하다.
+
+CView::OnInitialUpdate()
+  -  프로그래밍 시작될 때, 프로그램의 [파일 - 새 문서/열기]항목을 선택하면
+      자동으로 호출되는 가상함수임
+ 
+  -  프레임 웤에서 뷰 윈도우가 생성되면  OnCreate() 함수를 호출하는데 이 함수 
+      다음에  OnInitialUpdate()함수를 호출하게 된다.
+      따라서 뷰 클래스의 대부분의 초기화 작업을 여기서 수행하게 된다.
+  
+  *) 프로그램이 실행되는 동안 OnCrete는 단 한번 호출되지만 OnInitialUpdate()
+      는 여러 번 호출될 수 있다.
+
+CDocument::OnNewDocument()
+  -  도큐먼트 객체가 처음 생성될 때 , SDI프로그램에서 [파일-새문서]메뉴를 
+      선택할 때 어플리케이션 프레임웤에서 호출하는 가상함수 이다.
+
+
+*) 어플리케이션 시작
+
+      뷰 객체 생성 ==> 뷰 윈도우 생성 및 OnCreate 호출
+
+       ==> OnNewDocument() 호출 ==> OnInialUpdate()호출  : 뷰 객체 초기화
+
+       ==> OnDraw() 호출
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+    

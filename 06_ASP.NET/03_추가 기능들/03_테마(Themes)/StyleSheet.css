@@ -1,0 +1,46 @@
+﻿body 
+{
+    font-size: small;
+    font-family: Verdana;
+    color: #004000;
+}
+
+A:link
+{
+    color: Red;
+    text-decoration:none;
+}
+
+A:visited
+{
+    color: Green;
+    text-decoration:none;
+}
+
+A:hover
+{
+    color: Blue;
+    text-decoration:underline overline;
+}
+
+.Style1
+{
+    font-weight: bold;    
+    color: Navy;
+}
+
+.Style2
+{
+    font-weight: bold;
+    font-size: medium;
+    font-style:italic;
+    color: Olive;
+}
+
+.Style3
+{
+    font-weight: bold;
+    font-size: medium;
+    font-style: oblique;
+    color: Orange;
+}

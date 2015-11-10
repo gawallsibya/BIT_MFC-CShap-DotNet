@@ -1,0 +1,42 @@
+<html>
+<body>
+<pre>
+<h1>Build Log</h1>
+<h3>
+--------------------Configuration: 상태바2 - Win32 Debug--------------------
+</h3>
+<h3>Command Lines</h3>
+Creating command line "rc.exe /l 0x412 /fo"Debug/상태바2.res" /d "_DEBUG" /d "_AFXDLL" "C:\Documents and Settings\최창민\바탕 화면\03_MFC\1_강의\6일차_상태바_다이얼로그바\2_상태바_툴바\상태바2\상태바2.rc"" 
+Creating temporary file "C:\DOCUME~1\최창민\LOCALS~1\Temp\RSP57.tmp" with contents
+[
+/nologo /MDd /W3 /Gm /GX /ZI /Od /D "WIN32" /D "_DEBUG" /D "_WINDOWS" /D "_AFXDLL" /D "_MBCS" /Fp"Debug/상태바2.pch" /Yu"stdafx.h" /Fo"Debug/" /Fd"Debug/" /FD /GZ /c 
+"C:\Documents and Settings\최창민\바탕 화면\03_MFC\1_강의\6일차_상태바_다이얼로그바\2_상태바_툴바\상태바2\ChildView.cpp"
+"C:\Documents and Settings\최창민\바탕 화면\03_MFC\1_강의\6일차_상태바_다이얼로그바\2_상태바_툴바\상태바2\MainFrm.cpp"
+"C:\Documents and Settings\최창민\바탕 화면\03_MFC\1_강의\6일차_상태바_다이얼로그바\2_상태바_툴바\상태바2\상태바2.cpp"
+]
+Creating command line "cl.exe @"C:\DOCUME~1\최창민\LOCALS~1\Temp\RSP57.tmp"" 
+Creating temporary file "C:\DOCUME~1\최창민\LOCALS~1\Temp\RSP58.tmp" with contents
+[
+/nologo /MDd /W3 /Gm /GX /ZI /Od /D "WIN32" /D "_DEBUG" /D "_WINDOWS" /D "_AFXDLL" /D "_MBCS" /Fp"Debug/상태바2.pch" /Yc"stdafx.h" /Fo"Debug/" /Fd"Debug/" /FD /GZ /c 
+"C:\Documents and Settings\최창민\바탕 화면\03_MFC\1_강의\6일차_상태바_다이얼로그바\2_상태바_툴바\상태바2\StdAfx.cpp"
+]
+Creating command line "cl.exe @"C:\DOCUME~1\최창민\LOCALS~1\Temp\RSP58.tmp"" 
+Creating command line "link.exe /nologo /subsystem:windows /incremental:yes /pdb:"Debug/상태바2.pdb" /debug /machine:I386 /out:"Debug/상태바2.exe" /pdbtype:sept  ".\Debug\ChildView.obj" ".\Debug\MainFrm.obj" ".\Debug\StdAfx.obj" ".\Debug\상태바2.obj" ".\Debug\상태바2.res" "
+<h3>Output Window</h3>
+Compiling resources...
+Compiling...
+StdAfx.cpp
+Compiling...
+ChildView.cpp
+MainFrm.cpp
+상태바2.cpp
+Generating Code...
+Linking...
+
+
+
+<h3>Results</h3>
+상태바2.exe - 0 error(s), 0 warning(s)
+</pre>
+</body>
+</html>

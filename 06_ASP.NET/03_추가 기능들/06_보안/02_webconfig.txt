@@ -1,0 +1,40 @@
+[ Web.Config]
+
+1. <authenication> 폼 기반 인증을   사용하도록 처리
+   - 익명 사용자가 LoginStatus 컨트롤의 로그인 링크를 클릭하면
+     이동할 패이지 요소의 loginUrl 특성에 지정
+   - 인증 후 이동할 페이지를 default.url 특성에 지정
+
+2. <allow users="*"/>
+    유명무실한 구문
+    특정 권한을 설정하지 않음
+
+3. membership defaultProvider
+   minRequiredPasswordLength : 4
+   minRequiredNonalphanumericChacaters : 0
+   사용자 생성시 암호는 최소 4자리
+   특수 문자는 입력하지 않아도 됨
+
+
+<?xml version="1.0"?>
+
+<configuration xmlns="http://schemas.microsoft.com/.NetConfiguration/v2.0">
+	<appSettings/>
+	<connectionStrings/>
+	<system.web>
+		<authentication mode="Forms">
+			<forms name=".ASPXAUTH" loginUrl="Ex01_Login.aspx" defaultUrl="Default.aspx"></forms>
+		</authentication>
+
+		<authorization>
+	      <allow users="*"/>
+		</authorization>
+
+
+    <membership defaultProvider="MyAspNetSqlMembershipProvider">
+      <providers>
+        <add name="MyAspNetSqlMembershipProvider" type="System.Web.Security.SqlMembershipProvider" connectionStringName="LocalSqlServer" enablePasswordRetrieval="false" enablePasswordReset="true" requiresQuestionAndAnswer="true" applicationName="/" requiresUniqueEmail="false" passwordFormat="Hashed" maxInvalidPasswordAttempts="5" minRequiredPasswordLength="4" minRequiredNonalphanumericCharacters="0" />
+      </providers>
+    </membership>
+
+	</system.web>

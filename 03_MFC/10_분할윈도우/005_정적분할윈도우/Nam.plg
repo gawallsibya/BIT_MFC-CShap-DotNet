@@ -1,0 +1,57 @@
+<html>
+<body>
+<pre>
+<h1>Build Log</h1>
+<h3>
+--------------------Configuration: Nam - Win32 Debug--------------------
+</h3>
+<h3>Command Lines</h3>
+Creating command line "rc.exe /l 0x412 /fo"Debug/Nam.res" /d "_DEBUG" /d "_AFXDLL" "C:\Documents and Settings\최창민\바탕 화면\9일차_분할윈도우\003_동적분할윈도우\Nam.rc"" 
+Creating temporary file "C:\DOCUME~1\최창민\LOCALS~1\Temp\RSP13A.tmp" with contents
+[
+/nologo /MDd /W3 /Gm /GX /ZI /Od /D "WIN32" /D "_DEBUG" /D "_WINDOWS" /D "_AFXDLL" /D "_MBCS" /Fp"Debug/Nam.pch" /Yu"stdafx.h" /Fo"Debug/" /Fd"Debug/" /FD /GZ /c 
+"C:\Documents and Settings\최창민\바탕 화면\9일차_분할윈도우\003_동적분할윈도우\MainFrm.cpp"
+"C:\Documents and Settings\최창민\바탕 화면\9일차_분할윈도우\003_동적분할윈도우\Nam.cpp"
+"C:\Documents and Settings\최창민\바탕 화면\9일차_분할윈도우\003_동적분할윈도우\NamDoc.cpp"
+"C:\Documents and Settings\최창민\바탕 화면\9일차_분할윈도우\003_동적분할윈도우\NamView.cpp"
+"C:\Documents and Settings\최창민\바탕 화면\9일차_분할윈도우\003_동적분할윈도우\PaneView.cpp"
+]
+Creating command line "cl.exe @"C:\DOCUME~1\최창민\LOCALS~1\Temp\RSP13A.tmp"" 
+Creating temporary file "C:\DOCUME~1\최창민\LOCALS~1\Temp\RSP13B.tmp" with contents
+[
+/nologo /MDd /W3 /Gm /GX /ZI /Od /D "WIN32" /D "_DEBUG" /D "_WINDOWS" /D "_AFXDLL" /D "_MBCS" /Fp"Debug/Nam.pch" /Yc"stdafx.h" /Fo"Debug/" /Fd"Debug/" /FD /GZ /c 
+"C:\Documents and Settings\최창민\바탕 화면\9일차_분할윈도우\003_동적분할윈도우\StdAfx.cpp"
+]
+Creating command line "cl.exe @"C:\DOCUME~1\최창민\LOCALS~1\Temp\RSP13B.tmp"" 
+Creating temporary file "C:\DOCUME~1\최창민\LOCALS~1\Temp\RSP13C.tmp" with contents
+[
+/nologo /subsystem:windows /incremental:yes /pdb:"Debug/Nam.pdb" /debug /machine:I386 /out:"Debug/Nam.exe" /pdbtype:sept 
+".\Debug\MainFrm.obj"
+".\Debug\Nam.obj"
+".\Debug\NamDoc.obj"
+".\Debug\NamView.obj"
+".\Debug\PaneView.obj"
+".\Debug\StdAfx.obj"
+".\Debug\Nam.res"
+]
+Creating command line "link.exe @"C:\DOCUME~1\최창민\LOCALS~1\Temp\RSP13C.tmp""
+<h3>Output Window</h3>
+Compiling resources...
+Compiling...
+StdAfx.cpp
+Compiling...
+MainFrm.cpp
+Nam.cpp
+NamDoc.cpp
+NamView.cpp
+PaneView.cpp
+Generating Code...
+Linking...
+
+
+
+<h3>Results</h3>
+Nam.exe - 0 error(s), 0 warning(s)
+</pre>
+</body>
+</html>

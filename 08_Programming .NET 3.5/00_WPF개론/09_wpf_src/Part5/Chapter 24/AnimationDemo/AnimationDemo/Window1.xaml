@@ -1,0 +1,16 @@
+﻿<Window x:Class="AnimationDemo.Window1"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    Title="Window1" Height="432" Width="679">
+    <Canvas Width="635">
+        <Canvas.Resources>
+            <SolidColorBrush x:Key="brush" Color="Beige"/>
+            <DoubleAnimation x:Key="myAnimation" To="400" AutoReverse="True" Duration="00:00:05" />
+        </Canvas.Resources>
+        <Button Canvas.Left="44" Canvas.Top="332" Height="29" Name="btnAnimationStart" Width="117" Click="btnAnimationStart_Click">AnimationStart</Button>
+        <Ellipse Name="myEllipse" Canvas.Left="46" Canvas.Top="58" Height="93"  Stroke="Black" Width="97" Fill="{StaticResource  brush}" />
+        <Button Canvas.Left="177" Canvas.Top="334" Height="29" Name="BtnColorAnimationStart" Width="134" Click="BtnColorAnimationStart_Click">ColorAnimationStart</Button>
+        <Button Canvas.Left="334" Canvas.Top="335" Height="29" Name="btnRadiusAnimation" Width="114" Click="btnRadiusAnimation_Click">RadiusAnimation</Button>
+        <Button Canvas.Left="469" Canvas.Top="334" Height="29" Name="ResourceAnimation" Width="111" Click="ResourceAnimation_Click">ResourceAnimation</Button>
+    </Canvas>
+</Window>

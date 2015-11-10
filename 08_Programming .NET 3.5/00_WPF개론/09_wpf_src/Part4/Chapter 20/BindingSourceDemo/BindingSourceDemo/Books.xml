@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<MyBooks xmlns="" >
+  <Books>
+    <Book ISBN="0-1234-4321-9" Stock="No"  Number="9">
+      <Title>WPF Bible</Title>
+      <Summary>WPF Tutorial</Summary>
+    </Book>
+    <Book ISBN="0-7567-0890-2" Stock="No" Number="8">
+      <Title>East Sea Beach</Title>
+      <Summary>Photo Journal</Summary>
+    </Book>
+    <Book ISBN="0-5698-1232-9" Stock="Yes"  Number="7">
+      <Title>Hook ton</Title>
+      <Summary>News</Summary>
+    </Book>
+  </Books>
+</MyBooks>
+

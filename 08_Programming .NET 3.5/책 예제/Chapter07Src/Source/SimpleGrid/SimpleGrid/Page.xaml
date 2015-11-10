@@ -1,0 +1,47 @@
+﻿<UserControl x:Class="SimpleGrid.Page"
+    xmlns="http://schemas.microsoft.com/client/2007" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
+    Width="400" Height="300" >
+    <Grid x:Name="LayoutRoot" Background="White" ShowGridLines="False">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="15"/> <!--Margin-->
+            <RowDefinition MinHeight="10" MaxHeight="50" />
+            <RowDefinition MinHeight="10" MaxHeight="50" />
+            <RowDefinition MinHeight="10" MaxHeight="50" />
+            <RowDefinition MinHeight="10" MaxHeight="50" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="15"/>  <!--Margin-->
+        </Grid.RowDefinitions>
+        
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="10" />     <!--0 Margin-->
+            <ColumnDefinition Width="200" />    <!--1 Left -->
+            <ColumnDefinition Width="15" />     <!--2 Padding-->
+            <ColumnDefinition Width="*" />      <!--3 Right-->
+            <ColumnDefinition Width="10" />     <!--4 Margin-->
+        </Grid.ColumnDefinitions>
+        
+        <TextBlock Text="First Name" HorizontalAlignment="Right"
+        Grid.Column="1" Grid.Row="1" VerticalAlignment="Bottom"/>
+        <TextBox x:Name="First" Width="150" Height="30" HorizontalAlignment="Left"
+        Grid.Column="3" Grid.Row="1" VerticalAlignment="Bottom" Background="Bisque" />
+
+        <TextBlock Text="Last Name" HorizontalAlignment="Right"
+        Grid.Column="1" Grid.Row="2" VerticalAlignment="Bottom"/>
+        <TextBox x:Name="Last" Width="150" Height="30" HorizontalAlignment="Left"
+        Grid.Column="3" Grid.Row="2" VerticalAlignment="Bottom" Background="Bisque" />
+
+        <TextBlock Text="Technical Skills " HorizontalAlignment="Right"
+        Grid.Column="1" Grid.Row="3" VerticalAlignment="Bottom"/>
+        
+        <StackPanel Orientation="Horizontal" VerticalAlignment="Bottom" 
+           HorizontalAlignment="Right" Grid.Column="3" Grid.Row="3" >
+            <CheckBox x:Name="DotNet" Content=".NET" Width="50" Height="30"  />
+            <CheckBox x:Name="CSharp" Content="C#" Width="50" Height="30" Margin="5,0,0,0" />
+            <CheckBox x:Name="Silverlight" Content="VB" Width="50" Height="30" Margin="5,0,0,0" />    
+        </StackPanel>
+        <Button x:Name="myPushyButton" Content="Click Me Please" Height="30" Width="100"
+            Grid.Column="1" Grid.Row="4" />
+
+    </Grid>
+</UserControl>

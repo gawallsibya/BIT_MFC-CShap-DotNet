@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="70c0772d-2d9a-4b22-8c56-9db99ac170b6" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:50448/YahooQuotes/YahooQuotes.svc?wsdl" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="YahooQuotes.xsd" MetadataType="Schema" ID="ab5ecef4-26d1-4726-b2f1-22c14c6c2ffb" SourceId="1" SourceUrl="http://localhost:50448/YahooQuotes/YahooQuotes.svc?xsd=xsd2" />
+    <MetadataFile FileName="YahooQuotes1.xsd" MetadataType="Schema" ID="5fcd7203-fa45-4719-bd88-92afd9079132" SourceId="1" SourceUrl="http://localhost:50448/YahooQuotes/YahooQuotes.svc?xsd=xsd0" />
+    <MetadataFile FileName="YahooQuotes2.xsd" MetadataType="Schema" ID="9edbd81d-194e-429d-9ce2-d190dbe70de4" SourceId="1" SourceUrl="http://localhost:50448/YahooQuotes/YahooQuotes.svc?xsd=xsd1" />
+    <MetadataFile FileName="YahooQuotes.wsdl" MetadataType="Wsdl" ID="9094c537-c6a3-4b95-acd5-c6f6ea76456d" SourceId="1" SourceUrl="http://localhost:50448/YahooQuotes/YahooQuotes.svc?wsdl" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

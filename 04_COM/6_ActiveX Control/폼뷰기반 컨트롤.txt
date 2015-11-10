@@ -1,0 +1,44 @@
+1. 프로젝트 생성
+    - MFC ActiveX ControlWizard   Sample
+    - 기본값 설정
+
+2. 추가하고자 하는 h/cpp 파일 포함
+   관련 리소스 포함
+   ==> 에러 처리
+
+3. 객체 선언
+    #include Sample.h"
+    public:
+	CSample *m_pSample;
+
+4. OnCreate에서 객체 생성( 가상함수 )
+   m_pSample = new CSample;
+   m_pSample->Create(IDD_XXXX, this);
+   
+5. OnDraw처리
+   if( GetSafeHwnd())
+   {
+	// 부모의 색상으로 컨트롤 배경색 처리
+	CBrush hbr(TranslateColor(AmbientBackColor());
+	pdc->FillRect(rcBounds, &hbr);
+	
+	//다이얼로그의 위치가 ocx 중앙이 되도록
+	CRect DlgRect;
+	m_pSample->GetWindowRect(&DlgRect);
+	
+	int x = rcBounds.left;
+	int y = rcBounds.top;
+	if( DlgRect.Width() < rcBounds.Width())
+	{
+		int xMargin = (rcBounds.Width() - DlgRect.Width()) /2;
+		x	= rcBounds.left + xMargin;
+	}
+
+	if( DlgRect.Height() < rcBounds.Height())
+	{
+		int yMargin = (rcBounds.Height() - DlgRect.Height()) /2;
+		y = rcBounds.top + yMargin;
+	}
+	m_pSample->MoveWindow(x,y, DlgRect.Width(), DlgRect.Height(), TRUE);
+   }
+   

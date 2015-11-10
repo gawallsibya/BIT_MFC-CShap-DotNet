@@ -1,0 +1,55 @@
+﻿<UserControl x:Class="Bubbles.Page"
+    xmlns="http://schemas.microsoft.com/client/2007" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
+    Width="450" Height="150">
+    <Grid x:Name="LayoutRoot" Background="White">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="10" />
+            <RowDefinition Height="50" />
+            <RowDefinition Height="50" />
+            <RowDefinition Height="10" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="10" />
+            <ColumnDefinition Width="250" />
+            <ColumnDefinition Width="15" />
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="10" />
+        </Grid.ColumnDefinitions>
+
+
+            
+       <Button x:Name="SetFeatures" Height="40" Width="250" Background="Blue"
+        Grid.Row="1" Grid.Column="1">
+            <Button.Content>
+                <StackPanel x:Name="Features" Orientation="Horizontal" VerticalAlignment="Bottom" >
+                    <CheckBox x:Name="Soft" Content="Soft" Width="50" Height="40"
+                        Margin="5,0,0,0" />
+                    <CheckBox x:Name="Cozy" Content="Cozy" Width="50" Height="40" />                   
+                    <CheckBox x:Name="Warm" Content="Warm" Width="60" Height="40" />                   
+                    <CheckBox x:Name="Happy" Content="Happy" Width="60" Height="40" />                   
+                </StackPanel>
+            </Button.Content>
+        </Button>
+        <TextBlock x:Name="FeaturesEffects" Grid.Row="1" Grid.Column="3" 
+        Text="Waiting...." 
+        VerticalAlignment="Center"  HorizontalAlignment="Left"/>
+    
+       <Button x:Name="SetFeatures2" Height="40" Width="250" Background="Blue"
+        Grid.Row="2" Grid.Column="1">
+            <Button.Content>
+                <StackPanel x:Name="Features2" Orientation="Horizontal" VerticalAlignment="Bottom" >
+                    <CheckBox x:Name="Soft2" Content="Soft" Width="50" Height="40"
+                        Margin="5,0,0,0" />
+                    <CheckBox x:Name="Cozy2" Content="Cozy" Width="50" Height="40" />                   
+                    <CheckBox x:Name="Warm2" Content="Warm" Width="60" Height="40" />                   
+                    <CheckBox x:Name="Happy2" Content="Happy" Width="60" Height="40" />                   
+                </StackPanel>
+            </Button.Content>
+        </Button>
+        <TextBlock x:Name="FeaturesEffects2" Grid.Row="2" Grid.Column="3" 
+        Text="Waiting...." 
+        VerticalAlignment="Center"  HorizontalAlignment="Left"/>
+
+    </Grid>
+</UserControl>

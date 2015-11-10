@@ -1,0 +1,94 @@
+﻿<%@ Page Language="C#" %>
+<%@ Import Namespace="System.Data.SqlClient" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<script runat="server">
+    protected void Page_Load(object sender, EventArgs e)
+    {
+        if (!Page.IsPostBack)
+        {
+            BindDropDownList();
+            SetInfo();
+        }
+    }
+
+    void BindDropDownList()
+    {
+        SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["TestConnectionString"].ConnectionString);
+        SqlCommand cmd = new SqlCommand("SELECT user_id FROM Member", con);
+        
+        con.Open();
+        SqlDataReader rd = cmd.ExecuteReader();
+        DropDownList1.DataSource = rd;
+        DropDownList1.DataValueField = "user_id";
+        DropDownList1.DataTextField = "user_id";
+        DropDownList1.DataBind();
+        rd.Close();
+        con.Close();
+    }
+
+    void SetInfo()
+    {
+        SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["TestConnectionString"].ConnectionString);
+        SqlCommand cmd = new SqlCommand("SELECT * FROM Member WHERE user_id = @user_id", con);
+        cmd.Parameters.AddWithValue("@user_id", DropDownList1.SelectedItem.Value);
+        
+        con.Open();
+        SqlDataReader rd = cmd.ExecuteReader();
+        if (rd.Read())
+        {
+            Label1.Text = rd["user_id"].ToString();
+            TextBox1.Text = rd["password"].ToString();
+            TextBox2.Text = rd["name"].ToString();
+            TextBox3.Text = rd["phone"].ToString();
+        }
+        rd.Close();
+        con.Close();
+    }
+    
+    protected void DropDownList1_SelectedIndexChanged(object sender, EventArgs e)
+    {
+        SetInfo();
+    }
+
+    protected void Button1_Click(object sender, EventArgs e)
+    {
+        SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["TestConnectionString"].ConnectionString);
+        string strSql = "UPDATE Member SET password = @password, name = @name, phone = @phone WHERE user_id = @user_id";
+        SqlCommand cmd = new SqlCommand(strSql, con);
+        cmd.Parameters.AddWithValue("@password", TextBox1.Text);
+        cmd.Parameters.AddWithValue("@name", TextBox2.Text);
+        cmd.Parameters.AddWithValue("@phone", TextBox3.Text);
+        cmd.Parameters.AddWithValue("@user_id", DropDownList1.SelectedItem.Value);
+        
+        con.Open();
+        cmd.ExecuteNonQuery();
+        con.Close();
+
+        Label2.Text = Label1.Text + "의 정보가 수정되었습니다.";
+    }
+</script>
+
+<html xmlns="http://www.w3.org/1999/xhtml" >
+<head runat="server">
+    <title>제목 없음</title>
+</head>
+<body>
+    <form id="form1" runat="server">
+    <div>
+        <h3>연결기반 UPDATE 예제</h3>  
+        
+        아이디 선택 : 
+        <asp:DropDownList ID="DropDownList1" runat="server" AutoPostBack="True" OnSelectedIndexChanged="DropDownList1_SelectedIndexChanged">
+        </asp:DropDownList><p></p>   
+        아이디 : <asp:Label ID="Label1" runat="server"></asp:Label><br />
+        암호 : <asp:TextBox ID="TextBox1" runat="server"></asp:TextBox><br />
+        이름 : <asp:TextBox ID="TextBox2" runat="server"></asp:TextBox><br />
+        전화 : <asp:TextBox ID="TextBox3" runat="server"></asp:TextBox><br />
+        <asp:Button ID="Button1" runat="server" Text="수정" OnClick="Button1_Click" /><br />
+        <asp:Label ID="Label2" runat="server"></asp:Label>
+    </div>
+    </form>
+</body>
+</html>

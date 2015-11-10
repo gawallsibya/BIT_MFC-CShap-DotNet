@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Database Name="MVCDatabase" Class="MVCDatabaseDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="WebSettings" ConnectionString="Data Source=merkwürdigliebe\sqlexpress;Initial Catalog=MVCDatabase;Integrated Security=True" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="MVCDatabaseConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.Person" Member="Persons">
+    <Type Name="Person">
+      <Column Name="IDPerson" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="IDShippingMethod" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="PersonName" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Association Name="ShippingMethod_Person" Member="ShippingMethod" ThisKey="IDShippingMethod" Type="ShippingMethod" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ShippingMethod" Member="ShippingMethods">
+    <Type Name="ShippingMethod">
+      <Column Name="IDShippingMethod" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="ShippingMethod" Member="ShippingMethod1" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Association Name="ShippingMethod_Person" Member="Persons" OtherKey="IDShippingMethod" Type="Person" />
+    </Type>
+  </Table>
+</Database>

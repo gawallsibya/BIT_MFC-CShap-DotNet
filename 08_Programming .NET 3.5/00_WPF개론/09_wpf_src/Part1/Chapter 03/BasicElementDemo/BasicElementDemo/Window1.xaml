@@ -1,0 +1,18 @@
+﻿<Window x:Class="BasicElementDemo.Window1"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    Title="Window1" Height="300" Width="300">
+    <Grid>
+        <FlowDocumentReader>
+            <FlowDocument>
+                <Paragraph>
+                    Hello
+                </Paragraph>
+            </FlowDocument>
+        </FlowDocumentReader>
+        
+        <!--여기 아래 붙여 넣어 세요-->
+        
+
+    </Grid>
+</Window>

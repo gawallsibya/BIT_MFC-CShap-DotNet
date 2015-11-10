@@ -1,0 +1,388 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="3.5" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{1CAD7901-6585-4E04-884D-5B9482B5D122}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>WPFControls</RootNamespace>
+    <AssemblyName>WPFControls</AssemblyName>
+    <TargetFrameworkVersion>v3.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="ReachFramework">
+      <RequiredTargetFramework>3.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="UIAutomationProvider">
+      <RequiredTargetFramework>3.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="WindowsBase">
+      <RequiredTargetFramework>3.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="PresentationCore">
+      <RequiredTargetFramework>3.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="PresentationFramework">
+      <RequiredTargetFramework>3.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="WPFToolkit, Version=3.5.31016.1, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="WPFToolkit.Design, Version=3.5.31016.1, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="WPFToolkit.VisualStudio.Design, Version=3.5.31016.1, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Page Include="BorderSample.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="BulletDecorator.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="CalendarSample.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="CanvasSample.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="CheckBoxSample.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ComboBoxSample.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ContextMenuSample.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="DataGridSample.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="DatePickerSample.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="DockPanelSample.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="DocumentViewerSample.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ExpanderSample.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="FlowDocumentPageViewerSample.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="FlowDocumentReaderSample.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="FlowDocumentScrollViewerSample.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="FrameSample.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="GridSample.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="GridSplitterSample.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="GroupBoxSample.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ImageSample.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="LabelSample.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ListBoxSample.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ListViewSample.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MenuSample.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="PanelSample.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="PopupSample.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="PrintDialogSample.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ProgressBarSample.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="RadioButtonSample.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="RepeatButtonSample.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ScrollBarSample.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ScrollViewerSample.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="SliderSample.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="StackPanelSample.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="StatusBarSample.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="TabControlSample.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ToolBarSample.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ToolTipSample.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="TreeViewSample.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ViewBoxSample.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BorderSample.xaml.cs">
+      <DependentUpon>BorderSample.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BulletDecorator.xaml.cs">
+      <DependentUpon>BulletDecorator.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="CalendarSample.xaml.cs">
+      <DependentUpon>CalendarSample.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="CanvasSample.xaml.cs">
+      <DependentUpon>CanvasSample.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="CheckBoxSample.xaml.cs">
+      <DependentUpon>CheckBoxSample.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ComboBoxSample.xaml.cs">
+      <DependentUpon>ComboBoxSample.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ContextMenuSample.xaml.cs">
+      <DependentUpon>ContextMenuSample.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="DataGridSample.xaml.cs">
+      <DependentUpon>DataGridSample.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="DatePickerSample.xaml.cs">
+      <DependentUpon>DatePickerSample.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="DockPanelSample.xaml.cs">
+      <DependentUpon>DockPanelSample.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="DocumentViewerSample.xaml.cs">
+      <DependentUpon>DocumentViewerSample.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ExpanderSample.xaml.cs">
+      <DependentUpon>ExpanderSample.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="FlowDocumentPageViewerSample.xaml.cs">
+      <DependentUpon>FlowDocumentPageViewerSample.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="FlowDocumentReaderSample.xaml.cs">
+      <DependentUpon>FlowDocumentReaderSample.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="FlowDocumentScrollViewerSample.xaml.cs">
+      <DependentUpon>FlowDocumentScrollViewerSample.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="FrameSample.xaml.cs">
+      <DependentUpon>FrameSample.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="GridSample.xaml.cs">
+      <DependentUpon>GridSample.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="GridSplitterSample.xaml.cs">
+      <DependentUpon>GridSplitterSample.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="GroupBoxSample.xaml.cs">
+      <DependentUpon>GroupBoxSample.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ImageSample.xaml.cs">
+      <DependentUpon>ImageSample.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="LabelSample.xaml.cs">
+      <DependentUpon>LabelSample.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ListBoxSample.xaml.cs">
+      <DependentUpon>ListBoxSample.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ListViewSample.xaml.cs">
+      <DependentUpon>ListViewSample.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MenuSample.xaml.cs">
+      <DependentUpon>MenuSample.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PanelSample.xaml.cs">
+      <DependentUpon>PanelSample.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PopupSample.xaml.cs">
+      <DependentUpon>PopupSample.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PrintDialogSample.xaml.cs">
+      <DependentUpon>PrintDialogSample.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ProgressBarSample.xaml.cs">
+      <DependentUpon>ProgressBarSample.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="RadioButtonSample.xaml.cs">
+      <DependentUpon>RadioButtonSample.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="RepeatButtonSample.xaml.cs">
+      <DependentUpon>RepeatButtonSample.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ScrollBarSample.xaml.cs">
+      <DependentUpon>ScrollBarSample.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ScrollViewerSample.xaml.cs">
+      <DependentUpon>ScrollViewerSample.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="SliderSample.xaml.cs">
+      <DependentUpon>SliderSample.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="StackPanelSample.xaml.cs">
+      <DependentUpon>StackPanelSample.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="StatusBarSample.xaml.cs">
+      <DependentUpon>StatusBarSample.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="TabControlSample.xaml.cs">
+      <DependentUpon>TabControlSample.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ToolBarSample.xaml.cs">
+      <DependentUpon>ToolBarSample.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ToolTipSample.xaml.cs">
+      <DependentUpon>ToolTipSample.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="TreeViewSample.xaml.cs">
+      <DependentUpon>TreeViewSample.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ViewBoxSample.xaml.cs">
+      <DependentUpon>ViewBoxSample.xaml</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <Content Include="entity.xps">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Resource Include="Sunset.JPG">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <None Include="ClassDiagram1.cd" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <AppDesigner Include="Properties\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

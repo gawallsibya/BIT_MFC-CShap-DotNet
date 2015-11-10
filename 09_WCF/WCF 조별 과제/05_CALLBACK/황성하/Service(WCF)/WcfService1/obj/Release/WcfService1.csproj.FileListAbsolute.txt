@@ -1,0 +1,10 @@
+C:\Users\wsu-bit-82\Desktop\05_CallBack\WcfService12\WcfService1\bin\WcfService1.dll
+C:\Users\wsu-bit-82\Desktop\05_CallBack\WcfService12\WcfService1\bin\WcfService1.pdb
+C:\Users\wsu-bit-82\Desktop\05_CallBack\WcfService12\WcfService1\obj\Release\WcfService1.dll
+C:\Users\wsu-bit-82\Desktop\05_CallBack\WcfService12\WcfService1\obj\Release\WcfService1.pdb
+C:\Users\wsu-bit-82\Desktop\05_CallBack\WcfService12\WcfService1\obj\Release\WcfService1.csprojResolveAssemblyReference.cache
+C:\Users\wsu-bit-82\Desktop\05_CallBack\Service(WCF)\WcfService1\bin\WcfService1.dll
+C:\Users\wsu-bit-82\Desktop\05_CallBack\Service(WCF)\WcfService1\bin\WcfService1.pdb
+C:\Users\wsu-bit-82\Desktop\05_CallBack\Service(WCF)\WcfService1\obj\Release\WcfService1.csprojResolveAssemblyReference.cache
+C:\Users\wsu-bit-82\Desktop\05_CallBack\Service(WCF)\WcfService1\obj\Release\WcfService1.dll
+C:\Users\wsu-bit-82\Desktop\05_CallBack\Service(WCF)\WcfService1\obj\Release\WcfService1.pdb

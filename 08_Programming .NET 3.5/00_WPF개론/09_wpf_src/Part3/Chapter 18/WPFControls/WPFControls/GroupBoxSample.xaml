@@ -1,0 +1,27 @@
+﻿<Window x:Class="WPFControls.GroupBox"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    Title="GroupBox" Height="300" Width="300">
+    <Grid>
+        <GroupBox BorderBrush="Black" VerticalAlignment="Top">
+            <GroupBox.Header>
+                주의 사항
+            </GroupBox.Header>
+            <StackPanel VerticalAlignment="Top">
+                <BulletDecorator>
+                    <BulletDecorator.Bullet>
+                        <Ellipse Width="10" Height="10" Fill="Black"/>
+                    </BulletDecorator.Bullet>
+                    <TextBlock>하절기 식중독 사고</TextBlock>
+                </BulletDecorator>
+                <BulletDecorator>
+                    <BulletDecorator.Bullet>
+                        <Ellipse Width="10" Height="10" Fill="Black"/>
+                    </BulletDecorator.Bullet>
+                    <TextBlock >안개 지역 시야 확보</TextBlock>
+                </BulletDecorator>
+            </StackPanel>
+        </GroupBox>
+        
+    </Grid>
+</Window>
